@@ -99,5 +99,18 @@ namespace BizHawk.Client.EmuHawk
 			Controls.Add(new SingleColumnFLP { Controls = { flpButtons, flpPanels } });
 			ResumeLayout();
 		}
+
+		private void InitializeComponent()
+		{
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TAStudioColorSettingsForm));
+            this.SuspendLayout();
+            // 
+            // TAStudioColorSettingsForm
+            // 
+            resources.ApplyResources(this, "$this");
+            this.Name = "TAStudioColorSettingsForm";
+            this.ResumeLayout(false);
+
+		}
 	}
 }

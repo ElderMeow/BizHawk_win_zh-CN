@@ -56,7 +56,7 @@ namespace BizHawk.Client.EmuHawk
 			PresentationPanel presentationPanel,
 			Func<bool> getIsSecondaryThrottlingDisabled)
 				: base(config, emulator, inputManager, movieSession, gl.DispMethodEnum, gl, gl.CreateGuiRenderer(),
-					  TheLocalizer.GetCustomizedFontPathAndFirstName()) // 在这里获取并传入本地化字体。 Try to use customized font.
+					  TheLocalizater.GetCustomizedFontPathAndFirstName()) // 在这里获取并传入本地化字体。 Try to use customized font.
 		{
 			_presentationPanel = presentationPanel;
 			_getIsSecondaryThrottlingDisabled = getIsSecondaryThrottlingDisabled;

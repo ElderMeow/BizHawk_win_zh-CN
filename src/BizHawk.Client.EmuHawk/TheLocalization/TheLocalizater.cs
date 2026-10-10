@@ -4,9 +4,9 @@ using System.Threading;
 
 namespace BizHawk.Client.EmuHawk.TheLocalization
 {
-	internal static class TheLocalizer
+	internal static class TheLocalizater
 	{
-		static TheLocalizer()
+		static TheLocalizater()
 		{
 			_translaters[""] = new HardEncodingTextTralslaterBase(); //default implementation.
 
