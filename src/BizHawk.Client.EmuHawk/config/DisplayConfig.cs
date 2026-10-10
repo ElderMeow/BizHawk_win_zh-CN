@@ -71,38 +71,38 @@ namespace BizHawk.Client.EmuHawk
 					{
 						cbStaticWindowTitles,
 						new Label { Size = new(32, 1) }, // whitespace
-						new LabelEx { Text = "Window title suffix (static and not):" },
+						new LabelEx { Text = TheLocalizater.TranslateText("Window title suffix (static and not):") },
 						txtSWTOverride,
 					},
 				});
-			LocSzGroupBoxEx grpSnow = new() { Location = UIHelper.Scale(new Point(6, 200)), Size = UIHelper.Scale(new Size(371, 160)), Text = "Snowy NullHawk" };
+			LocSzGroupBoxEx grpSnow = new() { Location = UIHelper.Scale(new Point(6, 200)), Size = UIHelper.Scale(new Size(371, 160)), Text = TheLocalizater.TranslateText("Snowy NullHawk") };
 			_snowRadioTracker = grpSnow.Tracker;
 			RadioButtonEx rbSnowAlways = new(_snowRadioTracker)
 			{
 				Checked = config.SnowyNullHawk is SnowyNullVideo.TriggerCriterion.Always,
 				Name = nameof(rbSnowAlways),
 				Tag = SnowyNullVideo.TriggerCriterion.Always,
-				Text = "Always",
+				Text = TheLocalizater.TranslateText("Always"),
 			};
 			RadioButtonEx rbSnowForChristmas = new(_snowRadioTracker)
 			{
 				Checked = config.SnowyNullHawk is SnowyNullVideo.TriggerCriterion.WeekOfChristmas,
 				Name = nameof(rbSnowForChristmas),
 				Tag = SnowyNullVideo.TriggerCriterion.WeekOfChristmas,
-				Text = "During Christmas (Dec. 20th through 26th)",
+				Text = TheLocalizater.TranslateText("During Christmas (Dec. 20th through 26th)"),
 			};
 			RadioButtonEx rbSnowNever = new(_snowRadioTracker)
 			{
 				Checked = config.SnowyNullHawk is SnowyNullVideo.TriggerCriterion.Never,
 				Name = nameof(rbSnowNever),
 				Tag = SnowyNullVideo.TriggerCriterion.Never,
-				Text = "Never",
+				Text = TheLocalizater.TranslateText("Never"),
 			};
 			LabelEx lblFramerate = new();
 			tbSnowFramerate.ValueChanged += (changedSender, _) =>
 			{
 				var val = ((TrackBar) changedSender).Value;
-				lblFramerate.Text = $"Framerate: {60.0 / val:F1} Hz";
+				lblFramerate.Text = TheLocalizater.TranslateFormatString("Framerate: {0:F1} Hz", 60.0 / val);
 			};
 			tbSnowFramerate.Value = snowSettings.FramerateScalar;
 			nudSnowIntensity.Value = new(snowSettings.Intensity);
@@ -111,16 +111,16 @@ namespace BizHawk.Client.EmuHawk
 			{
 				Controls =
 				{
-					new LabelEx { Text = "When no rom loaded, draw \"snow\" (white noise):" },
+					new LabelEx { Text = TheLocalizater.TranslateText("When no rom loaded, draw \"snow\" (white noise):") },
 					new SingleRowFLP { Controls = { rbSnowAlways, rbSnowNever } },
 					rbSnowForChristmas,
 					new SingleRowFLP
 					{
 						Controls =
 						{
-							new LabelEx { Text = "Brightness multiplier:" },
+							new LabelEx { Text = TheLocalizater.TranslateText("Brightness multiplier:") },
 							nudSnowIntensity,
-							new LabelEx { Text = "RNG bias:" },
+							new LabelEx { Text = TheLocalizater.TranslateText("RNG bias:") },
 							nudSnowBias,
 						},
 					},
@@ -461,7 +461,7 @@ namespace BizHawk.Client.EmuHawk
 		public void TbScanlineIntensity_Scroll(object sender, EventArgs e)
 		{
 			_config.TargetScanlineFilterIntensity = tbScanlineIntensity.Value;
-			lblScanlines.Text = $"{_config.TargetScanlineFilterIntensity / 256.0:P2}";
+			lblScanlines.Text = TheLocalizater.TranslateFormatString("{0:P2}", _config.TargetScanlineFilterIntensity / 256.0);
 		}
 
 		private void TrackBarFrameSizeWindowed_ValueChanged(object sender, EventArgs e)
@@ -473,17 +473,17 @@ namespace BizHawk.Client.EmuHawk
 		{
 			if (trackbarFrameSizeWindowed.Value == 0)
 			{
-				lblFrameTypeWindowed.Text = "None";
+				lblFrameTypeWindowed.Text = TheLocalizater.TranslateText("None");
 			}
 
 			if (trackbarFrameSizeWindowed.Value == 1)
 			{
-				lblFrameTypeWindowed.Text = "Thin";
+				lblFrameTypeWindowed.Text = TheLocalizater.TranslateText("Thin");
 			}
 
 			if (trackbarFrameSizeWindowed.Value == 2)
 			{
-				lblFrameTypeWindowed.Text = "Thick";
+				lblFrameTypeWindowed.Text = TheLocalizater.TranslateText("Thick");
 			}
 		}
 

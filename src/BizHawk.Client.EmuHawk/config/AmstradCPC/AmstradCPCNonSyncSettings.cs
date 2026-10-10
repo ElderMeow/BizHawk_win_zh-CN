@@ -63,13 +63,13 @@ namespace BizHawk.Client.EmuHawk
 			switch (type)
 			{
 				case AmstradCPC.OSDVerbosity.Full:
-					lblOSDVerbinfo.Text = "Show all OSD messages";
+					lblOSDVerbinfo.Text = TheLocalizater.TranslateText("Show all OSD messages");
 					break;
 				case AmstradCPC.OSDVerbosity.Medium:
-					lblOSDVerbinfo.Text = "Only show machine/device generated messages";
+					lblOSDVerbinfo.Text = TheLocalizater.TranslateText("Only show machine/device generated messages");
 					break;
 				case AmstradCPC.OSDVerbosity.None:
-					lblOSDVerbinfo.Text = "No core-driven OSD messages";
+					lblOSDVerbinfo.Text = TheLocalizater.TranslateText("No core-driven OSD messages");
 					break;
 			}
 		}

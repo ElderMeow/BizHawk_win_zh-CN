@@ -31,7 +31,7 @@ namespace BizHawk.Client.EmuHawk
 
 		private bool _initializing;
 
-		protected override string WindowTitleStatic => "Macro Input";
+		protected override string WindowTitleStatic => TheLocalizater.TranslateText("Macro Input");
 
 		public MacroInputTool()
 		{
@@ -46,7 +46,7 @@ namespace BizHawk.Client.EmuHawk
 			// which resets tools before the movie session becomes active)
 			if (CurrentMovie.NotActive() && !Tools.IsLoaded<TAStudio>())
 			{
-				DialogController.ShowMessageBox("In order to use this tool you must be recording a movie.");
+				DialogController.ShowMessageBox(TheLocalizater.TranslateText("In order to use this tool you must be recording a movie."));
 				Close();
 				DialogResult = DialogResult.Cancel;
 				return;
@@ -101,7 +101,7 @@ namespace BizHawk.Client.EmuHawk
 				return true;
 			}
 
-			var result = DialogController.ShowMessageBox3("You have unsaved macro(s). Do you wish to save them?", "Save?");
+			var result = DialogController.ShowMessageBox3(TheLocalizater.TranslateText("You have unsaved macro(s). Do you wish to save them?"), TheLocalizater.TranslateText("Save?"));
 			if (result == null)
 			{
 				return false;
@@ -125,7 +125,7 @@ namespace BizHawk.Client.EmuHawk
 		{
 			if (StartNum.Value >= CurrentMovie.InputLogLength || EndNum.Value >= CurrentMovie.InputLogLength)
 			{
-				DialogController.ShowMessageBox("Start and end frames must be inside the movie.");
+				DialogController.ShowMessageBox(TheLocalizater.TranslateText("Start and end frames must be inside the movie."));
 				return;
 			}
 
@@ -205,7 +205,7 @@ namespace BizHawk.Client.EmuHawk
 		{
 			if (SelectedZone == null)
 			{
-				DialogController.ShowMessageBox("Please select a zone first.");
+				DialogController.ShowMessageBox(TheLocalizater.TranslateText("Please select a zone first."));
 				return;
 			}
 

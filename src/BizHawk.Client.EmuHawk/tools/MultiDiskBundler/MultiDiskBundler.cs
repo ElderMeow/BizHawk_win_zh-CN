@@ -23,7 +23,7 @@ namespace BizHawk.Client.EmuHawk
 		[RequiredService]
 		public IEmulator Emulator { get; set; }
 
-		protected override string WindowTitleStatic => "Multi-disk Bundler";
+		protected override string WindowTitleStatic => TheLocalizater.TranslateText("Multi-disk Bundler");
 
 		public MultiDiskBundler()
 		{
@@ -148,7 +148,7 @@ namespace BizHawk.Client.EmuHawk
 			fileInfo = new FileInfo(NameBox.Text);
 			if (fileInfo.Exists)
 			{
-				var result = this.ModalMessageBox2("File already exists, overwrite?", "File exists", EMsgBoxIcon.Warning, useOKCancel: true);
+				var result = this.ModalMessageBox2(TheLocalizater.TranslateText("File already exists, overwrite?"), TheLocalizater.TranslateText("File exists"), EMsgBoxIcon.Warning, useOKCancel: true);
 				if (!result)
 				{
 					return false;

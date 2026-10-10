@@ -181,7 +181,7 @@ namespace BizHawk.Client.EmuHawk
 		private void UpdateList()
 		{
 			MovieView.Refresh();
-			MovieCount.Text = $"{_movieList.Count} {(_movieList.Count == 1 ? "movie" : "movies")}";
+			MovieCount.Text = TheLocalizater.TranslateFormatString("{0} {1}", _movieList.Count, (_movieList.Count == 1 ? "movie" : "movies"));
 		}
 
 		private void PreHighlightMovie()
@@ -400,28 +400,28 @@ namespace BizHawk.Client.EmuHawk
 						if (_game.Hash != v)
 						{
 							item.BackColor = Color.Pink;
-							item.ToolTipText = $"Expected: {v}\nActual: {_game.Hash}";
+							item.ToolTipText = TheLocalizater.TranslateFormatString("Expected: {0}\nActual: {1}", v, _game.Hash);
 						}
 						break;
 					case HeaderKeys.EmulatorVersion:
 						if (VersionInfo.GetEmuVersion() != v)
 						{
 							item.BackColor = Color.Yellow;
-							item.ToolTipText = $"Expected: {v}\nActual: {VersionInfo.GetEmuVersion()}";
+							item.ToolTipText = TheLocalizater.TranslateFormatString("Expected: {0}\nActual: {1}", v, VersionInfo.GetEmuVersion());
 						}
 						break;
 					case HeaderKeys.Platform:
 						if (_emulator.SystemId != v)
 						{
 							item.BackColor = Color.Pink;
-							item.ToolTipText = $"Expected: {v}\n Actual: {_emulator.SystemId}";
+							item.ToolTipText = TheLocalizater.TranslateFormatString("Expected: {0}\n Actual: {1}", v, _emulator.SystemId);
 						}
 						break;
 					case HeaderKeys.VsyncAttoseconds:
 						if (_emulator is MAME mame && mame.VsyncAttoseconds != long.Parse(v))
 						{
 							item.BackColor = Color.Pink;
-							item.ToolTipText = $"Expected: {v}\n Actual: {mame.VsyncAttoseconds}";
+							item.ToolTipText = TheLocalizater.TranslateFormatString("Expected: {0}\n Actual: {1}", v, mame.VsyncAttoseconds);
 						}
 						break;
 					default:
@@ -432,7 +432,7 @@ namespace BizHawk.Client.EmuHawk
 							if (actualHash != v)
 							{
 								item.BackColor = Color.Yellow;
-								item.ToolTipText = $"Expected: {v}\nActual: {actualHash}";
+								item.ToolTipText = TheLocalizater.TranslateFormatString("Expected: {0}\nActual: {1}", v, actualHash);
 							}
 						}
 						break;

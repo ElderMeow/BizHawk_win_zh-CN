@@ -29,7 +29,7 @@ namespace BizHawk.Client.EmuHawk
 		}
 		private void UnSupportedConfiguration()
 		{
-			DialogController.ShowMessageBox("RAM Poke does not support mixed types", "Unsupported Options", EMsgBoxIcon.Error);
+			DialogController.ShowMessageBox(TheLocalizater.TranslateText("RAM Poke does not support mixed types"), TheLocalizater.TranslateText("Unsupported Options"), EMsgBoxIcon.Error);
 			Close();
 		}
 
@@ -69,13 +69,13 @@ namespace BizHawk.Client.EmuHawk
 			DomainLabel.Text = _watchList[0].Domain.Name;
 			SizeLabel.Text = _watchList[0].Size.ToString();
 			DisplayTypeLabel.Text = Watch.DisplayTypeToString(_watchList[0].Type);
-			BigEndianLabel.Text = _watchList[0].BigEndian ? "Big Endian" : "Little Endian";
+			BigEndianLabel.Text = _watchList[0].BigEndian ? TheLocalizater.TranslateText("Big Endian") : TheLocalizater.TranslateText("Little Endian");
 			SetTitle();
 		}
 
 		private void SetTitle()
 		{
-			Text = $"RAM Poke - {_watchList[0].Domain.Name}";
+			Text = TheLocalizater.TranslateFormatString("RAM Poke - {0}", _watchList[0].Domain.Name);
 		}
 
 		private void Cancel_Click(object sender, EventArgs e)
@@ -108,7 +108,7 @@ namespace BizHawk.Client.EmuHawk
 			}
 			else
 			{
-				OutputLabel.Text = "An error occured when writing Value.";
+				OutputLabel.Text = TheLocalizater.TranslateText("An error occured when writing Value.");
 			}
 		}
 	}

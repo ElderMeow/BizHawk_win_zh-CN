@@ -34,13 +34,13 @@ namespace BizHawk.Client.EmuHawk
 				switch (value)
 				{
 					case BreakpointOperation.Add:
-						Text = "Add Breakpoint";
+						Text = TheLocalizater.TranslateText("Add Breakpoint");
 						break;
 					case BreakpointOperation.Duplicate:
-						Text = "Duplicate Breakpoint";
+						Text = TheLocalizater.TranslateText("Duplicate Breakpoint");
 						break;
 					case BreakpointOperation.Edit:
-						Text = "Edit Breakpoint";
+						Text = TheLocalizater.TranslateText("Edit Breakpoint");
 						break;
 				}
 

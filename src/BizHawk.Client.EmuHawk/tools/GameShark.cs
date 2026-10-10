@@ -29,7 +29,7 @@ namespace BizHawk.Client.EmuHawk
 		// ReSharper disable once UnusedAutoPropertyAccessor.Local
 		private IEmulator Emulator { get; set; }
 
-		protected override string WindowTitleStatic => "Cheat Code Converter";
+		protected override string WindowTitleStatic => TheLocalizater.TranslateText("Cheat Code Converter");
 
 		public GameShark()
 		{
@@ -57,7 +57,7 @@ namespace BizHawk.Client.EmuHawk
 					}
 					else
 					{
-						DialogController.ShowMessageBox(result.Error, "Input Error", EMsgBoxIcon.Error);
+						DialogController.ShowMessageBox(result.Error, TheLocalizater.TranslateText("Input Error"), EMsgBoxIcon.Error);
 					}
 				}
 				catch (Exception ex)
@@ -74,7 +74,7 @@ namespace BizHawk.Client.EmuHawk
 		private void BtnClear_Click(object sender, EventArgs e)
 		{
 			// Clear old Inputs
-			var result = DialogController.ShowMessageBox2("Are you sure you want to clear this form?", "Clear Form", EMsgBoxIcon.Question);
+			var result = DialogController.ShowMessageBox2(TheLocalizater.TranslateText("Are you sure you want to clear this form?"), TheLocalizater.TranslateText("Clear Form"), EMsgBoxIcon.Question);
 			if (result)
 			{
 				txtDescription.Clear();

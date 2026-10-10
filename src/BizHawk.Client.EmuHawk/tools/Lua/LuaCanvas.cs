@@ -48,7 +48,7 @@ namespace BizHawk.Client.EmuHawk
 			ClientSize = new Size(284, 261);
 			FormBorderStyle = FormBorderStyle.FixedSingle;
 			Name = "LuaCanvas";
-			Text = "LuaCanvas";
+			Text = TheLocalizater.TranslateText("LuaCanvas");
 
 			if (x.HasValue)
 			{

@@ -94,11 +94,11 @@ namespace BizHawk.Client.EmuHawk
 		{
 			lblBorderInfo.Text = type switch
 			{
-				ZXSpectrum.BorderType.Full => "Original border sizes",
-				ZXSpectrum.BorderType.Medium => "All borders 24px",
-				ZXSpectrum.BorderType.None => "No border at all",
-				ZXSpectrum.BorderType.Small => "All borders 10px",
-				ZXSpectrum.BorderType.Widescreen => "No top and bottom border (almost 16:9)",
+				ZXSpectrum.BorderType.Full => TheLocalizater.TranslateText("Original border sizes"),
+				ZXSpectrum.BorderType.Medium => TheLocalizater.TranslateText("All borders 24px"),
+				ZXSpectrum.BorderType.None => TheLocalizater.TranslateText("No border at all"),
+				ZXSpectrum.BorderType.Small => TheLocalizater.TranslateText("All borders 10px"),
+				ZXSpectrum.BorderType.Widescreen => TheLocalizater.TranslateText("No top and bottom border (almost 16:9)"),
 				_ => lblBorderInfo.Text,
 			};
 		}

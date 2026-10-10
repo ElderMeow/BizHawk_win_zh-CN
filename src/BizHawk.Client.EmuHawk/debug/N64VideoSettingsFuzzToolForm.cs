@@ -63,8 +63,8 @@ namespace BizHawk.Client.EmuHawk.ForDebugging
 				Controls =
 				{
 					comboPlugin,
-					GenControl.Button("--> randomise some props", width: 200, () => Fuzz(limit: true)),
-					GenControl.Button("--> randomise every prop", width: 200, () => Fuzz(limit: false)),
+					GenControl.Button(TheLocalizater.TranslateText("--> randomise some props"), width: 200, () => Fuzz(limit: true)),
+					GenControl.Button(TheLocalizater.TranslateText("--> randomise every prop"), width: 200, () => Fuzz(limit: false)),
 				},
 			});
 			ResumeLayout();

@@ -129,7 +129,7 @@ namespace BizHawk.Client.EmuHawk
 				{
 					tb.Controls.Add(new Label
 					{
-						Text = "Save States hotkeys operate with branches when TAStudio is engaged.",
+						Text = TheLocalizater.TranslateText("Save States hotkeys operate with branches when TAStudio is engaged."),
 						Location = new Point(x, y),
 						Size = new(iwWidth + iwOffsetX, HotkeyTabControl.Height - y),
 					});

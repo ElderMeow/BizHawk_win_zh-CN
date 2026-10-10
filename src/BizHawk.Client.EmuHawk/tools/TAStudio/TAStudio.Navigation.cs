@@ -42,7 +42,7 @@ namespace BizHawk.Client.EmuHawk
 
 				if (SeekingTo - _seekStartFrame > 1)
 				{
-					MessageStatusLabel.Text = "Seeking...";
+					MessageStatusLabel.Text = TheLocalizater.TranslateText("Seeking...");
 					ProgressBar.Visible = true;
 				}
 			}

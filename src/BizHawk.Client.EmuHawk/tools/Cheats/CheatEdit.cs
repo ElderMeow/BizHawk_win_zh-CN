@@ -338,7 +338,7 @@ namespace BizHawk.Client.EmuHawk
 					comparisonType);
 			}
 
-			MessageBox.Show($"0x{address:X} is not a valid address for the domain {domain.Name}", "Index out of range", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+			MessageBox.Show(TheLocalizater.TranslateFormatString("0x{0:X} is not a valid address for the domain {1}", address, domain.Name), TheLocalizater.TranslateText("Index out of range"), MessageBoxButtons.OK, MessageBoxIcon.Warning);
 			return Cheat.Separator;
 		}
 

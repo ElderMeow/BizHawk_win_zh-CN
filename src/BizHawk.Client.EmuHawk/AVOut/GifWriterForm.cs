@@ -35,9 +35,9 @@ namespace BizHawk.Client.EmuHawk
 		{
 			label3.Text = numericUpDown2.Value switch
 			{
-				-1 => "Auto",
-				0 => "Fastest",
-				_ => $"{(int) ((100 + numericUpDown2.Value / 2) / numericUpDown2.Value)} FPS",
+				-1 => TheLocalizater.TranslateText("Auto"),
+				0 => TheLocalizater.TranslateText("Fastest"),
+				_ => TheLocalizater.TranslateFormatString("{0} FPS", (int) ((100 + numericUpDown2.Value / 2) / numericUpDown2.Value)),
 			};
 		}
 	}

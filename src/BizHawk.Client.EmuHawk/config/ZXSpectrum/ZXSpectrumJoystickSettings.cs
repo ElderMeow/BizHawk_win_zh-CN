@@ -111,7 +111,7 @@ namespace BizHawk.Client.EmuHawk
 				}
 				else
 				{
-					DialogController.ShowMessageBox("Invalid joystick configuration. \nDuplicates have automatically been changed to NULL.\n\nPlease review the configuration");
+					DialogController.ShowMessageBox(TheLocalizater.TranslateText("Invalid joystick configuration. \nDuplicates have automatically been changed to NULL.\n\nPlease review the configuration"));
 				}
 			}
 			else

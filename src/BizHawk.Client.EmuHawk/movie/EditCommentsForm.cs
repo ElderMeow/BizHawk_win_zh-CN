@@ -36,7 +36,7 @@ namespace BizHawk.Client.EmuHawk
 			if (_readOnly)
 			{
 				CommentGrid.Columns[0].ReadOnly = true;
-				Text = "View Comments";
+				Text = TheLocalizater.TranslateText("View Comments");
 			}
 
 			if (CommentGrid.Rows.Count > 8)

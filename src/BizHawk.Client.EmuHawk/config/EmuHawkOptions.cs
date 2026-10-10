@@ -20,8 +20,8 @@ namespace BizHawk.Client.EmuHawk
 			_config = config;
 			InitializeComponent();
 			cbEnableGCAdapterSupport.Text = OSTailoredCode.IsUnixHost
-				? "Enable Wii U/Switch GameCube Adapter Support (via libusb)"
-				: "Enable Wii U/Switch GameCube Adapter Support (via Zadig/WinUSB)";
+				? TheLocalizater.TranslateText("Enable Wii U/Switch GameCube Adapter Support (via libusb)")
+				: TheLocalizater.TranslateText("Enable Wii U/Switch GameCube Adapter Support (via Zadig/WinUSB)");
 		}
 
 		public int AutosaveSaveRAMSeconds
@@ -96,8 +96,8 @@ namespace BizHawk.Client.EmuHawk
 				var merging = cbMergeLAndRModifierKeys.Checked;
 				var result = MessageBox.Show(
 					this,
-					text: $"Would you like to replace {(merging ? "LShift and RShift with Shift" : "Shift with LShift")},\nand the same for the other modifier keys,\nin existing keybinds for hotkeys and all systems' gamepads?",
-					caption: "Rewrite keybinds now?",
+					text: TheLocalizater.TranslateFormatString("Would you like to replace {0},\nand the same for the other modifier keys,\nin existing keybinds for hotkeys and all systems' gamepads?", (merging ? "LShift and RShift with Shift" : "Shift with LShift")),
+					caption: TheLocalizater.TranslateText("Rewrite keybinds now?"),
 					MessageBoxButtons.YesNoCancel,
 					MessageBoxIcon.Question);
 				if (result is DialogResult.Cancel) return;

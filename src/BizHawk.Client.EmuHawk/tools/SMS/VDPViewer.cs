@@ -22,7 +22,7 @@ namespace BizHawk.Client.EmuHawk
 
 		private int _palIndex;
 
-		protected override string WindowTitleStatic => "VDP Viewer";
+		protected override string WindowTitleStatic => TheLocalizater.TranslateText("VDP Viewer");
 
 		public SmsVdpViewer()
 		{

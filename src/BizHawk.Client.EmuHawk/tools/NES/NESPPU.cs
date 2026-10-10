@@ -54,7 +54,7 @@ namespace BizHawk.Client.EmuHawk
 			set { _chrRomView = value; CalculateFormSize(); }
 		}
 
-		protected override string WindowTitleStatic => "PPU Viewer";
+		protected override string WindowTitleStatic => TheLocalizater.TranslateText("PPU Viewer");
 
 		public NesPPU()
 		{
@@ -280,7 +280,7 @@ namespace BizHawk.Client.EmuHawk
 
 		private void ClearDetails()
 		{
-			DetailsBox.Text = "Details";
+			DetailsBox.Text = TheLocalizater.TranslateText("Details");
 			AddressLabel.Text = "";
 			ValueLabel.Text = "";
 			Value2Label.Text = "";
@@ -293,8 +293,8 @@ namespace BizHawk.Client.EmuHawk
 		private void UpdatePaletteSelection()
 		{
 			_forceChange = true;
-			Table0PaletteLabel.Text = $"Palette: {PatternView.Pal0}";
-			Table1PaletteLabel.Text = $"Palette: {PatternView.Pal1}";
+			Table0PaletteLabel.Text = TheLocalizater.TranslateFormatString("Palette: {0}", PatternView.Pal0);
+			Table1PaletteLabel.Text = TheLocalizater.TranslateFormatString("Palette: {0}", PatternView.Pal1);
 		}
 
 		private static Bitmap Section(Image srcBitmap, Rectangle section, bool is8x16)
@@ -496,7 +496,7 @@ namespace BizHawk.Client.EmuHawk
 						return;
 					}
 
-					toolStripStatusLabel1.Text = $"{found.Text} copied to clipboard.";
+					toolStripStatusLabel1.Text = TheLocalizater.TranslateFormatString("{0} copied to clipboard.", found.Text);
 
 					Messagetimer.Stop();
 					Messagetimer.Start();
@@ -507,7 +507,7 @@ namespace BizHawk.Client.EmuHawk
 		private void MessageTimer_Tick(object sender, EventArgs e)
 		{
 			Messagetimer.Stop();
-			toolStripStatusLabel1.Text = "Use CTRL+C to copy the pane under the mouse to the clipboard.";
+			toolStripStatusLabel1.Text = TheLocalizater.TranslateText("Use CTRL+C to copy the pane under the mouse to the clipboard.");
 		}
 
 		private void PaletteView_MouseClick(object sender, MouseEventArgs e)
@@ -522,7 +522,7 @@ namespace BizHawk.Client.EmuHawk
 
 		private void SpriteView_MouseEnter(object sender, EventArgs e)
 		{
-			DetailsBox.Text = "Details - Sprites";
+			DetailsBox.Text = TheLocalizater.TranslateText("Details - Sprites");
 		}
 
 		private void SpriteView_MouseLeave(object sender, EventArgs e)
@@ -614,11 +614,11 @@ namespace BizHawk.Client.EmuHawk
 				tile &= ~1;
 			}
 
-			AddressLabel.Text = $"Number: {spriteNumber:X2}";
+			AddressLabel.Text = TheLocalizater.TranslateFormatString("Number: {0:X2}", spriteNumber);
 			ValueLabel.Text = $"X: {x:X2}";
 			Value2Label.Text = $"Y: {y:X2}";
-			Value3Label.Text = $"Tile: {tile:X2}";
-			Value4Label.Text = $"Color: {color}";
+			Value3Label.Text = TheLocalizater.TranslateFormatString("Tile: {0:X2}", tile);
+			Value4Label.Text = TheLocalizater.TranslateFormatString("Color: {0}", color);
 			Value5Label.Text = flags;
 
 			if (is8x16)
@@ -640,7 +640,7 @@ namespace BizHawk.Client.EmuHawk
 
 		private void PaletteView_MouseEnter(object sender, EventArgs e)
 		{
-			DetailsBox.Text = "Details - Palettes";
+			DetailsBox.Text = TheLocalizater.TranslateText("Details - Palettes");
 		}
 
 		private void PaletteView_MouseMove(object sender, MouseEventArgs e)
@@ -663,7 +663,7 @@ namespace BizHawk.Client.EmuHawk
 
 			int column = p.X / 16;
 			int addr = baseAddr + column;
-			AddressLabel.Text = $"Address: 0x{addr:X4}";
+			AddressLabel.Text = TheLocalizater.TranslateFormatString("Address: 0x{0:X4}", addr);
 			int val;
 
 			var bmp = new Bitmap(64, 64);
@@ -688,8 +688,8 @@ namespace BizHawk.Client.EmuHawk
 
 			g.Dispose();
 
-			Value3Label.Text = $"Color: 0x{val:X2}";
-			Value4Label.Text = $"Offset: {addr & 0x03}";
+			Value3Label.Text = TheLocalizater.TranslateFormatString("Color: 0x{0:X2}", val);
+			Value4Label.Text = TheLocalizater.TranslateFormatString("Offset: {0}", addr & 0x03);
 			ZoomBox.Image = bmp;
 		}
 
@@ -722,7 +722,7 @@ namespace BizHawk.Client.EmuHawk
 
 		private void PatternView_MouseEnter(object sender, EventArgs e)
 		{
-			DetailsBox.Text = "Details - Patterns";
+			DetailsBox.Text = TheLocalizater.TranslateText("Details - Patterns");
 		}
 
 		private void PatternView_MouseLeave(object sender, EventArgs e)
@@ -770,9 +770,9 @@ namespace BizHawk.Client.EmuHawk
 				usage += " (SPR16)";
 			}
 
-			AddressLabel.Text = $"Address: {address:X4}";
-			ValueLabel.Text = $"Table {table}";
-			Value3Label.Text = $"Tile {tile:X2}";
+			AddressLabel.Text = TheLocalizater.TranslateFormatString("Address: {0:X4}", address);
+			ValueLabel.Text = TheLocalizater.TranslateFormatString("Table {0}", table);
+			Value3Label.Text = TheLocalizater.TranslateFormatString("Tile {0:X2}", tile);
 			Value4Label.Text = usage;
 
 			ZoomBox.Image = Section(PatternView.Pattern, new Rectangle(new Point((p.X / 8) * 8, (p.Y / 8) * 8), new Size(8, 8)), false);

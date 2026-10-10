@@ -34,7 +34,7 @@ namespace BizHawk.Client.EmuHawk.ForDebugging
 				var filename = this.ShowFileSaveDialog(initDir: Config!.PathEntries.FirmwareAbsolutePath());
 				if (filename is not null) txtBaseFile.Text = filename;
 			}
-			CheckBoxEx cbDryRun = new() { Checked = true, Text = "dry run (skip writing to disk)" };
+			CheckBoxEx cbDryRun = new() { Checked = true, Text = TheLocalizater.TranslateText("dry run (skip writing to disk)") };
 			void DoPatch()
 			{
 				var fpo = patches[comboPatchsets.SelectedIndex].PatchOption;
@@ -44,25 +44,25 @@ namespace BizHawk.Client.EmuHawk.ForDebugging
 					{
 						var (filePath, _, _) = FirmwareManager.PerformPatchOnDisk(txtBaseFile.Text, in fpo, Config!.PathEntries);
 						// if the base file (or patchset) is wrong, too bad
-						this.ModalMessageBox($"wrote {filePath}");
+						this.ModalMessageBox(TheLocalizater.TranslateFormatString("wrote {0}", filePath));
 						return;
 					}
 					var @base = File.ReadAllBytes(txtBaseFile.Text);
 					var (_, actualHash) = FirmwareManager.PerformPatchInMemory(@base, in fpo);
 					if (actualHash == fpo.TargetHash)
 					{
-						this.ModalMessageBox("success");
+						this.ModalMessageBox(TheLocalizater.TranslateText("success"));
 						return;
 					}
 					// else something happened, figure out what it was
 					var baseHash = SHA1Checksum.ComputeDigestHex(@base);
 					this.ModalMessageBox(baseHash == fpo.BaseHash
-						? $"patchset declared with target\nSHA1:{fpo.TargetHash}\nbut produced\nSHA1:{actualHash}\n(is the patch wrong, or the hash?)"
-						: $"patchset declared for base\nSHA1:{fpo.BaseHash}\nbut\nSHA1:{baseHash}\nwas provided");
+						? TheLocalizater.TranslateFormatString("patchset declared with target\nSHA1:{0}\nbut produced\nSHA1:{1}\n(is the patch wrong, or the hash?)", fpo.TargetHash, actualHash)
+						: TheLocalizater.TranslateFormatString("patchset declared for base\nSHA1:{0}\nbut\nSHA1:{1}\nwas provided", fpo.BaseHash, baseHash));
 				}
 				catch (Exception e)
 				{
-					this.ModalMessageBox($"caught {e.GetType().Name}:\n{e}");
+					this.ModalMessageBox(TheLocalizater.TranslateFormatString("caught {0}:\n{1}", e.GetType().Name, e));
 				}
 			}
 			ClientSize = new(320, 200);
@@ -71,13 +71,13 @@ namespace BizHawk.Client.EmuHawk.ForDebugging
 			{
 				Controls =
 				{
-					new LabelEx { Text = "apply" },
+					new LabelEx { Text = TheLocalizater.TranslateText("apply") },
 					comboPatchsets,
-					new LabelEx { Text = "to file" },
-					new SingleRowFLP { Controls = { txtBaseFile, GenControl.Button("(browse)", width: 75, ShowBaseFilePicker) } },
+					new LabelEx { Text = TheLocalizater.TranslateText("to file") },
+					new SingleRowFLP { Controls = { txtBaseFile, GenControl.Button(TheLocalizater.TranslateText("(browse)"), width: 75, ShowBaseFilePicker) } },
 					cbDryRun,
-					new LabelEx { Text = "patched files are saved in dir set as \"Temp Files\"" },
-					GenControl.Button("--> patch", width: 75, DoPatch),
+					new LabelEx { Text = TheLocalizater.TranslateText("patched files are saved in dir set as \"Temp Files\"") },
+					GenControl.Button(TheLocalizater.TranslateText("--> patch"), width: 75, DoPatch),
 				},
 			});
 			ResumeLayout();

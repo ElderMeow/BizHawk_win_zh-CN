@@ -25,7 +25,7 @@ namespace BizHawk.Client.EmuHawk
 			return DisplayRectangle.Location;
 		}
 
-		protected override string WindowTitleStatic => "VDP Viewer";
+		protected override string WindowTitleStatic => TheLocalizater.TranslateText("VDP Viewer");
 
 		public GenVdpViewer()
 		{

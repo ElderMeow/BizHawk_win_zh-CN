@@ -657,7 +657,7 @@ namespace BizHawk.Client.EmuHawk
 			}
 			catch (Exception e)
 			{
-				_dialogParent.DialogController.ShowMessageBox($"JMD Worker Thread died:\n\n{e}");
+				_dialogParent.DialogController.ShowMessageBox(TheLocalizater.TranslateFormatString("JMD Worker Thread died:\n\n{0}", e));
 			}
 		}
 

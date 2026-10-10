@@ -26,7 +26,7 @@ namespace BizHawk.Client.EmuHawk
 		[RequiredService]
 		private NES Nes { get; set; }
 
-		protected override string WindowTitleStatic => "Music Ripper";
+		protected override string WindowTitleStatic => TheLocalizater.TranslateText("Music Ripper");
 
 		public NESMusicRipper()
 		{
@@ -487,7 +487,7 @@ namespace BizHawk.Client.EmuHawk
 
 		private void SyncContents()
 		{
-			lblContents.Text = $"{_log.Count} Rows";
+			lblContents.Text = TheLocalizater.TranslateFormatString("{0} Rows", _log.Count);
 		}
 
 		private void BtnControl_Click(object sender, EventArgs e)
@@ -498,7 +498,7 @@ namespace BizHawk.Client.EmuHawk
 				Nes.apu.DebugCallback = null;
 				Nes.apu.DebugCallbackDivider = 0;
 				_isRunning = false;
-				btnControl.Text = "Start";
+				btnControl.Text = TheLocalizater.TranslateText("Start");
 			}
 			else
 			{
@@ -506,7 +506,7 @@ namespace BizHawk.Client.EmuHawk
 				Nes.apu.DebugCallback = DebugCallback;
 				Nes.apu.DebugCallbackDivider = int.Parse(txtDivider.Text);
 				_isRunning = true;
-				btnControl.Text = "Stop";
+				btnControl.Text = TheLocalizater.TranslateText("Stop");
 			}
 		}
 

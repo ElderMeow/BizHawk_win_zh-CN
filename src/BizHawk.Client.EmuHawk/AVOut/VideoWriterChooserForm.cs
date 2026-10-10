@@ -37,7 +37,7 @@ namespace BizHawk.Client.EmuHawk
 				_captureHeight = bb.Height;
 			}
 
-			lblSize.Text = $"Size:\r\n{_captureWidth}x{_captureHeight}";
+			lblSize.Text = TheLocalizater.TranslateFormatString("Size:\r\n{0}x{1}", _captureWidth, _captureHeight);
 
 			if (_captureWidth % 4 != 0 || _captureHeight % 4 != 0)
 			{
@@ -144,13 +144,13 @@ namespace BizHawk.Client.EmuHawk
 				{
 					if (numericTextBoxW.IntValue < 1 || numericTextBoxH.IntValue < 1)
 					{
-						this.ModalMessageBox("Size must be positive!");
+						this.ModalMessageBox(TheLocalizater.TranslateText("Size must be positive!"));
 						DialogResult = DialogResult.None;
 					}
 				}
 				catch (FormatException)
 				{
-					this.ModalMessageBox("Size must be numeric!");
+					this.ModalMessageBox(TheLocalizater.TranslateText("Size must be numeric!"));
 					DialogResult = DialogResult.None;
 				}
 			}

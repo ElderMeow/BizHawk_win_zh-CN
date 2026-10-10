@@ -420,6 +420,6 @@ namespace BizHawk.Client.EmuHawk
 		}
 
 		private void WarnForMismatchedPair(string functionName, string kind)
-			=> LogOutputCallback($"{functionName}: both {kind} must be set to have any effect");
+			=> LogOutputCallback(TheLocalizater.TranslateFormatString("{0}: both {1} must be set to have any effect", functionName, kind));
 	}
 }

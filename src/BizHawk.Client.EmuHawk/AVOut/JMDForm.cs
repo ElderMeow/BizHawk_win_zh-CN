@@ -14,14 +14,14 @@ namespace BizHawk.Client.EmuHawk
 
 		private void ThreadsBar_Scroll(object sender, EventArgs e)
 		{
-			threadTop.Text = $"Number of compression threads: {threadsBar.Value}";
+			threadTop.Text = TheLocalizater.TranslateFormatString("Number of compression threads: {0}", threadsBar.Value);
 		}
 
 		private void CompressionBar_Scroll(object sender, EventArgs e)
 		{
 			compressionTop.Text = compressionBar.Value == compressionBar.Minimum
-				? "Compression Level: NONE"
-				: $"Compression Level: {compressionBar.Value}";
+				? TheLocalizater.TranslateText("Compression Level: NONE")
+				: TheLocalizater.TranslateFormatString("Compression Level: {0}", compressionBar.Value);
 		}
 
 		/// <summary>

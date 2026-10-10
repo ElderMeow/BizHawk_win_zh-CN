@@ -18,7 +18,7 @@ namespace BizHawk.Client.EmuHawk
 		public FeedbacksBindPanel(IDictionary<string, FeedbackBind> realConfigObject, ICollection<string>? realConfigButtons = null)
 		{
 			_realConfigObject = realConfigObject;
-			_flpMain.Controls.Add(new LabelEx { Text = "To bind, click \"Bind!\", move an axis (e.g. analog stick) on the desired gamepad, and choose from the dropdown." });
+			_flpMain.Controls.Add(new LabelEx { Text = TheLocalizater.TranslateText("To bind, click \"Bind!\", move an axis (e.g. analog stick) on the desired gamepad, and choose from the dropdown.") });
 			var adapter = Input.Instance.Adapter;
 			foreach (var buttonName in realConfigButtons ?? realConfigObject.Keys)
 			{

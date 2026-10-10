@@ -49,15 +49,15 @@ namespace BizHawk.Client.EmuHawk
 
 			// tips
 			const string HowToSetAutoFire = "\nYou can set a column as auto hold/fire by right-clicking on the column header.";
-			toolTip1.SetToolTip(PatternHoldRadioButton, toolTip1.GetToolTip(PatternHoldRadioButton) + HowToSetAutoFire);
-			toolTip1.SetToolTip(PatternAutoFireRadioButton, toolTip1.GetToolTip(PatternAutoFireRadioButton) + HowToSetAutoFire);
-			toolTip1.SetToolTip(PatternCustomRadioButton, toolTip1.GetToolTip(PatternCustomRadioButton) + HowToSetAutoFire);
+			toolTip1.SetToolTip(PatternHoldRadioButton, toolTip1.GetToolTip(PatternHoldRadioButton) + TheLocalizater.TranslateText(HowToSetAutoFire));
+			toolTip1.SetToolTip(PatternAutoFireRadioButton, toolTip1.GetToolTip(PatternAutoFireRadioButton) + TheLocalizater.TranslateText(HowToSetAutoFire));
+			toolTip1.SetToolTip(PatternCustomRadioButton, toolTip1.GetToolTip(PatternCustomRadioButton) + TheLocalizater.TranslateText(HowToSetAutoFire));
 
 			const string ScrollMethodPrefix = "When scrolling with \"Follow cursor\", ";
-			toolTip1.SetToolTip(ScrollToViewRadio, ScrollMethodPrefix + toolTip1.GetToolTip(ScrollToViewRadio));
-			toolTip1.SetToolTip(ScrollToTopRadio, ScrollMethodPrefix + toolTip1.GetToolTip(ScrollToTopRadio));
-			toolTip1.SetToolTip(ScrollToBottomRadio, ScrollMethodPrefix + toolTip1.GetToolTip(ScrollToBottomRadio));
-			toolTip1.SetToolTip(ScrollToCenterRadio, ScrollMethodPrefix + toolTip1.GetToolTip(ScrollToCenterRadio));
+			toolTip1.SetToolTip(ScrollToViewRadio, TheLocalizater.TranslateText(ScrollMethodPrefix) + toolTip1.GetToolTip(ScrollToViewRadio));
+			toolTip1.SetToolTip(ScrollToTopRadio, TheLocalizater.TranslateText(ScrollMethodPrefix) + toolTip1.GetToolTip(ScrollToTopRadio));
+			toolTip1.SetToolTip(ScrollToBottomRadio, TheLocalizater.TranslateText(ScrollMethodPrefix) + toolTip1.GetToolTip(ScrollToBottomRadio));
+			toolTip1.SetToolTip(ScrollToCenterRadio, TheLocalizater.TranslateText(ScrollMethodPrefix) + toolTip1.GetToolTip(ScrollToCenterRadio));
 		}
 
 		private void TAStudioSettingsForm_Load(object sender, EventArgs e)
@@ -459,8 +459,8 @@ namespace BizHawk.Client.EmuHawk
 			if (isBad && !wasAlreadyBad)
 			{
 				if (MessageBox.Show(
-					text: "You have enabled 'bind markers to input' and disabled 'allow editing hidden columns'. This combination is not recommended, and may result in your markers being moved in unexpected ways. Continue?",
-					caption: "Warning",
+					text: TheLocalizater.TranslateText("You have enabled 'bind markers to input' and disabled 'allow editing hidden columns'. This combination is not recommended, and may result in your markers being moved in unexpected ways. Continue?"),
+					caption: TheLocalizater.TranslateText("Warning"),
 					buttons: MessageBoxButtons.OKCancel,
 					icon: MessageBoxIcon.Warning) == DialogResult.Cancel)
 				{

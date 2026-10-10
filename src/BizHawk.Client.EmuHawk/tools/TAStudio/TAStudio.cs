@@ -182,7 +182,7 @@ namespace BizHawk.Client.EmuHawk
 			if (OSTailoredCode.IsUnixHost)
 			{
 				// workaround for https://github.com/mono/mono/issues/12644
-				ColumnRightClickMenu.Items.Insert(0, new ToolStripMenuItemEx { Text = "(Dismiss Menu)" }); // don't even need to attach any behaviour, since clicking anything will dismiss the menu first
+				ColumnRightClickMenu.Items.Insert(0, new ToolStripMenuItemEx { Text = TheLocalizater.TranslateText("(Dismiss Menu)") }); // don't even need to attach any behaviour, since clicking anything will dismiss the menu first
 				ColumnRightClickMenu.Items.Insert(1, new ToolStripSeparatorEx());
 
 				// see https://github.com/TASEmulators/BizHawk/issues/4779#issuecomment-4800440717
@@ -295,21 +295,21 @@ namespace BizHawk.Client.EmuHawk
 			// Start Scenario 1: A regular movie is active
 			if (MovieSession.Movie.IsActive() && MovieSession.Movie is not ITasMovie)
 			{
-				var changesString = "Would you like to save the current movie before closing it?";
+				var changesString = TheLocalizater.TranslateText("Would you like to save the current movie before closing it?");
 				if (MovieSession.Movie.Changes)
 				{
-					changesString = "The current movie has unsaved changes. Would you like to save before closing it?";
+					changesString = TheLocalizater.TranslateText("The current movie has unsaved changes. Would you like to save before closing it?");
 				}
 				var shouldSaveResult = DialogController.ShowMessageBox3(
-					"TAStudio will create a new project file from the current movie.\n\n" + changesString,
-					"Convert movie",
+					TheLocalizater.TranslateText("TAStudio will create a new project file from the current movie.\n\n") + changesString,
+					TheLocalizater.TranslateText("Convert movie"),
 					EMsgBoxIcon.Question);
 				if (shouldSaveResult == true)
 				{
 					FileWriteResult saveResult = MovieSession.Movie.Save();
 					if (saveResult.IsError)
 					{
-						DisplayMessageIfFailed(() => saveResult, "Failed to save movie.");
+						DisplayMessageIfFailed(() => saveResult, TheLocalizater.TranslateText("Failed to save movie."));
 						return false;
 					}
 				}
@@ -418,8 +418,8 @@ namespace BizHawk.Client.EmuHawk
 			{
 				_autosaveTimer.Stop();
 				bool tryAgain = DialogController.ShowMessageBox2(
-					$"Failed to auto-save. {saveResult.UserFriendlyErrorMessage()}\n{saveResult.Exception.Message}\n\nTry again?",
-					"Error");
+					TheLocalizater.TranslateFormatString("Failed to auto-save. {0}\n{1}\n\nTry again?", saveResult.UserFriendlyErrorMessage(), saveResult.Exception.Message),
+					TheLocalizater.TranslateText("Error"));
 				if (tryAgain)
 				{
 					AutosaveTimerEventProcessor(null, EventArgs.Empty);
@@ -806,7 +806,7 @@ namespace BizHawk.Client.EmuHawk
 					}
 					else
 					{
-						this.DialogController.ShowMessageBox("Failed to load the movie's client settings. Movie is still usable.", "Warning", EMsgBoxIcon.Warning);
+						this.DialogController.ShowMessageBox(TheLocalizater.TranslateText("Failed to load the movie's client settings. Movie is still usable."), TheLocalizater.TranslateText("Warning"), EMsgBoxIcon.Warning);
 						hasClientSettings = false;
 					}
 				}
@@ -935,8 +935,8 @@ namespace BizHawk.Client.EmuHawk
 			if (result.IsError)
 			{
 				DialogController.ShowMessageBox(
-					$"{message}\n{result.UserFriendlyErrorMessage()}\n{result.Exception.Message}",
-					"Error",
+					TheLocalizater.TranslateFormatString("{0}\n{1}\n{2}", message, result.UserFriendlyErrorMessage(), result.Exception.Message),
+					TheLocalizater.TranslateText("Error"),
 					EMsgBoxIcon.Error);
 			}
 		}
@@ -950,8 +950,8 @@ namespace BizHawk.Client.EmuHawk
 
 			_autosaveTimer.Stop();
 			MessageStatusLabel.Text = saveBackup
-				? "Saving backup..."
-				: "Saving...";
+				? TheLocalizater.TranslateText("Saving backup...")
+				: TheLocalizater.TranslateText("Saving...");
 			MessageStatusLabel.Owner.Update();
 			Cursor = Cursors.WaitCursor;
 
@@ -971,12 +971,12 @@ namespace BizHawk.Client.EmuHawk
 			if (!result.IsError)
 			{
 				MessageStatusLabel.Text = saveBackup
-					? $"Backup .{(saveAsBk2 ? MovieService.StandardMovieExtension : MovieService.TasMovieExtension)} saved to \"Movie backups\" path."
-					: "File saved.";
+					? TheLocalizater.TranslateFormatString("Backup .{0} saved to \"Movie backups\" path.", (saveAsBk2 ? MovieService.StandardMovieExtension : MovieService.TasMovieExtension))
+					: TheLocalizater.TranslateText("File saved.");
 			}
 			else
 			{
-				MessageStatusLabel.Text = "Failed to save movie.";
+				MessageStatusLabel.Text = TheLocalizater.TranslateText("Failed to save movie.");
 			}
 
 			Cursor = Cursors.Default;
@@ -1003,7 +1003,7 @@ namespace BizHawk.Client.EmuHawk
 			FileWriteResult saveResult = null;
 			if (fileInfo != null)
 			{
-				MessageStatusLabel.Text = "Saving...";
+				MessageStatusLabel.Text = TheLocalizater.TranslateText("Saving...");
 				MessageStatusLabel.Owner.Update();
 				Cursor = Cursors.WaitCursor;
 				CurrentTasMovie.Filename = fileInfo.FullName;
@@ -1013,12 +1013,12 @@ namespace BizHawk.Client.EmuHawk
 
 				if (!saveResult.IsError)
 				{
-					MessageStatusLabel.Text = "File saved.";
+					MessageStatusLabel.Text = TheLocalizater.TranslateText("File saved.");
 					ScheduleAutoSave(Settings.AutosaveInterval);
 				}
 				else
 				{
-					MessageStatusLabel.Text = "Failed to save.";
+					MessageStatusLabel.Text = TheLocalizater.TranslateText("Failed to save.");
 				}
 			}
 
@@ -1031,12 +1031,12 @@ namespace BizHawk.Client.EmuHawk
 
 		protected override string WindowTitle
 			=> CurrentTasMovie == null
-				? "TAStudio"
+				? TheLocalizater.TranslateText("TAStudio")
 				: CurrentTasMovie.Changes
-					? $"TAStudio - {CurrentTasMovie.Name}*"
-					: $"TAStudio - {CurrentTasMovie.Name}";
+					? TheLocalizater.TranslateFormatString("TAStudio - {0}*", CurrentTasMovie.Name)
+					: TheLocalizater.TranslateFormatString("TAStudio - {0}", CurrentTasMovie.Name);
 
-		protected override string WindowTitleStatic => "TAStudio";
+		protected override string WindowTitleStatic => TheLocalizater.TranslateText("TAStudio");
 
 		public IEnumerable<int> GetSelection() => _activeInputRoll.SelectedRows;
 
@@ -1134,9 +1134,9 @@ namespace BizHawk.Client.EmuHawk
 		{
 			// TODO: columns selected?
 			var selectedRowCount = GetSelection().Count();
-			var temp = $"Selected: {selectedRowCount} {(selectedRowCount == 1 ? "frame" : "frames")}, States: {CurrentTasMovie.TasStateManager.Count}";
+			var temp = TheLocalizater.TranslateFormatString("Selected: {0} {1}, States: {2}", selectedRowCount, (selectedRowCount == 1 ? "frame" : "frames"), CurrentTasMovie.TasStateManager.Count);
 			var clipboardCount = _tasClipboard.Count;
-			if (clipboardCount is not 0) temp += $", Clipboard: {clipboardCount} {(clipboardCount is 1 ? "frame" : "frames")}";
+			if (clipboardCount is not 0) temp += TheLocalizater.TranslateFormatString(", Clipboard: {0} {1}", clipboardCount, (clipboardCount is 1 ? "frame" : "frames"));
 			SplicerStatusLabel.Text = temp;
 		}
 
@@ -1300,7 +1300,7 @@ namespace BizHawk.Client.EmuHawk
 			}
 			catch (Exception)
 			{
-				DialogController.ShowMessageBox($"Invalid mnemonic string: {inputLogEntry}", "Paste Input failed!");
+				DialogController.ShowMessageBox(TheLocalizater.TranslateFormatString("Invalid mnemonic string: {0}", inputLogEntry), TheLocalizater.TranslateText("Paste Input failed!"));
 				return null;
 			}
 		}

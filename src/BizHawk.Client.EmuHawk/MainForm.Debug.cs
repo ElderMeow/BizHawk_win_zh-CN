@@ -27,11 +27,11 @@ namespace BizHawk.Client.EmuHawk
 			void OpenTool<T>() where T : class, IToolForm => Tools.Load<T>();
 			ToolStripMenuItemEx firmwareAutopatchDebugItem = new() { Text = FirmwareAutopatchDebugToolForm.TOOL_NAME };
 			firmwareAutopatchDebugItem.Click += (_, _) => OpenTool<FirmwareAutopatchDebugToolForm>();
-			ToolStripMenuItemEx rcHashDebugItem = new() { Text = "Debug RC Hash" };
+			ToolStripMenuItemEx rcHashDebugItem = new() { Text = TheLocalizater.TranslateText("Debug RC Hash") };
 			rcHashDebugItem.Click += (_, _) => RCheevos.DebugHash();
-			ToolStripMenuItemEx testModal1DebugItem = new() { Text = "Open Dummy Modal Dialog" };
-			testModal1DebugItem.Click += (_, _) => this.ModalMessageBox("This message is meaningless.\nPress\"OK\" to continue.");
-			ToolStripMenuItemEx testOSDDebugItem = new() { Text = "Queue Dummy OSD Message" };
+			ToolStripMenuItemEx testModal1DebugItem = new() { Text = TheLocalizater.TranslateText("Open Dummy Modal Dialog") };
+			testModal1DebugItem.Click += (_, _) => this.ModalMessageBox(TheLocalizater.TranslateText("This message is meaningless.\nPress\"OK\" to continue."));
+			ToolStripMenuItemEx testOSDDebugItem = new() { Text = TheLocalizater.TranslateText("Queue Dummy OSD Message") };
 			testOSDDebugItem.Click += (_, _) => AddOnScreenMessage("This toast will last at least 5 seconds", 5);
 			ToolStripMenuItemEx debugMenu = new()
 			{
@@ -43,7 +43,7 @@ namespace BizHawk.Client.EmuHawk
 						{
 							firmwareAutopatchDebugItem,
 						},
-						Text = "Firmware",
+						Text = TheLocalizater.TranslateText("Firmware"),
 					},
 					new ToolStripMenuItemEx
 					{
@@ -51,7 +51,7 @@ namespace BizHawk.Client.EmuHawk
 						{
 							rcHashDebugItem,
 						},
-						Text = "RCheevos",
+						Text = TheLocalizater.TranslateText("RCheevos"),
 					},
 					new ToolStripMenuItemEx
 					{
@@ -60,7 +60,7 @@ namespace BizHawk.Client.EmuHawk
 							testModal1DebugItem,
 							testOSDDebugItem,
 						},
-						Text = "WinForms/UI",
+						Text = TheLocalizater.TranslateText("WinForms/UI"),
 					},
 					new ToolStripSeparatorEx(),
 					new DebugVSystemMenuItem(VSystemID.Raw.GB, VSystemID.Raw.GBC)
@@ -68,7 +68,7 @@ namespace BizHawk.Client.EmuHawk
 						DropDownItems =
 						{
 							new DebugVSystemChildItem(
-								"Debug SameBoy States",
+								TheLocalizater.TranslateText("Debug SameBoy States"),
 								() => ((Sameboy) Emulator).DebugSameBoyState())
 							{
 								RequiresCore = CoreNames.Sameboy,
@@ -85,7 +85,7 @@ namespace BizHawk.Client.EmuHawk
 					},
 				},
 				Image = Resources.Bug,
-				Text = "&Debug Utilities",
+				Text = TheLocalizater.TranslateText("&Debug Utilities"),
 			};
 			debugMenu.DropDownOpened += (ddoSender, _) =>
 			{

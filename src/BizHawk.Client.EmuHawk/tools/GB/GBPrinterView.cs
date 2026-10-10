@@ -35,7 +35,7 @@ namespace BizHawk.Client.EmuHawk
 		// the entire bitmap
 		private Bitmap _printerHistory;
 
-		protected override string WindowTitleStatic => "Printer Viewer";
+		protected override string WindowTitleStatic => TheLocalizater.TranslateText("Printer Viewer");
 
 		public GBPrinterView()
 		{

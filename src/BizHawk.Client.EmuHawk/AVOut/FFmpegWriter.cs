@@ -199,7 +199,7 @@ namespace BizHawk.Client.EmuHawk
 			}
 			catch
 			{
-				_dialogParent.DialogController.ShowMessageBox($"Exception! ffmpeg history:\n{FfmpegGetError()}");
+				_dialogParent.DialogController.ShowMessageBox(TheLocalizater.TranslateFormatString("Exception! ffmpeg history:\n{0}", FfmpegGetError()));
 				throw;
 			}
 
@@ -293,7 +293,7 @@ namespace BizHawk.Client.EmuHawk
 			}
 			catch
 			{
-				_dialogParent.DialogController.ShowMessageBox($"Exception! ffmpeg history:\n{FfmpegGetError()}");
+				_dialogParent.DialogController.ShowMessageBox(TheLocalizater.TranslateFormatString("Exception! ffmpeg history:\n{0}", FfmpegGetError()));
 				throw;
 			}
 		}

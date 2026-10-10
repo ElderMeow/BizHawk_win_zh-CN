@@ -59,7 +59,7 @@ namespace BizHawk.Client.EmuHawk
 		private void ControllerConfig_Load(object sender, EventArgs e)
 		{
 			Icon = Properties.Resources.GameControllerIcon;
-			Text = $"{_emulator.ControllerDefinition.Name} Configuration";
+			Text = TheLocalizater.TranslateFormatString("{0} Configuration", _emulator.ControllerDefinition.Name);
 			Input.Instance.ControlInputFocus(this, HostInputType.Mouse, true);
 		}
 
@@ -450,7 +450,7 @@ namespace BizHawk.Client.EmuHawk
 		{
 			// this doesn't work anymore, as it stomps out any defaults for buttons that aren't currently active on the console
 			// there are various ways to fix it, each with its own semantic problems
-			var result = this.ModalMessageBox2("OK to overwrite defaults for current control scheme?", "Save Defaults");
+			var result = this.ModalMessageBox2(TheLocalizater.TranslateText("OK to overwrite defaults for current control scheme?"), TheLocalizater.TranslateText("Save Defaults"));
 			if (result)
 			{
 				var cd = ConfigService.Load<DefaultControls>(Config.ControlDefaultPath);

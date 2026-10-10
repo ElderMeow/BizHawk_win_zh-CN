@@ -125,7 +125,7 @@ namespace BizHawk.Client.EmuHawk.CustomControls
 		{
 			if (!btn1.Visible)
 			{
-				SetButtons(new[] { "OK" }, new[] { DialogResult.OK });
+				SetButtons(new[] { TheLocalizater.TranslateText("OK") }, new[] { DialogResult.OK });
 			}
 
 			_minButtonRowWidth += 2 * FormXMargin; //add margin to the ends

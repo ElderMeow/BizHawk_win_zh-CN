@@ -273,7 +273,7 @@ namespace BizHawk.Client.EmuHawk
 			{
 				if (alert)
 				{
-					this.ModalMessageBox("Error loading .pal file!");
+					this.ModalMessageBox(TheLocalizater.TranslateText("Error loading .pal file!"));
 				}
 			}
 		}
@@ -294,7 +294,7 @@ namespace BizHawk.Client.EmuHawk
 			}
 			catch
 			{
-				this.ModalMessageBox("Error saving .pal file!");
+				this.ModalMessageBox(TheLocalizater.TranslateText("Error saving .pal file!"));
 			}
 		}
 

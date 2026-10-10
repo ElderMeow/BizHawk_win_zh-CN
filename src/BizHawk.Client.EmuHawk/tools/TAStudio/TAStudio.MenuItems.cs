@@ -46,7 +46,7 @@ namespace BizHawk.Client.EmuHawk
 			{
 				var result = CurrentTasMovie.ConvertToSavestateAnchoredMovie(
 					Emulator.Frame, StatableEmulator.CloneSavestate());
-				DisplayMessageIfFailed(() => result, "Failed to create movie.");
+				DisplayMessageIfFailed(() => result, TheLocalizater.TranslateText("Failed to create movie."));
 
 				if (result.Value is ITasMovie newProject)
 				{
@@ -63,7 +63,7 @@ namespace BizHawk.Client.EmuHawk
 				var saveRam = SaveRamEmulator?.CloneSaveRam(clearDirty: false) ?? throw new Exception("No SaveRam");
 				GoToFrame(AnyRowsSelected ? FirstSelectedRowIndex : 0);
 				var result = CurrentTasMovie.ConvertToSaveRamAnchoredMovie(saveRam);
-				DisplayMessageIfFailed(() => result, "Failed to create movie.");
+				DisplayMessageIfFailed(() => result, TheLocalizater.TranslateText("Failed to create movie."));
 
 				if (result.Value is ITasMovie newProject)
 				{
@@ -106,9 +106,9 @@ namespace BizHawk.Client.EmuHawk
 			if (filename.EndsWithOrdinal(MovieService.StandardMovieExtension))
 			{
 				if (!DialogController.ShowMessageBox2(
-					caption: "Convert movie",
+					caption: TheLocalizater.TranslateText("Convert movie"),
 					icon: EMsgBoxIcon.Question,
-					text: "This is a regular movie, a new project must be created from it to use in TAStudio\nProceed?",
+					text: TheLocalizater.TranslateText("This is a regular movie, a new project must be created from it to use in TAStudio\nProceed?"),
 					useOKCancel: true))
 				{
 					return false;
@@ -117,38 +117,38 @@ namespace BizHawk.Client.EmuHawk
 				return LoadFileWithFallback(filename);
 			}
 			DialogController.ShowMessageBox(
-				caption: "Movie load error",
+				caption: TheLocalizater.TranslateText("Movie load error"),
 				icon: EMsgBoxIcon.Error,
-				text: "This is not a BizHawk movie!");
+				text: TheLocalizater.TranslateText("This is not a BizHawk movie!"));
 			return false;
 		}
 
 		private void SaveTasMenuItem_Click(object sender, EventArgs e)
 		{
-			DisplayMessageIfFailed(() => SaveTas(), "Failed to save movie.");
+			DisplayMessageIfFailed(() => SaveTas(), TheLocalizater.TranslateText("Failed to save movie."));
 			if (Settings.BackupPerFileSave)
 			{
-				DisplayMessageIfFailed(() => SaveTas(saveBackup: true), "Failed to save backup.");
+				DisplayMessageIfFailed(() => SaveTas(saveBackup: true), TheLocalizater.TranslateText("Failed to save backup."));
 			}
 		}
 
 		private void SaveAsTasMenuItem_Click(object sender, EventArgs e)
 		{
-			DisplayMessageIfFailed(() => SaveAsTas(), "Failed to save movie.");
+			DisplayMessageIfFailed(() => SaveAsTas(), TheLocalizater.TranslateText("Failed to save movie."));
 			if (Settings.BackupPerFileSave)
 			{
-				DisplayMessageIfFailed(() => SaveTas(saveBackup: true), "Failed to save backup.");
+				DisplayMessageIfFailed(() => SaveTas(saveBackup: true), TheLocalizater.TranslateText("Failed to save backup."));
 			}
 		}
 
 		private void SaveBackupMenuItem_Click(object sender, EventArgs e)
 		{
-			DisplayMessageIfFailed(() => SaveTas(saveBackup: true), "Failed to save backup.");
+			DisplayMessageIfFailed(() => SaveTas(saveBackup: true), TheLocalizater.TranslateText("Failed to save backup."));
 		}
 
 		private void SaveBk2BackupMenuItem_Click(object sender, EventArgs e)
 		{
-			DisplayMessageIfFailed(() => SaveTas(saveAsBk2: true, saveBackup: true), "Failed to save backup.");
+			DisplayMessageIfFailed(() => SaveTas(saveAsBk2: true, saveBackup: true), TheLocalizater.TranslateText("Failed to save backup."));
 		}
 
 		private void SaveSelectionToMacroMenuItem_Click(object sender, EventArgs e)
@@ -183,8 +183,8 @@ namespace BizHawk.Client.EmuHawk
 				if (saveResult.IsError)
 				{
 					DialogController.ShowMessageBox(
-						$"Failed to save macro.\n{saveResult.UserFriendlyErrorMessage()}\n{saveResult.Exception.Message}",
-						"Error",
+						TheLocalizater.TranslateFormatString("Failed to save macro.\n{0}\n{1}", saveResult.UserFriendlyErrorMessage(), saveResult.Exception.Message),
+						TheLocalizater.TranslateText("Error"),
 						EMsgBoxIcon.Error);
 				}
 				else
@@ -223,7 +223,7 @@ namespace BizHawk.Client.EmuHawk
 
 			if (Emulator.HasCycleTiming() && !CurrentTasMovie.IsAtEnd())
 			{
-				DialogController.ShowMessageBox("This core requires emulation to be on the last frame when writing the movie, otherwise movie length will appear incorrect.", "Warning", EMsgBoxIcon.Warning);
+				DialogController.ShowMessageBox(TheLocalizater.TranslateText("This core requires emulation to be on the last frame when writing the movie, otherwise movie length will appear incorrect."), TheLocalizater.TranslateText("Warning"), EMsgBoxIcon.Warning);
 			}
 
 			string filename = CurrentTasMovie.Filename;
@@ -237,7 +237,7 @@ namespace BizHawk.Client.EmuHawk
 
 			if (fileInfo is not null)
 			{
-				MessageStatusLabel.Text = "Exporting to .bk2...";
+				MessageStatusLabel.Text = TheLocalizater.TranslateText("Exporting to .bk2...");
 				MessageStatusLabel.Owner.Update();
 
 				Cursor = Cursors.WaitCursor;
@@ -250,17 +250,17 @@ namespace BizHawk.Client.EmuHawk
 				while (saveResult.IsError)
 				{
 					DialogResult d = MessageBox.Show(
-						$"Failed to save .bk2. {saveResult.UserFriendlyErrorMessage()}\nTry again?",
-						"Error",
+						TheLocalizater.TranslateFormatString("Failed to save .bk2. {0}\nTry again?", saveResult.UserFriendlyErrorMessage()),
+						TheLocalizater.TranslateText("Error"),
 						MessageBoxButtons.YesNo);
 					if (d == DialogResult.Yes) saveResult = bk2.Save();
 					else break;
 				}
-				if (!saveResult.IsError) MessageStatusLabel.Text = $"{bk2.Name} exported.";
+				if (!saveResult.IsError) MessageStatusLabel.Text = TheLocalizater.TranslateFormatString("{0} exported.", bk2.Name);
 			}
 			else
 			{
-				MessageStatusLabel.Text = "bk2 export cancelled.";
+				MessageStatusLabel.Text = TheLocalizater.TranslateText("bk2 export cancelled.");
 			}
 
 			if (Settings.AutosaveInterval > 0)
@@ -393,8 +393,8 @@ namespace BizHawk.Client.EmuHawk
 			MainForm.PauseEmulator();
 			using InputPrompt dialog = new()
 			{
-				Text = "Go to Frame",
-				Message = "Jump/Seek to frame index:",
+				Text = TheLocalizater.TranslateText("Go to Frame"),
+				Message = TheLocalizater.TranslateText("Jump/Seek to frame index:"),
 				TextInputType = InputPrompt.InputType.Unsigned,
 			};
 			if (this.ShowDialogWithTempMute(dialog).IsOk()) GoToFrame(int.Parse(dialog.PromptText));
@@ -532,7 +532,7 @@ namespace BizHawk.Client.EmuHawk
 
 		private void CloneFramesXTimesMenuItem_Click(object sender, EventArgs e)
 		{
-			using var framesPrompt = new FramesPrompt("Clone # Times", "Insert times to clone:");
+			using var framesPrompt = new FramesPrompt(TheLocalizater.TranslateText("Clone # Times"), TheLocalizater.TranslateText("Insert times to clone:"));
 			if (framesPrompt.ShowDialogOnScreen().IsOk())
 			{
 				CloneFramesXTimes(framesPrompt.Frames);
@@ -601,7 +601,7 @@ namespace BizHawk.Client.EmuHawk
 			var selectedRows = GetSelection().ToList();
 			if (selectedRows.Count > 50)
 			{
-				var result = DialogController.ShowMessageBox2("Are you sure you want to add more than 50 markers?", "Add markers", EMsgBoxIcon.Question, useOKCancel: true);
+				var result = DialogController.ShowMessageBox2(TheLocalizater.TranslateText("Are you sure you want to add more than 50 markers?"), TheLocalizater.TranslateText("Add markers"), EMsgBoxIcon.Question, useOKCancel: true);
 				if (!result)
 				{
 					return;
@@ -635,7 +635,7 @@ namespace BizHawk.Client.EmuHawk
 		{
 			if (!Emulator.DeterministicEmulation)
 			{
-				if (!DialogController.ShowMessageBox2("The emulator is not deterministic. It might fail even if the difference isn't enough to cause a desync.\nContinue with check?", "Not Deterministic"))
+				if (!DialogController.ShowMessageBox2(TheLocalizater.TranslateText("The emulator is not deterministic. It might fail even if the difference isn't enough to cause a desync.\nContinue with check?"), TheLocalizater.TranslateText("Not Deterministic")))
 				{
 					return;
 				}
@@ -657,7 +657,7 @@ namespace BizHawk.Client.EmuHawk
 
 					if (!state.SequenceEqual(greenZone))
 					{
-						if (DialogController.ShowMessageBox2($"Bad data between frames {lastState} and {Emulator.Frame}. Save the relevant state (raw data)?", "Integrity Failed!"))
+						if (DialogController.ShowMessageBox2(TheLocalizater.TranslateFormatString("Bad data between frames {0} and {1}. Save the relevant state (raw data)?", lastState, Emulator.Frame), TheLocalizater.TranslateText("Integrity Failed!")))
 						{
 							var result = this.ShowFileSaveDialog(initDir: Config!.PathEntries.ToolsAbsolutePath(), initFileName: "integrity.fresh");
 							if (result is not null)
@@ -676,7 +676,7 @@ namespace BizHawk.Client.EmuHawk
 			}
 			while (Emulator.Frame < goToFrame);
 
-			DialogController.ShowMessageBox("Integrity Check passed");
+			DialogController.ShowMessageBox(TheLocalizater.TranslateText("Integrity Check passed"));
 		}
 
 		public void UpdateChangeLogMaxSteps(int value)
@@ -741,7 +741,7 @@ namespace BizHawk.Client.EmuHawk
 			ToolStripMenuItem rollIndicatorItem = new();
 			ColumnsSubMenu.DropDownItems.Insert(0, rollIndicatorItem);
 			ColumnsSubMenu.DropDownOpening += (_, _) => {
-				rollIndicatorItem.Text = $"Current roll: #{_inputRolls.IndexOf(_activeInputRoll) + 1}";
+				rollIndicatorItem.Text = TheLocalizater.TranslateFormatString("Current roll: #{0}", _inputRolls.IndexOf(_activeInputRoll) + 1);
 				rollIndicatorItem.Visible = _inputRolls.Count > 1;
 			};
 		}
@@ -796,7 +796,7 @@ namespace BizHawk.Client.EmuHawk
 			{
 				var menuItem = new ToolStripMenuItem
 				{
-					Text = $"{column.Text} ({column.Name})",
+					Text = TheLocalizater.TranslateFormatString("{0} ({1})", column.Text, column.Name),
 					Checked = column.Visible,
 					CheckOnClick = true,
 					Tag = column.Name,
@@ -835,7 +835,7 @@ namespace BizHawk.Client.EmuHawk
 			// update text on key group dropdowns
 			foreach (var menu in keysMenus)
 			{
-				string text = $"Keys ({menu.DropDownItems[0].Tag} - {menu.DropDownItems[menu.DropDownItems.Count - 1].Tag})";
+				string text = TheLocalizater.TranslateFormatString("Keys ({0} - {1})", menu.DropDownItems[0].Tag, menu.DropDownItems[menu.DropDownItems.Count - 1].Tag);
 				menu.Text = text.Replace("Key ", "");
 			}
 			// add player menus only if they actually contain items
@@ -935,9 +935,9 @@ namespace BizHawk.Client.EmuHawk
 			parent.DropDownItems.Add(new ToolStripMenuItem
 			{
 				Enabled = false,
-				Text = "Change Peripherals...",
-				ToolTipText = "Changing peripherals/players is done in the core's sync settings (if the core supports different peripherals)."
-					+ "\nAs these can't be changed in the middle of a movie, you'll have to close TAStudio, change the settings, and create a new TAStudio project.",
+				Text = TheLocalizater.TranslateText("Change Peripherals..."),
+				ToolTipText = TheLocalizater.TranslateText("Changing peripherals/players is done in the core's sync settings (if the core supports different peripherals).")
+					+ TheLocalizater.TranslateText("\nAs these can't be changed in the middle of a movie, you'll have to close TAStudio, change the settings, and create a new TAStudio project."),
 			});
 		}
 
@@ -1112,7 +1112,7 @@ namespace BizHawk.Client.EmuHawk
 
 					if (CurrentTasMovie.TasStateManager.Settings != s.CurrentStateManagerSettings)
 					{
-						bool keep = DialogController.ShowMessageBox2("Attempt to keep old states?", "Keep old states?");
+						bool keep = DialogController.ShowMessageBox2(TheLocalizater.TranslateText("Attempt to keep old states?"), TheLocalizater.TranslateText("Keep old states?"));
 						CurrentTasMovie.TasStateManager = CurrentTasMovie.TasStateManager.UpdateSettings(s.CurrentStateManagerSettings, keep);
 					}
 					Config.Movies.DefaultTasStateManagerSettings = s.DefaultStateManagerSettings;

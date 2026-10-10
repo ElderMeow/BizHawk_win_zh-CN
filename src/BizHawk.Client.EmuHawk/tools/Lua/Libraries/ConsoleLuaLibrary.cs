@@ -14,7 +14,7 @@ namespace BizHawk.Client.EmuHawk
 		public ConsoleLuaLibrary(ILuaLibraries luaLibsImpl, ApiContainer apiContainer, Action<string> logOutputCallback)
 			: base(luaLibsImpl, apiContainer, logOutputCallback) {}
 
-		public override string Name => "console";
+		public override string Name => TheLocalizater.TranslateText("console");
 
 		[LuaMethodExample("console.clear( );")]
 		[LuaMethod("clear", "clears the output box of the Lua Console window")]

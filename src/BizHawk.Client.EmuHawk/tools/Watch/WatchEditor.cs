@@ -69,7 +69,7 @@ namespace BizHawk.Client.EmuHawk
 			};
 			var row = 0;
 
-			LocLabelEx label6 = new() { Anchor = AnchorStyles.Right, Text = "Mem Domain:" };
+			LocLabelEx label6 = new() { Anchor = AnchorStyles.Right, Text = TheLocalizater.TranslateText("Mem Domain:") };
 			DomainDropDown = new()
 			{
 				DropDownStyle = ComboBoxStyle.DropDownList,
@@ -81,7 +81,7 @@ namespace BizHawk.Client.EmuHawk
 			tlpMain.Controls.Add(DomainDropDown, row: row, column: 1);
 			row++;
 
-			LocLabelEx label1 = new() { Anchor = AnchorStyles.Right, Text = "Address:" };
+			LocLabelEx label1 = new() { Anchor = AnchorStyles.Right, Text = TheLocalizater.TranslateText("Address:") };
 			AddressBox = new()
 			{
 				CharacterCasing = CharacterCasing.Upper,
@@ -98,7 +98,7 @@ namespace BizHawk.Client.EmuHawk
 			tlpMain.Controls.Add(flpAddr, row: row, column: 1);
 			row++;
 
-			LocLabelEx label3 = new() { Anchor = AnchorStyles.Right, Text = "Size:" };
+			LocLabelEx label3 = new() { Anchor = AnchorStyles.Right, Text = TheLocalizater.TranslateText("Size:") };
 			SizeDropDown = new()
 			{
 				DropDownStyle = ComboBoxStyle.DropDownList,
@@ -116,13 +116,13 @@ namespace BizHawk.Client.EmuHawk
 			{
 				AutoSize = true,
 				Size = new(77, 17),
-				Text = "Big Endian",
+				Text = TheLocalizater.TranslateText("Big Endian"),
 				UseVisualStyleBackColor = true,
 			};
 			tlpMain.Controls.Add(BigEndianCheckBox, row: row, column: 1);
 			row++;
 
-			LocLabelEx DisplayTypeLabel = new() { Anchor = AnchorStyles.Right, Text = "Display Type:" };
+			LocLabelEx DisplayTypeLabel = new() { Anchor = AnchorStyles.Right, Text = TheLocalizater.TranslateText("Display Type:") };
 			DisplayTypeDropDown = new()
 			{
 				DropDownStyle = ComboBoxStyle.DropDownList,
@@ -134,7 +134,7 @@ namespace BizHawk.Client.EmuHawk
 			tlpMain.Controls.Add(DisplayTypeDropDown, row: row, column: 1);
 			row++;
 
-			LocLabelEx label2 = new() { Anchor = AnchorStyles.Right, Text = "Notes:" };
+			LocLabelEx label2 = new() { Anchor = AnchorStyles.Right, Text = TheLocalizater.TranslateText("Notes:") };
 			NotesBox = new() { MaxLength = 256, Size = new(120, 20) };
 			tlpMain.Controls.Add(label2, row: row, column: 0);
 			tlpMain.Controls.Add(NotesBox, row: row, column: 1);
@@ -145,7 +145,7 @@ namespace BizHawk.Client.EmuHawk
 				Anchor = AnchorStyles.Bottom | AnchorStyles.Left,
 				Location = new(12, 260),
 				Size = new(75, 23),
-				Text = "OK",
+				Text = TheLocalizater.TranslateText("OK"),
 				UseVisualStyleBackColor = true,
 			};
 			OK.Click += Ok_Click;
@@ -155,7 +155,7 @@ namespace BizHawk.Client.EmuHawk
 				DialogResult = DialogResult.Cancel,
 				Location = new(123, 260),
 				Size = new(75, 23),
-				Text = "Cancel",
+				Text = TheLocalizater.TranslateText("Cancel"),
 				UseVisualStyleBackColor = true,
 			};
 			Cancel.Click += Cancel_Click;
@@ -172,7 +172,7 @@ namespace BizHawk.Client.EmuHawk
 			MinimizeBox = false;
 			Name = nameof(WatchEditor);
 			StartPosition = FormStartPosition.CenterParent;
-			Text = "New Watch";
+			Text = TheLocalizater.TranslateText("New Watch");
 			Load += RamWatchNewWatch_Load;
 
 			ResumeLayout(performLayout: false);
@@ -247,10 +247,10 @@ namespace BizHawk.Client.EmuHawk
 		{
 			Text = _mode switch
 			{
-				Mode.New => "New Watch",
-				Mode.Edit => $"Edit {(Watches.Count == 1 ? "Watch" : "Watches")}",
-				Mode.Duplicate => "Duplicate Watch",
-				_ => "New Watch",
+				Mode.New => TheLocalizater.TranslateText("New Watch"),
+				Mode.Edit => TheLocalizater.TranslateFormatString("Edit {0}", (Watches.Count == 1 ? "Watch" : "Watches")),
+				Mode.Duplicate => TheLocalizater.TranslateText("Duplicate Watch"),
+				_ => TheLocalizater.TranslateText("New Watch"),
 			};
 		}
 

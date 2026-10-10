@@ -59,15 +59,15 @@ namespace BizHawk.Client.EmuHawk
 		{
 			var config = getConfig();
 			if (config.SkipRATelemetryWarning || mainForm.ModalMessageBox2(
-				text: "In order to use RetroAchievements, some information needs to be sent to retroachievements.org:\n" +
-				"\n\u2022 Your RetroAchievements username and password (first login) or token (subsequent logins)." +
-				"\n\u2022 The hash of the game(s) you have loaded into BizHawk. (for game identification + achievement unlock + leaderboard submission)" +
-				"\n\u2022 The RetroAchievements game ID(s) of the game(s) you have loaded into BizHawk. (for game information + achievement definitions + leaderboard definitions + rich presence definitions + code notes + achievement badges + user unlocks + leaderboard submission + ticket submission)" +
-				"\n\u2022 Rich presence data (periodically sent, derived from emulated game memory)." +
-				"\n\u2022 Whether or not you are currently in \"Hardcore Mode\" (for achievement unlock)." +
-				"\n\u2022 Ticket submission type and message (when submitting tickets with RAIntegration)." + // todo: add this to our impl? doesn't seem to be supported in rcheevos...
-				"\n\nDo you agree to send this information to retroachievements.org?",
-				caption: "Notice",
+				text: TheLocalizater.TranslateText("In order to use RetroAchievements, some information needs to be sent to retroachievements.org:\n") +
+				TheLocalizater.TranslateText("\n\u2022 Your RetroAchievements username and password (first login) or token (subsequent logins).") +
+				TheLocalizater.TranslateText("\n\u2022 The hash of the game(s) you have loaded into BizHawk. (for game identification + achievement unlock + leaderboard submission)") +
+				TheLocalizater.TranslateText("\n\u2022 The RetroAchievements game ID(s) of the game(s) you have loaded into BizHawk. (for game information + achievement definitions + leaderboard definitions + rich presence definitions + code notes + achievement badges + user unlocks + leaderboard submission + ticket submission)") +
+				TheLocalizater.TranslateText("\n\u2022 Rich presence data (periodically sent, derived from emulated game memory).") +
+				TheLocalizater.TranslateText("\n\u2022 Whether or not you are currently in \"Hardcore Mode\" (for achievement unlock).") +
+				TheLocalizater.TranslateText("\n\u2022 Ticket submission type and message (when submitting tickets with RAIntegration).") + // todo: add this to our impl? doesn't seem to be supported in rcheevos...
+				TheLocalizater.TranslateText("\n\nDo you agree to send this information to retroachievements.org?"),
+				caption: TheLocalizater.TranslateText("Notice"),
 				icon: EMsgBoxIcon.Question,
 				useOKCancel: false))
 			{

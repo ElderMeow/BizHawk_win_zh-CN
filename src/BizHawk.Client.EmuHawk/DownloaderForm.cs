@@ -34,7 +34,7 @@ namespace BizHawk.Client.EmuHawk
 		public DownloaderForm()
 		{
 			InitializeComponent();
-			Load += (_, _) => Text = $"Download {ComponentName ?? "COMPONENT UNSET"}";
+			Load += (_, _) => Text = TheLocalizater.TranslateFormatString("Download {0}", ComponentName ?? "COMPONENT UNSET");
 		}
 
 		private int _pct = 0;
@@ -148,7 +148,7 @@ namespace BizHawk.Client.EmuHawk
 
 		private void btnDownload_Click(object sender, EventArgs e)
 		{
-			btnDownload.Text = "Downloading...";
+			btnDownload.Text = TheLocalizater.TranslateText("Downloading...");
 			btnDownload.Enabled = false;
 			_failed = false;
 			_succeeded = false;
@@ -177,7 +177,7 @@ namespace BizHawk.Client.EmuHawk
 			{
 				_failed = false;
 				_pct = 0;
-				btnDownload.Text = "FAILED - Download Again";
+				btnDownload.Text = TheLocalizater.TranslateText("FAILED - Download Again");
 				btnDownload.Enabled = true;
 			}
 			progressBar1.Value = _pct;

@@ -52,7 +52,7 @@ namespace BizHawk.Client.EmuHawk
 		[ConfigPersist]
 		public int UserBackdropColor { get; set; }
 
-		protected override string WindowTitleStatic => "Graphics Debugger";
+		protected override string WindowTitleStatic => TheLocalizater.TranslateText("Graphics Debugger");
 
 		public SNESGraphicsDebugger()
 		{
@@ -306,14 +306,14 @@ namespace BizHawk.Client.EmuHawk
 				if (si.Mode == 1 && si.Mode1_BG3_Priority)
 				{
 					lblBG3.ForeColor = Color.Red;
-					if (toolTip1.GetToolTip(lblBG3) != "Mode 1 BG3 priority toggle bit of $2105 is SET")
-						toolTip1.SetToolTip(lblBG3, "Mode 1 BG3 priority toggle bit of $2105 is SET");
+					if (toolTip1.GetToolTip(lblBG3) != TheLocalizater.TranslateText("Mode 1 BG3 priority toggle bit of $2105 is SET"))
+						toolTip1.SetToolTip(lblBG3, TheLocalizater.TranslateText("Mode 1 BG3 priority toggle bit of $2105 is SET"));
 				}
 				else
 				{
 					lblBG3.ForeColor = Color.Black;
-					if (toolTip1.GetToolTip(lblBG3) != "Mode 1 BG3 priority toggle bit of $2105 is CLEAR")
-						toolTip1.SetToolTip(lblBG3, "Mode 1 BG3 priority toggle bit of $2105 is CLEAR");
+					if (toolTip1.GetToolTip(lblBG3) != TheLocalizater.TranslateText("Mode 1 BG3 priority toggle bit of $2105 is CLEAR"))
+						toolTip1.SetToolTip(lblBG3, TheLocalizater.TranslateText("Mode 1 BG3 priority toggle bit of $2105 is CLEAR"));
 				}
 
 				SyncColorSelection();
@@ -884,10 +884,10 @@ namespace BizHawk.Client.EmuHawk
 			foreach (Control control in oldControls) control.Dispose();
 
 			//set the freeze caption accordingly
-			if (tp == tpMapEntry) groupFreeze.Text = "Freeze - Map Entry";
-			if (tp == tpPalette) groupFreeze.Text = "Freeze - Color";
-			if (tp == tpTile) groupFreeze.Text = "Freeze - Tile";
-			if (tp == tpOBJ) groupFreeze.Text = "Freeze - OBJ";
+			if (tp == tpMapEntry) groupFreeze.Text = TheLocalizater.TranslateText("Freeze - Map Entry");
+			if (tp == tpPalette) groupFreeze.Text = TheLocalizater.TranslateText("Freeze - Color");
+			if (tp == tpTile) groupFreeze.Text = TheLocalizater.TranslateText("Freeze - Tile");
+			if (tp == tpOBJ) groupFreeze.Text = TheLocalizater.TranslateText("Freeze - OBJ");
 
 			groupFreeze.ResumeLayout();
 			groupFreeze.ResumeDrawing();
@@ -1265,7 +1265,7 @@ namespace BizHawk.Client.EmuHawk
 		private void MessageTimer_Tick(object sender, EventArgs e)
 		{
 			messagetimer.Stop();
-			labelClipboard.Text = "CTRL+C copies the pane under the mouse.";
+			labelClipboard.Text = TheLocalizater.TranslateText("CTRL+C copies the pane under the mouse.");
 		}
 
 		private void comboPalette_SelectedIndexChanged(object sender, EventArgs e)

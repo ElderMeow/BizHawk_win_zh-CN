@@ -32,11 +32,11 @@ namespace BizHawk.Client.EmuHawk
 		private static readonly IReadOnlyDictionary<FirmwareOptionStatus, string> StatusDescs = new SortedDictionary<FirmwareOptionStatus, string>
 		{
 			[FirmwareOptionStatus.Unset] = STATUS_DESC_UNUSED,
-			[FirmwareOptionStatus.Bad] = "BAD! Why are you using this file",
+			[FirmwareOptionStatus.Bad] = TheLocalizater.TranslateText("BAD! Why are you using this file"),
 			[FirmwareOptionStatus.Unknown] = STATUS_DESC_UNUSED,
-			[FirmwareOptionStatus.Unacceptable] = "NO: This doesn't work on the core",
-			[FirmwareOptionStatus.Acceptable] = "OK: This works on the core",
-			[FirmwareOptionStatus.Ideal] = "PERFECT: Ideal for TASing and anything",
+			[FirmwareOptionStatus.Unacceptable] = TheLocalizater.TranslateText("NO: This doesn't work on the core"),
+			[FirmwareOptionStatus.Acceptable] = TheLocalizater.TranslateText("OK: This works on the core"),
+			[FirmwareOptionStatus.Ideal] = TheLocalizater.TranslateText("PERFECT: Ideal for TASing and anything"),
 		};
 
 		internal static readonly IReadOnlyDictionary<FirmwareOptionStatus, Image> StatusIcons = new SortedDictionary<FirmwareOptionStatus, Image>
@@ -165,8 +165,8 @@ namespace BizHawk.Client.EmuHawk
 
 
 				tbbCloseReload.ToolTipText = string.IsNullOrWhiteSpace(reloadRomPath)
-					? "Close Firmware Manager and reload ROM"
-					: $"Close Firmware Manager and reload {reloadRomPath}";
+					? TheLocalizater.TranslateText("Close Firmware Manager and reload ROM")
+					: TheLocalizater.TranslateFormatString("Close Firmware Manager and reload {0}", reloadRomPath);
 			}
 		}
 
@@ -313,7 +313,7 @@ namespace BizHawk.Client.EmuHawk
 				if (ri == null)
 				{
 					lvi.ImageIndex = (int) FirmwareOptionStatus.Unset;
-					lvi.ToolTipText = "No file bound for this firmware!";
+					lvi.ToolTipText = TheLocalizater.TranslateText("No file bound for this firmware!");
 				}
 				else
 				{
@@ -330,8 +330,8 @@ namespace BizHawk.Client.EmuHawk
 					if (hash == null)
 					{
 						lvi.ImageIndex = (int) FirmwareOptionStatus.Unknown;
-						lvi.ToolTipText = "You've bound a custom choice here. Hope you know what you're doing.";
-						lvi.SubItems[4].Text = "-custom-";
+						lvi.ToolTipText = TheLocalizater.TranslateText("You've bound a custom choice here. Hope you know what you're doing.");
+						lvi.SubItems[4].Text = TheLocalizater.TranslateText("-custom-");
 					}
 					else
 					{
@@ -339,15 +339,15 @@ namespace BizHawk.Client.EmuHawk
 						lvi.ImageIndex = (int) (fo?.Status ?? FirmwareOptionStatus.Unset);
 						if (fo?.Status == FirmwareOptionStatus.Ideal)
 						{
-							lvi.ToolTipText = "Perfect! This file has been bound to an ideal choice";
+							lvi.ToolTipText = TheLocalizater.TranslateText("Perfect! This file has been bound to an ideal choice");
 						}
 						else if (fo?.Status == FirmwareOptionStatus.Acceptable)
 						{
-							lvi.ToolTipText = "Good! This file has been bound to some kind of a decent choice";
+							lvi.ToolTipText = TheLocalizater.TranslateText("Good! This file has been bound to some kind of a decent choice");
 						}
 						else
 						{
-							lvi.ToolTipText = "Bad! This file has been bound to a choice which is known to be bad (details in right-click -> Info)";
+							lvi.ToolTipText = TheLocalizater.TranslateText("Bad! This file has been bound to a choice which is known to be bad (details in right-click -> Info)");
 						}
 						lvi.SubItems[4].Text = ri.KnownFirmwareFile.Value.Description;
 					}
@@ -368,14 +368,14 @@ namespace BizHawk.Client.EmuHawk
 					if (ri.Missing)
 					{
 						lvi.ImageIndex = (int) FirmwareOptionStatus.Unset;
-						lvi.ToolTipText = "The file that's specified is missing!";
+						lvi.ToolTipText = TheLocalizater.TranslateText("The file that's specified is missing!");
 					}
 
 					// if the user specified a known firmware file but its for some other firmware, it was probably a mistake. mark it as suspicious
 					if (ri.KnownMismatching)
 					{
 						lvi.ImageIndex = (int) FirmwareOptionStatus.Unknown;
-						lvi.ToolTipText = "You've manually specified a firmware file, and we're sure it's wrong. Hope you know what you're doing.";
+						lvi.ToolTipText = TheLocalizater.TranslateText("You've manually specified a firmware file, and we're sure it's wrong. Hope you know what you're doing.");
 					}
 
 
@@ -395,9 +395,9 @@ namespace BizHawk.Client.EmuHawk
 		private void TbbOrganize_Click(object sender, EventArgs e)
 		{
 			if (!this.ModalMessageBox2(
-				caption: "Organize firmware",
-				text: "This is going to move/rename every automatically-selected firmware file under your configured Firmware folder to match our recommended organizational scheme (which is not super great right now)."
-					+ "\nProceed?",
+				caption: TheLocalizater.TranslateText("Organize firmware"),
+				text: TheLocalizater.TranslateText("This is going to move/rename every automatically-selected firmware file under your configured Firmware folder to match our recommended organizational scheme (which is not super great right now).")
+					+ TheLocalizater.TranslateText("\nProceed?"),
 				useOKCancel: true))
 			{
 				return;
@@ -496,7 +496,7 @@ namespace BizHawk.Client.EmuHawk
 						// check whether this file is currently outside of the global firmware directory
 						if (_currSelectorDir != firmwarePath)
 						{
-							var askMoveResult = this.ModalMessageBox2("The selected custom firmware does not reside in the root of the global firmware directory.\nDo you want to copy it there?", "Import Custom Firmware");
+							var askMoveResult = this.ModalMessageBox2(TheLocalizater.TranslateText("The selected custom firmware does not reside in the root of the global firmware directory.\nDo you want to copy it there?"), TheLocalizater.TranslateText("Import Custom Firmware"));
 							if (askMoveResult)
 							{
 								try
@@ -507,7 +507,7 @@ namespace BizHawk.Client.EmuHawk
 								}
 								catch (Exception ex)
 								{
-									this.ModalMessageBox($"There was an issue copying the file. The customization has NOT been set.\n\n{ex.StackTrace}");
+									this.ModalMessageBox(TheLocalizater.TranslateFormatString("There was an issue copying the file. The customization has NOT been set.\n\n{0}", ex.StackTrace));
 									continue;
 								}
 							}
@@ -519,7 +519,7 @@ namespace BizHawk.Client.EmuHawk
 			}
 			catch (Exception ex)
 			{
-				this.ModalMessageBox($"There was an issue during the process. The customization has NOT been set.\n\n{ex.StackTrace}");
+				this.ModalMessageBox(TheLocalizater.TranslateFormatString("There was an issue during the process. The customization has NOT been set.\n\n{0}", ex.StackTrace));
 				return;
 			}
 
@@ -687,7 +687,7 @@ namespace BizHawk.Client.EmuHawk
 
 			if (!string.IsNullOrEmpty(errors))
 			{
-				DialogController.ShowMessageBox(errors, "Error importing these files");
+				DialogController.ShowMessageBox(errors, TheLocalizater.TranslateText("Error importing these files"));
 			}
 
 			if (didSomething)

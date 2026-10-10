@@ -37,7 +37,7 @@ namespace BizHawk.Client.EmuHawk
 
 		private int _scanline;
 
-		protected override string WindowTitleStatic => "Nametable Viewer";
+		protected override string WindowTitleStatic => TheLocalizater.TranslateText("Nametable Viewer");
 
 		public NESNameTableViewer()
 		{
@@ -291,9 +291,9 @@ namespace BizHawk.Client.EmuHawk
 
 			XYLabel.Text = $"{tileX} : {tileY}";
 			int ppuAddress = 0x2000 + (nameTable * 0x400) + ((tileY % 30) * 32) + (tileX % 32);
-			PPUAddressLabel.Text = $"{ppuAddress:X4}";
+			PPUAddressLabel.Text = TheLocalizater.TranslateFormatString("{0:X4}", ppuAddress);
 			int tileID = _ppu.PeekPPU(ppuAddress);
-			TileIDLabel.Text = $"{tileID:X2}";
+			TileIDLabel.Text = TheLocalizater.TranslateFormatString("{0:X2}", tileID);
 			TableLabel.Text = nameTable.ToString();
 
 			int yTable = 0, yLine = 0;

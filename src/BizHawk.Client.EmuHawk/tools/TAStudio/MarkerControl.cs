@@ -45,16 +45,16 @@ namespace BizHawk.Client.EmuHawk
 
 		public void UpdateHotkeyTooltips(Config config)
 		{
-			toolTip1.SetToolTip(AddMarkerButton, $"Add Marker to Emulated Frame ({config.HotkeyBindings["Set Marker"]})");
-			toolTip1.SetToolTip(AddMarkerWithTextButton, $"Add Marker with Text to Emulated Frame ({config.HotkeyBindings["Set Marker"]} {config.HotkeyBindings["Set Marker"]})");
-			toolTip1.SetToolTip(RemoveMarkerButton, $"Remove Marker ({config.HotkeyBindings["Delete Marker"]} on marker's frame)");
+			toolTip1.SetToolTip(AddMarkerButton, TheLocalizater.TranslateFormatString("Add Marker to Emulated Frame ({0})", config.HotkeyBindings["Set Marker"]));
+			toolTip1.SetToolTip(AddMarkerWithTextButton, TheLocalizater.TranslateFormatString("Add Marker with Text to Emulated Frame ({0} {1})", config.HotkeyBindings["Set Marker"], config.HotkeyBindings["Set Marker"]));
+			toolTip1.SetToolTip(RemoveMarkerButton, TheLocalizater.TranslateFormatString("Remove Marker ({0} on marker's frame)", config.HotkeyBindings["Delete Marker"]));
 		}
 
 		private void SetupColumns()
 		{
 			MarkerView.AllColumns.Clear();
-			MarkerView.AllColumns.Add(new(name: "FrameColumn", widthUnscaled: 52, text: "Frame"));
-			MarkerView.AllColumns.Add(new(name: SAVESTATE_COL_NAME, widthUnscaled: 24, text: "State"));
+			MarkerView.AllColumns.Add(new(name: "FrameColumn", widthUnscaled: 52, text: TheLocalizater.TranslateText("Frame")));
+			MarkerView.AllColumns.Add(new(name: SAVESTATE_COL_NAME, widthUnscaled: 24, text: TheLocalizater.TranslateText("State")));
 			MarkerView.AllColumns.Add(new(name: "LabelColumn", widthUnscaled: 125, text: string.Empty));
 		}
 
@@ -204,9 +204,9 @@ namespace BizHawk.Client.EmuHawk
 			{
 				var i = new InputPrompt
 				{
-					Text = $"Marker for frame {frame}",
+					Text = TheLocalizater.TranslateFormatString("Marker for frame {0}", frame),
 					TextInputType = InputPrompt.InputType.Text,
-					Message = "Enter a message",
+					Message = TheLocalizater.TranslateText("Enter a message"),
 					InitialValue = Markers.IsMarker(frame) ? Markers.PreviousOrCurrent(frame).Message : string.Empty,
 				};
 
@@ -246,9 +246,9 @@ namespace BizHawk.Client.EmuHawk
 			var markerFrame = marker.Frame;
 			var i = new InputPrompt
 			{
-				Text = $"Marker for frame {markerFrame}",
+				Text = TheLocalizater.TranslateFormatString("Marker for frame {0}", markerFrame),
 				TextInputType = InputPrompt.InputType.Text,
-				Message = "Enter a message",
+				Message = TheLocalizater.TranslateText("Enter a message"),
 				InitialValue = Markers.IsMarker(markerFrame) ? Markers.PreviousOrCurrent(markerFrame).Message : string.Empty,
 			};
 
@@ -265,9 +265,9 @@ namespace BizHawk.Client.EmuHawk
 			var markerFrame = marker.Frame;
 			var i = new InputPrompt
 			{
-				Text = $"Marker for frame {markerFrame}",
+				Text = TheLocalizater.TranslateFormatString("Marker for frame {0}", markerFrame),
 				TextInputType = InputPrompt.InputType.Unsigned,
-				Message = "Enter a frame number",
+				Message = TheLocalizater.TranslateText("Enter a frame number"),
 				InitialValue = Markers.IsMarker(markerFrame)
 					? Markers.PreviousOrCurrent(markerFrame).Frame.ToString()
 					: "0",

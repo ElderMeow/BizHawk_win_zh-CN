@@ -28,8 +28,8 @@ namespace BizHawk.Client.EmuHawk
 			if (CheatList.AnyActive)
 			{
 				var result = this.ModalMessageBox3(
-					caption: "Cheats warning",
-					text: "Continue playback with cheats enabled?\nChoosing \"No\" will disable cheats but not remove them.",
+					caption: TheLocalizater.TranslateText("Cheats warning"),
+					text: TheLocalizater.TranslateText("Continue playback with cheats enabled?\nChoosing \"No\" will disable cheats but not remove them."),
 					icon: EMsgBoxIcon.Question);
 				if (result is null) return false;
 				if (result is false) CheatList.DisableAll();
@@ -50,7 +50,7 @@ namespace BizHawk.Client.EmuHawk
 				catch (MoviePlatformMismatchException ex)
 				{
 					using var ownerForm = new Form { TopMost = true };
-					MessageBox.Show(ownerForm, ex.Message, "Movie/Platform Mismatch", MessageBoxButtons.OK, MessageBoxIcon.Error);
+					MessageBox.Show(ownerForm, ex.Message, TheLocalizater.TranslateText("Movie/Platform Mismatch"), MessageBoxButtons.OK, MessageBoxIcon.Error);
 					return false;
 				}
 
@@ -96,19 +96,19 @@ namespace BizHawk.Client.EmuHawk
 			if (MovieSession.Movie.IsPlayingOrFinished())
 			{
 				PlayRecordStatusButton.Image = Properties.Resources.Play;
-				PlayRecordStatusButton.ToolTipText = "Movie is in playback mode";
+				PlayRecordStatusButton.ToolTipText = TheLocalizater.TranslateText("Movie is in playback mode");
 				PlayRecordStatusButton.Visible = true;
 			}
 			else if (MovieSession.Movie.IsRecording())
 			{
 				PlayRecordStatusButton.Image = Properties.Resources.Record;
-				PlayRecordStatusButton.ToolTipText = "Movie is in record mode";
+				PlayRecordStatusButton.ToolTipText = TheLocalizater.TranslateText("Movie is in record mode");
 				PlayRecordStatusButton.Visible = true;
 			}
 			else if (MovieSession.Movie.NotActive())
 			{
 				PlayRecordStatusButton.Image = Properties.Resources.Blank;
-				PlayRecordStatusButton.ToolTipText = "No movie is active";
+				PlayRecordStatusButton.ToolTipText = TheLocalizater.TranslateText("No movie is active");
 				PlayRecordStatusButton.Visible = false;
 			}
 
@@ -129,8 +129,8 @@ namespace BizHawk.Client.EmuHawk
 				if (saveResult.IsError)
 				{
 					this.ShowMessageBox(
-						$"Failed to save movie.\n{saveResult.UserFriendlyErrorMessage()}\n{saveResult.Exception.Message}",
-						"Error",
+						TheLocalizater.TranslateFormatString("Failed to save movie.\n{0}\n{1}", saveResult.UserFriendlyErrorMessage(), saveResult.Exception.Message),
+						TheLocalizater.TranslateText("Error"),
 						EMsgBoxIcon.Error);
 				}
 				SetMainformMovieInfo();
@@ -142,7 +142,7 @@ namespace BizHawk.Client.EmuHawk
 			if (ToolControllingRestartMovie is { } tool) return tool.RestartMovie();
 			if (!MovieSession.Movie.IsActive()) return false;
 			var success = StartNewMovie(MovieSession.Movie, false);
-			if (success) AddOnScreenMessage("Replaying movie file in read-only mode");
+			if (success) AddOnScreenMessage(TheLocalizater.TranslateText("Replaying movie file in read-only mode"));
 			return success;
 		}
 

@@ -74,7 +74,7 @@ namespace BizHawk.Client.EmuHawk
 		public static void DoDialog(IEmulator emulator, IDialogParent owner, bool isMovieActive)
 		{
 			var settable = ((MainForm) owner).GetSettingsAdapterForLoadedCoreUntyped(); //HACK
-			var title = $"{emulator.Attributes().CoreName} Settings";
+			var title = TheLocalizater.TranslateFormatString("{0} Settings", emulator.Attributes().CoreName);
 			_ = emulator switch
 			{
 				MAME mame => DoMAMEDialog(owner, settable, mame.CurrentDriverSettings, isMovieActive: isMovieActive),

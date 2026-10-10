@@ -59,7 +59,7 @@ namespace BizHawk.Client.EmuHawk
 				DialogResult = DialogResult.Cancel,
 				Location = new(391, 135),
 				Size = new(75, 23),
-				Text = "&Cancel",
+				Text = TheLocalizater.TranslateText("&Cancel"),
 				UseVisualStyleBackColor = true,
 			};
 			Cancel.Click += Cancel_Click;
@@ -69,7 +69,7 @@ namespace BizHawk.Client.EmuHawk
 				Anchor = AnchorStyles.Bottom | AnchorStyles.Right,
 				Location = new(310, 135),
 				Size = new(75, 23),
-				Text = "&OK",
+				Text = TheLocalizater.TranslateText("&OK"),
 				UseVisualStyleBackColor = true,
 			};
 			OK.Click += Ok_Click;
@@ -112,7 +112,7 @@ namespace BizHawk.Client.EmuHawk
 				AutoSize = true,
 				Location = new(327, 64),
 				Size = new(121, 17),
-				Text = "Make default author",
+				Text = TheLocalizater.TranslateText("Make default author"),
 				UseVisualStyleBackColor = true,
 			};
 
@@ -131,12 +131,12 @@ namespace BizHawk.Client.EmuHawk
 				Size = new(454, 112),
 			};
 			groupBox1.SuspendLayout();
-			groupBox1.Controls.Add(new LocLabelEx { Location = new(51, 16), Text = "File:" });
+			groupBox1.Controls.Add(new LocLabelEx { Location = new(51, 16), Text = TheLocalizater.TranslateText("File:") });
 			groupBox1.Controls.Add(RecordBox);
 			groupBox1.Controls.Add(BrowseBtn);
-			groupBox1.Controls.Add(new LocLabelEx { Location = new(36, 41), Text = "Author:" });
+			groupBox1.Controls.Add(new LocLabelEx { Location = new(36, 41), Text = TheLocalizater.TranslateText("Author:") });
 			groupBox1.Controls.Add(AuthorBox);
-			groupBox1.Controls.Add(new LocLabelEx { Location = new(6, 68), Text = "Record From:" });
+			groupBox1.Controls.Add(new LocLabelEx { Location = new(6, 68), Text = TheLocalizater.TranslateText("Record From:") });
 			groupBox1.Controls.Add(StartFromCombo);
 			groupBox1.Controls.Add(DefaultAuthorCheckBox);
 
@@ -150,7 +150,7 @@ namespace BizHawk.Client.EmuHawk
 			MaximizeBox = false;
 			MinimizeBox = false;
 			StartPosition = FormStartPosition.CenterParent;
-			Text = "Record Movie";
+			Text = TheLocalizater.TranslateText("Record Movie");
 			Controls.Add(new FlowLayoutPanel
 			{
 				Controls =
@@ -205,7 +205,7 @@ namespace BizHawk.Client.EmuHawk
 			{
 				if (File.Exists(path))
 				{
-					var result = DialogController.ShowMessageBox2($"{path} already exists, overwrite?", "Confirm overwrite", EMsgBoxIcon.Warning, useOKCancel: true);
+					var result = DialogController.ShowMessageBox2(TheLocalizater.TranslateFormatString("{0} already exists, overwrite?", path), TheLocalizater.TranslateText("Confirm overwrite"), EMsgBoxIcon.Warning, useOKCancel: true);
 					if (!result)
 					{
 						return;
@@ -258,7 +258,7 @@ namespace BizHawk.Client.EmuHawk
 			}
 			else
 			{
-				DialogController.ShowMessageBox("Please select a movie to record", "File selection error", EMsgBoxIcon.Error);
+				DialogController.ShowMessageBox(TheLocalizater.TranslateText("Please select a movie to record"), TheLocalizater.TranslateText("File selection error"), EMsgBoxIcon.Error);
 			}
 		}
 
