@@ -34,7 +34,7 @@ namespace BizHawk.Client.EmuHawk
 					new SzTextBoxEx { ReadOnly = true, Size = new(80, 23), Text = strings[y][x] },
 					row: y,
 					column: x);
-				SzButtonEx btnCopyTSV = new() { Size = new(128, 23), Text = ".tsv --> Clipboard" };
+				SzButtonEx btnCopyTSV = new() { Size = new(128, 23), Text = TheLocalizater.TranslateText(".tsv --> Clipboard") };
 				btnCopyTSV.Click += (_, _) => Clipboard.SetText(string.Join(
 					"\n",
 					strings.Select(static l => string.Join("\t", l))));
@@ -155,11 +155,11 @@ namespace BizHawk.Client.EmuHawk
 		private SolidBrush _highlightBrush;
 		private SolidBrush _secondaryHighlightBrush;
 
-		private string _windowTitle = "Hex Editor";
+		private string _windowTitle = TheLocalizater.TranslateText("Hex Editor");
 
 		protected override string WindowTitle => _windowTitle;
 
-		protected override string WindowTitleStatic => "Hex Editor";
+		protected override string WindowTitleStatic => TheLocalizater.TranslateText("Hex Editor");
 
 		public HexEditor()
 		{
@@ -721,10 +721,10 @@ namespace BizHawk.Client.EmuHawk
 		private void UpdateGroupBoxTitle()
 		{
 			var addressesString = "0x" + $"{_domain.Size / DataSize:X8}".TrimStart('0');
-			var viewerText = $"{Emulator.SystemId} {_domain}{(_domain.Writable ? string.Empty : " (READ-ONLY)")}  -  {addressesString} addresses";
+			var viewerText = TheLocalizater.TranslateFormatString("{0} {1}{2}  -  {3} addresses", Emulator.SystemId, _domain, (_domain.Writable ? string.Empty : " (READ-ONLY)"), addressesString);
 			if (_nibbles.Count is not 0)
 			{
-				viewerText += $"  Typing: ({MakeNibbles()})";
+				viewerText += TheLocalizater.TranslateFormatString("  Typing: ({0})", MakeNibbles());
 			}
 
 			MemoryViewerBox.Text = viewerText;
@@ -791,11 +791,11 @@ namespace BizHawk.Client.EmuHawk
 			}
 			else
 			{
-				var newTitle = "Hex Editor";
-				newTitle += " - Editing Address 0x" + string.Format(_numDigitsStr, _highlightedAddress);
+				var newTitle = TheLocalizater.TranslateText("Hex Editor");
+				newTitle += TheLocalizater.TranslateText(" - Editing Address 0x") + string.Format(_numDigitsStr, _highlightedAddress);
 				if (_secondaryHighlightedAddresses.Count is not 0)
 				{
-					newTitle += $" (Selected 0x{_secondaryHighlightedAddresses.Count + (_secondaryHighlightedAddresses.Contains(_highlightedAddress.Value) ? 0 : 1):X})";
+					newTitle += TheLocalizater.TranslateFormatString(" (Selected 0x{0:X})", _secondaryHighlightedAddresses.Count + (_secondaryHighlightedAddresses.Contains(_highlightedAddress.Value) ? 0 : 1));
 				}
 				_windowTitle = newTitle;
 			}
@@ -1233,12 +1233,12 @@ namespace BizHawk.Client.EmuHawk
 			if (_domain.Name is ROM_DOMAIN_NAME)
 			{
 				SaveMenuItem.Visible = !CurrentRomIsArchive();
-				SaveAsBinaryMenuItem.Text = "Save as ROM...";
+				SaveAsBinaryMenuItem.Text = TheLocalizater.TranslateText("Save as ROM...");
 			}
 			else
 			{
 				SaveMenuItem.Visible = false;
-				SaveAsBinaryMenuItem.Text = "Save as binary...";
+				SaveAsBinaryMenuItem.Text = TheLocalizater.TranslateText("Save as binary...");
 			}
 
 			CloseTableFileMenuItem.Enabled = _textTable.Count is not 0;
@@ -1265,7 +1265,7 @@ namespace BizHawk.Client.EmuHawk
 		{
 			if(!_domain.Writable)
 			{
-				DialogController.ShowMessageBox("This Memory Domain can't be Poked; so importing can't work");
+				DialogController.ShowMessageBox(TheLocalizater.TranslateText("This Memory Domain can't be Poked; so importing can't work"));
 				return;
 			}
 
@@ -1472,12 +1472,12 @@ namespace BizHawk.Client.EmuHawk
 			if (_highlightedAddress.HasValue && IsFrozen(_highlightedAddress.Value))
 			{
 				FreezeAddressMenuItem.Image = Resources.Unfreeze;
-				FreezeAddressMenuItem.Text = "Un&freeze Address";
+				FreezeAddressMenuItem.Text = TheLocalizater.TranslateText("Un&freeze Address");
 			}
 			else
 			{
 				FreezeAddressMenuItem.Image = Resources.Freeze;
-				FreezeAddressMenuItem.Text = "&Freeze Address";
+				FreezeAddressMenuItem.Text = TheLocalizater.TranslateText("&Freeze Address");
 			}
 
 			AddToRamWatchMenuItem.Enabled =
@@ -1539,9 +1539,9 @@ namespace BizHawk.Client.EmuHawk
 		{
 			using var inputPrompt = new InputPrompt
 			{
-				Text = "Go to Address",
+				Text = TheLocalizater.TranslateText("Go to Address"),
 				StartLocation = this.ChildPointToScreen(MemoryViewerBox),
-				Message = "Enter a hexadecimal value",
+				Message = TheLocalizater.TranslateText("Enter a hexadecimal value"),
 			};
 
 			if (this.ShowDialogWithTempMute(inputPrompt).IsOk() && inputPrompt.PromptText.IsHex())
@@ -1898,12 +1898,12 @@ namespace BizHawk.Client.EmuHawk
 
 			if (_highlightedAddress.HasValue && IsFrozen(_highlightedAddress.Value))
 			{
-				FreezeContextItem.Text = "Un&freeze";
+				FreezeContextItem.Text = TheLocalizater.TranslateText("Un&freeze");
 				FreezeContextItem.Image = Resources.Unfreeze;
 			}
 			else
 			{
-				FreezeContextItem.Text = "&Freeze";
+				FreezeContextItem.Text = TheLocalizater.TranslateText("&Freeze");
 				FreezeContextItem.Image = Resources.Freeze;
 			}
 

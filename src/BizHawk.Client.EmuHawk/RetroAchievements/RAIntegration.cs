@@ -59,11 +59,11 @@ namespace BizHawk.Client.EmuHawk
 			var numItems = RA.GetPopupMenuItems(_menuItems);
 			_raDropDownItems.Clear();
 			{
-				var tsi = new ToolStripMenuItem("Shutdown RetroAchievements");
+				var tsi = new ToolStripMenuItem(TheLocalizater.TranslateText("Shutdown RetroAchievements"));
 				tsi.Click += (_, _) => _shutdownRACallback();
 				_raDropDownItems.Add(tsi);
 
-				tsi = new("Autostart RetroAchievements")
+				tsi = new(TheLocalizater.TranslateText("Autostart RetroAchievements"))
 				{
 					Checked = _getConfig().RAAutostart,
 					CheckOnClick = true,
@@ -105,9 +105,9 @@ namespace BizHawk.Client.EmuHawk
 		protected override void HandleHardcoreModeDisable(string reason)
 		{
 			_dialogParent.ModalMessageBox(
-				caption: "Warning",
+				caption: TheLocalizater.TranslateText("Warning"),
 				icon: EMsgBoxIcon.Warning,
-				text: $"{reason} Disabling hardcore mode.");
+				text: TheLocalizater.TranslateFormatString("{0} Disabling hardcore mode.", reason));
 			RA.WarnDisableHardcore(null);
 		}
 
@@ -167,7 +167,7 @@ namespace BizHawk.Client.EmuHawk
 		{
 			if (RA.HardcoreModeIsActive())
 			{
-				HandleHardcoreModeDisable("Loading savestates is not allowed in hardcore mode.");
+				HandleHardcoreModeDisable(TheLocalizater.TranslateText("Loading savestates is not allowed in hardcore mode."));
 			}
 
 			RA.OnLoadState(path);
@@ -197,7 +197,7 @@ namespace BizHawk.Client.EmuHawk
 					if (!_mainForm.RebootCore())
 					{
 						// unset hardcore mode if we fail to reboot core somehow
-						HandleHardcoreModeDisable("Failed to reboot core.");
+						HandleHardcoreModeDisable(TheLocalizater.TranslateText("Failed to reboot core."));
 					}
 					if (RA.HardcoreModeIsActive() && _mainForm.CurrentlyOpenRomArgs is not null)
 					{

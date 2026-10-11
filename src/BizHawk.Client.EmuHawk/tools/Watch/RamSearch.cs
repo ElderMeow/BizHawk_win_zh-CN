@@ -41,7 +41,7 @@ namespace BizHawk.Client.EmuHawk
 
 		private bool _dropdownDontfire; // Used as a hack to get around lame .net dropdowns, there's no way to set their index without firing the SelectedIndexChanged event!
 
-		protected override string WindowTitleStatic => "RAM Search";
+		protected override string WindowTitleStatic => TheLocalizater.TranslateText("RAM Search");
 
 		public RamSearch()
 		{
@@ -326,7 +326,7 @@ namespace BizHawk.Client.EmuHawk
 
 			_settings = new SearchEngineSettings(MemoryDomains, Settings.UseUndoHistory);
 			_searches = new RamSearchEngine(_settings, MemoryDomains);
-			MessageLabel.Text = "Search restarted";
+			MessageLabel.Text = TheLocalizater.TranslateText("Search restarted");
 			DoDomainSizeCheck();
 			_dropdownDontfire = true;
 			SetSize(_settings.Size);
@@ -565,12 +565,12 @@ namespace BizHawk.Client.EmuHawk
 
 		private void SetRemovedMessage(int val)
 		{
-			MessageLabel.Text = $"{val} {(val == 1 ? "address" : "addresses")} removed";
+			MessageLabel.Text = TheLocalizater.TranslateFormatString("{0} {1} removed", val, (val == 1 ? "address" : "addresses"));
 		}
 
 		private void SetTotal()
 		{
-			TotalSearchLabel.Text = $"{_searches.Count:n0} addresses";
+			TotalSearchLabel.Text = TheLocalizater.TranslateFormatString("{0:n0} addresses", _searches.Count);
 		}
 
 		private void SetDomainLabel()
@@ -607,7 +607,7 @@ namespace BizHawk.Client.EmuHawk
 			{
 				_settings.Mode = SearchMode.Fast;
 				SetReboot(true);
-				MessageLabel.Text = "Large domain, switching to fast mode";
+				MessageLabel.Text = TheLocalizater.TranslateText("Large domain, switching to fast mode");
 			}
 		}
 
@@ -867,7 +867,7 @@ namespace BizHawk.Client.EmuHawk
 				else
 				{
 					_searches.AddRange(addresses, append);
-					MessageLabel.Text = $"{file.Name} loaded";
+					MessageLabel.Text = TheLocalizater.TranslateFormatString("{0} loaded", file.Name);
 				}
 
 				UpdateList();
@@ -924,9 +924,9 @@ namespace BizHawk.Client.EmuHawk
 			WatchListView.DeselectAll();
 			var prompt = new InputPrompt
 			{
-				Text = "Go to Address",
+				Text = TheLocalizater.TranslateText("Go to Address"),
 				StartLocation = this.ChildPointToScreen(WatchListView),
-				Message = "Enter a hexadecimal value",
+				Message = TheLocalizater.TranslateText("Enter a hexadecimal value"),
 			};
 
 			while (this.ShowDialogWithTempMute(prompt).IsOk())
@@ -965,11 +965,11 @@ namespace BizHawk.Client.EmuHawk
 			{
 				Columns = new List<RollColumn>
 				{
-					new(name: WatchList.Address, widthUnscaled: 60, text: "Address"),
-					new(name: WatchList.Value, widthUnscaled: 59, text: "Value"),
-					new(name: WatchList.Prev, widthUnscaled: 59, text: "Prev"),
-					new(name: WatchList.ChangesCol, widthUnscaled: 60, text: "Changes"),
-					new(name: WatchList.Diff, widthUnscaled: 59, text: "Diff") { Visible = false },
+					new(name: WatchList.Address, widthUnscaled: 60, text: TheLocalizater.TranslateText("Address")),
+					new(name: WatchList.Value, widthUnscaled: 59, text: TheLocalizater.TranslateText("Value")),
+					new(name: WatchList.Prev, widthUnscaled: 59, text: TheLocalizater.TranslateText("Prev")),
+					new(name: WatchList.ChangesCol, widthUnscaled: 60, text: TheLocalizater.TranslateText("Changes")),
+					new(name: WatchList.Diff, widthUnscaled: 59, text: TheLocalizater.TranslateText("Diff")) { Visible = false },
 				};
 
 				PreviewMode = true;
@@ -1025,12 +1025,12 @@ namespace BizHawk.Client.EmuHawk
 					if (saveResult.IsError)
 					{
 						this.ErrorMessageBox(saveResult);
-						MessageLabel.Text = $"Failed to save {Path.GetFileName(_currentFileName)}";
+						MessageLabel.Text = TheLocalizater.TranslateFormatString("Failed to save {0}", Path.GetFileName(_currentFileName));
 					}
 					else
 					{
 						_currentFileName = watches.CurrentFileName;
-						MessageLabel.Text = $"{Path.GetFileName(_currentFileName)} saved";
+						MessageLabel.Text = TheLocalizater.TranslateFormatString("{0} saved", Path.GetFileName(_currentFileName));
 						Settings.RecentSearches.Add(watches.CurrentFileName);
 					}
 				}
@@ -1043,11 +1043,11 @@ namespace BizHawk.Client.EmuHawk
 						if (result.IsError)
 						{
 							this.ErrorMessageBox(result);
-							MessageLabel.Text = $"Failed to save {Path.GetFileName(_currentFileName)}";
+							MessageLabel.Text = TheLocalizater.TranslateFormatString("Failed to save {0}", Path.GetFileName(_currentFileName));
 						}
 						else
 						{
-							MessageLabel.Text = $"{Path.GetFileName(_currentFileName)} saved";
+							MessageLabel.Text = TheLocalizater.TranslateFormatString("{0} saved", Path.GetFileName(_currentFileName));
 							Settings.RecentSearches.Add(watches.CurrentFileName);
 						}
 					}
@@ -1069,12 +1069,12 @@ namespace BizHawk.Client.EmuHawk
 			if (result.IsError)
 			{
 				this.ErrorMessageBox(result);
-				MessageLabel.Text = $"Failed to save {Path.GetFileName(_currentFileName)}";
+				MessageLabel.Text = TheLocalizater.TranslateFormatString("Failed to save {0}", Path.GetFileName(_currentFileName));
 			}
 			else
 			{
 				_currentFileName = watches.CurrentFileName;
-				MessageLabel.Text = $"{Path.GetFileName(_currentFileName)} saved";
+				MessageLabel.Text = TheLocalizater.TranslateFormatString("{0} saved", Path.GetFileName(_currentFileName));
 				Settings.RecentSearches.Add(watches.CurrentFileName);
 			}
 		}
@@ -1251,7 +1251,7 @@ namespace BizHawk.Client.EmuHawk
 				ToggleSearchDependentToolBarItems();
 				_forcePreviewClear = true;
 				UpdateUndoToolBarButtons();
-				MessageLabel.Text = $"{restoredCount} {(restoredCount == 1 ? "address" : "addresses")} restored";
+				MessageLabel.Text = TheLocalizater.TranslateFormatString("{0} {1} restored", restoredCount, (restoredCount == 1 ? "address" : "addresses"));
 			}
 		}
 
@@ -1264,7 +1264,7 @@ namespace BizHawk.Client.EmuHawk
 				ToggleSearchDependentToolBarItems();
 				_forcePreviewClear = true;
 				UpdateUndoToolBarButtons();
-				MessageLabel.Text = $"{restoredCount} {(restoredCount == 1 ? "address" : "addresses")} removed";
+				MessageLabel.Text = TheLocalizater.TranslateFormatString("{0} {1} removed", restoredCount, (restoredCount == 1 ? "address" : "addresses"));
 			}
 		}
 
@@ -1407,12 +1407,12 @@ namespace BizHawk.Client.EmuHawk
 
 			if (SelectedItems.All(watch => MainForm.CheatList.IsActive(_settings.Domain, watch.Address)))
 			{
-				FreezeContextMenuItem.Text = "&Unfreeze Address";
+				FreezeContextMenuItem.Text = TheLocalizater.TranslateText("&Unfreeze Address");
 				FreezeContextMenuItem.Image = Resources.Unfreeze;
 			}
 			else
 			{
-				FreezeContextMenuItem.Text = "&Freeze Address";
+				FreezeContextMenuItem.Text = TheLocalizater.TranslateText("&Freeze Address");
 				FreezeContextMenuItem.Image = Resources.Freeze;
 			}
 		}

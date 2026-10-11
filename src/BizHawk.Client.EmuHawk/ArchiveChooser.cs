@@ -137,8 +137,8 @@ namespace BizHawk.Client.EmuHawk
 				errMsg = errMsg.Substring(startIndex: errMsg.IndexOf('-') + 2);
 
 				// Balloon is bugged on first invocation
-				_errorBalloon.Show($"Error parsing RegEx: {errMsg}", tb);
-				_errorBalloon.Show($"Error parsing RegEx: {errMsg}", tb);
+				_errorBalloon.Show(TheLocalizater.TranslateFormatString("Error parsing RegEx: {0}", errMsg), tb);
+				_errorBalloon.Show(TheLocalizater.TranslateFormatString("Error parsing RegEx: {0}", errMsg), tb);
 			}
 		}
 
@@ -169,8 +169,8 @@ namespace BizHawk.Client.EmuHawk
 			else
 			{
 				// Balloon is bugged on first invocation
-				_errorBalloon.Show("Could not find search text", tbSearch);
-				_errorBalloon.Show("Could not find search text", tbSearch);
+				_errorBalloon.Show(TheLocalizater.TranslateText("Could not find search text"), tbSearch);
+				_errorBalloon.Show(TheLocalizater.TranslateText("Could not find search text"), tbSearch);
 			}
 		}
 

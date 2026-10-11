@@ -196,7 +196,7 @@
     <value>解冻所有</value>
   </data>
   <data name="PokeAddressMenuItem.Text" xml:space="preserve">
-    <value>刺探地址(&amp;P)</value>
+    <value>写入地址(&amp;P)</value>
   </data>
   <data name="OptionsSubMenu.Text" xml:space="preserve">
     <value>选项(&amp;O)</value>

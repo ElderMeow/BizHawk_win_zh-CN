@@ -3,11 +3,11 @@ using System.Collections.Concurrent;
 using System.Linq;
 using System.Threading;
 
-namespace BizHawk.Client.DiscoHawk.TheLocalization
+namespace BizHawk.Client.DiscoHawk
 {
-	internal static class TheLocalizer
+	internal static class TheLocalizater
 	{
-		static TheLocalizer()
+		static TheLocalizater()
 		{
 			_translaters[""] = new HardEncodingTextTralslaterBase(); //default implementation.
 

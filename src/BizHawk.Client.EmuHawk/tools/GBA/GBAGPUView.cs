@@ -34,7 +34,7 @@ namespace BizHawk.Client.EmuHawk
 
 		// MobileDetailView memory;
 
-		protected override string WindowTitleStatic => "GBA GPU Viewer";
+		protected override string WindowTitleStatic => TheLocalizater.TranslateText("GBA GPU Viewer");
 
 		public GbaGpuView()
 		{
@@ -659,17 +659,17 @@ namespace BizHawk.Client.EmuHawk
 		private void GenerateWidgets()
 		{
 			listBoxWidgets.BeginUpdate();
-			_bg0 = MakeMBVWidget("Background 0", 256, 256);
-			_bg1 = MakeMBVWidget("Background 1", 256, 256);
-			_bg2 = MakeMBVWidget("Background 2", 256, 256);
-			_bg3 = MakeMBVWidget("Background 3", 256, 256);
-			_bgPal = MakeMBVWidget("Background Palettes", 256, 256);
-			_spPal = MakeMBVWidget("Sprite Palettes", 256, 256);
-			_sprites = MakeMBVWidget("Sprites", 1024, 512);
-			_spTiles16 = MakeMBVWidget("Sprite Tiles (4bpp)", 256, 256);
-			_spTiles256 = MakeMBVWidget("Sprite Tiles (8bpp)", 128, 256);
-			_bgTiles16 = MakeMBVWidget("Background Tiles (4bpp)", 512, 256);
-			_bgTiles256 = MakeMBVWidget("Background Tiles (8bpp)", 256, 256);
+			_bg0 = MakeMBVWidget(TheLocalizater.TranslateText("Background 0"), 256, 256);
+			_bg1 = MakeMBVWidget(TheLocalizater.TranslateText("Background 1"), 256, 256);
+			_bg2 = MakeMBVWidget(TheLocalizater.TranslateText("Background 2"), 256, 256);
+			_bg3 = MakeMBVWidget(TheLocalizater.TranslateText("Background 3"), 256, 256);
+			_bgPal = MakeMBVWidget(TheLocalizater.TranslateText("Background Palettes"), 256, 256);
+			_spPal = MakeMBVWidget(TheLocalizater.TranslateText("Sprite Palettes"), 256, 256);
+			_sprites = MakeMBVWidget(TheLocalizater.TranslateText("Sprites"), 1024, 512);
+			_spTiles16 = MakeMBVWidget(TheLocalizater.TranslateText("Sprite Tiles (4bpp)"), 256, 256);
+			_spTiles256 = MakeMBVWidget(TheLocalizater.TranslateText("Sprite Tiles (8bpp)"), 128, 256);
+			_bgTiles16 = MakeMBVWidget(TheLocalizater.TranslateText("Background Tiles (4bpp)"), 512, 256);
+			_bgTiles256 = MakeMBVWidget(TheLocalizater.TranslateText("Background Tiles (8bpp)"), 256, 256);
 			// todo: finish these
 			// MakeMDVWidget("Details", 128, 192);
 			// memory = MakeMDVWidget("Details - Memory", 128, 192);
@@ -785,7 +785,7 @@ namespace BizHawk.Client.EmuHawk
 		private void hScrollBar1_ValueChanged(object sender, EventArgs e)
 		{
 			_cbScanline = (hScrollBar1.Value + 160) % 228;
-			radioButtonScanline.Text = $"Scanline {_cbScanline}";
+			radioButtonScanline.Text = TheLocalizater.TranslateFormatString("Scanline {0}", _cbScanline);
 		}
 
 		private void radioButtonManual_CheckedChanged(object sender, EventArgs e)
@@ -804,7 +804,7 @@ namespace BizHawk.Client.EmuHawk
 		private void timerMessage_Tick(object sender, EventArgs e)
 		{
 			timerMessage.Stop();
-			labelClipboard.Text = "CTRL + C: Copy under mouse to clipboard.";
+			labelClipboard.Text = TheLocalizater.TranslateText("CTRL + C: Copy under mouse to clipboard.");
 		}
 
 		private void GbaGpuView_KeyDown(object sender, KeyEventArgs e)
@@ -814,7 +814,7 @@ namespace BizHawk.Client.EmuHawk
 				if (this.InnermostControlAt(Cursor.Position) is BmpView view)
 				{
 					Clipboard.SetImage(view.Bmp);
-					labelClipboard.Text = $"{view.Text} copied to clipboard.";
+					labelClipboard.Text = TheLocalizater.TranslateFormatString("{0} copied to clipboard.", view.Text);
 					timerMessage.Stop();
 					timerMessage.Start();
 				}

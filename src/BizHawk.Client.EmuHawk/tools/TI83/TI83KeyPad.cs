@@ -17,7 +17,7 @@ namespace BizHawk.Client.EmuHawk
 		// ReSharper disable once UnusedAutoPropertyAccessor.Local
 		public TI83Common Emu { get; private set; }
 
-		protected override string WindowTitleStatic => "TI-83 Virtual KeyPad";
+		protected override string WindowTitleStatic => TheLocalizater.TranslateText("TI-83 Virtual KeyPad");
 
 		public TI83KeyPad()
 		{

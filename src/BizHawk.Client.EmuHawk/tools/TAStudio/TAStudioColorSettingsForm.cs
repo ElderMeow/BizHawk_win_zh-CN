@@ -61,7 +61,7 @@ namespace BizHawk.Client.EmuHawk
 			};
 
 			Size btnSize = new(75, 23);
-			SzButtonEx btnOK = new() { Size = btnSize, Text = "OK" };
+			SzButtonEx btnOK = new() { Size = btnSize, Text = TheLocalizater.TranslateText("OK") };
 			btnOK.Click += (_, _) =>
 			{
 				save(new(
@@ -79,9 +79,9 @@ namespace BizHawk.Client.EmuHawk
 					analogEdit_Col: colours["analogEdit_Col"]));
 				Close();
 			};
-			SzButtonEx btnCancel = new() { Size = btnSize, Text = "Cancel" };
+			SzButtonEx btnCancel = new() { Size = btnSize, Text = TheLocalizater.TranslateText("Cancel") };
 			btnCancel.Click += (_, _) => Close();
-			SzButtonEx btnDefaults = new() { Size = btnSize, Text = "Defaults" };
+			SzButtonEx btnDefaults = new() { Size = btnSize, Text = TheLocalizater.TranslateText("Defaults") };
 			btnDefaults.Click += (_, _) =>
 			{
 				Init(TAStudioPalette.Default);
@@ -95,7 +95,7 @@ namespace BizHawk.Client.EmuHawk
 
 			SuspendLayout();
 			ClientSize = new(240, 320);
-			Text = "Edit TAStudio Colors";
+			Text = TheLocalizater.TranslateText("Edit TAStudio Colors");
 			Controls.Add(new SingleColumnFLP { Controls = { flpButtons, flpPanels } });
 			ResumeLayout();
 		}

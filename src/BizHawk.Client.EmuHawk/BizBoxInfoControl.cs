@@ -16,7 +16,7 @@ namespace BizHawk.Client.EmuHawk
 
 			if (!string.IsNullOrEmpty(attributes.Author))
 			{
-				CoreAuthorLabel.Text = $"authors: {attributes.Author}";
+				CoreAuthorLabel.Text = TheLocalizater.TranslateFormatString("authors: {0}", attributes.Author);
 			}
 			else
 			{
@@ -25,7 +25,7 @@ namespace BizHawk.Client.EmuHawk
 
 			if (attributes is PortedCoreAttribute ported)
 			{
-				CorePortedLabel.Text = "(Ported)";
+				CorePortedLabel.Text = TheLocalizater.TranslateText("(Ported)");
 				_url = ported.PortedUrl;
 				CoreUrlLink.Text = ported.PortedVersion;
 				CoreUrlLink.Visible = true;

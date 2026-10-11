@@ -5,7 +5,6 @@ using BizHawk.Bizware.Graphics.Controls;
 using BizHawk.Bizware.Input;
 using BizHawk.Client.Common;
 using BizHawk.Client.EmuHawk.CustomControls;
-using BizHawk.Client.EmuHawk.TheLocalization;
 using BizHawk.Common;
 using BizHawk.Common.PathExtensions;
 using BizHawk.Common.StringExtensions;
@@ -40,7 +39,7 @@ namespace BizHawk.Client.EmuHawk
 		private static void Show32BitWarningDialog()
 		{
 			EnsureWinFormsInitialized();
-			using ExceptionBox box = new("EmuHawk requires a 64 bit environment in order to run! EmuHawk will now close.");
+			using ExceptionBox box = new(TheLocalizater.TranslateText("EmuHawk requires a 64 bit environment in order to run! EmuHawk will now close."));
 			box.ShowDialog();
 		}
 
@@ -126,7 +125,7 @@ namespace BizHawk.Client.EmuHawk
 				}.Any(asmVer => asmVer != thisAsmVer))
 			{
 				EnsureWinFormsInitialized();
-				MessageBox.Show("One or more of the BizHawk.* assemblies have the wrong version!\n(Did you attempt to update by overwriting an existing install?)");
+				MessageBox.Show(TheLocalizater.TranslateText("One or more of the BizHawk.* assemblies have the wrong version!\n(Did you attempt to update by overwriting an existing install?)"));
 				return -1;
 			}
 
@@ -214,16 +213,16 @@ namespace BizHawk.Client.EmuHawk
 			{
 				if (!VersionInfo.DeveloperBuild && !ConfigService.IsFromSameVersion(configPath, out var msg))
 				{
-					new MsgBox(msg, "Mismatched version in config file", MessageBoxIcon.Warning).ShowDialog();
+					new MsgBox(msg, TheLocalizater.TranslateText("Mismatched version in config file"), MessageBoxIcon.Warning).ShowDialog();
 				}
 				initialConfig = ConfigService.Load<Config>(configPath);
 			}
 			catch (Exception e)
 			{
 				new ExceptionBox(string.Join("\n",
-					"It appears your config file (config.ini) is corrupted; an exception was thrown while loading it.",
-					"On closing this warning, EmuHawk will delete your config file and generate a new one. You can go make a backup now if you'd like to look into diffs.",
-					"The caught exception was:",
+					TheLocalizater.TranslateText("It appears your config file (config.ini) is corrupted; an exception was thrown while loading it."),
+					TheLocalizater.TranslateText("On closing this warning, EmuHawk will delete your config file and generate a new one. You can go make a backup now if you'd like to look into diffs."),
+					TheLocalizater.TranslateText("The caught exception was:"),
 					e.ToString()
 				)).ShowDialog();
 				File.Delete(configPath);
@@ -269,7 +268,7 @@ namespace BizHawk.Client.EmuHawk
 					catch (Exception ex)
 					{
 						var (method, name) = ChooseFallback();
-						new ExceptionBox(new Exception($"Initialization of Display Method failed; falling back to {name}", ex)).ShowDialog();
+						new ExceptionBox(new Exception(TheLocalizater.TranslateFormatString("Initialization of Display Method failed; falling back to {0}", name), ex)).ShowDialog();
 						return TryInitIGL(initialConfig.DispMethod = method);
 					}
 				}
@@ -289,7 +288,7 @@ namespace BizHawk.Client.EmuHawk
 						catch (Exception ex)
 						{
 							var (method, name) = ChooseFallback();
-							new ExceptionBox(new Exception($"Initialization of Direct3D11 Display Method failed; falling back to {name}", ex)).ShowDialog();
+							new ExceptionBox(new Exception(TheLocalizater.TranslateFormatString("Initialization of Direct3D11 Display Method failed; falling back to {0}", name), ex)).ShowDialog();
 							return TryInitIGL(initialConfig.DispMethod = method);
 						}
 					case EDispMethod.OpenGL:
@@ -297,7 +296,7 @@ namespace BizHawk.Client.EmuHawk
 						{
 							// too old to use, need to fallback to something else
 							var (method, name) = ChooseFallback();
-							new ExceptionBox(new Exception($"Initialization of OpenGL Display Method failed; falling back to {name}")).ShowDialog();
+							new ExceptionBox(new Exception(TheLocalizater.TranslateFormatString("Initialization of OpenGL Display Method failed; falling back to {0}", name))).ShowDialog();
 							return TryInitIGL(initialConfig.DispMethod = method);
 						}
 						// need to have a context active for checking renderer, will be disposed afterwards
@@ -329,7 +328,7 @@ namespace BizHawk.Client.EmuHawk
 				if (!Win32Imports.SetDllDirectoryW(dllDir))
 				{
 					MessageBox.Show(
-						$"SetDllDirectoryW failed with error code {Marshal.GetLastWin32Error()}, this is fatal. EmuHawk will now close.");
+						TheLocalizater.TranslateFormatString("SetDllDirectoryW failed with error code {0}, this is fatal. EmuHawk will now close.", Marshal.GetLastWin32Error()));
 					return -1;
 				}
 			}
@@ -340,11 +339,11 @@ namespace BizHawk.Client.EmuHawk
 				if (EmuHawkUtil.CLRHostHasElevatedPrivileges)
 				{
 					using MsgBox dialog = new(
-						title: "This EmuHawk is privileged",
-						message: $"EmuHawk detected it {(OSTailoredCode.IsUnixHost ? "is running as root (Superuser)" : "has Administrator privileges")}.\n"
-							+ $"Regularly using {(OSTailoredCode.IsUnixHost ? "Superuser" : "Administrator")} for things other than system administration makes it easier to hack you.\n"
-							+ "If you're certain, you may continue anyway (and without support).\n"
-							+ $"You'll find a flag \"{nameof(Config.SkipSuperuserPrivsCheck)}\" in the config file, which disables this warning.",
+						title: TheLocalizater.TranslateText("This EmuHawk is privileged"),
+						message: TheLocalizater.TranslateFormatString("EmuHawk detected it {0}.\n", (OSTailoredCode.IsUnixHost ? "is running as root (Superuser)" : "has Administrator privileges"))
+							+ TheLocalizater.TranslateFormatString("Regularly using {0} for things other than system administration makes it easier to hack you.\n", (OSTailoredCode.IsUnixHost ? "Superuser" : "Administrator"))
+							+ TheLocalizater.TranslateText("If you're certain, you may continue anyway (and without support).\n")
+							+ TheLocalizater.TranslateFormatString("You'll find a flag \"{0}\" in the config file, which disables this warning.", nameof(Config.SkipSuperuserPrivsCheck)),
 						boxIcon: MessageBoxIcon.Warning);
 					dialog.ShowDialog();
 				}
@@ -382,7 +381,7 @@ namespace BizHawk.Client.EmuHawk
 				{
 					if (!VersionInfo.DeveloperBuild && !ConfigService.IsFromSameVersion(iniPath, out var msg))
 					{
-						new MsgBox(msg, "Mismatched version in config file", MessageBoxIcon.Warning).ShowDialog();
+						new MsgBox(msg, TheLocalizater.TranslateText("Mismatched version in config file"), MessageBoxIcon.Warning).ShowDialog();
 					}
 					initialConfig = ConfigService.Load<Config>(iniPath);
 					initialConfig.ResolveDefaults();
@@ -399,8 +398,8 @@ namespace BizHawk.Client.EmuHawk
 				catch (Exception e) when (movieSession.Movie.IsActive() && !(Debugger.IsAttached || VersionInfo.DeveloperBuild))
 				{
 					var result = MessageBox.Show(
-						"EmuHawk has thrown a fatal exception and is about to close.\nA movie has been detected. Would you like to try to save?\n(Note: Depending on what caused this error, this may or may not succeed)",
-						$"Fatal error: {e.GetType().Name}",
+						TheLocalizater.TranslateText("EmuHawk has thrown a fatal exception and is about to close.\nA movie has been detected. Would you like to try to save?\n(Note: Depending on what caused this error, this may or may not succeed)"),
+						TheLocalizater.TranslateFormatString("Fatal error: {0}", e.GetType().Name),
 						MessageBoxButtons.YesNo,
 						MessageBoxIcon.Exclamation
 					);

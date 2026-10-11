@@ -15,7 +15,7 @@ namespace BizHawk.Client.EmuHawk
 		public static Icon ToolIcon
 			=> Properties.Resources.BugIcon;
 
-		protected override string WindowTitleStatic => "Debugger";
+		protected override string WindowTitleStatic => TheLocalizater.TranslateText("Debugger");
 
 		public GenericDebugger()
 		{
@@ -87,7 +87,7 @@ namespace BizHawk.Client.EmuHawk
 				DisassemblerBox.Enabled = false;
 				DisassemblerView.RowCount = 0;
 				DisassemblerBox.Controls.Add(GenDisabledCPUPicker("Unknown"));
-				toolTip1.SetToolTip(DisassemblerBox, "This core does not currently support disassembling");
+				toolTip1.SetToolTip(DisassemblerBox, TheLocalizater.TranslateText("This core does not currently support disassembling"));
 			}
 
 			RegisterPanel.Core = Debuggable;
@@ -130,17 +130,17 @@ namespace BizHawk.Client.EmuHawk
 
 			if (!StepIntoMenuItem.Enabled)
 			{
-				toolTip1.SetToolTip(StepIntoBtn, "This core does not currently implement this feature");
+				toolTip1.SetToolTip(StepIntoBtn, TheLocalizater.TranslateText("This core does not currently implement this feature"));
 			}
 
 			if (!StepOutMenuItem.Enabled)
 			{
-				toolTip1.SetToolTip(StepOutBtn, "This core does not currently implement this feature");
+				toolTip1.SetToolTip(StepOutBtn, TheLocalizater.TranslateText("This core does not currently implement this feature"));
 			}
 
 			if (!StepOverMenuItem.Enabled)
 			{
-				toolTip1.SetToolTip(StepOverBtn, "This core does not currently implement this feature");
+				toolTip1.SetToolTip(StepOverBtn, TheLocalizater.TranslateText("This core does not currently implement this feature"));
 			}
 		}
 
@@ -152,13 +152,13 @@ namespace BizHawk.Client.EmuHawk
 		public void DisableRegisterBox()
 		{
 			RegistersGroupBox.Enabled = false;
-			toolTip1.SetToolTip(RegistersGroupBox, "This core does not currently support reading registers");
+			toolTip1.SetToolTip(RegistersGroupBox, TheLocalizater.TranslateText("This core does not currently support reading registers"));
 		}
 
 		public void DisableBreakpointBox()
 		{
 			BreakpointsGroupBox.Enabled = false;
-			toolTip1.SetToolTip(BreakpointsGroupBox, "This core does not currently support breakpoints");
+			toolTip1.SetToolTip(BreakpointsGroupBox, TheLocalizater.TranslateText("This core does not currently support breakpoints"));
 		}
 
 		public void EnabledBreakpointBox()

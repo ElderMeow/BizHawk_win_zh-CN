@@ -27,7 +27,7 @@ namespace BizHawk.Client.EmuHawk.ToolExtensions
 
 			if (recent.Empty)
 			{
-				var none = new ToolStripMenuItem { Enabled = false, Text = "None" };
+				var none = new ToolStripMenuItem { Enabled = false, Text = TheLocalizater.TranslateText("None") };
 				items.Add(none);
 			}
 			else
@@ -75,22 +75,22 @@ namespace BizHawk.Client.EmuHawk.ToolExtensions
 							if (isArchive)
 							{
 								//make a menuitem to let you copy the path
-								var tsmiCopyCanonicalPath = new ToolStripMenuItem { Text = "&Copy Canonical Path" };
+								var tsmiCopyCanonicalPath = new ToolStripMenuItem { Text = TheLocalizater.TranslateText("&Copy Canonical Path") };
 								tsmiCopyCanonicalPath.Click += (o, ev) => { Clipboard.SetText(physicalPath); };
 								tsdd.Items.Add(tsmiCopyCanonicalPath);
 
-								var tsmiCopyArchivePath = new ToolStripMenuItem { Text = "Copy Archive Path" };
+								var tsmiCopyArchivePath = new ToolStripMenuItem { Text = TheLocalizater.TranslateText("Copy Archive Path") };
 								tsmiCopyArchivePath.Click += (_, _) => Clipboard.SetText(filePathWithoutMember);
 								tsdd.Items.Add(tsmiCopyArchivePath);
 
-								var tsmiOpenArchive = new ToolStripMenuItem { Text = "Open &Archive" };
+								var tsmiOpenArchive = new ToolStripMenuItem { Text = TheLocalizater.TranslateText("Open &Archive") };
 								tsmiOpenArchive.Click += (_, _) => System.Diagnostics.Process.Start(filePathWithoutMember);
 								tsdd.Items.Add(tsmiOpenArchive);
 							}
 							else
 							{
 								// make a menuitem to let you copy the path
-								var tsmiCopyPath = new ToolStripMenuItem { Text = "&Copy Path" };
+								var tsmiCopyPath = new ToolStripMenuItem { Text = TheLocalizater.TranslateText("&Copy Path") };
 								tsmiCopyPath.Click += (o, ev) => { Clipboard.SetText(physicalPath); };
 								tsdd.Items.Add(tsmiCopyPath);
 							}
@@ -98,19 +98,19 @@ namespace BizHawk.Client.EmuHawk.ToolExtensions
 							tsdd.Items.Add(new ToolStripSeparator());
 
 							// make a menuitem to let you explore to it
-							var tsmiExplore = new ToolStripMenuItem { Text = "&Explore" };
+							var tsmiExplore = new ToolStripMenuItem { Text = TheLocalizater.TranslateText("&Explore") };
 							var explorePath = $"\"{filePathWithoutMember}\"";
 							tsmiExplore.Click += (o, ev) => { System.Diagnostics.Process.Start("explorer.exe", $"/select, {explorePath}"); };
 							tsdd.Items.Add(tsmiExplore);
 
-							var tsmiCopyFile = new ToolStripMenuItem { Text = "Copy &File" };
+							var tsmiCopyFile = new ToolStripMenuItem { Text = TheLocalizater.TranslateText("Copy &File") };
 							StringCollection lame = [ filePathWithoutMember ];
 							tsmiCopyFile.Click += (o, ev) => { Clipboard.SetFileDropList(lame); };
 							tsdd.Items.Add(tsmiCopyFile);
 
 							if (!OSTailoredCode.IsUnixHost)
 							{
-								var tsmiTest = new ToolStripMenuItem { Text = "&Shell Context Menu" };
+								var tsmiTest = new ToolStripMenuItem { Text = TheLocalizater.TranslateText("&Shell Context Menu") };
 								tsmiTest.Click += (o, ev) =>
 								{
 									var tsddi = (ToolStripDropDownItem)o;
@@ -129,14 +129,14 @@ namespace BizHawk.Client.EmuHawk.ToolExtensions
 						else
 						{
 							//make a menuitem to show the last modified timestamp
-							var tsmiMissingFile = new ToolStripLabel { Text = "-Missing-" };
+							var tsmiMissingFile = new ToolStripLabel { Text = TheLocalizater.TranslateText("-Missing-") };
 							tsdd.Items.Add(tsmiMissingFile);
 							tsdd.Items.Add(new ToolStripSeparator());
 						}
 					} //crazystuff
 
 					//in any case, make a menuitem to let you remove the item
-					var tsmiRemovePath = new ToolStripMenuItem { Text = "&Remove" };
+					var tsmiRemovePath = new ToolStripMenuItem { Text = TheLocalizater.TranslateText("&Remove") };
 					tsmiRemovePath.Click += (o, ev) => {
 						recent.Remove(path);
 					};
@@ -170,16 +170,16 @@ namespace BizHawk.Client.EmuHawk.ToolExtensions
 
 			items.Add(new ToolStripSeparator());
 
-			var clearItem = new ToolStripMenuItem { Text = "&Clear", Enabled = !recent.Frozen };
+			var clearItem = new ToolStripMenuItem { Text = TheLocalizater.TranslateText("&Clear"), Enabled = !recent.Frozen };
 			clearItem.Click += (o, ev) => recent.Clear();
 			items.Add(clearItem);
-			var clearMovedItem = new ToolStripMenuItem { Text = "&Clear Moved/Deleted", Enabled = !recent.Frozen };
+			var clearMovedItem = new ToolStripMenuItem { Text = TheLocalizater.TranslateText("&Clear Moved/Deleted"), Enabled = !recent.Frozen };
 			clearMovedItem.Click += (_, _) => recent.ClearMoved();
 			items.Add(clearMovedItem);
 
 			var freezeItem = new ToolStripMenuItem
 			{
-				Text = recent.Frozen ? "&Unfreeze" : "&Freeze",
+				Text = recent.Frozen ? TheLocalizater.TranslateText("&Unfreeze") : TheLocalizater.TranslateText("&Freeze"),
 				Image = recent.Frozen ? Properties.Resources.Unfreeze : Properties.Resources.Freeze,
 			};
 			freezeItem.Click += (_, _) => recent.Frozen = !recent.Frozen;
@@ -187,18 +187,18 @@ namespace BizHawk.Client.EmuHawk.ToolExtensions
 
 			if (!noAutoload)
 			{
-				var auto = new ToolStripMenuItem { Text = $"&Autoload {entrySemantic}", Checked = recent.AutoLoad };
+				var auto = new ToolStripMenuItem { Text = TheLocalizater.TranslateFormatString("&Autoload {0}", entrySemantic), Checked = recent.AutoLoad };
 				auto.Click += (o, ev) => recent.ToggleAutoLoad();
 				items.Add(auto);
 			}
 
-			var settingsItem = new ToolStripMenuItem { Text = "&Recent Settings..." };
+			var settingsItem = new ToolStripMenuItem { Text = TheLocalizater.TranslateText("&Recent Settings...") };
 			settingsItem.Click += (o, ev) =>
 			{
 				using var prompt = new InputPrompt
 				{
 					TextInputType = InputPrompt.InputType.Unsigned,
-					Message = "Number of recent files to track",
+					Message = TheLocalizater.TranslateText("Number of recent files to track"),
 					InitialValue = recent.MAX_RECENT_FILES.ToString(),
 				};
 				if (!mainForm.ShowDialogWithTempMute(prompt).IsOk()) return;
@@ -221,14 +221,14 @@ namespace BizHawk.Client.EmuHawk.ToolExtensions
 				if (recent.Frozen)
 				{
 					dialogParent.ModalMessageBox(
-						caption: "File not found",
+						caption: TheLocalizater.TranslateText("File not found"),
 						icon: EMsgBoxIcon.Error,
-						text: $"Could not open {path}");
+						text: TheLocalizater.TranslateFormatString("Could not open {0}", path));
 				}
 				else
 				{
 					// ensure topmost, not to have to minimize everything to see and use our modal window, if it somehow got covered
-					var result = MessageBox.Show(new Form { TopMost = true }, $"Could not open {path}\nRemove from list?", "File not found", MessageBoxButtons.YesNo, MessageBoxIcon.Error);
+					var result = MessageBox.Show(new Form { TopMost = true }, TheLocalizater.TranslateFormatString("Could not open {0}\nRemove from list?", path), TheLocalizater.TranslateText("File not found"), MessageBoxButtons.YesNo, MessageBoxIcon.Error);
 					if (result == DialogResult.Yes)
 					{
 						recent.Remove(encodedPath ?? path);

@@ -29,12 +29,12 @@ namespace BizHawk.Client.EmuHawk
 		/// </summary>
 		public static readonly SpecialBindingInfo[] SpecialBindings =
 		{
-			new SpecialBindingInfo { BindingName = "Escape", TooltipText = "Binds the Escape key" },
-			new SpecialBindingInfo { BindingName = "WMouse L", TooltipText = "Binds the left mouse button" },
-			new SpecialBindingInfo { BindingName = "WMouse M", TooltipText = "Binds the middle mouse button" },
-			new SpecialBindingInfo { BindingName = "WMouse R", TooltipText = "Binds the right mouse button" },
-			new SpecialBindingInfo { BindingName = "WMouse 1", TooltipText = "Binds the mouse auxiliary button 1" },
-			new SpecialBindingInfo { BindingName = "WMouse 2", TooltipText = "Binds the mouse auxiliary button 2" },
+			new SpecialBindingInfo { BindingName = "Escape", TooltipText = TheLocalizater.TranslateText("Binds the Escape key") },
+			new SpecialBindingInfo { BindingName = "WMouse L", TooltipText = TheLocalizater.TranslateText("Binds the left mouse button") },
+			new SpecialBindingInfo { BindingName = "WMouse M", TooltipText = TheLocalizater.TranslateText("Binds the middle mouse button") },
+			new SpecialBindingInfo { BindingName = "WMouse R", TooltipText = TheLocalizater.TranslateText("Binds the right mouse button") },
+			new SpecialBindingInfo { BindingName = "WMouse 1", TooltipText = TheLocalizater.TranslateText("Binds the mouse auxiliary button 1") },
+			new SpecialBindingInfo { BindingName = "WMouse 2", TooltipText = TheLocalizater.TranslateText("Binds the mouse auxiliary button 2") },
 		};
 
 		public InputWidget()

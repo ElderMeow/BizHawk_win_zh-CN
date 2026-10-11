@@ -23,7 +23,7 @@ namespace BizHawk.Client.EmuHawk
 		private int _bgPalNum;
 		private int _spPalNum;
 
-		protected override string WindowTitleStatic => "Tile Viewer";
+		protected override string WindowTitleStatic => TheLocalizater.TranslateText("Tile Viewer");
 
 		public PceTileViewer()
 		{

@@ -22,12 +22,12 @@ namespace BizHawk.Client.EmuHawk
 			var res = _loginCallback(txtUsername.Text, txtPassword.Text);
 			if (res)
 			{
-				MessageBox.Show("Login successful");
+				MessageBox.Show(TheLocalizater.TranslateText("Login successful"));
 				Close();
 			}
 			else
 			{
-				MessageBox.Show("Login failed");
+				MessageBox.Show(TheLocalizater.TranslateText("Login failed"));
 			}
 		}
 

@@ -104,7 +104,7 @@ namespace BizHawk.Client.EmuHawk
 			}
 			catch (Exception e)
 			{
-				_dialogParent.DialogController.ShowMessageBox($"AVIFIL32 Thread died:\n\n{e}");
+				_dialogParent.DialogController.ShowMessageBox(TheLocalizater.TranslateFormatString("AVIFIL32 Thread died:\n\n{0}", e));
 			}
 		}
 
@@ -168,7 +168,7 @@ namespace BizHawk.Client.EmuHawk
 			{
 				if (!_workerT.IsAlive)
 				{
-					throw new Exception("AVI Worker thread died!");
+					throw new Exception(TheLocalizater.TranslateText("AVI Worker thread died!"));
 				}
 			}
 		}
@@ -194,7 +194,7 @@ namespace BizHawk.Client.EmuHawk
 			{
 				if (!_workerT.IsAlive)
 				{
-					throw new Exception("AVI Worker thread died!");
+					throw new Exception(TheLocalizater.TranslateText("AVI Worker thread died!"));
 				}
 			}
 		}

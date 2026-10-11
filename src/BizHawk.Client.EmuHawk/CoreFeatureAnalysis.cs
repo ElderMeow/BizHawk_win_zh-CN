@@ -100,7 +100,7 @@ namespace BizHawk.Client.EmuHawk
 		[RequiredService]
 		private IEmulator Emulator { get; set; }
 
-		protected override string WindowTitleStatic => "Core Features";
+		protected override string WindowTitleStatic => TheLocalizater.TranslateText("Core Features");
 
 		public CoreFeatureAnalysis()
 		{
@@ -113,7 +113,7 @@ namespace BizHawk.Client.EmuHawk
 		{
 			var ret = new TreeNode
 			{
-				Text = ci.CoreName + (ci.Released ? "" : " (UNRELEASED)"),
+				Text = ci.CoreName + (ci.Released ? "" : TheLocalizater.TranslateText(" (UNRELEASED)")),
 				ForeColor = ci.Released ? Color.Black : Color.DarkGray,
 			};
 
@@ -189,7 +189,7 @@ namespace BizHawk.Client.EmuHawk
 				.ThenBy(core => core.Name)
 				.ToList();
 
-			toolStripStatusLabel1.Text = $"Total: {possibleCoreTypes.Count} Released: {KnownCores.Values.Count(c => c.Released)} Profiled: {KnownCores.Count}";
+			toolStripStatusLabel1.Text = TheLocalizater.TranslateFormatString("Total: {0} Released: {1} Profiled: {2}", possibleCoreTypes.Count, KnownCores.Values.Count(c => c.Released), KnownCores.Count);
 
 			CoreTree.Nodes.Clear();
 			CoreTree.BeginUpdate();
@@ -212,7 +212,7 @@ namespace BizHawk.Client.EmuHawk
 					string img = "Unknown";
 					var coreNode = new TreeNode
 					{
-						Text = core.Name + (core.CoreAttr.Released ? "" : " (UNRELEASED)"),
+						Text = core.Name + (core.CoreAttr.Released ? "" : TheLocalizater.TranslateText(" (UNRELEASED)")),
 						ForeColor = core.CoreAttr.Released ? Color.Black : Color.DarkGray,
 						ImageKey = img,
 						SelectedImageKey = img,

@@ -102,8 +102,8 @@ namespace BizHawk.Client.EmuHawk
 		private void HelpBtn_Click(object sender, EventArgs e)
 		{
 			this.ModalMessageBox(
-				"Board Properties are special per-mapper system settings.  They are only useful to advanced users creating Tool Assisted Superplays.  No support will be provided if you break something with them.",
-				"Help",
+				TheLocalizater.TranslateText("Board Properties are special per-mapper system settings.  They are only useful to advanced users creating Tool Assisted Superplays.  No support will be provided if you break something with them."),
+				TheLocalizater.TranslateText("Help"),
 				EMsgBoxIcon.Info);
 		}
 	}

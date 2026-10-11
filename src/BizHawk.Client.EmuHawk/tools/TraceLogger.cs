@@ -71,7 +71,7 @@ namespace BizHawk.Client.EmuHawk
 		private const string DisasmColumnName = "Disasm";
 		private const string RegistersColumnName = "Registers";
 
-		protected override string WindowTitleStatic => "Trace Logger";
+		protected override string WindowTitleStatic => TheLocalizater.TranslateText("Trace Logger");
 
 		public TraceLogger()
 		{
@@ -239,26 +239,26 @@ namespace BizHawk.Client.EmuHawk
 			{
 				if (ToFileRadio.Checked)
 				{
-					TracerBox.Text = "Trace log - logging to file...";
+					TracerBox.Text = TheLocalizater.TranslateText("Trace log - logging to file...");
 				}
 				else if (_instructions.Count is not 0)
 				{
-					TracerBox.Text = $"Trace log - logging - {_instructions.Count} instructions";
+					TracerBox.Text = TheLocalizater.TranslateFormatString("Trace log - logging - {0} instructions", _instructions.Count);
 				}
 				else
 				{
-					TracerBox.Text = "Trace log - logging...";
+					TracerBox.Text = TheLocalizater.TranslateText("Trace log - logging...");
 				}
 			}
 			else
 			{
 				if (_instructions.Count is not 0)
 				{
-					TracerBox.Text = $"Trace log - {_instructions.Count} instructions";
+					TracerBox.Text = TheLocalizater.TranslateFormatString("Trace log - {0} instructions", _instructions.Count);
 				}
 				else
 				{
-					TracerBox.Text = "Trace log";
+					TracerBox.Text = TheLocalizater.TranslateText("Trace log");
 				}
 			}
 		}
@@ -334,7 +334,7 @@ namespace BizHawk.Client.EmuHawk
 			{
 				StartLocation = this.ChildPointToScreen(TraceView),
 				TextInputType = InputPrompt.InputType.Unsigned,
-				Message = "Max lines to display in the window",
+				Message = TheLocalizater.TranslateText("Max lines to display in the window"),
 				InitialValue = MaxLines.ToString(),
 			};
 			if (!this.ShowDialogWithTempMute(prompt).IsOk()) return;
@@ -348,7 +348,7 @@ namespace BizHawk.Client.EmuHawk
 			{
 				StartLocation = this.ChildPointToScreen(TraceView),
 				TextInputType = InputPrompt.InputType.Unsigned,
-				Message = "Log file segment size in megabytes\nSetting 0 disables segmentation",
+				Message = TheLocalizater.TranslateText("Log file segment size in megabytes\nSetting 0 disables segmentation"),
 				InitialValue = FileSizeCap.ToString(),
 			};
 			if (!this.ShowDialogWithTempMute(prompt).IsOk()) return;
@@ -373,7 +373,7 @@ namespace BizHawk.Client.EmuHawk
 					CloseFile();
 				}
 			}
-			LoggingEnabled.Text = LoggingEnabled.Checked ? "Stop &logging" : "Start &logging";
+			LoggingEnabled.Text = LoggingEnabled.Checked ? TheLocalizater.TranslateText("Stop &logging") : TheLocalizater.TranslateText("Start &logging");
 		}
 
 		private void StartLogFile(bool append = false)

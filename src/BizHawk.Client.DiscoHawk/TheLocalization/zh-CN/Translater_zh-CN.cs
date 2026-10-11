@@ -1,4 +1,4 @@
-﻿namespace BizHawk.Client.DiscoHawk.TheLocalization.zh_CN
+﻿namespace BizHawk.Client.DiscoHawk.zh_CN
 {
 	internal class Translater_zh_CN : HardEncodingTextTralslaterBase
 	{

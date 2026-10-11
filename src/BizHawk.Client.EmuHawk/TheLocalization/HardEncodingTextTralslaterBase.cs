@@ -1,6 +1,6 @@
 ﻿using System.Collections.Concurrent;
 
-namespace BizHawk.Client.EmuHawk.TheLocalization
+namespace BizHawk.Client.EmuHawk
 {
 	internal class HardEncodingTextTralslaterBase
 	{

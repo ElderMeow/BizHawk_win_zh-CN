@@ -118,7 +118,7 @@ namespace BizHawk.Client.EmuHawk
 				{
 					Checked = i == selected,
 					Tag = i,
-					Text = $"Disk{i + 1}",
+					Text = TheLocalizater.TranslateFormatString("Disk{0}", i + 1),
 				};
 				menuItem.Click += clickHandler;
 				AppleDisksSubMenu.DropDownItems.Add(menuItem);
@@ -126,7 +126,7 @@ namespace BizHawk.Client.EmuHawk
 		}
 
 		private DialogResult OpenVirtuSettingsDialog()
-			=> OpenGenericCoreConfigFor<AppleII>(CoreNames.Virtu + " Settings");
+			=> OpenGenericCoreConfigFor<AppleII>(CoreNames.Virtu + TheLocalizater.TranslateText(" Settings"));
 
 		private void AppleIISettingsMenuItem_Click(object sender, EventArgs e)
 			=> _ = Emulator switch
@@ -159,7 +159,7 @@ namespace BizHawk.Client.EmuHawk
 				{
 					Checked = i == selected,
 					Tag = i,
-					Text = $"Disk{i + 1}",
+					Text = TheLocalizater.TranslateFormatString("Disk{0}", i + 1),
 				};
 				menuItem.Click += clickHandler;
 				C64DisksSubMenu.DropDownItems.Add(menuItem);
@@ -167,7 +167,7 @@ namespace BizHawk.Client.EmuHawk
 		}
 
 		private DialogResult OpenC64HawkSettingsDialog()
-			=> OpenGenericCoreConfigFor<C64>(CoreNames.C64Hawk + " Settings");
+			=> OpenGenericCoreConfigFor<C64>(CoreNames.C64Hawk + TheLocalizater.TranslateText(" Settings"));
 
 		private void C64SettingsMenuItem_Click(object sender, EventArgs e)
 			=> _ = Emulator switch
@@ -330,13 +330,13 @@ namespace BizHawk.Client.EmuHawk
 			=> GBPrefs.DoGBPrefsDialog(Config, this, Game, MovieSession, settable);
 
 		private DialogResult OpenGBHawkSettingsDialog()
-			=> OpenGenericCoreConfigFor<GBHawk>(CoreNames.GbHawk + " Settings");
+			=> OpenGenericCoreConfigFor<GBHawk>(CoreNames.GbHawk + TheLocalizater.TranslateText(" Settings"));
 
 		private DialogResult OpenSameBoySettingsDialog()
-			=> OpenGenericCoreConfigFor<Sameboy>(CoreNames.Sameboy + " Settings");
+			=> OpenGenericCoreConfigFor<Sameboy>(CoreNames.Sameboy + TheLocalizater.TranslateText(" Settings"));
 
 		private DialogResult OpenSubGBHawkSettingsDialog()
-			=> OpenGenericCoreConfigFor<SubGBHawk>(CoreNames.SubGbHawk + " Settings");
+			=> OpenGenericCoreConfigFor<SubGBHawk>(CoreNames.SubGbHawk + TheLocalizater.TranslateText(" Settings"));
 
 		private void GbCoreSettingsMenuItem_Click(object sender, EventArgs e)
 			=> _ = Emulator switch
@@ -378,7 +378,7 @@ namespace BizHawk.Client.EmuHawk
 			};
 
 		private DialogResult OpenDOSBoxSettingsDialog()
-			=> OpenGenericCoreConfigFor<DOSBox>(CoreNames.DOSBox + " Settings");
+			=> OpenGenericCoreConfigFor<DOSBox>(CoreNames.DOSBox + TheLocalizater.TranslateText(" Settings"));
 
 		private void DOSSExportHddMenuItem_Click(object sender, EventArgs e)
 		{
@@ -529,7 +529,7 @@ namespace BizHawk.Client.EmuHawk
 		}
 
 		private void Ares64SettingsMenuItem_Click(object sender, EventArgs e)
-			=> OpenGenericCoreConfigFor<Ares64>(CoreNames.Ares64 + " Settings");
+			=> OpenGenericCoreConfigFor<Ares64>(CoreNames.Ares64 + TheLocalizater.TranslateText(" Settings"));
 
 		private void Ares64SubMenu_DropDownOpened(object sender, EventArgs e)
 			=> Ares64CircularAnalogRangeMenuItem.Checked = Config.N64UseCircularAnalogConstraint;
@@ -606,7 +606,7 @@ namespace BizHawk.Client.EmuHawk
 			=> GenericCoreConfig.DoDialogFor(
 				this,
 				settable,
-				CoreNames.QuickNes + " Controller Settings",
+				CoreNames.QuickNes + TheLocalizater.TranslateText(" Controller Settings"),
 				isMovieActive: MovieSession.Movie.IsActive(),
 				ignoreSettings: true);
 
@@ -687,7 +687,7 @@ namespace BizHawk.Client.EmuHawk
 			for (int i = 0; Emulator.ControllerDefinition.BoolButtons.Contains(button = $"FDS Insert {i}"); i++)
 			{
 				var name = $"Disk {i / 2 + 1} Side {(char)(i % 2 + 'A')}";
-				FdsInsertDiskMenuAdd($"Insert {name}", button, $"FDS {name} inserted.");
+				FdsInsertDiskMenuAdd(TheLocalizater.TranslateFormatString("Insert {0}", name), button, $"FDS {name} inserted.");
 			}
 		}
 
@@ -962,8 +962,8 @@ namespace BizHawk.Client.EmuHawk
 				if (this.ShowMessageBox3(
 					owner: null,
 					icon: EMsgBoxIcon.Question,
-					caption: "Upload Failed",
-					text: $"Invalid file format. Reason: {ex.Message} \nForce transfer? This may cause the calculator to crash.")
+					caption: TheLocalizater.TranslateText("Upload Failed"),
+					text: TheLocalizater.TranslateFormatString("Invalid file format. Reason: {0} \nForce transfer? This may cause the calculator to crash.", ex.Message))
 						is not true)
 				{
 					return;
@@ -1145,15 +1145,15 @@ namespace BizHawk.Client.EmuHawk
 			}
 			ToolStripMenuItemEx CreateGenericCoreConfigItem<T>(string coreName)
 				where T : IEmulator
-				=> CreateSettingsItem("Settings...", (_, _) => OpenGenericCoreConfigFor<T>($"{coreName} Settings"));
+				=> CreateSettingsItem(TheLocalizater.TranslateText("Settings..."), (_, _) => OpenGenericCoreConfigFor<T>(TheLocalizater.TranslateFormatString("{0} Settings", coreName)));
 			ToolStripMenuItemEx CreateGenericNymaCoreConfigItem<T>(string coreName, Func<CoreComm, NymaCore.NymaSettingsInfo> getCachedSettingsInfo)
 				where T : NymaCore
 				=> CreateSettingsItem(
-					"Settings...",
+					TheLocalizater.TranslateText("Settings..."),
 					(_, _) => GenericCoreConfig.DoNymaDialogFor(
 						this,
 						GetSettingsAdapterFor<T>(),
-						$"{coreName} Settings",
+						TheLocalizater.TranslateFormatString("{0} Settings", coreName),
 						getCachedSettingsInfo(CreateCoreComm()),
 						isMovieActive: MovieSession.Movie.IsActive()));
 			ToolStripMenuItemEx CreateCoreSubmenu(VSystemCategory cat, string coreName, params ToolStripItem[] items)
@@ -1167,14 +1167,14 @@ namespace BizHawk.Client.EmuHawk
 			// cores A-Z by value of `CoreAttribute.CoreName`
 
 			// A7800Hawk
-			var a7800HawkGamepadSettingsItem = CreateSettingsItem("Controller Settings...", (_, _) => OpenA7800HawkGamepadSettingsDialog(GetSettingsAdapterFor<A7800Hawk>()));
-			var a7800HawkFilterSettingsItem = CreateSettingsItem("Filter Settings...", (_, _) => OpenA7800HawkFilterSettingsDialog(GetSettingsAdapterFor<A7800Hawk>()));
+			var a7800HawkGamepadSettingsItem = CreateSettingsItem(TheLocalizater.TranslateText("Controller Settings..."), (_, _) => OpenA7800HawkGamepadSettingsDialog(GetSettingsAdapterFor<A7800Hawk>()));
+			var a7800HawkFilterSettingsItem = CreateSettingsItem(TheLocalizater.TranslateText("Filter Settings..."), (_, _) => OpenA7800HawkFilterSettingsDialog(GetSettingsAdapterFor<A7800Hawk>()));
 			var a7800HawkSubmenu = CreateCoreSubmenu(VSystemCategory.Consoles, CoreNames.A7800Hawk, a7800HawkGamepadSettingsItem, a7800HawkFilterSettingsItem);
 			a7800HawkSubmenu.DropDownOpened += (_, _) => a7800HawkGamepadSettingsItem.Enabled = a7800HawkFilterSettingsItem.Enabled = MovieSession.Movie.NotActive() || Emulator is not A7800Hawk;
 			items.Add(a7800HawkSubmenu);
 
 			// Ares64
-			var ares64AnalogConstraintItem = CreateSettingsItem("Circular Analog Range", N64CircularAnalogRangeMenuItem_Click);
+			var ares64AnalogConstraintItem = CreateSettingsItem(TheLocalizater.TranslateText("Circular Analog Range"), N64CircularAnalogRangeMenuItem_Click);
 			var ares64Submenu = CreateCoreSubmenu(VSystemCategory.Consoles, CoreNames.Ares64, CreateGenericCoreConfigItem<Ares64>(CoreNames.Ares64));
 			ares64Submenu.DropDownOpened += (_, _) => ares64AnalogConstraintItem.Checked = Config.N64UseCircularAnalogConstraint;
 			items.Add(ares64Submenu);
@@ -1183,29 +1183,29 @@ namespace BizHawk.Client.EmuHawk
 			items.Add(CreateCoreSubmenu(VSystemCategory.Consoles, CoreNames.Atari2600Hawk, CreateGenericCoreConfigItem<Atari2600>(CoreNames.Atari2600Hawk)));
 
 			// BSNES
-			var oldBSNESGamepadSettingsItem = CreateSettingsItem("Controller Configuration...", (_, _) => OpenOldBSNESGamepadSettingsDialog(GetSettingsAdapterFor<LibsnesCore>()));
-			var oldBSNESSettingsItem = CreateSettingsItem("Options...", (_, _) => OpenOldBSNESSettingsDialog(GetSettingsAdapterFor<LibsnesCore>()));
+			var oldBSNESGamepadSettingsItem = CreateSettingsItem(TheLocalizater.TranslateText("Controller Configuration..."), (_, _) => OpenOldBSNESGamepadSettingsDialog(GetSettingsAdapterFor<LibsnesCore>()));
+			var oldBSNESSettingsItem = CreateSettingsItem(TheLocalizater.TranslateText("Options..."), (_, _) => OpenOldBSNESSettingsDialog(GetSettingsAdapterFor<LibsnesCore>()));
 			var oldBSNESSubmenu = CreateCoreSubmenu(VSystemCategory.Consoles, CoreNames.Bsnes, oldBSNESGamepadSettingsItem, oldBSNESSettingsItem);
 			oldBSNESSubmenu.DropDownOpened += (_, _) => oldBSNESGamepadSettingsItem.Enabled = MovieSession.Movie.NotActive() || Emulator is not LibsnesCore;
 			items.Add(oldBSNESSubmenu);
 
 			// BSNESv115+
-			var bsnesGamepadSettingsItem = CreateSettingsItem("Controller Configuration...", (_, _) => OpenBSNESGamepadSettingsDialog(GetSettingsAdapterFor<BsnesCore>()));
-			var bsnesSettingsItem = CreateSettingsItem("Options...", (_, _) => OpenBSNESSettingsDialog(GetSettingsAdapterFor<BsnesCore>()));
+			var bsnesGamepadSettingsItem = CreateSettingsItem(TheLocalizater.TranslateText("Controller Configuration..."), (_, _) => OpenBSNESGamepadSettingsDialog(GetSettingsAdapterFor<BsnesCore>()));
+			var bsnesSettingsItem = CreateSettingsItem(TheLocalizater.TranslateText("Options..."), (_, _) => OpenBSNESSettingsDialog(GetSettingsAdapterFor<BsnesCore>()));
 			var bsnesSubmenu = CreateCoreSubmenu(VSystemCategory.Consoles, CoreNames.Bsnes115, bsnesGamepadSettingsItem, bsnesSettingsItem);
 			bsnesSubmenu.DropDownOpened += (_, _) => bsnesGamepadSettingsItem.Enabled = MovieSession.Movie.NotActive() || Emulator is not BsnesCore;
 			items.Add(bsnesSubmenu);
 
 			// C64Hawk
-			items.Add(CreateCoreSubmenu(VSystemCategory.PCs, CoreNames.C64Hawk, CreateSettingsItem("Settings...", (_, _) => OpenC64HawkSettingsDialog())));
+			items.Add(CreateCoreSubmenu(VSystemCategory.PCs, CoreNames.C64Hawk, CreateSettingsItem(TheLocalizater.TranslateText("Settings..."), (_, _) => OpenC64HawkSettingsDialog())));
 
 			// ChannelFHawk
 			items.Add(CreateCoreSubmenu(VSystemCategory.Consoles, CoreNames.ChannelFHawk, CreateGenericCoreConfigItem<ChannelF>(CoreNames.ChannelFHawk)));
 
 			// ColecoHawk
-			var colecoHawkGamepadSettingsItem = CreateSettingsItem("Controller Settings...", (_, _) => OpenColecoHawkGamepadSettingsDialog(GetSettingsAdapterFor<ColecoVision>()));
-			var colecoHawkSkipBIOSItem = CreateSettingsItem("Skip BIOS intro (When Applicable)", (sender, _) => ColecoHawkSetSkipBIOSIntro(!((ToolStripMenuItem) sender).Checked, GetSettingsAdapterFor<ColecoVision>()));
-			var colecoHawkUseSGMItem = CreateSettingsItem("Use the Super Game Module", (sender, _) => ColecoHawkSetSuperGameModule(!((ToolStripMenuItem) sender).Checked, GetSettingsAdapterFor<ColecoVision>()));
+			var colecoHawkGamepadSettingsItem = CreateSettingsItem(TheLocalizater.TranslateText("Controller Settings..."), (_, _) => OpenColecoHawkGamepadSettingsDialog(GetSettingsAdapterFor<ColecoVision>()));
+			var colecoHawkSkipBIOSItem = CreateSettingsItem(TheLocalizater.TranslateText("Skip BIOS intro (When Applicable)"), (sender, _) => ColecoHawkSetSkipBIOSIntro(!((ToolStripMenuItem) sender).Checked, GetSettingsAdapterFor<ColecoVision>()));
+			var colecoHawkUseSGMItem = CreateSettingsItem(TheLocalizater.TranslateText("Use the Super Game Module"), (sender, _) => ColecoHawkSetSuperGameModule(!((ToolStripMenuItem) sender).Checked, GetSettingsAdapterFor<ColecoVision>()));
 			var colecoHawkSubmenu = CreateCoreSubmenu(VSystemCategory.Consoles, CoreNames.ColecoHawk, colecoHawkGamepadSettingsItem, colecoHawkSkipBIOSItem, colecoHawkUseSGMItem);
 			colecoHawkSubmenu.DropDownOpened += (_, _) =>
 			{
@@ -1220,9 +1220,9 @@ namespace BizHawk.Client.EmuHawk
 			items.Add(CreateCoreSubmenu(
 				VSystemCategory.PCs,
 				CoreNames.CPCHawk,
-				CreateSettingsItem("Core Emulation Settings...", (_, _) => OpenCPCHawkSyncSettingsDialog(GetSettingsAdapterFor<AmstradCPC>())),
-				CreateSettingsItem("Audio Settings...", (_, _) => OpenCPCHawkAudioSettingsDialog(GetSettingsAdapterFor<AmstradCPC>())),
-				CreateSettingsItem("Non-Sync Settings...", (_, _) => OpenCPCHawkSettingsDialog(GetSettingsAdapterFor<AmstradCPC>()))));
+				CreateSettingsItem(TheLocalizater.TranslateText("Core Emulation Settings..."), (_, _) => OpenCPCHawkSyncSettingsDialog(GetSettingsAdapterFor<AmstradCPC>())),
+				CreateSettingsItem(TheLocalizater.TranslateText("Audio Settings..."), (_, _) => OpenCPCHawkAudioSettingsDialog(GetSettingsAdapterFor<AmstradCPC>())),
+				CreateSettingsItem(TheLocalizater.TranslateText("Non-Sync Settings..."), (_, _) => OpenCPCHawkSettingsDialog(GetSettingsAdapterFor<AmstradCPC>()))));
 
 			// Cygne
 			items.Add(CreateCoreSubmenu(VSystemCategory.Handhelds, CoreNames.Cygne, CreateGenericCoreConfigItem<WonderSwan>(CoreNames.Cygne)));
@@ -1234,7 +1234,7 @@ namespace BizHawk.Client.EmuHawk
 			items.Add(CreateCoreSubmenu(VSystemCategory.Other, CoreNames.DSDA, CreateGenericCoreConfigItem<DSDA>(CoreNames.DSDA)));
 
 			// Emu83
-			items.Add(CreateCoreSubmenu(VSystemCategory.Other, CoreNames.Emu83, CreateSettingsItem("Palette...", (_, _) => OpenTI83PaletteSettingsDialog(GetSettingsAdapterFor<Emu83>()))));
+			items.Add(CreateCoreSubmenu(VSystemCategory.Other, CoreNames.Emu83, CreateSettingsItem(TheLocalizater.TranslateText("Palette..."), (_, _) => OpenTI83PaletteSettingsDialog(GetSettingsAdapterFor<Emu83>()))));
 
 			// Encore
 			items.Add(CreateCoreSubmenu(VSystemCategory.Handhelds, CoreNames.Encore, CreateGenericCoreConfigItem<Encore>(CoreNames.Encore)));
@@ -1243,14 +1243,14 @@ namespace BizHawk.Client.EmuHawk
 			items.Add(CreateCoreSubmenu(VSystemCategory.Consoles, CoreNames.Faust, CreateGenericNymaCoreConfigItem<Faust>(CoreNames.Faust, Faust.CachedSettingsInfo)));
 
 			// Gambatte
-			items.Add(CreateCoreSubmenu(VSystemCategory.Handhelds, CoreNames.Gambatte, CreateSettingsItem("Settings...", (_, _) => OpenGambatteSettingsDialog(GetSettingsAdapterFor<Gameboy>()))));
-			if (includeDupes) items.Add(CreateCoreSubmenu(VSystemCategory.Consoles, CoreNames.Gambatte, CreateSettingsItem("Settings...", (_, _) => OpenGambatteSettingsDialog(GetSettingsAdapterFor<Gameboy>()))));
+			items.Add(CreateCoreSubmenu(VSystemCategory.Handhelds, CoreNames.Gambatte, CreateSettingsItem(TheLocalizater.TranslateText("Settings..."), (_, _) => OpenGambatteSettingsDialog(GetSettingsAdapterFor<Gameboy>()))));
+			if (includeDupes) items.Add(CreateCoreSubmenu(VSystemCategory.Consoles, CoreNames.Gambatte, CreateSettingsItem(TheLocalizater.TranslateText("Settings..."), (_, _) => OpenGambatteSettingsDialog(GetSettingsAdapterFor<Gameboy>()))));
 
 			// GambatteLink
-			items.Add(CreateCoreSubmenu(VSystemCategory.Handhelds, CoreNames.GambatteLink, CreateSettingsItem("Settings...", (_, _) => OpenGambatteLinkSettingsDialog(GetSettingsAdapterFor<GambatteLink>()))));
+			items.Add(CreateCoreSubmenu(VSystemCategory.Handhelds, CoreNames.GambatteLink, CreateSettingsItem(TheLocalizater.TranslateText("Settings..."), (_, _) => OpenGambatteLinkSettingsDialog(GetSettingsAdapterFor<GambatteLink>()))));
 
 			// GBHawk
-			items.Add(CreateCoreSubmenu(VSystemCategory.Handhelds, CoreNames.GbHawk, CreateSettingsItem("Settings...", (_, _) => OpenGBHawkSettingsDialog())));
+			items.Add(CreateCoreSubmenu(VSystemCategory.Handhelds, CoreNames.GbHawk, CreateSettingsItem(TheLocalizater.TranslateText("Settings..."), (_, _) => OpenGBHawkSettingsDialog())));
 
 			// GBHawkLink
 			items.Add(CreateCoreSubmenu(VSystemCategory.Handhelds, CoreNames.GBHawkLink, CreateGenericCoreConfigItem<GBHawkLink>(CoreNames.GBHawkLink)));
@@ -1274,7 +1274,7 @@ namespace BizHawk.Client.EmuHawk
 			items.Add(CreateCoreSubmenu(VSystemCategory.Consoles, CoreNames.HyperNyma, CreateGenericNymaCoreConfigItem<HyperNyma>(CoreNames.HyperNyma, HyperNyma.CachedSettingsInfo)));
 
 			// IntelliHawk
-			var intelliHawkGamepadSettingsItem = CreateSettingsItem("Controller Settings...", (_, _) => OpenIntelliHawkGamepadSettingsDialog(GetSettingsAdapterFor<Intellivision>()));
+			var intelliHawkGamepadSettingsItem = CreateSettingsItem(TheLocalizater.TranslateText("Controller Settings..."), (_, _) => OpenIntelliHawkGamepadSettingsDialog(GetSettingsAdapterFor<Intellivision>()));
 			var intelliHawkSubmenu = CreateCoreSubmenu(VSystemCategory.Consoles, CoreNames.IntelliHawk, intelliHawkGamepadSettingsItem);
 			intelliHawkSubmenu.DropDownOpened += (_, _) => intelliHawkGamepadSettingsItem.Enabled = MovieSession.Movie.NotActive() || Emulator is not Intellivision;
 			items.Add(intelliHawkSubmenu);
@@ -1286,7 +1286,7 @@ namespace BizHawk.Client.EmuHawk
 				CreateGenericCoreConfigItem<LibretroHost>(CoreNames.Libretro))); // as Libretro doesn't implement `ISettable<,>`, this opens an empty `GenericCoreConfig`, which is dumb, but matches the existing behaviour
 
 			// MAME
-			var mameSettingsItem = CreateSettingsItem("Settings...", (_, _) => OpenGenericCoreConfig());
+			var mameSettingsItem = CreateSettingsItem(TheLocalizater.TranslateText("Settings..."), (_, _) => OpenGenericCoreConfig());
 			var mameSubmenu = CreateCoreSubmenu(VSystemCategory.Other, CoreNames.MAME, mameSettingsItem);
 			mameSubmenu.DropDownOpened += (_, _) => mameSettingsItem.Enabled = Emulator is MAME;
 			items.Add(mameSubmenu);
@@ -1301,11 +1301,11 @@ namespace BizHawk.Client.EmuHawk
 			items.Add(CreateCoreSubmenu(VSystemCategory.PCs, CoreNames.MSXHawk, CreateGenericCoreConfigItem<MSX>(CoreNames.MSXHawk)));
 
 			// Mupen64Plus
-			var mupen64PlusGraphicsSettingsItem = CreateSettingsItem("Video Plugins...", N64PluginSettingsMenuItem_Click);
-			var mupen64PlusGamepadSettingsItem = CreateSettingsItem("Controller Settings...", (_, _) => OpenMupen64PlusGamepadSettingsDialog(GetSettingsAdapterFor<N64>()));
-			var mupen64PlusAnalogConstraintItem = CreateSettingsItem("Circular Analog Range", N64CircularAnalogRangeMenuItem_Click);
-			var mupen64PlusMupenStyleLagFramesItem = CreateSettingsItem("Mupen Style Lag Frames", (sender, _) => Mupen64PlusSetMupenStyleLag(!((ToolStripMenuItem) sender).Checked, GetSettingsAdapterFor<N64>()));
-			var mupen64PlusUseExpansionSlotItem = CreateSettingsItem("Use Expansion Slot", (sender, _) => Mupen64PlusSetUseExpansionSlot(!((ToolStripMenuItem) sender).Checked, GetSettingsAdapterFor<N64>()));
+			var mupen64PlusGraphicsSettingsItem = CreateSettingsItem(TheLocalizater.TranslateText("Video Plugins..."), N64PluginSettingsMenuItem_Click);
+			var mupen64PlusGamepadSettingsItem = CreateSettingsItem(TheLocalizater.TranslateText("Controller Settings..."), (_, _) => OpenMupen64PlusGamepadSettingsDialog(GetSettingsAdapterFor<N64>()));
+			var mupen64PlusAnalogConstraintItem = CreateSettingsItem(TheLocalizater.TranslateText("Circular Analog Range"), N64CircularAnalogRangeMenuItem_Click);
+			var mupen64PlusMupenStyleLagFramesItem = CreateSettingsItem(TheLocalizater.TranslateText("Mupen Style Lag Frames"), (sender, _) => Mupen64PlusSetMupenStyleLag(!((ToolStripMenuItem) sender).Checked, GetSettingsAdapterFor<N64>()));
+			var mupen64PlusUseExpansionSlotItem = CreateSettingsItem(TheLocalizater.TranslateText("Use Expansion Slot"), (sender, _) => Mupen64PlusSetUseExpansionSlot(!((ToolStripMenuItem) sender).Checked, GetSettingsAdapterFor<N64>()));
 			var mupen64PlusSubmenu = CreateCoreSubmenu(VSystemCategory.Consoles, CoreNames.Mupen64Plus, mupen64PlusGraphicsSettingsItem, mupen64PlusGamepadSettingsItem, mupen64PlusAnalogConstraintItem, mupen64PlusMupenStyleLagFramesItem, mupen64PlusUseExpansionSlotItem);
 			mupen64PlusSubmenu.DropDownOpened += (_, _) =>
 			{
@@ -1335,14 +1335,14 @@ namespace BizHawk.Client.EmuHawk
 			items.Add(CreateCoreSubmenu(VSystemCategory.Handhelds, CoreNames.NeoPop, CreateGenericNymaCoreConfigItem<NeoGeoPort>(CoreNames.NeoPop, NeoGeoPort.CachedSettingsInfo)));
 
 			// NesHawk
-			var nesHawkGamepadSettingsItem = CreateSettingsItem("Controller Settings...", (_, _) => OpenNesHawkGamepadSettingsDialog(GetSettingsAdapterFor<NES>()));
-			var nesHawkVSSettingsItem = CreateSettingsItem("VS Settings...", (_, _) => OpenNesHawkVSSettingsDialog(GetSettingsAdapterFor<NES>()));
-			var nesHawkAdvancedSettingsItem = CreateSettingsItem("Advanced Settings...", (_, _) => OpenNesHawkAdvancedSettingsDialog(GetSettingsAdapterFor<NES>(), Emulator is not NES nesHawk || nesHawk.HasMapperProperties));
+			var nesHawkGamepadSettingsItem = CreateSettingsItem(TheLocalizater.TranslateText("Controller Settings..."), (_, _) => OpenNesHawkGamepadSettingsDialog(GetSettingsAdapterFor<NES>()));
+			var nesHawkVSSettingsItem = CreateSettingsItem(TheLocalizater.TranslateText("VS Settings..."), (_, _) => OpenNesHawkVSSettingsDialog(GetSettingsAdapterFor<NES>()));
+			var nesHawkAdvancedSettingsItem = CreateSettingsItem(TheLocalizater.TranslateText("Advanced Settings..."), (_, _) => OpenNesHawkAdvancedSettingsDialog(GetSettingsAdapterFor<NES>(), Emulator is not NES nesHawk || nesHawk.HasMapperProperties));
 			var nesHawkSubmenu = CreateCoreSubmenu(
 				VSystemCategory.Consoles,
 				CoreNames.NesHawk,
 				nesHawkGamepadSettingsItem,
-				CreateSettingsItem("Graphics Settings...", (_, _) => OpenNesHawkGraphicsSettingsDialog(GetSettingsAdapterFor<NES>())),
+				CreateSettingsItem(TheLocalizater.TranslateText("Graphics Settings..."), (_, _) => OpenNesHawkGraphicsSettingsDialog(GetSettingsAdapterFor<NES>())),
 				nesHawkVSSettingsItem,
 				nesHawkAdvancedSettingsItem);
 			nesHawkSubmenu.DropDownOpened += (_, _) =>
@@ -1362,11 +1362,11 @@ namespace BizHawk.Client.EmuHawk
 			items.Add(CreateCoreSubmenu(VSystemCategory.Consoles, CoreNames.O2Hawk, CreateGenericCoreConfigItem<O2Hawk>(CoreNames.O2Hawk)));
 
 			// Octoshock
-			var octoshockGamepadSettingsItem = CreateSettingsItem("Controller / Memcard Settings...", (_, _) => OpenOctoshockGamepadSettingsDialog(GetSettingsAdapterFor<Octoshock>()));
-			var octoshockSettingsItem = CreateSettingsItem("Options...", PsxOptionsMenuItem_Click);
+			var octoshockGamepadSettingsItem = CreateSettingsItem(TheLocalizater.TranslateText("Controller / Memcard Settings..."), (_, _) => OpenOctoshockGamepadSettingsDialog(GetSettingsAdapterFor<Octoshock>()));
+			var octoshockSettingsItem = CreateSettingsItem(TheLocalizater.TranslateText("Options..."), PsxOptionsMenuItem_Click);
 			// using init buffer sizes here (in practice, they don't matter here, but might as well)
-			var octoshockNTSCSettingsItem = CreateSettingsItem("Options (as NTSC)...", (_, _) => OpenOctoshockSettingsDialog(GetSettingsAdapterFor<Octoshock>(), OctoshockDll.eVidStandard.NTSC, new(280, 240)));
-			var octoshockPALSettingsItem = CreateSettingsItem("Options (as PAL)...", (_, _) => OpenOctoshockSettingsDialog(GetSettingsAdapterFor<Octoshock>(), OctoshockDll.eVidStandard.PAL, new(280, 288)));
+			var octoshockNTSCSettingsItem = CreateSettingsItem(TheLocalizater.TranslateText("Options (as NTSC)..."), (_, _) => OpenOctoshockSettingsDialog(GetSettingsAdapterFor<Octoshock>(), OctoshockDll.eVidStandard.NTSC, new(280, 240)));
+			var octoshockPALSettingsItem = CreateSettingsItem(TheLocalizater.TranslateText("Options (as PAL)..."), (_, _) => OpenOctoshockSettingsDialog(GetSettingsAdapterFor<Octoshock>(), OctoshockDll.eVidStandard.PAL, new(280, 288)));
 			var octoshockSubmenu = CreateCoreSubmenu(VSystemCategory.Consoles, CoreNames.Octoshock, octoshockGamepadSettingsItem, octoshockSettingsItem, octoshockNTSCSettingsItem, octoshockPALSettingsItem);
 			octoshockSubmenu.DropDownOpened += (_, _) =>
 			{
@@ -1387,12 +1387,12 @@ namespace BizHawk.Client.EmuHawk
 			items.Add(CreateCoreSubmenu(VSystemCategory.Consoles, CoreNames.PicoDrive, CreateGenericCoreConfigItem<PicoDrive>(CoreNames.PicoDrive)));
 
 			// QuickNes
-			var quickNesGamepadSettingsItem = CreateSettingsItem("Controller Settings...", (_, _) => OpenQuickNesGamepadSettingsDialog(GetSettingsAdapterFor<QuickNES>()));
+			var quickNesGamepadSettingsItem = CreateSettingsItem(TheLocalizater.TranslateText("Controller Settings..."), (_, _) => OpenQuickNesGamepadSettingsDialog(GetSettingsAdapterFor<QuickNES>()));
 			var quickNesSubmenu = CreateCoreSubmenu(
 				VSystemCategory.Consoles,
 				CoreNames.QuickNes,
 				quickNesGamepadSettingsItem,
-				CreateSettingsItem("Graphics Settings...", (_, _) => OpenQuickNesGraphicsSettingsDialog(GetSettingsAdapterFor<QuickNES>())));
+				CreateSettingsItem(TheLocalizater.TranslateText("Graphics Settings..."), (_, _) => OpenQuickNesGraphicsSettingsDialog(GetSettingsAdapterFor<QuickNES>())));
 			quickNesSubmenu.DropDownOpened += (_, _) => quickNesGamepadSettingsItem.Enabled = (MovieSession.Movie.NotActive() || Emulator is not QuickNES) && Tools.IsAvailable<NesControllerSettings>();
 			items.Add(quickNesSubmenu);
 
@@ -1400,8 +1400,8 @@ namespace BizHawk.Client.EmuHawk
 			items.Add(CreateCoreSubmenu(
 				VSystemCategory.Handhelds,
 				CoreNames.Sameboy,
-				CreateSettingsItem("Settings...", (_, _) => OpenSameBoySettingsDialog()),
-				CreateSettingsItem("Choose Custom Palette...", (_, _) => OpenSameBoyPaletteSettingsDialog(GetSettingsAdapterFor<Sameboy>()))));
+				CreateSettingsItem(TheLocalizater.TranslateText("Settings..."), (_, _) => OpenSameBoySettingsDialog()),
+				CreateSettingsItem(TheLocalizater.TranslateText("Choose Custom Palette..."), (_, _) => OpenSameBoyPaletteSettingsDialog(GetSettingsAdapterFor<Sameboy>()))));
 
 			// Saturnus
 			items.Add(CreateCoreSubmenu(VSystemCategory.Consoles, CoreNames.Saturnus, CreateGenericNymaCoreConfigItem<Saturnus>(CoreNames.Saturnus, Saturnus.CachedSettingsInfo)));
@@ -1417,24 +1417,24 @@ namespace BizHawk.Client.EmuHawk
 			items.Add(CreateCoreSubmenu(VSystemCategory.Consoles, CoreNames.Stella, CreateGenericCoreConfigItem<Stella>(CoreNames.Stella)));
 
 			// SubBSNESv115+
-			var subBsnesGamepadSettingsItem = CreateSettingsItem("Controller Configuration...", (_, _) => OpenBSNESGamepadSettingsDialog(GetSettingsAdapterFor<SubBsnesCore>()));
-			var subBsnesSettingsItem = CreateSettingsItem("Options...", (_, _) => OpenBSNESSettingsDialog(GetSettingsAdapterFor<SubBsnesCore>()));
+			var subBsnesGamepadSettingsItem = CreateSettingsItem(TheLocalizater.TranslateText("Controller Configuration..."), (_, _) => OpenBSNESGamepadSettingsDialog(GetSettingsAdapterFor<SubBsnesCore>()));
+			var subBsnesSettingsItem = CreateSettingsItem(TheLocalizater.TranslateText("Options..."), (_, _) => OpenBSNESSettingsDialog(GetSettingsAdapterFor<SubBsnesCore>()));
 			var subBsnesSubmenu = CreateCoreSubmenu(VSystemCategory.Consoles, CoreNames.SubBsnes115, subBsnesGamepadSettingsItem, subBsnesSettingsItem);
 			subBsnesSubmenu.DropDownOpened += (_, _) => subBsnesGamepadSettingsItem.Enabled = MovieSession.Movie.NotActive() || Emulator is not SubBsnesCore;
 			items.Add(subBsnesSubmenu);
 
 			// SubGBHawk
-			items.Add(CreateCoreSubmenu(VSystemCategory.Handhelds, CoreNames.SubGbHawk, CreateSettingsItem("Settings...", (_, _) => OpenSubGBHawkSettingsDialog())));
+			items.Add(CreateCoreSubmenu(VSystemCategory.Handhelds, CoreNames.SubGbHawk, CreateSettingsItem(TheLocalizater.TranslateText("Settings..."), (_, _) => OpenSubGBHawkSettingsDialog())));
 
 			// SubNESHawk
-			var subNESHawkGamepadSettingsItem = CreateSettingsItem("Controller Settings...", (_, _) => OpenNesHawkGamepadSettingsDialog(GetSettingsAdapterFor<SubNESHawk>()));
-			var subNESHawkVSSettingsItem = CreateSettingsItem("VS Settings...", (_, _) => OpenNesHawkVSSettingsDialog(GetSettingsAdapterFor<SubNESHawk>()));
-			var subNESHawkAdvancedSettingsItem = CreateSettingsItem("Advanced Settings...", (_, _) => OpenNesHawkAdvancedSettingsDialog(GetSettingsAdapterFor<SubNESHawk>(), Emulator is not SubNESHawk subNESHawk || subNESHawk.HasMapperProperties));
+			var subNESHawkGamepadSettingsItem = CreateSettingsItem(TheLocalizater.TranslateText("Controller Settings..."), (_, _) => OpenNesHawkGamepadSettingsDialog(GetSettingsAdapterFor<SubNESHawk>()));
+			var subNESHawkVSSettingsItem = CreateSettingsItem(TheLocalizater.TranslateText("VS Settings..."), (_, _) => OpenNesHawkVSSettingsDialog(GetSettingsAdapterFor<SubNESHawk>()));
+			var subNESHawkAdvancedSettingsItem = CreateSettingsItem(TheLocalizater.TranslateText("Advanced Settings..."), (_, _) => OpenNesHawkAdvancedSettingsDialog(GetSettingsAdapterFor<SubNESHawk>(), Emulator is not SubNESHawk subNESHawk || subNESHawk.HasMapperProperties));
 			var subNESHawkSubmenu = CreateCoreSubmenu(
 				VSystemCategory.Consoles,
 				CoreNames.SubNesHawk,
 				subNESHawkGamepadSettingsItem,
-				CreateSettingsItem("Graphics Settings...", (_, _) => OpenNesHawkGraphicsSettingsDialog(GetSettingsAdapterFor<SubNESHawk>())),
+				CreateSettingsItem(TheLocalizater.TranslateText("Graphics Settings..."), (_, _) => OpenNesHawkGraphicsSettingsDialog(GetSettingsAdapterFor<SubNESHawk>())),
 				subNESHawkVSSettingsItem,
 				subNESHawkAdvancedSettingsItem);
 			subNESHawkSubmenu.DropDownOpened += (_, _) =>
@@ -1451,7 +1451,7 @@ namespace BizHawk.Client.EmuHawk
 			items.Add(CreateCoreSubmenu(VSystemCategory.Consoles, CoreNames.TST, CreateGenericNymaCoreConfigItem<Tst>(CoreNames.TST, Tst.CachedSettingsInfo)));
 
 			// TI83Hawk
-			items.Add(CreateCoreSubmenu(VSystemCategory.Other, CoreNames.TI83Hawk, CreateSettingsItem("Palette...", (_, _) => OpenTI83PaletteSettingsDialog(GetSettingsAdapterFor<TI83>()))));
+			items.Add(CreateCoreSubmenu(VSystemCategory.Other, CoreNames.TI83Hawk, CreateSettingsItem(TheLocalizater.TranslateText("Palette..."), (_, _) => OpenTI83PaletteSettingsDialog(GetSettingsAdapterFor<TI83>()))));
 
 			// TIC80
 			items.Add(CreateCoreSubmenu(VSystemCategory.PCs, CoreNames.TIC80, CreateGenericCoreConfigItem<TIC80>(CoreNames.TIC80)));
@@ -1469,7 +1469,7 @@ namespace BizHawk.Client.EmuHawk
 			items.Add(CreateCoreSubmenu(VSystemCategory.Consoles, CoreNames.VectrexHawk, CreateGenericCoreConfigItem<VectrexHawk>(CoreNames.VectrexHawk)));
 
 			// Virtu
-			items.Add(CreateCoreSubmenu(VSystemCategory.PCs, CoreNames.Virtu, CreateSettingsItem("Settings...", (_, _) => OpenVirtuSettingsDialog())));
+			items.Add(CreateCoreSubmenu(VSystemCategory.PCs, CoreNames.Virtu, CreateSettingsItem(TheLocalizater.TranslateText("Settings..."), (_, _) => OpenVirtuSettingsDialog())));
 
 			// Virtual Boyee
 			items.Add(CreateCoreSubmenu(VSystemCategory.Consoles, CoreNames.VirtualBoyee, CreateGenericNymaCoreConfigItem<VirtualBoyee>(CoreNames.VirtualBoyee, VirtualBoyee.CachedSettingsInfo)));
@@ -1481,10 +1481,10 @@ namespace BizHawk.Client.EmuHawk
 			items.Add(CreateCoreSubmenu(
 				VSystemCategory.PCs,
 				CoreNames.ZXHawk,
-				CreateSettingsItem("Core Emulation Settings...", (_, _) => OpenZXHawkSyncSettingsDialog(GetSettingsAdapterFor<ZXSpectrum>())),
-				CreateSettingsItem("Joystick Configuration...", (_, _) => OpenZXHawkGamepadSettingsDialog(GetSettingsAdapterFor<ZXSpectrum>())),
-				CreateSettingsItem("Audio Settings...", (_, _) => OpenZXHawkAudioSettingsDialog(GetSettingsAdapterFor<ZXSpectrum>())),
-				CreateSettingsItem("Non-Sync Settings...", (_, _) => OpenZXHawkSettingsDialog(GetSettingsAdapterFor<ZXSpectrum>()))));
+				CreateSettingsItem(TheLocalizater.TranslateText("Core Emulation Settings..."), (_, _) => OpenZXHawkSyncSettingsDialog(GetSettingsAdapterFor<ZXSpectrum>())),
+				CreateSettingsItem(TheLocalizater.TranslateText("Joystick Configuration..."), (_, _) => OpenZXHawkGamepadSettingsDialog(GetSettingsAdapterFor<ZXSpectrum>())),
+				CreateSettingsItem(TheLocalizater.TranslateText("Audio Settings..."), (_, _) => OpenZXHawkAudioSettingsDialog(GetSettingsAdapterFor<ZXSpectrum>())),
+				CreateSettingsItem(TheLocalizater.TranslateText("Non-Sync Settings..."), (_, _) => OpenZXHawkSettingsDialog(GetSettingsAdapterFor<ZXSpectrum>()))));
 
 			return items;
 		}

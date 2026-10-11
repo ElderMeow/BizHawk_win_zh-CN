@@ -187,13 +187,13 @@ namespace BizHawk.Client.EmuHawk
 					if (applicabilityAttrs[0].NotApplicableTo(system))
 					{
 						item.ToolTipText = system is VSystemID.Raw.NULL
-							? "This tool doesn't work when no rom is loaded"
-							: "This tool doesn't work with this system";
+							? TheLocalizater.TranslateText("This tool doesn't work when no rom is loaded")
+							: TheLocalizater.TranslateText("This tool doesn't work with this system");
 						return item;
 					}
 					if (applicabilityAttrs[0].NotApplicableTo(loadedRomHash, system))
 					{
-						item.ToolTipText = "This tool doesn't work with this game";
+						item.ToolTipText = TheLocalizater.TranslateText("This tool doesn't work with this game");
 						return item;
 					}
 				}
@@ -216,10 +216,10 @@ namespace BizHawk.Client.EmuHawk
 #endif
 				item.ToolTipText = e switch
 				{
-					ExternalToolApplicabilityAttributeBase.DuplicateException => "The IExternalToolForm has conflicting applicability attributes.",
-					ExternalToolAttribute.MissingException => "The assembly doesn't contain a class implementing IExternalToolForm and annotated with [ExternalTool].",
-					ReflectionTypeLoadException => "Something went wrong while trying to load the assembly.",
-					_ => $"An exception of type {e.GetType().FullName} was thrown while trying to load the assembly and look for an IExternalToolForm:\n{e}",
+					ExternalToolApplicabilityAttributeBase.DuplicateException => TheLocalizater.TranslateText("The IExternalToolForm has conflicting applicability attributes."),
+					ExternalToolAttribute.MissingException => TheLocalizater.TranslateText("The assembly doesn't contain a class implementing IExternalToolForm and annotated with [ExternalTool]."),
+					ReflectionTypeLoadException => TheLocalizater.TranslateText("Something went wrong while trying to load the assembly."),
+					_ => TheLocalizater.TranslateFormatString("An exception of type {0} was thrown while trying to load the assembly and look for an IExternalToolForm:\n{1}", e.GetType().FullName, e),
 				};
 			}
 			return item;

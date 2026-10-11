@@ -4,7 +4,6 @@ using System.Drawing;
 using BizHawk.Bizware.Graphics;
 using BizHawk.Bizware.Graphics.Controls;
 using BizHawk.Client.Common;
-using BizHawk.Client.EmuHawk.TheLocalization;
 using BizHawk.Common;
 using BizHawk.Emulation.Common;
 

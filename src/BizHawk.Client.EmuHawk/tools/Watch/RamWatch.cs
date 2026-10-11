@@ -36,7 +36,7 @@ namespace BizHawk.Client.EmuHawk
 		[OptionalService]
 		private IDebuggable Debuggable { get; set; }
 
-		protected override string WindowTitleStatic => "RAM Watch";
+		protected override string WindowTitleStatic => TheLocalizater.TranslateText("RAM Watch");
 
 		public RamWatch()
 		{
@@ -91,11 +91,11 @@ namespace BizHawk.Client.EmuHawk
 			deduperMenuItem.Click += (_, _) =>
 			{
 				if (!this.ModalMessageBox2(
-					caption: "Purge duplicates?",
-					text: "This will go through each watch starting from the top,\n"
-						+ "removing it if its (domain & addr & size) has been seen before.\n"
-						+ "Neither the endianness nor display type are considered.\n"
-						+ "Overlapping watches also aren't considered.",
+					caption: TheLocalizater.TranslateText("Purge duplicates?"),
+					text: TheLocalizater.TranslateText("This will go through each watch starting from the top,\n")
+						+ TheLocalizater.TranslateText("removing it if its (domain & addr & size) has been seen before.\n")
+						+ TheLocalizater.TranslateText("Neither the endianness nor display type are considered.\n")
+						+ TheLocalizater.TranslateText("Overlapping watches also aren't considered."),
 					useOKCancel: true))
 				{
 					return;
@@ -166,14 +166,14 @@ namespace BizHawk.Client.EmuHawk
 			{
 				Columns = new List<RollColumn>
 				{
-					new(name: WatchList.Address, widthUnscaled: 60, text: "Address"),
-					new(name: WatchList.Value, widthUnscaled: 59, text: "Value"),
-					new(name: WatchList.Prev, widthUnscaled: 59, text: "Prev") { Visible = false },
-					new(name: WatchList.ChangesCol, widthUnscaled: 60, text: "Changes"),
-					new(name: WatchList.Diff, widthUnscaled: 59, text: "Diff") { Visible = false },
-					new(name: WatchList.Type, widthUnscaled: 55, text: "Type") { Visible = false },
-					new(name: WatchList.Domain, widthUnscaled: 55, text: "Domain"),
-					new(name: WatchList.Notes, widthUnscaled: 128, text: "Notes"),
+					new(name: WatchList.Address, widthUnscaled: 60, text: TheLocalizater.TranslateText("Address")),
+					new(name: WatchList.Value, widthUnscaled: 59, text: TheLocalizater.TranslateText("Value")),
+					new(name: WatchList.Prev, widthUnscaled: 59, text: TheLocalizater.TranslateText("Prev")) { Visible = false },
+					new(name: WatchList.ChangesCol, widthUnscaled: 60, text: TheLocalizater.TranslateText("Changes")),
+					new(name: WatchList.Diff, widthUnscaled: 59, text: TheLocalizater.TranslateText("Diff")) { Visible = false },
+					new(name: WatchList.Type, widthUnscaled: 55, text: TheLocalizater.TranslateText("Type")) { Visible = false },
+					new(name: WatchList.Domain, widthUnscaled: 55, text: TheLocalizater.TranslateText("Domain")),
+					new(name: WatchList.Notes, widthUnscaled: 128, text: TheLocalizater.TranslateText("Notes")),
 				};
 			}
 
@@ -207,13 +207,13 @@ namespace BizHawk.Client.EmuHawk
 		{
 			if (!_watches.Changes) return true;
 			var result = DialogController.DoWithTempMute(() => this.ModalMessageBox3(
-				caption: "Closing with Unsaved Changes",
+				caption: TheLocalizater.TranslateText("Closing with Unsaved Changes"),
 				icon: EMsgBoxIcon.Question,
-				text: "Save watch file?"));
+				text: TheLocalizater.TranslateText("Save watch file?")));
 			if (result is null) return false;
 			if (result.Value)
 			{
-				TryAgainResult saveResult = this.DoWithTryAgainBox(Save, "Failed to save watch list.");
+				TryAgainResult saveResult = this.DoWithTryAgainBox(Save, TheLocalizater.TranslateText("Failed to save watch list."));
 				return saveResult != TryAgainResult.Canceled;
 			}
 			else
@@ -472,9 +472,9 @@ namespace BizHawk.Client.EmuHawk
 			{
 				var inputPrompt = new InputPrompt
 				{
-					Text = "Edit Separator",
+					Text = TheLocalizater.TranslateText("Edit Separator"),
 					StartLocation = this.ChildPointToScreen(WatchListView),
-					Message = "Separator Text:",
+					Message = TheLocalizater.TranslateText("Separator Text:"),
 					TextInputType = InputPrompt.InputType.Text,
 				};
 
@@ -588,11 +588,11 @@ namespace BizHawk.Client.EmuHawk
 			FileWriteResult result = _watches.SaveAs(file);
 			if (result.IsError)
 			{
-				MessageLabel.Text = $"Failed to save {Path.GetFileName(_watches.CurrentFileName)}";
+				MessageLabel.Text = TheLocalizater.TranslateFormatString("Failed to save {0}", Path.GetFileName(_watches.CurrentFileName));
 			}
 			else
 			{
-				MessageLabel.Text = $"{Path.GetFileName(_watches.CurrentFileName)} saved";
+				MessageLabel.Text = TheLocalizater.TranslateFormatString("{0} saved", Path.GetFileName(_watches.CurrentFileName));
 				Config.RecentWatches.Add(_watches.CurrentFileName);
 				UpdateStatusBar(saved: true);
 			}
@@ -610,11 +610,11 @@ namespace BizHawk.Client.EmuHawk
 				FileWriteResult saveResult = _watches.Save();
 				if (saveResult.IsError)
 				{
-					MessageLabel.Text = $"Failed to save {Path.GetFileName(_watches.CurrentFileName)}";
+					MessageLabel.Text = TheLocalizater.TranslateFormatString("Failed to save {0}", Path.GetFileName(_watches.CurrentFileName));
 				}
 				else
 				{
-					MessageLabel.Text = $"{Path.GetFileName(_watches.CurrentFileName)} saved";
+					MessageLabel.Text = TheLocalizater.TranslateFormatString("{0} saved", Path.GetFileName(_watches.CurrentFileName));
 					Config.RecentWatches.Add(_watches.CurrentFileName);
 					UpdateStatusBar(saved: true);
 				}
@@ -640,7 +640,7 @@ namespace BizHawk.Client.EmuHawk
 			{
 				if (saved)
 				{
-					message = $"{Path.GetFileName(_watches.CurrentFileName)} saved.";
+					message = TheLocalizater.TranslateFormatString("{0} saved.", Path.GetFileName(_watches.CurrentFileName));
 				}
 				else
 				{
@@ -655,7 +655,7 @@ namespace BizHawk.Client.EmuHawk
 
 		private void UpdateWatchCount()
 		{
-			WatchCountLabel.Text = _watches.WatchCount + (_watches.WatchCount == 1 ? " watch" : " watches");
+			WatchCountLabel.Text = _watches.WatchCount + (_watches.WatchCount == 1 ? TheLocalizater.TranslateText(" watch") : TheLocalizater.TranslateText(" watches"));
 		}
 
 		private void WatchListView_QueryItemBkColor(InputRoll sender, int index, RollColumn column, ref Color color)
@@ -751,7 +751,7 @@ namespace BizHawk.Client.EmuHawk
 			FileWriteResult saveResult = Save();
 			if (saveResult.IsError)
 			{
-				this.ErrorMessageBox(saveResult, "Failed to save watch list.");
+				this.ErrorMessageBox(saveResult, TheLocalizater.TranslateText("Failed to save watch list."));
 			}
 		}
 
@@ -760,7 +760,7 @@ namespace BizHawk.Client.EmuHawk
 			FileWriteResult saveResult = SaveAs();
 			if (saveResult.IsError)
 			{
-				this.ErrorMessageBox(saveResult, "Failed to save watch list.");
+				this.ErrorMessageBox(saveResult, TheLocalizater.TranslateText("Failed to save watch list."));
 			}
 		}
 
@@ -1165,12 +1165,12 @@ namespace BizHawk.Client.EmuHawk
 
 			if (allCheats)
 			{
-				FreezeContextMenuItem.Text = "&Unfreeze Address";
+				FreezeContextMenuItem.Text = TheLocalizater.TranslateText("&Unfreeze Address");
 				FreezeContextMenuItem.Image = Resources.Unfreeze;
 			}
 			else
 			{
-				FreezeContextMenuItem.Text = "&Freeze Address";
+				FreezeContextMenuItem.Text = TheLocalizater.TranslateText("&Freeze Address");
 				FreezeContextMenuItem.Image = Resources.Freeze;
 			}
 

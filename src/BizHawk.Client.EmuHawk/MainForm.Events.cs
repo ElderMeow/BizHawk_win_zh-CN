@@ -254,7 +254,7 @@ namespace BizHawk.Client.EmuHawk
 				filter: filter,
 				filterIndex: ref _lastOpenRomFilter,
 				initDir: Config.PathEntries.RomAbsolutePath(Emulator.SystemId),
-				windowTitle: "Open Advanced");
+				windowTitle: TheLocalizater.TranslateText("Open Advanced"));
 			if (result is null) return;
 			FileInfo file = new(result);
 			Config.PathEntries.LastRomPath = file.DirectoryName;
@@ -315,7 +315,7 @@ namespace BizHawk.Client.EmuHawk
 
 		private void FlushSaveRAMMenuItem_Click(object sender, EventArgs e)
 		{
-			ShowMessageIfError(() => FlushSaveRAM(), "Failed to flush saveram!");
+			ShowMessageIfError(() => FlushSaveRAM(), TheLocalizater.TranslateText("Failed to flush saveram!"));
 		}
 
 		private void ReadonlyMenuItem_Click(object sender, EventArgs e)
@@ -329,10 +329,10 @@ namespace BizHawk.Client.EmuHawk
 			if (!Emulator.Attributes().Released)
 			{
 				var result = this.ModalMessageBox2(
-					"Thanks for using BizHawk!  The emulation core you have selected "
-						+ "is currently BETA-status.  We appreciate your help in testing BizHawk. "
-						+ "You can record a movie on this core if you'd like to, but expect to "
-						+ "encounter bugs and sync problems.  Continue?",
+					TheLocalizater.TranslateText("Thanks for using BizHawk!  The emulation core you have selected ")
+						+ TheLocalizater.TranslateText("is currently BETA-status.  We appreciate your help in testing BizHawk. ")
+						+ TheLocalizater.TranslateText("You can record a movie on this core if you'd like to, but expect to ")
+						+ TheLocalizater.TranslateText("encounter bugs and sync problems.  Continue?"),
 					"BizHawk");
 
 				if (!result)
@@ -446,7 +446,7 @@ namespace BizHawk.Client.EmuHawk
 		{
 			if (OSTailoredCode.IsUnixHost)
 			{
-				using MsgBox dialog = new("Most of these options will cause crashes on Linux.", "A/V instability warning", MessageBoxIcon.Warning);
+				using MsgBox dialog = new(TheLocalizater.TranslateText("Most of these options will cause crashes on Linux."), TheLocalizater.TranslateText("A/V instability warning"), MessageBoxIcon.Warning);
 				this.ShowDialogWithTempMute(dialog);
 			}
 			RecordAv();
@@ -539,7 +539,7 @@ namespace BizHawk.Client.EmuHawk
 			SoftResetMenuItem.ShortcutKeyDisplayString = Config.HotkeyBindings["Soft Reset"];
 			HardResetMenuItem.ShortcutKeyDisplayString = Config.HotkeyBindings["Hard Reset"];
 
-			RealTimeCounterMenuItem.Text = $"Est. {PlayMovie.MovieTimeLengthStr(Emulator.EstimatedRealTimeSincePowerOn())} since power-on";
+			RealTimeCounterMenuItem.Text = TheLocalizater.TranslateFormatString("Est. {0} since power-on", PlayMovie.MovieTimeLengthStr(Emulator.EstimatedRealTimeSincePowerOn()));
 		}
 
 		private void PauseMenuItem_Click(object sender, EventArgs e)
@@ -1068,18 +1068,18 @@ namespace BizHawk.Client.EmuHawk
 			ExternalToolMenuItem.ReplaceDropDownItems(items: ExtToolManager.ToolStripItems.ToArray());
 			if (ExternalToolMenuItem.DropDownItems.Count == 0)
 			{
-				ExternalToolMenuItem.DropDownItems.Add(new ToolStripMenuItemEx { Enabled = false, Text = "(none)" });
+				ExternalToolMenuItem.DropDownItems.Add(new ToolStripMenuItemEx { Enabled = false, Text = TheLocalizater.TranslateText("(none)") });
 			}
 			if (Config.TrustedExtTools.Count is 0) return;
 
 			ExternalToolMenuItem.DropDownItems.Add(new ToolStripSeparatorEx());
-			ToolStripMenuItemEx forgetTrustedItem = new() { Text = "Forget Trusted Tools" };
+			ToolStripMenuItemEx forgetTrustedItem = new() { Text = TheLocalizater.TranslateText("Forget Trusted Tools") };
 			forgetTrustedItem.Click += (_, _) =>
 			{
 				if (this.ModalMessageBox2(
-					caption: "Forget trusted ext. tools?",
-					text: "This will cause the warning about running third-party code to show again for all the ext. tools you've previously loaded.\n" +
-						"(If a tool has been loaded this session, the warning may not appear until EmuHawk is restarted.)",
+					caption: TheLocalizater.TranslateText("Forget trusted ext. tools?"),
+					text: TheLocalizater.TranslateText("This will cause the warning about running third-party code to show again for all the ext. tools you've previously loaded.\n") +
+						TheLocalizater.TranslateText("(If a tool has been loaded this session, the warning may not appear until EmuHawk is restarted.)"),
 					useOKCancel: true))
 				{
 					Config.TrustedExtTools.Clear();
@@ -1109,12 +1109,12 @@ namespace BizHawk.Client.EmuHawk
 		{
 			if (!Emulator.CanPollInput())
 			{
-				ShowMessageBox(owner: null, "Current core does not support input polling. TAStudio can't be used.");
+				ShowMessageBox(owner: null, TheLocalizater.TranslateText("Current core does not support input polling. TAStudio can't be used."));
 				return;
 			}
 			const int DONT_PROMPT_BEFORE_FRAME = 2 * 60 * 60; // 2 min @ 60 fps
 			if (MovieSession.Movie.NotActive() && Emulator.Frame > DONT_PROMPT_BEFORE_FRAME // if playing casually (not recording) AND played for enough frames (prompting always would be annoying)...
-				&& !this.ModalMessageBox2("This will reload the rom without saving. Launch TAStudio anyway?", "Confirmation")) // ...AND user responds "No" to "Open TAStudio?", then cancel
+				&& !this.ModalMessageBox2(TheLocalizater.TranslateText("This will reload the rom without saving. Launch TAStudio anyway?"), TheLocalizater.TranslateText("Confirmation"))) // ...AND user responds "No" to "Open TAStudio?", then cancel
 			{
 				return;
 			}
@@ -1281,13 +1281,13 @@ namespace BizHawk.Client.EmuHawk
 			{
 				if (MovieSession.ReadOnly)
 				{
-					ViewSubtitlesContextMenuItem.Text = "View Subtitles";
-					ViewCommentsContextMenuItem.Text = "View Comments";
+					ViewSubtitlesContextMenuItem.Text = TheLocalizater.TranslateText("View Subtitles");
+					ViewCommentsContextMenuItem.Text = TheLocalizater.TranslateText("View Comments");
 				}
 				else
 				{
-					ViewSubtitlesContextMenuItem.Text = "Edit Subtitles";
-					ViewCommentsContextMenuItem.Text = "Edit Comments";
+					ViewSubtitlesContextMenuItem.Text = TheLocalizater.TranslateText("Edit Subtitles");
+					ViewCommentsContextMenuItem.Text = TheLocalizater.TranslateText("Edit Comments");
 				}
 			}
 
@@ -1297,23 +1297,23 @@ namespace BizHawk.Client.EmuHawk
 				UndoSavestateContextMenuItem.Enabled = true;
 				if (_stateSlots.IsRedo(MovieSession.Movie, quicksaveSlot))
 				{
-					UndoSavestateContextMenuItem.Text = $"Redo Save to slot {quicksaveSlot}";
+					UndoSavestateContextMenuItem.Text = TheLocalizater.TranslateFormatString("Redo Save to slot {0}", quicksaveSlot);
 					UndoSavestateContextMenuItem.Image = Properties.Resources.Redo;
 				}
 				else
 				{
-					UndoSavestateContextMenuItem.Text = $"Undo Save to slot {quicksaveSlot}";
+					UndoSavestateContextMenuItem.Text = TheLocalizater.TranslateFormatString("Undo Save to slot {0}", quicksaveSlot);
 					UndoSavestateContextMenuItem.Image = Properties.Resources.Undo;
 				}
 			}
 			else
 			{
 				UndoSavestateContextMenuItem.Enabled = false;
-				UndoSavestateContextMenuItem.Text = "Undo Savestate";
+				UndoSavestateContextMenuItem.Text = TheLocalizater.TranslateText("Undo Savestate");
 				UndoSavestateContextMenuItem.Image = Properties.Resources.Undo;
 			}
 
-			ShowMenuContextMenuItem.Text = MainMenuStrip.Visible ? "Hide Menu" : "Show Menu";
+			ShowMenuContextMenuItem.Text = MainMenuStrip.Visible ? TheLocalizater.TranslateText("Hide Menu") : TheLocalizater.TranslateText("Show Menu");
 		}
 
 		private void MainFormContextMenu_Closing(object sender, ToolStripDropDownClosingEventArgs e)
@@ -1405,7 +1405,7 @@ namespace BizHawk.Client.EmuHawk
 			FileWriteResult swapResult = _stateSlots.SwapBackupSavestate(MovieSession.Movie, $"{SaveStatePrefix()}.QuickSave{slot % 10}.State", slot);
 			if (swapResult.IsError)
 			{
-				this.ErrorMessageBox(swapResult, "Failed to swap state files.");
+				this.ErrorMessageBox(swapResult, TheLocalizater.TranslateText("Failed to swap state files."));
 			}
 			else
 			{
@@ -1529,8 +1529,8 @@ namespace BizHawk.Client.EmuHawk
 		{
 			Sound.StopSound();
 			var result = this.ModalMessageBox3(
-				$"Version {Config.UpdateLatestVersion} is now available. Would you like to open the BizHawk homepage?\r\n\r\nClick \"No\" to hide the update notification for this version.",
-				"New Version Available",
+				TheLocalizater.TranslateFormatString("Version {0} is now available. Would you like to open the BizHawk homepage?\r\n\r\nClick \"No\" to hide the update notification for this version.", Config.UpdateLatestVersion),
+				TheLocalizater.TranslateText("New Version Available"),
 				EMsgBoxIcon.Question);
 			Sound.StartSound();
 

@@ -14,7 +14,7 @@ namespace BizHawk.Client.EmuHawk
 		{
 			InitializeComponent();
 
-			ControllerNameLabel.Text = $"Controller {ControllerNumber}";
+			ControllerNameLabel.Text = TheLocalizater.TranslateFormatString("Controller {0}", ControllerNumber);
 		}
 
 		public int ControllerNumber
@@ -59,7 +59,7 @@ namespace BizHawk.Client.EmuHawk
 
 		public override void Refresh()
 		{
-			ControllerNameLabel.Text = $"Controller {ControllerNumber}";
+			ControllerNameLabel.Text = TheLocalizater.TranslateFormatString("Controller {0}", ControllerNumber);
 			base.Refresh();
 		}
 

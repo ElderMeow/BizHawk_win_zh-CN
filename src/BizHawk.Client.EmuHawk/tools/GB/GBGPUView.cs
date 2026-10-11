@@ -70,7 +70,7 @@ namespace BizHawk.Client.EmuHawk
 			}
 		}
 
-		protected override string WindowTitleStatic => "GPU Viewer";
+		protected override string WindowTitleStatic => TheLocalizater.TranslateText("GPU Viewer");
 
 		public GbGpuView()
 		{
@@ -683,9 +683,9 @@ namespace BizHawk.Client.EmuHawk
 				int* pal = (int*)(sprite ? spPal : bgPal) + x * 4;
 				int color = pal[y];
 
-				sb.AppendLine($"Palette {x}");
-				sb.AppendLine($"Color {y}");
-				sb.AppendLine($"(R,G,B) = ({color >> 16 & 255},{color >> 8 & 255},{color & 255})");
+				sb.AppendLine(TheLocalizater.TranslateFormatString("Palette {0}", x));
+				sb.AppendLine(TheLocalizater.TranslateFormatString("Color {0}", y));
+				sb.AppendLine(TheLocalizater.TranslateFormatString("(R,G,B) = ({0},{1},{2})", color >> 16 & 255, color >> 8 & 255, color & 255));
 
 				var lockData = bmpViewDetails.Bmp.LockBits(new Rectangle(0, 0, 8, 10), ImageLockMode.WriteOnly, PixelFormat.Format32bppArgb);
 				int* dest = (int*)lockData.Scan0;
@@ -730,8 +730,8 @@ namespace BizHawk.Client.EmuHawk
 				int tileIndex = y * 16 + x;
 				int tileOffset = tileIndex * 16;
 				sb.AppendLine(_cgb
-					? $"Tile #{tileIndex} @{(secondBank ? 1 : 0)}:{tileOffset + 0x8000:x4}"
-					: $"Tile #{tileIndex} @{tileOffset + 0x8000:x4}");
+					? TheLocalizater.TranslateFormatString("Tile #{0} @{1}:{2:x4}", tileIndex, (secondBank ? 1 : 0), tileOffset + 0x8000)
+					: TheLocalizater.TranslateFormatString("Tile #{0} @{1:x4}", tileIndex, tileOffset + 0x8000));
 
 				var lockData = bmpViewDetails.Bmp.LockBits(new Rectangle(0, 0, 8, 8), ImageLockMode.WriteOnly, PixelFormat.Format32bppArgb);
 				DrawTile((byte*)vram + tileOffset + (secondBank ? 8192 : 0), (int*)lockData.Scan0, lockData.Stride / sizeof(int), (int*)tilesPal);
@@ -766,18 +766,18 @@ namespace BizHawk.Client.EmuHawk
 				var lockData = bmpViewDetails.Bmp.LockBits(new Rectangle(0, 0, 8, 8), ImageLockMode.WriteOnly, PixelFormat.Format32bppArgb);
 				if (!_cgb)
 				{
-					sb.AppendLine($"{(win ? "Win" : "BG")} Map ({x},{y}) @{mapOffset + 0x8000:x4}");
-					sb.AppendLine($"  Tile #{tileIndex} @{tileOffset + 0x8000:x4}");
+					sb.AppendLine(TheLocalizater.TranslateFormatString("{0} Map ({1},{2}) @{3:x4}", (win ? "Win" : "BG"), x, y, mapOffset + 0x8000));
+					sb.AppendLine(TheLocalizater.TranslateFormatString("  Tile #{0} @{1:x4}", tileIndex, tileOffset + 0x8000));
 					DrawTile((byte*)_vram + tileOffset, (int*)lockData.Scan0, lockData.Stride / sizeof(int), (int*)_bgpal);
 				}
 				else
 				{
 					int tileExt = mapBase[8192];
 
-					sb.AppendLine($"{(win ? "Win" : "BG")} Map ({x},{y}) @{mapOffset + 0x8000:x4}");
-					sb.AppendLine($"  Tile #{tileIndex} @{(tileExt.Bit(3) ? 1 : 0)}:{tileOffset + 0x8000:x4}");
-					sb.AppendLine($"  Palette {tileExt & 7}");
-					sb.AppendLine($"  Flags {(tileExt.Bit(5) ? 'H' : ' ')}{(tileExt.Bit(6) ? 'V' : ' ')}{(tileExt.Bit(7) ? 'P' : ' ')}");
+					sb.AppendLine(TheLocalizater.TranslateFormatString("{0} Map ({1},{2}) @{3:x4}", (win ? "Win" : "BG"), x, y, mapOffset + 0x8000));
+					sb.AppendLine(TheLocalizater.TranslateFormatString("  Tile #{0} @{1}:{2:x4}", tileIndex, (tileExt.Bit(3) ? 1 : 0), tileOffset + 0x8000));
+					sb.AppendLine(TheLocalizater.TranslateFormatString("  Palette {0}", tileExt & 7));
+					sb.AppendLine(TheLocalizater.TranslateFormatString("  Flags {0}{1}{2}", (tileExt.Bit(5) ? 'H' : ' '), (tileExt.Bit(6) ? 'V' : ' '), (tileExt.Bit(7) ? 'P' : ' ')));
 					DrawTileHv((byte*)_vram + tileOffset + (tileExt.Bit(3) ? 8192 : 0), (int*)lockData.Scan0, lockData.Stride / sizeof(int), (int*)_bgpal + 4 * (tileExt & 7), tileExt.Bit(5), tileExt.Bit(6));
 				}
 				bmpViewDetails.Bmp.UnlockBits(lockData);
@@ -815,26 +815,26 @@ namespace BizHawk.Client.EmuHawk
 				}
 
 				int tileOffset = tileNum * 16;
-				sb.AppendLine($"Sprite #{x} @{4 * x + 0xfe00:x4}");
-				sb.AppendLine($"  (x,y) = ({sx},{sy})");
+				sb.AppendLine(TheLocalizater.TranslateFormatString("Sprite #{0} @{1:x4}", x, 4 * x + 0xfe00));
+				sb.AppendLine(TheLocalizater.TranslateFormatString("  (x,y) = ({0},{1})", sx, sy));
 				var lockData = bmpViewDetails.Bmp.LockBits(new Rectangle(0, 0, 8, tall ? 16 : 8), ImageLockMode.WriteOnly, PixelFormat.Format32bppArgb);
 				if (_cgb)
 				{
-					sb.AppendLine($"  Tile #{(y == 1 ? tileNum ^ 1 : tileNum)} @{(flags.Bit(3) ? 1 : 0)}:{tileOffset + 0x8000:x4}");
-					sb.AppendLine($"  Palette {flags & 7}");
+					sb.AppendLine(TheLocalizater.TranslateFormatString("  Tile #{0} @{1}:{2:x4}", (y == 1 ? tileNum ^ 1 : tileNum), (flags.Bit(3) ? 1 : 0), tileOffset + 0x8000));
+					sb.AppendLine(TheLocalizater.TranslateFormatString("  Palette {0}", flags & 7));
 					DrawTileHv((byte*)vram + tileOffset + (flags.Bit(3) ? 8192 : 0), (int*)lockData.Scan0, lockData.Stride / sizeof(int), (int*)spPal + 4 * (flags & 7), hFlip, vFlip);
 					if (tall)
 						DrawTileHv((byte*)vram + (tileOffset ^ 16) + (flags.Bit(3) ? 8192 : 0), (int*)(lockData.Scan0 + lockData.Stride * 8), lockData.Stride / sizeof(int), (int*)spPal + 4 * (flags & 7), hFlip, vFlip);
 				}
 				else
 				{
-					sb.AppendLine($"  Tile #{(y == 1 ? tileNum ^ 1 : tileNum)} @{tileOffset + 0x8000:x4}");
-					sb.AppendLine($"  Palette {(flags.Bit(4) ? 1 : 0)}");
+					sb.AppendLine(TheLocalizater.TranslateFormatString("  Tile #{0} @{1:x4}", (y == 1 ? tileNum ^ 1 : tileNum), tileOffset + 0x8000));
+					sb.AppendLine(TheLocalizater.TranslateFormatString("  Palette {0}", (flags.Bit(4) ? 1 : 0)));
 					DrawTileHv((byte*)vram + tileOffset, (int*)lockData.Scan0, lockData.Stride / sizeof(int), (int*)spPal + (flags.Bit(4) ? 4 : 0), hFlip, vFlip);
 					if (tall)
 						DrawTileHv((byte*)vram + (tileOffset ^ 16), (int*)(lockData.Scan0 + lockData.Stride * 8), lockData.Stride / sizeof(int), (int*)spPal + 4 * (flags.Bit(4) ? 4 : 0), hFlip, vFlip);
 				}
-				sb.AppendLine($"  Flags {(hFlip ? 'H' : ' ')}{(vFlip ? 'V' : ' ')}{(flags.Bit(7) ? 'P' : ' ')}");
+				sb.AppendLine(TheLocalizater.TranslateFormatString("  Flags {0}{1}{2}", (hFlip ? 'H' : ' '), (vFlip ? 'V' : ' '), (flags.Bit(7) ? 'P' : ' ')));
 				bmpViewDetails.Bmp.UnlockBits(lockData);
 				labelDetails.Text = sb.ToString();
 				bmpViewDetails.Refresh();
@@ -844,7 +844,7 @@ namespace BizHawk.Client.EmuHawk
 		private void bmpViewBG_MouseEnter(object sender, EventArgs e)
 		{
 			SaveDetails();
-			groupBoxDetails.Text = "Details - Background";
+			groupBoxDetails.Text = TheLocalizater.TranslateText("Details - Background");
 		}
 
 		private void bmpViewBG_MouseLeave(object sender, EventArgs e)
@@ -860,7 +860,7 @@ namespace BizHawk.Client.EmuHawk
 		private void bmpViewWin_MouseEnter(object sender, EventArgs e)
 		{
 			SaveDetails();
-			groupBoxDetails.Text = "Details - Window";
+			groupBoxDetails.Text = TheLocalizater.TranslateText("Details - Window");
 		}
 
 		private void bmpViewWin_MouseLeave(object sender, EventArgs e)
@@ -876,7 +876,7 @@ namespace BizHawk.Client.EmuHawk
 		private void bmpViewTiles1_MouseEnter(object sender, EventArgs e)
 		{
 			SaveDetails();
-			groupBoxDetails.Text = "Details - Tiles";
+			groupBoxDetails.Text = TheLocalizater.TranslateText("Details - Tiles");
 		}
 
 		private void bmpViewTiles1_MouseLeave(object sender, EventArgs e)
@@ -894,7 +894,7 @@ namespace BizHawk.Client.EmuHawk
 			if (!_cgb)
 				return;
 			SaveDetails();
-			groupBoxDetails.Text = "Details - Tiles";
+			groupBoxDetails.Text = TheLocalizater.TranslateText("Details - Tiles");
 		}
 
 		private void bmpViewTiles2_MouseLeave(object sender, EventArgs e)
@@ -914,7 +914,7 @@ namespace BizHawk.Client.EmuHawk
 		private void bmpViewBGPal_MouseEnter(object sender, EventArgs e)
 		{
 			SaveDetails();
-			groupBoxDetails.Text = "Details - Palette";
+			groupBoxDetails.Text = TheLocalizater.TranslateText("Details - Palette");
 		}
 
 		private void bmpViewBGPal_MouseLeave(object sender, EventArgs e)
@@ -930,7 +930,7 @@ namespace BizHawk.Client.EmuHawk
 		private void bmpViewSPPal_MouseEnter(object sender, EventArgs e)
 		{
 			SaveDetails();
-			groupBoxDetails.Text = "Details - Palette";
+			groupBoxDetails.Text = TheLocalizater.TranslateText("Details - Palette");
 		}
 
 		private void bmpViewSPPal_MouseLeave(object sender, EventArgs e)
@@ -946,7 +946,7 @@ namespace BizHawk.Client.EmuHawk
 		private void bmpViewOAM_MouseEnter(object sender, EventArgs e)
 		{
 			SaveDetails();
-			groupBoxDetails.Text = "Details - Sprite";
+			groupBoxDetails.Text = TheLocalizater.TranslateText("Details - Sprite");
 		}
 
 		private void bmpViewOAM_MouseLeave(object sender, EventArgs e)
@@ -962,7 +962,7 @@ namespace BizHawk.Client.EmuHawk
 		private void bmpViewOBJ_MouseEnter(object sender, EventArgs e)
 		{
 			SaveDetails();
-			groupBoxDetails.Text = "Details - Objects";
+			groupBoxDetails.Text = TheLocalizater.TranslateText("Details - Objects");
 		}
 
 		private void bmpViewOBJ_MouseLeave(object sender, EventArgs e)
@@ -1005,7 +1005,7 @@ namespace BizHawk.Client.EmuHawk
 				if (this.InnermostControlAt(Cursor.Position) is BmpView bv)
 				{
 					Clipboard.SetImage(bv.Bmp);
-					labelClipboard.Text = $"{bv.Text} copied to clipboard.";
+					labelClipboard.Text = TheLocalizater.TranslateFormatString("{0} copied to clipboard.", bv.Text);
 					_messageTimer.Stop();
 					_messageTimer.Start();
 				}
@@ -1015,7 +1015,7 @@ namespace BizHawk.Client.EmuHawk
 		private void MessageTimer_Tick(object sender, EventArgs e)
 		{
 			_messageTimer.Stop();
-			labelClipboard.Text = "CTRL+C copies the pane under the mouse.";
+			labelClipboard.Text = TheLocalizater.TranslateText("CTRL+C copies the pane under the mouse.");
 		}
 
 		private void ButtonChangeColor_Click(object sender, EventArgs e)

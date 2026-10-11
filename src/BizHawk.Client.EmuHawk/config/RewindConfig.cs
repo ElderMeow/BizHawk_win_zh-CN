@@ -165,8 +165,8 @@ namespace BizHawk.Client.EmuHawk
 				if (TargetFrameLengthRadioButton.Checked)
 					calculatedRewindInterval = (int) Math.Ceiling((int) TargetFrameLengthNumeric.Value / estFrames);
 			}
-			ApproxFramesLabel.Text = $"{estFrames:n0} frames";
-			EstTimeLabel.Text = $"{estFrames / _framerate / 60.0 * calculatedRewindInterval:n} minutes";
+			ApproxFramesLabel.Text = TheLocalizater.TranslateFormatString("{0:n0} frames", estFrames);
+			EstTimeLabel.Text = TheLocalizater.TranslateFormatString("{0:n} minutes", estFrames / _framerate / 60.0 * calculatedRewindInterval);
 		}
 
 		private void FrameLength_ValueChanged(object sender, EventArgs e) => CalculateEstimates();

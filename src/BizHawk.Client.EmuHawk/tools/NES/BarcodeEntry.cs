@@ -12,7 +12,7 @@ namespace BizHawk.Client.EmuHawk
 		[RequiredService]
 		private DatachBarcode Reader { get; set; }
 
-		protected override string WindowTitleStatic => "Barcode Entry";
+		protected override string WindowTitleStatic => TheLocalizater.TranslateText("Barcode Entry");
 
 		public BarcodeEntry()
 		{
@@ -27,7 +27,7 @@ namespace BizHawk.Client.EmuHawk
 		{
 			if (!DatachBarcode.ValidString(textBox1.Text, out var why))
 			{
-				label3.Text = $"Invalid: {why}";
+				label3.Text = TheLocalizater.TranslateFormatString("Invalid: {0}", why);
 				label3.Visible = true;
 				button1.Enabled = false;
 			}

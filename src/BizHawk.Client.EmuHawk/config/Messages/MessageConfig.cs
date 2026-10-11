@@ -68,9 +68,9 @@ namespace BizHawk.Client.EmuHawk
 				Anchor = AnchorStyles.Bottom | AnchorStyles.Left,
 				Controls =
 				{
-					new LabelEx { Text = "Messages fade after" },
+					new LabelEx { Text = TheLocalizater.TranslateText("Messages fade after") },
 					_nudDuration,
-					new LabelEx { Text = "seconds" },
+					new LabelEx { Text = TheLocalizater.TranslateText("seconds") },
 				},
 				Location = OSTailoredCode.IsUnixHost ? new(224, 380) : new(192, 360), // ¯\_(ツ)_/¯
 				Size = new(300, 24),

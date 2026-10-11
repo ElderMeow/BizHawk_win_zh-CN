@@ -41,7 +41,7 @@ namespace BizHawk.Client.EmuHawk
 			{
 				timer1.Stop();
 				_listening = false;
-				buttonBind.Text = "Bind!";
+				buttonBind.Text = TheLocalizater.TranslateText("Bind!");
 				Input.Instance.StopListeningForAxisEvents();
 				// rebinding the same mouse axis toggles between relative and absolute
 				const string AXIS_MX = "WMouse X";
@@ -69,14 +69,14 @@ namespace BizHawk.Client.EmuHawk
 			{
 				timer1.Stop();
 				_listening = false;
-				buttonBind.Text = "Bind!";
+				buttonBind.Text = TheLocalizater.TranslateText("Bind!");
 				Input.Instance.StopListeningForAxisEvents();
 			}
 			else
 			{
 				Input.Instance.StartListeningForAxisEvents();
 				_listening = true;
-				buttonBind.Text = "Cancel!";
+				buttonBind.Text = TheLocalizater.TranslateText("Cancel!");
 				timer1.Start();
 			}
 		}
@@ -84,13 +84,13 @@ namespace BizHawk.Client.EmuHawk
 		private void TrackBarSensitivity_ValueChanged(object sender, EventArgs e)
 		{
 			_bind.Mult = trackBarSensitivity.Value / 20.0f;
-			labelSensitivity.Text = $"Sensitivity: {_bind.Mult:P0}";
+			labelSensitivity.Text = TheLocalizater.TranslateFormatString("Sensitivity: {0:P0}", _bind.Mult);
 		}
 
 		private void TrackBarDeadzone_ValueChanged(object sender, EventArgs e)
 		{
 			_bind.Deadzone = trackBarDeadzone.Value / 50.0f;
-			labelDeadzone.Text = $"Deadzone: {_bind.Deadzone:P0}";
+			labelDeadzone.Text = TheLocalizater.TranslateFormatString("Deadzone: {0:P0}", _bind.Deadzone);
 		}
 
 		private void ButtonFlip_Click(object sender, EventArgs e)

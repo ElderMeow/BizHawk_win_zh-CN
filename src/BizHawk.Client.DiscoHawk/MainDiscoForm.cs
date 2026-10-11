@@ -6,7 +6,6 @@ using System.IO;
 using BizHawk.Common;
 using BizHawk.Common.PathExtensions;
 using BizHawk.Emulation.DiscSystem;
-using BizHawk.Client.DiscoHawk.TheLocalization;
 
 namespace BizHawk.Client.DiscoHawk
 {
@@ -49,7 +48,7 @@ namespace BizHawk.Client.DiscoHawk
 					var success = DiscoHawkLogic.HawkAndWriteFile(
 						inputPath: file,
 						// errorCallback: err => MessageBox.Show(err, "Error loading disc"),
-						errorCallback: err => MessageBox.Show(err, TheLocalizer.TranslateText("Error loading disc")),
+						errorCallback: err => MessageBox.Show(err, TheLocalizater.TranslateText("Error loading disc")),
 						hawkedFormat: outputFormat);
 					if (!success) break;
 				}
@@ -57,7 +56,7 @@ namespace BizHawk.Client.DiscoHawk
 			catch (Exception ex)
 			{
 				// MessageBox.Show(ex.ToString(), "Error loading disc");
-				MessageBox.Show(ex.ToString(), TheLocalizer.TranslateText("Error loading disc"));
+				MessageBox.Show(ex.ToString(), TheLocalizater.TranslateText("Error loading disc"));
 				throw;
 			}
 			finally
@@ -131,8 +130,8 @@ namespace BizHawk.Client.DiscoHawk
 				//	text: "This function requires FFmpeg, but it doesn't appear to have been downloaded.\n"
 				//		+ "EmuHawk can automatically download it: you just need to set up A/V recording with the FFmpeg writer.");
 				MessageBox.Show(
-					caption: TheLocalizer.TranslateText("FFmpeg missing"),
-					text: TheLocalizer.TranslateText("This function requires FFmpeg, but it doesn't appear to have been downloaded.\n"
+					caption: TheLocalizater.TranslateText("FFmpeg missing"),
+					text: TheLocalizater.TranslateText("This function requires FFmpeg, but it doesn't appear to have been downloaded.\n"
 						+ "EmuHawk can automatically download it: you just need to set up A/V recording with the FFmpeg writer."));
 				return;
 #else
@@ -156,8 +155,8 @@ namespace BizHawk.Client.DiscoHawk
 						//	$"Do you want to overwrite existing files? Choosing \"No\" will simply skip those. You could also \"Cancel\" the extraction entirely.\n\ncaused by file: {mp3Path}",
 						//	"File to extract already exists",
 						=> MessageBox.Show(
-							TheLocalizer.TranslateFormatString("Do you want to overwrite existing files? Choosing \"No\" will simply skip those. You could also \"Cancel\" the extraction entirely.\n\ncaused by file: {0}", mp3Path),
-							TheLocalizer.TranslateText("File to extract already exists"),
+							TheLocalizater.TranslateFormatString("Do you want to overwrite existing files? Choosing \"No\" will simply skip those. You could also \"Cancel\" the extraction entirely.\n\ncaused by file: {0}", mp3Path),
+							TheLocalizater.TranslateText("File to extract already exists"),
 							MessageBoxButtons.YesNoCancel) switch
 						{
 							DialogResult.Yes => true,
@@ -170,7 +169,7 @@ namespace BizHawk.Client.DiscoHawk
 			catch (Exception ex)
 			{
 				// MessageBox.Show(ex.ToString(), "Error loading disc");
-				MessageBox.Show(ex.ToString(), TheLocalizer.TranslateText("Error loading disc"));
+				MessageBox.Show(ex.ToString(), TheLocalizater.TranslateText("Error loading disc"));
 				throw;
 			}
 			finally

@@ -1,6 +1,6 @@
 ﻿using System.Collections.Concurrent;
 
-namespace BizHawk.Client.DiscoHawk.TheLocalization
+namespace BizHawk.Client.DiscoHawk
 {
 	internal class HardEncodingTextTralslaterBase
 	{

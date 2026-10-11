@@ -23,7 +23,7 @@ namespace BizHawk.Client.EmuHawk
 		private IPCEngineSoundDebuggable SoundDebugImpl
 			=> _maybeSoundDebug!;
 
-		protected override string WindowTitleStatic => "Sound Debugger";
+		protected override string WindowTitleStatic => TheLocalizater.TranslateText("Sound Debugger");
 
 		public PCESoundDebugger()
 		{
@@ -70,7 +70,7 @@ namespace BizHawk.Client.EmuHawk
 				{
 					lvChannels.Items[i].SubItems[1].Text = "-";
 					lvChannels.Items[i].SubItems[2].Text = "-";
-					lvChannels.Items[i].SubItems[3].Text = "(disabled)";
+					lvChannels.Items[i].SubItems[3].Text = TheLocalizater.TranslateText("(disabled)");
 					_lastSamples[i] = null;
 					continue;
 				}
@@ -86,7 +86,7 @@ namespace BizHawk.Client.EmuHawk
 				lvChannels.Items[i].SubItems[2].Text = ch.Frequency.ToString();
 				if (ch.NoiseChannel)
 				{
-					lvChannels.Items[i].SubItems[3].Text = "(noise)";
+					lvChannels.Items[i].SubItems[3].Text = TheLocalizater.TranslateText("(noise)");
 					_lastSamples[i] = null;
 					continue;
 				}

@@ -1,4 +1,3 @@
-using BizHawk.Client.DiscoHawk.TheLocalization;
 using BizHawk.Common;
 using BizHawk.Common.StringExtensions;
 using BizHawk.Emulation.DiscSystem;
@@ -87,7 +86,7 @@ namespace BizHawk.Client.DiscoHawk
 					if (dllShortPathLen == 0)
 					{
 						//MessageBox.Show(SEMICOLON_IN_DIR_MSG);
-						MessageBox.Show(TheLocalizer.TranslateText(SEMICOLON_IN_DIR_MSG));
+						MessageBox.Show(TheLocalizater.TranslateText(SEMICOLON_IN_DIR_MSG));
 						return;
 					}
 
@@ -96,7 +95,7 @@ namespace BizHawk.Client.DiscoHawk
 					if (dllShortPathLen == 0)
 					{
 						//MessageBox.Show(SEMICOLON_IN_DIR_MSG);
-						MessageBox.Show(TheLocalizer.TranslateText(SEMICOLON_IN_DIR_MSG));
+						MessageBox.Show(TheLocalizater.TranslateText(SEMICOLON_IN_DIR_MSG));
 						return;
 					}
 
@@ -104,7 +103,7 @@ namespace BizHawk.Client.DiscoHawk
 					if (dllDir.ContainsOrdinal(';'))
 					{
 						//MessageBox.Show(SEMICOLON_IN_DIR_MSG);
-						MessageBox.Show(TheLocalizer.TranslateText(SEMICOLON_IN_DIR_MSG));
+						MessageBox.Show(TheLocalizater.TranslateText(SEMICOLON_IN_DIR_MSG));
 						return;
 					}
 				}
@@ -114,7 +113,7 @@ namespace BizHawk.Client.DiscoHawk
 					// MessageBox.Show(
 					// 	$"SetDllDirectoryW failed with error code {Marshal.GetLastWin32Error()}, this is fatal. DiscoHawk will now close.");
 					MessageBox.Show(
-					 	TheLocalizer.TranslateFormatString("SetDllDirectoryW failed with error code {0}, this is fatal. DiscoHawk will now close.", Marshal.GetLastWin32Error()));
+					 	TheLocalizater.TranslateFormatString("SetDllDirectoryW failed with error code {0}, this is fatal. DiscoHawk will now close.", Marshal.GetLastWin32Error()));
 					return;
 				}
 			}

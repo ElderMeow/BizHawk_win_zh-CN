@@ -157,12 +157,12 @@ namespace BizHawk.Client.EmuHawk
 
 			if (CurrentTasMovie?.Changes is not true) return true;
 			var shouldSaveResult = DialogController.DoWithTempMute(() => this.ModalMessageBox3(
-				caption: "Closing with Unsaved Changes",
+				caption: TheLocalizater.TranslateText("Closing with Unsaved Changes"),
 				icon: EMsgBoxIcon.Question,
-				text: $"Save {WindowTitleStatic} project?"));
+				text: TheLocalizater.TranslateFormatString("Save {0} project?", WindowTitleStatic)));
 			if (shouldSaveResult == true)
 			{
-				TryAgainResult saveResult = this.DoWithTryAgainBox(() => SaveTas(), "Failed to save movie.");
+				TryAgainResult saveResult = this.DoWithTryAgainBox(() => SaveTas(), TheLocalizater.TranslateText("Failed to save movie."));
 				return saveResult != TryAgainResult.Canceled;
 			}
 			if (shouldSaveResult is null) return false;

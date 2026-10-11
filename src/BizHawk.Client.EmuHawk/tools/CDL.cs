@@ -60,11 +60,11 @@ namespace BizHawk.Client.EmuHawk
 		private string _currentFilename;
 		private CodeDataLog _cdl;
 
-		private string _windowTitle = "Code Data Logger";
+		private string _windowTitle = TheLocalizater.TranslateText("Code Data Logger");
 
 		protected override string WindowTitle => _windowTitle;
 
-		protected override string WindowTitleStatic => "Code Data Logger";
+		protected override string WindowTitleStatic => TheLocalizater.TranslateText("Code Data Logger");
 
 		public CDL()
 		{
@@ -220,7 +220,7 @@ namespace BizHawk.Client.EmuHawk
 				}
 			}
 
-			var result = DialogController.ShowMessageBox3("Save changes to CDL session?", "CDL Save", EMsgBoxIcon.Question);
+			var result = DialogController.ShowMessageBox3(TheLocalizater.TranslateText("Save changes to CDL session?"), TheLocalizater.TranslateText("CDL Save"), EMsgBoxIcon.Question);
 			if (result == false)
 			{
 				ShutdownCDL();
@@ -263,7 +263,7 @@ namespace BizHawk.Client.EmuHawk
 				if (!newCDL.Check(testCDL))
 				{
 					if(!_autoloading)
-						this.ModalMessageBox("CDL file does not match emulator's current memory map!");
+						this.ModalMessageBox(TheLocalizater.TranslateText("CDL file does not match emulator's current memory map!"));
 					return;
 				}
 
@@ -318,7 +318,7 @@ namespace BizHawk.Client.EmuHawk
 			//take care not to clobber an existing CDL
 			if (_cdl != null)
 			{
-				var result = this.ModalMessageBox2("OK to create new CDL?", "Query");
+				var result = this.ModalMessageBox2(TheLocalizater.TranslateText("OK to create new CDL?"), TheLocalizater.TranslateText("Query"));
 				if (!result) return;
 			}
 
@@ -338,7 +338,7 @@ namespace BizHawk.Client.EmuHawk
 			//take care not to clobber an existing CDL
 			if (_cdl != null)
 			{
-				var result = this.ModalMessageBox2("OK to load new CDL?", "Query");
+				var result = this.ModalMessageBox2(TheLocalizater.TranslateText("OK to load new CDL?"), TheLocalizater.TranslateText("Query"));
 				if (!result) return;
 			}
 
@@ -352,7 +352,7 @@ namespace BizHawk.Client.EmuHawk
 		{
 			TryAgainResult result = this.DoWithTryAgainBox(
 				() => FileWriter.Write(_currentFilename, _cdl.Save),
-				"Failed to save CDL session.");
+				TheLocalizater.TranslateText("Failed to save CDL session."));
 			if (result == TryAgainResult.Saved)
 			{
 				_recent.Add(_currentFilename);
@@ -365,7 +365,7 @@ namespace BizHawk.Client.EmuHawk
 		{
 			if (_cdl == null)
 			{
-				this.ModalMessageBox("Cannot save with no CDL loaded!", "Alert");
+				this.ModalMessageBox(TheLocalizater.TranslateText("Cannot save with no CDL loaded!"), TheLocalizater.TranslateText("Alert"));
 				return;
 			}
 
@@ -411,7 +411,7 @@ namespace BizHawk.Client.EmuHawk
 		{
 			if (_cdl == null)
 			{
-				this.ModalMessageBox("Cannot append with no CDL loaded!", "Alert");
+				this.ModalMessageBox(TheLocalizater.TranslateText("Cannot append with no CDL loaded!"), TheLocalizater.TranslateText("Alert"));
 			}
 			else
 			{
@@ -427,7 +427,7 @@ namespace BizHawk.Client.EmuHawk
 					newCDL.Load(fs);
 					if (!_cdl.Check(newCDL))
 					{
-						this.ModalMessageBox("CDL file does not match emulator's current memory map!");
+						this.ModalMessageBox(TheLocalizater.TranslateText("CDL file does not match emulator's current memory map!"));
 						return;
 					}
 					_cdl.LogicalOrFrom(newCDL);
@@ -440,11 +440,11 @@ namespace BizHawk.Client.EmuHawk
 		{
 			if (_cdl == null)
 			{
-				this.ModalMessageBox("Cannot clear with no CDL loaded!", "Alert");
+				this.ModalMessageBox(TheLocalizater.TranslateText("Cannot clear with no CDL loaded!"), TheLocalizater.TranslateText("Alert"));
 			}
 			else
 			{
-				var result = this.ModalMessageBox2("OK to clear CDL?", "Query");
+				var result = this.ModalMessageBox2(TheLocalizater.TranslateText("OK to clear CDL?"), TheLocalizater.TranslateText("Query"));
 				if (result)
 				{
 					_cdl.ClearData();
@@ -457,7 +457,7 @@ namespace BizHawk.Client.EmuHawk
 		{
 			if (_cdl == null)
 			{
-				this.ModalMessageBox("Cannot disassemble with no CDL loaded!", "Alert");
+				this.ModalMessageBox(TheLocalizater.TranslateText("Cannot disassemble with no CDL loaded!"), TheLocalizater.TranslateText("Alert"));
 				return;
 			}
 			var result = this.ShowFileSaveDialog(initDir: Config!.PathEntries.ToolsAbsolutePath());

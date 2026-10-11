@@ -72,7 +72,7 @@ namespace BizHawk.Client.EmuHawk
 		private readonly StatusLabelEx StatusBarRewindIndicator = new()
 		{
 			Image = Properties.Resources.RewindRecord,
-			ToolTipText = "Rewinder is capturing states",
+			ToolTipText = TheLocalizater.TranslateText("Rewinder is capturing states"),
 		};
 
 		private void MainForm_Load(object sender, EventArgs e)
@@ -102,7 +102,7 @@ namespace BizHawk.Client.EmuHawk
 					var temp = new ToolStripMenuItemEx
 					{
 						Tag = i,
-						Text = $"{(quotient is not 0L ? quotient.ToString() : string.Empty)}&{remainder}x",
+						Text = TheLocalizater.TranslateFormatString("{0}&{1}x", (quotient is not 0L ? quotient.ToString() : string.Empty), remainder),
 					};
 					temp.Click += this.WindowSize_Click;
 					WindowSizeSubMenu.DropDownItems.Insert(i - 1, temp);
@@ -146,31 +146,31 @@ namespace BizHawk.Client.EmuHawk
 				CoresSubMenu.DropDownItems.Add(submenu);
 			}
 			CoresSubMenu.DropDownItems.Add(new ToolStripSeparator { AutoSize = true });
-			var GBInSGBMenuItem = new ToolStripMenuItem { Text = "GB in SGB" };
+			var GBInSGBMenuItem = new ToolStripMenuItem { Text = TheLocalizater.TranslateText("GB in SGB") };
 			GBInSGBMenuItem.Click += (_, _) =>
 			{
 				Config.GbAsSgb = !Config.GbAsSgb;
 				if (Emulator.SystemId is VSystemID.Raw.GB or VSystemID.Raw.GBC or VSystemID.Raw.SGB) FlagNeedsReboot();
 			};
 			CoresSubMenu.DropDownItems.Add(GBInSGBMenuItem);
-			var setLibretroCoreToolStripMenuItem = new ToolStripMenuItem { Text = "Set Libretro Core..." };
+			var setLibretroCoreToolStripMenuItem = new ToolStripMenuItem { Text = TheLocalizater.TranslateText("Set Libretro Core...") };
 			setLibretroCoreToolStripMenuItem.Click += (_, _) => RunLibretroCoreChooser();
 			CoresSubMenu.DropDownItems.Add(setLibretroCoreToolStripMenuItem);
 			CoresSubMenu.DropDownOpened += (_, _) => GBInSGBMenuItem.Checked = Config.GbAsSgb;
 
-			ToolStripMenuItemEx recentCoreSettingsSubmenu = new() { Text = "Recent" };
+			ToolStripMenuItemEx recentCoreSettingsSubmenu = new() { Text = TheLocalizater.TranslateText("Recent") };
 			recentCoreSettingsSubmenu.DropDownItems.AddRange(CreateCoreSettingsSubmenus().ToArray());
-			ToolStripMenuItemEx noRecentsItem = new() { Enabled = false, Text = "(N/A)" };
+			ToolStripMenuItemEx noRecentsItem = new() { Enabled = false, Text = TheLocalizater.TranslateText("(N/A)") };
 			recentCoreSettingsSubmenu.DropDownItems.Add(noRecentsItem);
 			recentCoreSettingsSubmenu.DropDownOpening += (_, _) =>
 			{
 				foreach (ToolStripItem submenu in recentCoreSettingsSubmenu.DropDownItems) submenu.Visible = Config.RecentCores.Contains(submenu.Text);
 				noRecentsItem.Visible = Config.RecentCores.Count is 0;
 			};
-			ToolStripMenuItemEx consolesCoreSettingsSubmenu = new() { Text = "For Consoles" };
-			ToolStripMenuItemEx handheldsCoreSettingsSubmenu = new() { Text = "For Handhelds" };
-			ToolStripMenuItemEx pcsCoreSettingsSubmenu = new() { Text = "For Computers" };
-			ToolStripMenuItemEx otherCoreSettingsSubmenu = new() { Text = "Other" };
+			ToolStripMenuItemEx consolesCoreSettingsSubmenu = new() { Text = TheLocalizater.TranslateText("For Consoles") };
+			ToolStripMenuItemEx handheldsCoreSettingsSubmenu = new() { Text = TheLocalizater.TranslateText("For Handhelds") };
+			ToolStripMenuItemEx pcsCoreSettingsSubmenu = new() { Text = TheLocalizater.TranslateText("For Computers") };
+			ToolStripMenuItemEx otherCoreSettingsSubmenu = new() { Text = TheLocalizater.TranslateText("Other") };
 			foreach (var submenu in CreateCoreSettingsSubmenus(includeDupes: true).OrderBy(submenu => submenu.Text))
 			{
 				var parentMenu = (VSystemCategory) submenu.Tag switch
@@ -186,7 +186,7 @@ namespace BizHawk.Client.EmuHawk
 			{
 				if (submenu.DropDownItems.Count is 0)
 				{
-					submenu.DropDownItems.Add(new ToolStripMenuItemEx { Text = "(none)" });
+					submenu.DropDownItems.Add(new ToolStripMenuItemEx { Text = TheLocalizater.TranslateText("(none)") });
 					submenu.Enabled = false;
 				}
 			}
@@ -203,15 +203,15 @@ namespace BizHawk.Client.EmuHawk
 						pcsCoreSettingsSubmenu,
 						otherCoreSettingsSubmenu,
 					},
-					Text = "Core Settings",
+					Text = TheLocalizater.TranslateText("Core Settings"),
 				});
 
 			_ = MainformMenu.Items.InsertAfter(ToolsSubMenu, insert: NullHawkVSysSubmenu);
 
-			ToolStripMenuItemEx DOSSettingsToolStripMenuItem = new() { Text = "Settings..." };
+			ToolStripMenuItemEx DOSSettingsToolStripMenuItem = new() { Text = TheLocalizater.TranslateText("Settings...") };
 			DOSSettingsToolStripMenuItem.Click += (_, _) => _ = OpenDOSBoxSettingsDialog();
 			DOSSubMenu.DropDownItems.Add(DOSSettingsToolStripMenuItem);
-			ToolStripMenuItemEx DOSExportHDDImageToolStripMenuItem = new() { Text = "Export Hard Disk Drive..." };
+			ToolStripMenuItemEx DOSExportHDDImageToolStripMenuItem = new() { Text = TheLocalizater.TranslateText("Export Hard Disk Drive...") };
 			DOSExportHDDImageToolStripMenuItem.Click += DOSSExportHddMenuItem_Click;
 			DOSSubMenu.DropDownItems.Add(DOSExportHDDImageToolStripMenuItem);
 			DOSSubMenu.DropDownOpened += (_, _) => DOSExportHDDImageToolStripMenuItem.Enabled = Emulator is DOSBox dosbox && dosbox.HasValidHDD();
@@ -269,7 +269,7 @@ namespace BizHawk.Client.EmuHawk
 			if (OSTailoredCode.IsUnixHost)
 			{
 				// workaround for https://github.com/mono/mono/issues/12644
-				MainFormContextMenu.Items.Insert(0, new ToolStripMenuItemEx { Text = "(Dismiss Menu)" }); // don't even need to attach any behaviour, since clicking anything will dismiss the menu first
+				MainFormContextMenu.Items.Insert(0, new ToolStripMenuItemEx { Text = TheLocalizater.TranslateText("(Dismiss Menu)") }); // don't even need to attach any behaviour, since clicking anything will dismiss the menu first
 				MainFormContextMenu.Items.Insert(1, new ToolStripSeparatorEx());
 			}
 
@@ -323,7 +323,7 @@ namespace BizHawk.Client.EmuHawk
 
 			// can't pass self as IDialogParent :(
 			return new CoreComm(
-				message => this.ModalMessageBox(message, "Warning", EMsgBoxIcon.Warning),
+				message => this.ModalMessageBox(message, TheLocalizater.TranslateText("Warning"), EMsgBoxIcon.Warning),
 				AddOnScreenMessage,
 				cfp,
 				prefs,
@@ -668,8 +668,8 @@ namespace BizHawk.Client.EmuHawk
 				{
 					ShowMessageBox(
 						owner: null,
-						text: "Couldn't initialize sound device! Try changing the output method in Sound config.",
-						caption: "Initialization Error",
+						text: TheLocalizater.TranslateText("Couldn't initialize sound device! Try changing the output method in Sound config."),
+						caption: TheLocalizater.TranslateText("Initialization Error"),
 						EMsgBoxIcon.Error);
 				}
 				Config.SoundOutputMethod = ESoundOutputMethod.Dummy;
@@ -709,7 +709,7 @@ namespace BizHawk.Client.EmuHawk
 				_ = LoadRom(ioa.SimplePath, new LoadRomArgs(ioa));
 				if (Game.IsNullInstance())
 				{
-					ShowMessageBox(owner: null, $"Failed to load {_argParser.cmdRom} specified on commandline");
+					ShowMessageBox(owner: null, TheLocalizater.TranslateFormatString("Failed to load {0} specified on commandline", _argParser.cmdRom));
 				}
 			}
 			else if (Config.RecentRoms.AutoLoad && !Config.RecentRoms.Empty)
@@ -756,7 +756,7 @@ namespace BizHawk.Client.EmuHawk
 					}
 					else
 					{
-						ShowMessageBox(owner: null, $"Failed to load movie {_argParser.cmdMovie} specified on commandline");
+						ShowMessageBox(owner: null, TheLocalizater.TranslateFormatString("Failed to load movie {0} specified on commandline", _argParser.cmdMovie));
 					}
 				}
 			}
@@ -862,18 +862,18 @@ namespace BizHawk.Client.EmuHawk
 				var (winVersion, win10PlusVersion) = OSTailoredCode.HostWindowsVersion.Value;
 				var message = winVersion switch
 				{
-					OSTailoredCode.WindowsVersion._11 when win10PlusVersion! < new Version(10, 0, 22621) => $"Quick reminder: Your copy of Windows 11 (build {win10PlusVersion.Build}) is no longer supported by Microsoft.\nEmuHawk will probably continue working, but please update to 24H2 for increased security.",
+					OSTailoredCode.WindowsVersion._11 when win10PlusVersion! < new Version(10, 0, 22621) => TheLocalizater.TranslateFormatString("Quick reminder: Your copy of Windows 11 (build {0}) is no longer supported by Microsoft.\nEmuHawk will probably continue working, but please update to 24H2 for increased security.", win10PlusVersion.Build),
 					OSTailoredCode.WindowsVersion._11 => null,
-					OSTailoredCode.WindowsVersion._10 when win10PlusVersion! < new Version(10, 0, 19045) => $"Quick reminder: Your copy of Windows 10 (build {win10PlusVersion.Build}) is no longer supported by Microsoft.\nEmuHawk will probably continue working, but please update to 22H2 for increased security.",
+					OSTailoredCode.WindowsVersion._10 when win10PlusVersion! < new Version(10, 0, 19045) => TheLocalizater.TranslateFormatString("Quick reminder: Your copy of Windows 10 (build {0}) is no longer supported by Microsoft.\nEmuHawk will probably continue working, but please update to 22H2 for increased security.", win10PlusVersion.Build),
 					OSTailoredCode.WindowsVersion._10 => null,
-					_ => $"Quick reminder: Windows {winVersion.ToString().RemovePrefix('_').Replace('_', '.')} is no longer supported by Microsoft.\nEmuHawk will probably continue working, but please get a new operating system for increased security (either Windows 10+ or a GNU+Linux distro).",
+					_ => TheLocalizater.TranslateFormatString("Quick reminder: Windows {0} is no longer supported by Microsoft.\nEmuHawk will probably continue working, but please get a new operating system for increased security (either Windows 10+ or a GNU+Linux distro).", winVersion.ToString().RemovePrefix('_').Replace('_', '.')),
 				};
 				if (message is not null)
 				{
 #if DEBUG
 				Console.WriteLine(message);
 #else
-				Load += (_, _) => Config.SkipOutdatedOsCheck = this.ShowMessageBox2($"{message}\n\nSkip this reminder from now on?");
+				Load += (_, _) => Config.SkipOutdatedOsCheck = this.ShowMessageBox2(TheLocalizater.TranslateFormatString("{0}\n\nSkip this reminder from now on?", message));
 #endif
 				}
 			}
@@ -886,9 +886,9 @@ namespace BizHawk.Client.EmuHawk
 			if (_currAviWriter is not null)
 			{
 				if (!this.ModalMessageBox2(
-					caption: "Really quit?",
+					caption: TheLocalizater.TranslateText("Really quit?"),
 					icon: EMsgBoxIcon.Question,
-					text: "You are currently recording A/V.\nChoose \"Yes\" to finalise it and quit EmuHawk.\nChoose \"No\" to cancel shutdown and continue recording."))
+					text: TheLocalizater.TranslateText("You are currently recording A/V.\nChoose \"Yes\" to finalise it and quit EmuHawk.\nChoose \"No\" to cancel shutdown and continue recording.")))
 				{
 					closingArgs.Cancel = true;
 					return;
@@ -897,7 +897,7 @@ namespace BizHawk.Client.EmuHawk
 				StopAv();
 			}
 
-			TryAgainResult configSaveResult = this.DoWithTryAgainBox(() => SaveConfig(), "Failed to save config file.");
+			TryAgainResult configSaveResult = this.DoWithTryAgainBox(() => SaveConfig(), TheLocalizater.TranslateText("Failed to save config file."));
 			if (configSaveResult == TryAgainResult.Canceled)
 			{
 				closingArgs.Cancel = true;
@@ -1582,10 +1582,10 @@ namespace BizHawk.Client.EmuHawk
 			{
 				ShowMessageBox(
 					owner: null,
-					text: "Native Lua dynamic library was unable to be loaded. " + (OSTailoredCode.IsUnixHost
-						? "Make sure Lua is installed with your package manager."
-						: "This library is provided in the dll/ folder, try redownloading BizHawk to fix this error."),
-					caption: "Lua Load Error",
+					text: TheLocalizater.TranslateText("Native Lua dynamic library was unable to be loaded. ") + (OSTailoredCode.IsUnixHost
+						? TheLocalizater.TranslateText("Make sure Lua is installed with your package manager.")
+						: TheLocalizater.TranslateText("This library is provided in the dll/ folder, try redownloading BizHawk to fix this error.")),
+					caption: TheLocalizater.TranslateText("Lua Load Error"),
 					EMsgBoxIcon.Error);
 				return;
 			}
@@ -1648,7 +1648,7 @@ namespace BizHawk.Client.EmuHawk
 		{
 			if (CheatList.AnyActive)
 			{
-				CheatStatusButton.ToolTipText = "Cheats are currently active";
+				CheatStatusButton.ToolTipText = TheLocalizater.TranslateText("Cheats are currently active");
 				CheatStatusButton.Image = Properties.Resources.Cheat;
 				CheatStatusButton.Visible = true;
 			}
@@ -1832,24 +1832,24 @@ namespace BizHawk.Client.EmuHawk
 				else Game.Status = newStatus.Value;
 				(kind, icon, tooltip) = newStatus switch
 				{
-					RomStatus.GoodDump => (DUMP_KIND_GOOD, Properties.Resources.GreenCheck, "Verified good dump"),
-					RomStatus.BadDump => (DUMP_KIND_BAD, Properties.Resources.ExclamationRed, "Warning: Bad ROM Dump"),
-					RomStatus.Homebrew => (DUMP_KIND_HACK, Properties.Resources.HomeBrew, "Homebrew ROM"),
-					RomStatus.TranslatedRom => (DUMP_KIND_HACK, Properties.Resources.Translation, "Translated ROM"),
-					RomStatus.Hack => (DUMP_KIND_HACK, Properties.Resources.Hack, "Hacked ROM"),
-					RomStatus.Overdump => (DUMP_KIND_BAD, Properties.Resources.ExclamationRed, "Warning: Overdump"),
-					RomStatus.NotInDatabase => (DUMP_KIND_UNRECOGNIZED, Properties.Resources.RetroQuestion, "Warning: Unknown ROM"),
+					RomStatus.GoodDump => (DUMP_KIND_GOOD, Properties.Resources.GreenCheck, TheLocalizater.TranslateText("Verified good dump")),
+					RomStatus.BadDump => (DUMP_KIND_BAD, Properties.Resources.ExclamationRed, TheLocalizater.TranslateText("Warning: Bad ROM Dump")),
+					RomStatus.Homebrew => (DUMP_KIND_HACK, Properties.Resources.HomeBrew, TheLocalizater.TranslateText("Homebrew ROM")),
+					RomStatus.TranslatedRom => (DUMP_KIND_HACK, Properties.Resources.Translation, TheLocalizater.TranslateText("Translated ROM")),
+					RomStatus.Hack => (DUMP_KIND_HACK, Properties.Resources.Hack, TheLocalizater.TranslateText("Hacked ROM")),
+					RomStatus.Overdump => (DUMP_KIND_BAD, Properties.Resources.ExclamationRed, TheLocalizater.TranslateText("Warning: Overdump")),
+					RomStatus.NotInDatabase => (DUMP_KIND_UNRECOGNIZED, Properties.Resources.RetroQuestion, TheLocalizater.TranslateText("Warning: Unknown ROM")),
 					// 3 from MAME:
-					RomStatus.Imperfect => (DUMP_KIND_MAME_BADEMU, Properties.Resources.RetroQuestion, "Warning: Imperfect emulation"),
-					RomStatus.Unimplemented => (DUMP_KIND_MAME_BADEMU, Properties.Resources.ExclamationRed, "Warning: Unemulated features"),
-					RomStatus.NotWorking => (DUMP_KIND_MAME_BADEMU, Properties.Resources.ExclamationRed, "Warning: The game does not work"),
-					/*RomStatus.Unknown or RomStatus.Bios*/_ => (DUMP_KIND_UNRECOGNIZED, Properties.Resources.Hack, "Warning: ROM of Unknown Character"),
+					RomStatus.Imperfect => (DUMP_KIND_MAME_BADEMU, Properties.Resources.RetroQuestion, TheLocalizater.TranslateText("Warning: Imperfect emulation")),
+					RomStatus.Unimplemented => (DUMP_KIND_MAME_BADEMU, Properties.Resources.ExclamationRed, TheLocalizater.TranslateText("Warning: Unemulated features")),
+					RomStatus.NotWorking => (DUMP_KIND_MAME_BADEMU, Properties.Resources.ExclamationRed, TheLocalizater.TranslateText("Warning: The game does not work")),
+					/*RomStatus.Unknown or RomStatus.Bios*/_ => (DUMP_KIND_UNRECOGNIZED, Properties.Resources.Hack, TheLocalizater.TranslateText("Warning: ROM of Unknown Character")),
 				};
 				if (_multiDiskMode
 					&& kind is not DUMP_KIND_MAME_BADEMU) // don't override the warnings from MAME in this case
 				{
 					icon = Properties.Resources.RetroQuestion;
-					tooltip = "Multi-disk bundler";
+					tooltip = TheLocalizater.TranslateText("Multi-disk bundler");
 				}
 			}
 			DumpStatusButton.Image = icon;
@@ -1887,10 +1887,10 @@ namespace BizHawk.Client.EmuHawk
 				{
 					bool result = ShowMessageBox2(
 						owner: this,
-						"The autosaved SaveRAM is more recent than the normal SaveRAM.\n" +
-						"This could happen due to a crash or because files were manually modified.\n" +
-						"Do you want to load the autosave instead of the older SaveRAM file?",
-						"Load autosaved SaveRAM?",
+						TheLocalizater.TranslateText("The autosaved SaveRAM is more recent than the normal SaveRAM.\n") +
+						TheLocalizater.TranslateText("This could happen due to a crash or because files were manually modified.\n") +
+						TheLocalizater.TranslateText("Do you want to load the autosave instead of the older SaveRAM file?"),
+						TheLocalizater.TranslateText("Load autosaved SaveRAM?"),
 						EMsgBoxIcon.Error);
 
 					saveramToLoad = result ? autoSaveRam : saveRam;
@@ -2017,7 +2017,7 @@ namespace BizHawk.Client.EmuHawk
 			GenericCoreSubMenu.Text = sysID;
 			GenericCoreSubMenu.DropDownItems.Clear();
 
-			var settingsMenuItem = new ToolStripMenuItem { Text = "&Settings" };
+			var settingsMenuItem = new ToolStripMenuItem { Text = TheLocalizater.TranslateText("&Settings") };
 			settingsMenuItem.Click += GenericCoreSettingsMenuItem_Click;
 			GenericCoreSubMenu.DropDownItems.Add(settingsMenuItem);
 
@@ -2087,20 +2087,20 @@ namespace BizHawk.Client.EmuHawk
 			{
 				PauseStatusButton.Image = Properties.Resources.Pause;
 				PauseStatusButton.Visible = true;
-				PauseStatusButton.ToolTipText = "Emulator Paused";
+				PauseStatusButton.ToolTipText = TheLocalizater.TranslateText("Emulator Paused");
 			}
 			else if (IsTurboSeeking)
 			{
 				PauseStatusButton.Image = Properties.Resources.Lightning;
 				PauseStatusButton.Visible = true;
 				// ReSharper disable once PossibleInvalidOperationException
-				PauseStatusButton.ToolTipText = $"Emulator is turbo seeking to frame {PauseOnFrame.Value} click to stop seek";
+				PauseStatusButton.ToolTipText = TheLocalizater.TranslateFormatString("Emulator is turbo seeking to frame {0} click to stop seek", PauseOnFrame.Value);
 			}
 			else if (PauseOnFrame.HasValue)
 			{
 				PauseStatusButton.Image = Properties.Resources.YellowRight;
 				PauseStatusButton.Visible = true;
-				PauseStatusButton.ToolTipText = $"Emulator is playing to frame {PauseOnFrame.Value} click to stop seek";
+				PauseStatusButton.ToolTipText = TheLocalizater.TranslateFormatString("Emulator is playing to frame {0} click to stop seek", PauseOnFrame.Value);
 			}
 			else
 			{
@@ -2189,7 +2189,7 @@ namespace BizHawk.Client.EmuHawk
 				}
 				catch (Exception ex)
 				{
-					ShowMessageBox(owner: null, $"Exception on drag and drop:\n{ex}");
+					ShowMessageBox(owner: null, TheLocalizater.TranslateFormatString("Exception on drag and drop:\n{0}", ex));
 				}
 				PathsFromDragDrop = null;
 			});
@@ -2338,8 +2338,8 @@ namespace BizHawk.Client.EmuHawk
 					{
 						ShowMessageBox(
 							owner: null,
-							"No sync settings found, using currently configured settings for this core.",
-							"No sync settings found",
+							TheLocalizater.TranslateText("No sync settings found, using currently configured settings for this core."),
+							TheLocalizater.TranslateText("No sync settings found"),
 							EMsgBoxIcon.Warning);
 					}
 				}
@@ -2672,7 +2672,7 @@ namespace BizHawk.Client.EmuHawk
 			{
 				var linkableCore = Emulator.AsLinkable();
 				LinkConnectStatusBarButton.Image = linkableCore.LinkConnected ? _linkCableOn : _linkCableOff;
-				LinkConnectStatusBarButton.ToolTipText = $"Link connection is currently {(linkableCore.LinkConnected ? "enabled" : "disabled")}";
+				LinkConnectStatusBarButton.ToolTipText = TheLocalizater.TranslateFormatString("Link connection is currently {0}", (linkableCore.LinkConnected ? "enabled" : "disabled"));
 				LinkConnectStatusBarButton.Visible = true;
 			}
 			else
@@ -2683,8 +2683,8 @@ namespace BizHawk.Client.EmuHawk
 
 		private void UpdateStatusBarMuteIndicator()
 			=> (StatusBarMuteIndicator.Image, StatusBarMuteIndicator.ToolTipText) = Config.SoundEnabled
-				? (Properties.Resources.Audio, $"Core is producing audio, live playback at {(Config.SoundEnabledNormal ? Config.SoundVolume : 0)}% volume")
-				: (Properties.Resources.AudioMuted, "Core is not producing audio");
+				? (Properties.Resources.Audio, TheLocalizater.TranslateFormatString("Core is producing audio, live playback at {0}% volume", (Config.SoundEnabledNormal ? Config.SoundVolume : 0)))
+				: (Properties.Resources.AudioMuted, TheLocalizater.TranslateText("Core is not producing audio"));
 
 		private void UpdateStatusBarRewindIndicator()
 			=> StatusBarRewindIndicator.Visible = Rewinder?.Active is true;
@@ -2696,15 +2696,15 @@ namespace BizHawk.Client.EmuHawk
 				default:
 				case Config.InputPriority.BOTH:
 					KeyPriorityStatusLabel.Image = Properties.Resources.Both;
-					KeyPriorityStatusLabel.ToolTipText = "Key priority: Allow both hotkeys and controller buttons";
+					KeyPriorityStatusLabel.ToolTipText = TheLocalizater.TranslateText("Key priority: Allow both hotkeys and controller buttons");
 					break;
 				case Config.InputPriority.INPUT:
 					KeyPriorityStatusLabel.Image = Properties.Resources.GameController;
-					KeyPriorityStatusLabel.ToolTipText = "Key priority: Controller buttons will override hotkeys";
+					KeyPriorityStatusLabel.ToolTipText = TheLocalizater.TranslateText("Key priority: Controller buttons will override hotkeys");
 					break;
 				case Config.InputPriority.HOTKEY:
 					KeyPriorityStatusLabel.Image = Properties.Resources.HotKeys;
-					KeyPriorityStatusLabel.ToolTipText = "Key priority: Hotkeys will override controller buttons";
+					KeyPriorityStatusLabel.ToolTipText = TheLocalizater.TranslateText("Key priority: Hotkeys will override controller buttons");
 					break;
 			}
 		}
@@ -2769,7 +2769,7 @@ namespace BizHawk.Client.EmuHawk
 
 			CoreNameStatusBarButton.Text = coreDispName;
 			CoreNameStatusBarButton.Image = Emulator.Icon();
-			CoreNameStatusBarButton.ToolTipText = attributes is PortedCoreAttribute ? "(ported) " : "";
+			CoreNameStatusBarButton.ToolTipText = attributes is PortedCoreAttribute ? TheLocalizater.TranslateText("(ported) ") : "";
 
 
 			if (Emulator.SystemId == VSystemID.Raw.ZXSpectrum)
@@ -2993,7 +2993,7 @@ namespace BizHawk.Client.EmuHawk
 							// For autosave, allow one failure before bothering the user.
 							if (AutoFlushSaveRamFailed)
 							{
-								this.ErrorMessageBox(result, "Failed to flush saveram!");
+								this.ErrorMessageBox(result, TheLocalizater.TranslateText("Failed to flush saveram!"));
 							}
 							AutoFlushSaveRamFailed = true;
 							AutoFlushSaveRamIn = Math.Min(600, Config.FlushSaveRamFrames);
@@ -3294,7 +3294,7 @@ namespace BizHawk.Client.EmuHawk
 				_currAviWriter = aw;
 				AddOnScreenMessage("A/V capture started");
 				AVStatusLabel.Image = Properties.Resources.Avi;
-				AVStatusLabel.ToolTipText = "A/V capture in progress";
+				AVStatusLabel.ToolTipText = TheLocalizater.TranslateText("A/V capture in progress");
 				AVStatusLabel.Visible = true;
 			}
 			catch
@@ -3459,7 +3459,7 @@ namespace BizHawk.Client.EmuHawk
 				}
 				catch (Exception e)
 				{
-					ShowMessageBox(owner: null, $"Video dumping died:\n\n{e}");
+					ShowMessageBox(owner: null, TheLocalizater.TranslateFormatString("Video dumping died:\n\n{0}", e));
 					AbortAv();
 				}
 				finally
@@ -3516,9 +3516,9 @@ namespace BizHawk.Client.EmuHawk
 			if (e.Type == RomLoader.LoadErrorType.MissingFirmware)
 			{
 				if (this.ShowMessageBox2(
-					caption: "Missing Firmware!",
+					caption: TheLocalizater.TranslateText("Missing Firmware!"),
 					icon: EMsgBoxIcon.Error,
-					text: $"{e.Message}\n\nOpen the firmware manager now?",
+					text: TheLocalizater.TranslateFormatString("{0}\n\nOpen the firmware manager now?", e.Message),
 					useOKCancel: true))
 				{
 					OpenFWConfigRomLoadFailed(e);
@@ -3533,10 +3533,10 @@ namespace BizHawk.Client.EmuHawk
 			}
 			else
 			{
-				string title = "load error";
+				string title = TheLocalizater.TranslateText("load error");
 				if (e.AttemptedCoreLoad != null)
 				{
-					title = $"{e.AttemptedCoreLoad} load error";
+					title = TheLocalizater.TranslateFormatString("{0} load error", e.AttemptedCoreLoad);
 				}
 
 				this.ModalMessageBox(e.Message, title, EMsgBoxIcon.Error);
@@ -3658,7 +3658,7 @@ namespace BizHawk.Client.EmuHawk
 						//TODO let the user pick from `availCores`?
 						// also use a different message when `availCores` is empty (which might happen if someone makes a movie on a new core and tries to load it in a version without the core)
 						if (!this.ModalMessageBox2(
-							caption: "No such core",
+							caption: TheLocalizater.TranslateText("No such core"),
 							icon: EMsgBoxIcon.Error,
 							text: string.Format(
 								FMT_STR_NO_SUCH_CORE,
@@ -3924,13 +3924,13 @@ namespace BizHawk.Client.EmuHawk
 				return false;
 			}
 			// There is a cheats tool, but cheats can be active while the "cheats tool" is not. And have auto-save option.
-			TryAgainResult cheatSaveResult = this.DoWithTryAgainBox(CheatList.SaveOnClose, "Failed to save cheats.");
+			TryAgainResult cheatSaveResult = this.DoWithTryAgainBox(CheatList.SaveOnClose, TheLocalizater.TranslateText("Failed to save cheats."));
 			if (cheatSaveResult == TryAgainResult.Canceled) return false;
 
 			// If TAStudio is open, we already asked about saving the movie.
 			if (!Tools.IsLoaded<TAStudio>())
 			{
-				TryAgainResult saveMovieResult = this.DoWithTryAgainBox(() => MovieSession.StopMovie(), "Failed to save movie.");
+				TryAgainResult saveMovieResult = this.DoWithTryAgainBox(() => MovieSession.StopMovie(), TheLocalizater.TranslateText("Failed to save movie."));
 				if (saveMovieResult == TryAgainResult.Canceled) return false;
 			}
 
@@ -3950,7 +3950,7 @@ namespace BizHawk.Client.EmuHawk
 						{
 							return new(FileWriteEnum.FailedToDeleteGeneric, new(path, ""), ex);
 						}
-					}, "Failed to clear SRAM.");
+					}, TheLocalizater.TranslateText("Failed to clear SRAM."));
 					if (clearResult == TryAgainResult.Canceled)
 					{
 						return false;
@@ -3961,11 +3961,11 @@ namespace BizHawk.Client.EmuHawk
 			{
 				TryAgainResult flushResult = this.DoWithTryAgainBox(
 					() => FlushSaveRAM(),
-					"Failed flushing the game's Save RAM to your disk.");
+					TheLocalizater.TranslateText("Failed flushing the game's Save RAM to your disk."));
 				if (flushResult == TryAgainResult.Canceled) return false;
 			}
 
-			TryAgainResult stateSaveResult = this.DoWithTryAgainBox(AutoSaveStateIfConfigured, "Failed to auto-save state.");
+			TryAgainResult stateSaveResult = this.DoWithTryAgainBox(AutoSaveStateIfConfigured, TheLocalizater.TranslateText("Failed to auto-save state."));
 			if (stateSaveResult == TryAgainResult.Canceled) return false;
 
 			StopAv();
@@ -4025,7 +4025,7 @@ namespace BizHawk.Client.EmuHawk
 
 			if (result.Errors.Count is not 0)
 			{
-				ShowMessageBox(owner: null, string.Join("\n", result.Errors), "Conversion error", EMsgBoxIcon.Error);
+				ShowMessageBox(owner: null, string.Join("\n", result.Errors), TheLocalizater.TranslateText("Conversion error"), EMsgBoxIcon.Error);
 				return;
 			}
 
@@ -4255,12 +4255,12 @@ namespace BizHawk.Client.EmuHawk
 			bool PromptToSwitchCore(string currentCore, string recommendedCore, Action disableCurrentCore)
 			{
 				using var box = new MsgBox(
-					$"While the {currentCore} core is faster, it is not nearly as accurate as {recommendedCore}.{Environment.NewLine}It is recommended that you switch to the {recommendedCore} core for movie recording.{Environment.NewLine}Switch to {recommendedCore}?",
-					"Accuracy Warning",
+					TheLocalizater.TranslateFormatString("While the {0} core is faster, it is not nearly as accurate as {1}.{2}It is recommended that you switch to the {3} core for movie recording.{4}Switch to {5}?", currentCore, recommendedCore, Environment.NewLine, recommendedCore, Environment.NewLine, recommendedCore),
+					TheLocalizater.TranslateText("Accuracy Warning"),
 					MessageBoxIcon.Warning);
 
 				box.SetButtons(
-					new[] { "Switch", "Continue" },
+					new[] { TheLocalizater.TranslateText("Switch"), TheLocalizater.TranslateText("Continue") },
 					new[] { DialogResult.Yes, DialogResult.Cancel });
 
 				box.MaximumSize = UIHelper.Scale(new Size(575, 175));
@@ -4319,7 +4319,7 @@ namespace BizHawk.Client.EmuHawk
 			{
 				ShowMessageIfError(
 					() => SaveState(path: shouldSaveResult, userFriendlyStateName: shouldSaveResult),
-					"Unable to save state.");
+					TheLocalizater.TranslateText("Unable to save state."));
 			}
 
 			if (Tools.IsLoaded<TAStudio>())

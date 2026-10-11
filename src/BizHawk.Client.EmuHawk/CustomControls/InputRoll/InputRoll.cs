@@ -1232,7 +1232,7 @@ namespace BizHawk.Client.EmuHawk
 							}
 							else
 							{
-								MessageBox.Show("Shift click logic for individual cells has not yet implemented");
+								MessageBox.Show(TheLocalizater.TranslateText("Shift click logic for individual cells has not yet implemented"));
 							}
 						}
 						else

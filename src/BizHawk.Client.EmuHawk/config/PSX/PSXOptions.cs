@@ -78,7 +78,7 @@ namespace BizHawk.Client.EmuHawk
 		private void BtnNiceDisplayConfig_Click(object sender, EventArgs e)
 		{
 			_dispSettingsSet = true;
-			DialogController.ShowMessageBox("Finetuned Display Options will take effect if you OK from PSX Options");
+			DialogController.ShowMessageBox(TheLocalizater.TranslateText("Finetuned Display Options will take effect if you OK from PSX Options"));
 		}
 
 		public static DialogResult DoSettingsDialog(
@@ -198,17 +198,17 @@ namespace BizHawk.Client.EmuHawk
 
 		private void LinkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
 		{
-			DialogController.ShowMessageBox($@"These options control BizHawk's Display Options to make it act quite a lot like Mednafen:
+			DialogController.ShowMessageBox(TheLocalizater.TranslateFormatString(@"These options control BizHawk's Display Options to make it act quite a lot like Mednafen:
 
-{nameof(_config.DispManagerAR)} = System (Use emulator-recommended AR)
-{nameof(_config.DispFixAspectRatio)} = true (Maintain aspect ratio [letterbox main window as needed])
-{nameof(_config.DispFinalFilter)} = bilinear (Like Mednafen)
-{nameof(_config.DispFixScaleInteger)} = false (Generally unwanted with bilinear filtering)
+{0} = System (Use emulator-recommended AR)
+{1} = true (Maintain aspect ratio [letterbox main window as needed])
+{2} = bilinear (Like Mednafen)
+{3} = false (Generally unwanted with bilinear filtering)
 
 This is a good place to write that Mednafen's default behaviour is fantastic for gaming!
 But: 1. we think we improved on it a tiny bit with the tweaked mode
 And: 2. It's not suitable for detailed scrutinizing of graphics
-");
+", nameof(_config.DispManagerAR), nameof(_config.DispFixAspectRatio), nameof(_config.DispFinalFilter), nameof(_config.DispFixScaleInteger)));
 		}
 	}
 }

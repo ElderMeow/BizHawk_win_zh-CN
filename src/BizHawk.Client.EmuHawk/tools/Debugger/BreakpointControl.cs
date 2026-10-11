@@ -224,7 +224,7 @@ namespace BizHawk.Client.EmuHawk
 
 		private void UpdateStatsLabel()
 		{
-			BreakpointStatsLabel.Text = $"{_breakpoints.Count} Total / {_breakpoints.Count(b => b.Active)} Active";
+			BreakpointStatsLabel.Text = TheLocalizater.TranslateFormatString("{0} Total / {1} Active", _breakpoints.Count, _breakpoints.Count(b => b.Active));
 		}
 
 		private void ToggleButton_Click(object sender, EventArgs e)

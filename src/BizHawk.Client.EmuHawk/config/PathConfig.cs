@@ -187,7 +187,7 @@ namespace BizHawk.Client.EmuHawk
 			}
 			var selectedPath = this.ShowFolderSelectDialog(
 				initDir: _pathEntries.AbsolutePathFor(box.Text, system),
-				subtitle: $"Set the directory for {name}");
+				subtitle: TheLocalizater.TranslateFormatString("Set the directory for {0}", name));
 			if (selectedPath is not null)
 			{
 				box.Text = _pathEntries.TryMakeRelative(selectedPath, system);

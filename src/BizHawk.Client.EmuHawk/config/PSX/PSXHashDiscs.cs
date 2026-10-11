@@ -8,7 +8,7 @@ namespace BizHawk.Client.EmuHawk
 		[RequiredService]
 		public IRedumpDiscChecksumInfo _psx { get; set; }
 
-		protected override string WindowTitleStatic { get; } = "PSX Disc Hasher";
+		protected override string WindowTitleStatic { get; } = TheLocalizater.TranslateText("PSX Disc Hasher");
 
 		public PSXHashDiscs()
 		{

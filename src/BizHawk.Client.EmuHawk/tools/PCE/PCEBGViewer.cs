@@ -29,7 +29,7 @@ namespace BizHawk.Client.EmuHawk
 
 		private int _vdcType;
 
-		protected override string WindowTitleStatic => "Background Viewer";
+		protected override string WindowTitleStatic => TheLocalizater.TranslateText("Background Viewer");
 
 		public PceBgViewer()
 		{

@@ -14,7 +14,7 @@ namespace BizHawk.Client.EmuHawk
 		public override void Restart()
 			=> NESSoundConfig_Load(null, EventArgs.Empty);
 
-		protected override string WindowTitleStatic => "NES Sound Channels";
+		protected override string WindowTitleStatic => TheLocalizater.TranslateText("NES Sound Channels");
 
 		public NESSoundConfig()
 		{

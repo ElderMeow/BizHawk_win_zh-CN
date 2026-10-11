@@ -252,7 +252,7 @@ namespace BizHawk.Client.EmuHawk
 			var closeMenuItem = new ToolStripMenuItem
 			{
 				Name = "CloseBtn",
-				Text = "&Close",
+				Text = TheLocalizater.TranslateText("&Close"),
 				ShortcutKeyDisplayString = "Alt+F4",
 			};
 
@@ -284,7 +284,7 @@ namespace BizHawk.Client.EmuHawk
 
 					if (dest == null)
 					{
-						var submenu = new ToolStripMenuItem("&Settings");
+						var submenu = new ToolStripMenuItem(TheLocalizater.TranslateText("&Settings"));
 						ms.Items.Add(submenu);
 						dest = submenu.DropDownItems;
 					}
@@ -300,11 +300,11 @@ namespace BizHawk.Client.EmuHawk
 
 			int idx = dest.Count;
 
-			dest.Add("Save Window &Position");
-			dest.Add("Stay on &Top");
-			dest.Add("&Float from Parent");
-			dest.Add("&Autoload with EmuHawk");
-			dest.Add("Restore &Defaults");
+			dest.Add(TheLocalizater.TranslateText("Save Window &Position"));
+			dest.Add(TheLocalizater.TranslateText("Stay on &Top"));
+			dest.Add(TheLocalizater.TranslateText("&Float from Parent"));
+			dest.Add(TheLocalizater.TranslateText("&Autoload with EmuHawk"));
+			dest.Add(TheLocalizater.TranslateText("Restore &Defaults"));
 
 			RefreshSettings(form, dest, settings, idx);
 
@@ -705,10 +705,10 @@ namespace BizHawk.Client.EmuHawk
 				if (!skipExtToolWarning)
 				{
 					if (!_owner.ShowMessageBox2(
-						caption: "Confirm loading",
+						caption: TheLocalizater.TranslateText("Confirm loading"),
 						icon: EMsgBoxIcon.Question,
-						text: "Trust this external tool to run on your device?"
-							+ "\nIf you're not 100% sure of what the tool will do, choose \"No\"."))
+						text: TheLocalizater.TranslateText("Trust this external tool to run on your device?")
+							+ TheLocalizater.TranslateText("\nIf you're not 100% sure of what the tool will do, choose \"No\".")))
 					{
 						return null;
 					}
@@ -719,18 +719,18 @@ namespace BizHawk.Client.EmuHawk
 					tool = Activator.CreateInstanceFrom(dllPath, toolTypeName ?? "BizHawk.Client.EmuHawk.CustomMainForm").Unwrap() as IExternalToolForm;
 					if (tool == null)
 					{
-						_owner.ShowMessageBox($"It seems that the object CustomMainForm does not implement {nameof(IExternalToolForm)}. Please review the code.", "No, no, no. Wrong Way !", EMsgBoxIcon.Warning);
+						_owner.ShowMessageBox(TheLocalizater.TranslateFormatString("It seems that the object CustomMainForm does not implement {0}. Please review the code.", nameof(IExternalToolForm)), TheLocalizater.TranslateText("No, no, no. Wrong Way !"), EMsgBoxIcon.Warning);
 						return null;
 					}
 				}
 				catch (MissingMethodException)
 				{
-					_owner.ShowMessageBox("It seems that the object CustomMainForm does not have a public default constructor. Please review the code.", "No, no, no. Wrong Way !", EMsgBoxIcon.Warning);
+					_owner.ShowMessageBox(TheLocalizater.TranslateText("It seems that the object CustomMainForm does not have a public default constructor. Please review the code."), TheLocalizater.TranslateText("No, no, no. Wrong Way !"), EMsgBoxIcon.Warning);
 					return null;
 				}
 				catch (TypeLoadException)
 				{
-					_owner.ShowMessageBox("It seems that the object CustomMainForm does not exists. Please review the code.", "No, no, no. Wrong Way !", EMsgBoxIcon.Warning);
+					_owner.ShowMessageBox(TheLocalizater.TranslateText("It seems that the object CustomMainForm does not exists. Please review the code."), TheLocalizater.TranslateText("No, no, no. Wrong Way !"), EMsgBoxIcon.Warning);
 					return null;
 				}
 			}

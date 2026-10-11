@@ -77,11 +77,11 @@ namespace BizHawk.Client.EmuHawk
 			public bool TurboWhenBotting { get; set; } = true;
 		}
 
-		private string _windowTitle = "Basic Bot";
+		private string _windowTitle = TheLocalizater.TranslateText("Basic Bot");
 
 		protected override string WindowTitle => _windowTitle;
 
-		protected override string WindowTitleStatic => "Basic Bot";
+		protected override string WindowTitleStatic => TheLocalizater.TranslateText("Basic Bot");
 
 		private IMovie CurrentMovie => MovieSession.Movie;
 
@@ -124,7 +124,7 @@ namespace BizHawk.Client.EmuHawk
 			// which resets tools before the movie session becomes active)
 			if (CurrentMovie.NotActive() && !Tools.IsLoaded<TAStudio>())
 			{
-				DialogController.ShowMessageBox("In order to use this tool you must be recording a movie.");
+				DialogController.ShowMessageBox(TheLocalizater.TranslateText("In order to use this tool you must be recording a movie."));
 				Close();
 				DialogResult = DialogResult.Cancel;
 				return;
@@ -132,7 +132,7 @@ namespace BizHawk.Client.EmuHawk
 
 			if (Config!.OpposingDirPolicy is not OpposingDirPolicy.Allow)
 			{
-				DialogController.ShowMessageBox("In order to use this tool, U+D/L+R policy in the controller binds dialog must be set to 'Allow'.");
+				DialogController.ShowMessageBox(TheLocalizater.TranslateText("In order to use this tool, U+D/L+R policy in the controller binds dialog must be set to 'Allow'."));
 				Close();
 				DialogResult = DialogResult.Cancel;
 				return;
@@ -452,7 +452,7 @@ namespace BizHawk.Client.EmuHawk
 			_startFrame = Emulator.Frame;
 			SetNormalSpeed();
 			UpdateBotStatusIcon();
-			MessageLabel.Text = "Replaying";
+			MessageLabel.Text = TheLocalizater.TranslateText("Replaying");
 			MainForm.UnpauseEmulator();
 		}
 
@@ -578,7 +578,7 @@ namespace BizHawk.Client.EmuHawk
 			}
 			if (botData.SysID != Emulator.SystemId)
 			{
-				this.ModalMessageBox(text: $"This file was made for a different system ({botData.SysID}).");
+				this.ModalMessageBox(text: TheLocalizater.TranslateFormatString("This file was made for a different system ({0}).", botData.SysID));
 				if (!string.IsNullOrEmpty(botData.SysID)) return false; // there's little chance the file would load without throwing, and if it did, it wouldn't be useful
 				// else grandfathered (made with old version, sysID unknowable), user has been warned
 			}
@@ -591,14 +591,14 @@ namespace BizHawk.Client.EmuHawk
 				var s = hawkVersionMatches
 					? coreNameMatches
 						? string.Empty
-						: $" with a different core ({botData.CoreName ?? "unknown"})"
+						: TheLocalizater.TranslateFormatString(" with a different core ({0})", botData.CoreName ?? "unknown")
 					: coreNameMatches
-						? " with a different version of EmuHawk"
-						: $" with a different core ({botData.CoreName ?? "unknown"}) on a different version of EmuHawk";
-				if (!gameNameMatches) s = $"for a different game ({botData.GameName ?? "unknown"}){s}";
+						? TheLocalizater.TranslateText(" with a different version of EmuHawk")
+						: TheLocalizater.TranslateFormatString(" with a different core ({0}) on a different version of EmuHawk", botData.CoreName ?? "unknown");
+				if (!gameNameMatches) s = TheLocalizater.TranslateFormatString("for a different game ({0}){1}", botData.GameName ?? "unknown", s);
 				if (!this.ModalMessageBox2(
-					text: $"This file was made {s}. Load it anyway?",
-					caption: "Confirm file load",
+					text: TheLocalizater.TranslateFormatString("This file was made {0}. Load it anyway?", s),
+					caption: TheLocalizater.TranslateText("Confirm file load"),
 					icon: EMsgBoxIcon.Question))
 				{
 					return false;
@@ -714,7 +714,7 @@ namespace BizHawk.Client.EmuHawk
 
 			CurrentFileName = path;
 			Settings.RecentBotFiles.Add(CurrentFileName);
-			MessageLabel.Text = $"{Path.GetFileNameWithoutExtension(path)} loaded";
+			MessageLabel.Text = TheLocalizater.TranslateFormatString("{0} loaded", Path.GetFileNameWithoutExtension(path));
 
 			AssessRunButtonStatus();
 		}
@@ -759,7 +759,7 @@ namespace BizHawk.Client.EmuHawk
 			File.WriteAllText(path, json);
 			CurrentFileName = path;
 			Settings.RecentBotFiles.Add(CurrentFileName);
-			MessageLabel.Text = $"{Path.GetFileName(CurrentFileName)} saved";
+			MessageLabel.Text = TheLocalizater.TranslateFormatString("{0} saved", Path.GetFileName(CurrentFileName));
 		}
 
 		public bool HasFrameAdvanced()
@@ -918,7 +918,7 @@ namespace BizHawk.Client.EmuHawk
 			_startFrame = 0;
 			_replayMode = false;
 			UpdateBotStatusIcon();
-			MessageLabel.Text = "Replay stopped";
+			MessageLabel.Text = TheLocalizater.TranslateText("Replay stopped");
 		}
 
 		private bool IsBetter(BotAttempt comparison, BotAttempt current)
@@ -1043,21 +1043,21 @@ namespace BizHawk.Client.EmuHawk
 			}
 
 			UpdateBotStatusIcon();
-			MessageLabel.Text = "Running...";
+			MessageLabel.Text = TheLocalizater.TranslateText("Running...");
 		}
 
 		private string CanStart()
 		{
 			if (!ControlProbabilities.Any(cp => cp.Value > 0))
 			{
-				return "At least one control must have a probability greater than 0.";
+				return TheLocalizater.TranslateText("At least one control must have a probability greater than 0.");
 			}
 
-			if (MaximizeAddress is null) return "A main value address is required.";
+			if (MaximizeAddress is null) return TheLocalizater.TranslateText("A main value address is required.");
 
 			if (FrameLengthNumeric.Value == 0)
 			{
-				return "A frame count greater than 0 is required";
+				return TheLocalizater.TranslateText("A frame count greater than 0 is required");
 			}
 
 			return null;
@@ -1088,7 +1088,7 @@ namespace BizHawk.Client.EmuHawk
 			MainForm.PauseEmulator();
 			SetNormalSpeed();
 			UpdateBotStatusIcon();
-			MessageLabel.Text = "Bot stopped";
+			MessageLabel.Text = TheLocalizater.TranslateText("Bot stopped");
 		}
 
 		private void RestoreConfigFlags()
@@ -1103,17 +1103,17 @@ namespace BizHawk.Client.EmuHawk
 			if (_replayMode)
 			{
 				BotStatusButton.Image = Resources.Play;
-				BotStatusButton.ToolTipText = "Replaying best result";
+				BotStatusButton.ToolTipText = TheLocalizater.TranslateText("Replaying best result");
 			}
 			else if (_isBotting)
 			{
 				BotStatusButton.Image = Resources.Record;
-				BotStatusButton.ToolTipText = "Botting in progress";
+				BotStatusButton.ToolTipText = TheLocalizater.TranslateText("Botting in progress");
 			}
 			else
 			{
 				BotStatusButton.Image = Resources.Pause;
-				BotStatusButton.ToolTipText = "Bot is currently not running";
+				BotStatusButton.ToolTipText = TheLocalizater.TranslateText("Bot is currently not running");
 			}
 		}
 

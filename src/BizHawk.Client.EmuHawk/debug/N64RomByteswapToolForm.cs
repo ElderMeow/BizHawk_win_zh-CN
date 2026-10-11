@@ -57,11 +57,11 @@ namespace BizHawk.Client.EmuHawk.ForDebugging
 						_ => N64RomByteswapper.ToZ64Native(rom),
 					};
 					File.WriteAllBytes(txtTargetFile.Text, rom);
-					this.ModalMessageBox($"wrote {txtTargetFile.Text}\n{SHA1Checksum.ComputePrefixedHex(rom)}");
+					this.ModalMessageBox(TheLocalizater.TranslateFormatString("wrote {0}\n{1}", txtTargetFile.Text, SHA1Checksum.ComputePrefixedHex(rom)));
 				}
 				catch (Exception e)
 				{
-					this.ModalMessageBox($"caught {e.GetType().Name}:\n{e}");
+					this.ModalMessageBox(TheLocalizater.TranslateFormatString("caught {0}:\n{1}", e.GetType().Name, e));
 				}
 			}
 			ClientSize = new(320, 200);
@@ -70,12 +70,12 @@ namespace BizHawk.Client.EmuHawk.ForDebugging
 			{
 				Controls =
 				{
-					new LabelEx { Text = "convert" },
-					new SingleRowFLP { Controls = { txtBaseFile, GenControl.Button("(browse)", width: 75, ChooseBaseFile) } },
-					new LabelEx { Text = "from <autodetected> (assumes .z64 on fail)" },
-					new SingleRowFLP { Controls = { new LabelEx { Text = "to" }, comboFormats } },
-					new SingleRowFLP { Controls = { txtTargetFile, GenControl.Button("(browse)", width: 75, ChooseTargetFile) } },
-					GenControl.Button("--> convert", width: 75, DoConvert),
+					new LabelEx { Text = TheLocalizater.TranslateText("convert") },
+					new SingleRowFLP { Controls = { txtBaseFile, GenControl.Button(TheLocalizater.TranslateText("(browse)"), width: 75, ChooseBaseFile) } },
+					new LabelEx { Text = TheLocalizater.TranslateText("from <autodetected> (assumes .z64 on fail)") },
+					new SingleRowFLP { Controls = { new LabelEx { Text = TheLocalizater.TranslateText("to") }, comboFormats } },
+					new SingleRowFLP { Controls = { txtTargetFile, GenControl.Button(TheLocalizater.TranslateText("(browse)"), width: 75, ChooseTargetFile) } },
+					GenControl.Button(TheLocalizater.TranslateText("--> convert"), width: 75, DoConvert),
 				},
 			});
 			ResumeLayout();

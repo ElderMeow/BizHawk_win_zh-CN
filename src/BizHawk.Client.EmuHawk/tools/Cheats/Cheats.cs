@@ -35,7 +35,7 @@ namespace BizHawk.Client.EmuHawk
 		private string _sortedColumn;
 		private bool _sortReverse;
 
-		protected override string WindowTitleStatic => "Cheats";
+		protected override string WindowTitleStatic => TheLocalizater.TranslateText("Cheats");
 
 		public Cheats()
 		{
@@ -94,7 +94,7 @@ namespace BizHawk.Client.EmuHawk
 		protected override void GeneralUpdate()
 		{
 			CheatListView.RowCount = MainForm.CheatList.Count;
-			TotalLabel.Text = $"{MainForm.CheatList.CheatCount} {(MainForm.CheatList.CheatCount == 1 ? "cheat" : "cheats")} {MainForm.CheatList.ActiveCount} active";
+			TotalLabel.Text = TheLocalizater.TranslateFormatString("{0} {1} {2} active", MainForm.CheatList.CheatCount, (MainForm.CheatList.CheatCount == 1 ? "cheat" : "cheats"), MainForm.CheatList.ActiveCount);
 		}
 
 		private void LoadFileFromRecent(string path)
@@ -118,9 +118,9 @@ namespace BizHawk.Client.EmuHawk
 		private void UpdateMessageLabel(bool saved = false)
 		{
 			MessageLabel.Text = saved
-				? $"{Path.GetFileName(MainForm.CheatList.CurrentFileName)} saved."
+				? TheLocalizater.TranslateFormatString("{0} saved.", Path.GetFileName(MainForm.CheatList.CurrentFileName))
 				: MainForm.CheatList.Changes
-					? $"{Path.GetFileName(MainForm.CheatList.CurrentFileName)} *"
+					? TheLocalizater.TranslateFormatString("{0} *", Path.GetFileName(MainForm.CheatList.CurrentFileName))
 					: Path.GetFileName(MainForm.CheatList.CurrentFileName);
 		}
 
@@ -249,7 +249,7 @@ namespace BizHawk.Client.EmuHawk
 					text = MainForm.CheatList[index].Size.ToString();
 					break;
 				case EndianColumn:
-					text = (MainForm.CheatList[index].BigEndian ?? false) ? "Big" : "Little";
+					text = (MainForm.CheatList[index].BigEndian ?? false) ? TheLocalizater.TranslateText("Big") : TheLocalizater.TranslateText("Little");
 					break;
 				case TypeColumn:
 					text = Watch.DisplayTypeToString(MainForm.CheatList[index].Type);
@@ -298,20 +298,20 @@ namespace BizHawk.Client.EmuHawk
 			if (selected.Count is 0)
 			{
 				CheatEditor.ClearForm();
-				CheatGroupBox.Text = "New Cheat";
+				CheatGroupBox.Text = TheLocalizater.TranslateText("New Cheat");
 				CheatGroupBox.Enabled = true;
 			}
 			else if (selected.Count is 1)
 			{
 				CheatEditor.SetCheat(selected[0]);
-				CheatGroupBox.Text = $"Editing Cheat {selected[0].Name} - {selected[0].AddressStr}";
+				CheatGroupBox.Text = TheLocalizater.TranslateFormatString("Editing Cheat {0} - {1}", selected[0].Name, selected[0].AddressStr);
 				CheatGroupBox.Enabled = true;
 			}
 			else
 			{
 				CheatGroupBox.Enabled = false;
 				CheatEditor.ClearForm();
-				CheatGroupBox.Text = "Multiple Cheats Selected";
+				CheatGroupBox.Text = TheLocalizater.TranslateText("Multiple Cheats Selected");
 			}
 		}
 
@@ -627,15 +627,15 @@ namespace BizHawk.Client.EmuHawk
 			{
 				Columns = new List<RollColumn>
 				{
-					new(name: NameColumn, widthUnscaled: 128, text: "Names"),
-					new(name: AddressColumn, widthUnscaled: 60, text: "Address"),
-					new(name: ValueColumn, widthUnscaled: 59, text: "Value"),
-					new(name: CompareColumn, widthUnscaled: 63, text: "Compare"),
-					new(name: ComparisonTypeColumn, widthUnscaled: 98, text: "Compare Type"),
-					new(name: OnColumn, widthUnscaled: 28, text: "On") { Visible = false },
-					new(name: SizeColumn, widthUnscaled: 55, text: "Size"),
-					new(name: EndianColumn, widthUnscaled: 55, text: "Endian") { Visible = false },
-					new(name: TypeColumn, widthUnscaled: 88, text: "Display Type") { Visible = false },
+					new(name: NameColumn, widthUnscaled: 128, text: TheLocalizater.TranslateText("Names")),
+					new(name: AddressColumn, widthUnscaled: 60, text: TheLocalizater.TranslateText("Address")),
+					new(name: ValueColumn, widthUnscaled: 59, text: TheLocalizater.TranslateText("Value")),
+					new(name: CompareColumn, widthUnscaled: 63, text: TheLocalizater.TranslateText("Compare")),
+					new(name: ComparisonTypeColumn, widthUnscaled: 98, text: TheLocalizater.TranslateText("Compare Type")),
+					new(name: OnColumn, widthUnscaled: 28, text: TheLocalizater.TranslateText("On")) { Visible = false },
+					new(name: SizeColumn, widthUnscaled: 55, text: TheLocalizater.TranslateText("Size")),
+					new(name: EndianColumn, widthUnscaled: 55, text: TheLocalizater.TranslateText("Endian")) { Visible = false },
+					new(name: TypeColumn, widthUnscaled: 88, text: TheLocalizater.TranslateText("Display Type")) { Visible = false },
 				};
 			}
 

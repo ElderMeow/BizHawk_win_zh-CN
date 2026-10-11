@@ -64,11 +64,11 @@ namespace BizHawk.Client.EmuHawk
 		{
 			raDropDownItems.Clear();
 
-			var shutDownRAItem = new ToolStripMenuItem("Shutdown RetroAchievements");
+			var shutDownRAItem = new ToolStripMenuItem(TheLocalizater.TranslateText("Shutdown RetroAchievements"));
 			shutDownRAItem.Click += (_, _) => _shutdownRACallback();
 			raDropDownItems.Add(shutDownRAItem);
 
-			var autoStartRAItem = new ToolStripMenuItem("Autostart RetroAchievements")
+			var autoStartRAItem = new ToolStripMenuItem(TheLocalizater.TranslateText("Autostart RetroAchievements"))
 			{
 				Checked = _getConfig().RAAutostart,
 				CheckOnClick = true,
@@ -80,7 +80,7 @@ namespace BizHawk.Client.EmuHawk
 			};
 			raDropDownItems.Add(autoStartRAItem);
 
-			var loginItem = new ToolStripMenuItem("Login")
+			var loginItem = new ToolStripMenuItem(TheLocalizater.TranslateText("Login"))
 			{
 				Visible = !LoggedIn,
 			};
@@ -93,7 +93,7 @@ namespace BizHawk.Client.EmuHawk
 			};
 			raDropDownItems.Add(loginItem);
 
-			var logoutItem = new ToolStripMenuItem("Logout")
+			var logoutItem = new ToolStripMenuItem(TheLocalizater.TranslateText("Logout"))
 			{
 				Visible = LoggedIn,
 			};
@@ -110,7 +110,7 @@ namespace BizHawk.Client.EmuHawk
 			var tss = new ToolStripSeparator();
 			raDropDownItems.Add(tss);
 
-			var enableCheevosItem = new ToolStripMenuItem("Enable Achievements")
+			var enableCheevosItem = new ToolStripMenuItem(TheLocalizater.TranslateText("Enable Achievements"))
 			{
 				Checked = CheevosActive,
 				CheckOnClick = true,
@@ -118,7 +118,7 @@ namespace BizHawk.Client.EmuHawk
 			enableCheevosItem.CheckedChanged += (_, _) => CheevosActive = !CheevosActive;
 			raDropDownItems.Add(enableCheevosItem);
 
-			var enableLboardNotifsItem = new ToolStripMenuItem("Enable Leaderboard Notifications")
+			var enableLboardNotifsItem = new ToolStripMenuItem(TheLocalizater.TranslateText("Enable Leaderboard Notifications"))
 			{
 				Checked = LBoardNotifsActive,
 				CheckOnClick = true,
@@ -127,7 +127,7 @@ namespace BizHawk.Client.EmuHawk
 			enableLboardNotifsItem.CheckedChanged += (_, _) => LBoardNotifsActive = !LBoardNotifsActive;
 			raDropDownItems.Add(enableLboardNotifsItem);
 
-			var enableRichPresenceItem = new ToolStripMenuItem("Enable Rich Presence")
+			var enableRichPresenceItem = new ToolStripMenuItem(TheLocalizater.TranslateText("Enable Rich Presence"))
 			{
 				Checked = RichPresenceActive || HardcoreMode,
 				CheckOnClick = true,
@@ -136,7 +136,7 @@ namespace BizHawk.Client.EmuHawk
 			enableRichPresenceItem.CheckedChanged += (_, _) => RichPresenceActive = !RichPresenceActive;
 			raDropDownItems.Add(enableRichPresenceItem);
 
-			var enableHardcoreItem = new ToolStripMenuItem("Enable Hardcore Mode")
+			var enableHardcoreItem = new ToolStripMenuItem(TheLocalizater.TranslateText("Enable Hardcore Mode"))
 			{
 				Checked = HardcoreMode,
 				CheckOnClick = true,
@@ -159,7 +159,7 @@ namespace BizHawk.Client.EmuHawk
 
 			_hardcoreModeMenuItem = enableHardcoreItem;
 
-			var enableSoundEffectsItem = new ToolStripMenuItem("Enable Sound Effects")
+			var enableSoundEffectsItem = new ToolStripMenuItem(TheLocalizater.TranslateText("Enable Sound Effects"))
 			{
 				Checked = EnableSoundEffects,
 				CheckOnClick = true,
@@ -167,7 +167,7 @@ namespace BizHawk.Client.EmuHawk
 			enableSoundEffectsItem.CheckedChanged += (_, _) => EnableSoundEffects = !EnableSoundEffects;
 			raDropDownItems.Add(enableSoundEffectsItem);
 
-			var enableUnofficialCheevosItem = new ToolStripMenuItem("Test Unofficial Achievements")
+			var enableUnofficialCheevosItem = new ToolStripMenuItem(TheLocalizater.TranslateText("Test Unofficial Achievements"))
 			{
 				Checked = AllowUnofficialCheevos,
 				CheckOnClick = true,
@@ -178,7 +178,7 @@ namespace BizHawk.Client.EmuHawk
 			tss = new ToolStripSeparator();
 			raDropDownItems.Add(tss);
 
-			var viewGameInfoItem = new ToolStripMenuItem("View Game Info");
+			var viewGameInfoItem = new ToolStripMenuItem(TheLocalizater.TranslateText("View Game Info"));
 			viewGameInfoItem.Click += (_, _) =>
 			{
 				_gameInfoForm.OnFrameAdvance(_gameData.GameBadge, _gameData.TotalCheevoPoints(HardcoreMode),
@@ -188,7 +188,7 @@ namespace BizHawk.Client.EmuHawk
 				_gameInfoForm.Show();
 			};
 			raDropDownItems.Add(viewGameInfoItem);
-			var viewCheevoListItem = new ToolStripMenuItem("View Achievement List");
+			var viewCheevoListItem = new ToolStripMenuItem(TheLocalizater.TranslateText("View Achievement List"));
 			viewCheevoListItem.Click += (_, _) =>
 			{
 				_cheevoListForm.OnFrameAdvance(HardcoreMode);
@@ -196,7 +196,7 @@ namespace BizHawk.Client.EmuHawk
 			};
 			raDropDownItems.Add(viewCheevoListItem);
 
-			var viewLboardListItem = new ToolStripMenuItem("View Leaderboard List");
+			var viewLboardListItem = new ToolStripMenuItem(TheLocalizater.TranslateText("View Leaderboard List"));
 			viewLboardListItem.Click += (_, _) =>
 			{
 				_lboardListForm.OnFrameAdvance();
@@ -208,9 +208,9 @@ namespace BizHawk.Client.EmuHawk
 		protected override void HandleHardcoreModeDisable(string reason)
 		{
 			_dialogParent.ModalMessageBox(
-				caption: "Warning",
+				caption: TheLocalizater.TranslateText("Warning"),
 				icon: EMsgBoxIcon.Warning,
-				text: $"{reason} Disabling hardcore mode.");
+				text: TheLocalizater.TranslateFormatString("{0} Disabling hardcore mode.", reason));
 			HardcoreMode = false;
 		}
 
@@ -297,7 +297,7 @@ namespace BizHawk.Client.EmuHawk
 
 			if (HardcoreMode)
 			{
-				HandleHardcoreModeDisable("Loading savestates is not allowed in hardcore mode.");
+				HandleHardcoreModeDisable(TheLocalizater.TranslateText("Loading savestates is not allowed in hardcore mode."));
 			}
 
 			OneShotActivateActiveModeCheevos();
@@ -316,9 +316,9 @@ namespace BizHawk.Client.EmuHawk
 			if (HardcoreMode)
 			{
 				e.Handled = _dialogParent.ModalMessageBox2(
-					caption: "Warning",
+					caption: TheLocalizater.TranslateText("Warning"),
 					icon: EMsgBoxIcon.Warning,
-					text: "Loading a quicksave is not allowed in hardcode mode. Abort loading state?");
+					text: TheLocalizater.TranslateText("Loading a quicksave is not allowed in hardcode mode. Abort loading state?"));
 			}
 		}
 

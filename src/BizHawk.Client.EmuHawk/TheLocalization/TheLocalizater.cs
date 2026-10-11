@@ -2,7 +2,7 @@
 using System.Linq;
 using System.Threading;
 
-namespace BizHawk.Client.EmuHawk.TheLocalization
+namespace BizHawk.Client.EmuHawk
 {
 	internal static class TheLocalizater
 	{

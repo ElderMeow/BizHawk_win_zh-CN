@@ -27,7 +27,7 @@ namespace BizHawk.Client.EmuHawk
 			{
 				if (Clipboard.GetText() == txt)
 				{
-					lblDone.Text = "Done!";
+					lblDone.Text = TheLocalizater.TranslateText("Done!");
 					lblDone.ForeColor = SystemColors.ControlText;
 					return;
 				}
@@ -36,7 +36,7 @@ namespace BizHawk.Client.EmuHawk
 			{
 			}
 
-			lblDone.Text = "ERROR!";
+			lblDone.Text = TheLocalizater.TranslateText("ERROR!");
 			lblDone.ForeColor = SystemColors.ControlText;
 		}
 

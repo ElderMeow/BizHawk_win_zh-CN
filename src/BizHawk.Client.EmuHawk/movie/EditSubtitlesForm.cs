@@ -63,7 +63,7 @@ namespace BizHawk.Client.EmuHawk
 					SubGrid.Columns[i].ReadOnly = true;
 				}
 
-				Text = "View Subtitles";
+				Text = TheLocalizater.TranslateText("View Subtitles");
 			}
 
 			if (SubGrid.Rows.Count > 8)
@@ -81,8 +81,8 @@ namespace BizHawk.Client.EmuHawk
 		private void ShowError(int row, int column)
 		{
 			var c = SubGrid.Rows[row].Cells[column];
-			var error = $"Unable to parse value: {c.Value}";
-			var caption = $"Parse Error Row {row} Column {column}";
+			var error = TheLocalizater.TranslateFormatString("Unable to parse value: {0}", c.Value);
+			var caption = TheLocalizater.TranslateFormatString("Parse Error Row {0} Column {1}", row, column);
 			DialogController.ShowMessageBox(error, caption, EMsgBoxIcon.Error);
 		}
 
@@ -219,7 +219,7 @@ namespace BizHawk.Client.EmuHawk
 			}
 			catch
 			{
-				DialogController.ShowMessageBox( "Could not determine movie fps, export failed.", "Error", EMsgBoxIcon.Error);
+				DialogController.ShowMessageBox( TheLocalizater.TranslateText("Could not determine movie fps, export failed."), TheLocalizater.TranslateText("Error"), EMsgBoxIcon.Error);
 
 				return;
 			}
@@ -229,7 +229,7 @@ namespace BizHawk.Client.EmuHawk
 			File.WriteAllText(fileName, str);
 
 			// Display success
-			DialogController.ShowMessageBox($"Subtitles successfully exported to {fileName}.", "Success");
+			DialogController.ShowMessageBox(TheLocalizater.TranslateFormatString("Subtitles successfully exported to {0}.", fileName), TheLocalizater.TranslateText("Success"));
 		}
 
 		private void SubGrid_DefaultValuesNeeded(object sender, DataGridViewRowEventArgs e)

@@ -45,7 +45,7 @@ namespace BizHawk.Client.EmuHawk
 			}
 		}
 
-		protected override string WindowTitleStatic => "Virtual Pads";
+		protected override string WindowTitleStatic => TheLocalizater.TranslateText("Virtual Pads");
 
 		public VirtualpadTool()
 		{
@@ -115,8 +115,8 @@ namespace BizHawk.Client.EmuHawk
 					if (!searchSetContains(controlSchema.Name))
 					{
 						this.ModalMessageBox(
-							$"Schema warning: Schema entry '{schema.DisplayName}':'{controlSchema.Name}' will not correspond to any control in definition '{Emulator.ControllerDefinition.Name}'",
-							"Dev Warning");
+							TheLocalizater.TranslateFormatString("Schema warning: Schema entry '{0}':'{1}' will not correspond to any control in definition '{2}'", schema.DisplayName, controlSchema.Name, Emulator.ControllerDefinition.Name),
+							TheLocalizater.TranslateText("Dev Warning"));
 					}
 				}
 			}

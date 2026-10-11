@@ -230,7 +230,7 @@
     <value>添加到 RAM 监视(&amp;A)</value>
   </data>
   <data name="PokeAddressMenuItem.Text" xml:space="preserve">
-    <value>刺探地址(&amp;P)</value>
+    <value>写入地址(&amp;P)</value>
   </data>
   <data name="FreezeAddressMenuItem.Text" xml:space="preserve">
     <value>冻结地址</value>
@@ -335,10 +335,10 @@
     <value>监视</value>
   </data>
   <data name="PokeAddressToolBarItem.Text" xml:space="preserve">
-    <value>刺探</value>
+    <value>写入</value>
   </data>
   <data name="PokeAddressToolBarItem.ToolTipText" xml:space="preserve">
-    <value>刺探</value>
+    <value>写入</value>
   </data>
   <data name="FreezeAddressToolBarItem.Text" xml:space="preserve">
     <value>冻结</value>

@@ -125,13 +125,13 @@
     <value>地址：0x</value>
   </data>
   <data name="OK.Text" xml:space="preserve">
-    <value>刺探地址(&amp;P)</value>
+    <value>写入地址(&amp;P)</value>
   </data>
   <data name="Cancel.Text" xml:space="preserve">
     <value>关闭(&amp;C)</value>
   </data>
   <data name="OutputLabel.Text" xml:space="preserve">
-    <value>输入刺探地址：</value>
+    <value>输入要写入的地址：</value>
   </data>
   <data name="ValeLabel.Location" type="System.Drawing.Point, System.Drawing">
     <value>24, 56</value>
@@ -176,6 +176,6 @@
     <value>主内存</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>RAM 刺探</value>
+    <value>RAM 写入</value>
   </data>
 </root>

@@ -99,8 +99,8 @@ namespace BizHawk.Client.EmuHawk
 		{
 			lblBorderInfo.Text = type switch
 			{
-				AmstradCPC.BorderType.Visible => "Approximates what you see on a CPC monitor",
-				AmstradCPC.BorderType.Uncropped => "The full display area",
+				AmstradCPC.BorderType.Visible => TheLocalizater.TranslateText("Approximates what you see on a CPC monitor"),
+				AmstradCPC.BorderType.Uncropped => TheLocalizater.TranslateText("The full display area"),
 				_ => lblBorderInfo.Text,
 			};
 		}

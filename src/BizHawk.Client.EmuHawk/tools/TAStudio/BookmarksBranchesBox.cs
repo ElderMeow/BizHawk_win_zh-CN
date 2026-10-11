@@ -77,11 +77,11 @@ namespace BizHawk.Client.EmuHawk
 		{
 			if (config.HotkeyBindings["Add Branch"].Length > 0)
 			{
-				toolTip1.SetToolTip(AddBranchButton, $"Add Branch ({config.HotkeyBindings["Add Branch"]})");
+				toolTip1.SetToolTip(AddBranchButton, TheLocalizater.TranslateFormatString("Add Branch ({0})", config.HotkeyBindings["Add Branch"]));
 			}
 			else
 			{
-				toolTip1.SetToolTip(AddBranchButton, "Add Branch");
+				toolTip1.SetToolTip(AddBranchButton, TheLocalizater.TranslateText("Add Branch"));
 			}
 		}
 
@@ -89,8 +89,8 @@ namespace BizHawk.Client.EmuHawk
 		{
 			BranchView.AllColumns.Clear();
 			BranchView.AllColumns.Add(new(name: BranchNumberColumnName, widthUnscaled: 30, text: "#"));
-			BranchView.AllColumns.Add(new(name: FrameColumnName, widthUnscaled: 64, text: "Frame"));
-			BranchView.AllColumns.Add(new(name: UserTextColumnName, widthUnscaled: 90, text: "UserText"));
+			BranchView.AllColumns.Add(new(name: FrameColumnName, widthUnscaled: 64, text: TheLocalizater.TranslateText("Frame")));
+			BranchView.AllColumns.Add(new(name: UserTextColumnName, widthUnscaled: 90, text: TheLocalizater.TranslateText("UserText")));
 		}
 
 		private void QueryItemText(InputRoll sender, int index, RollColumn column, out string text, ref int offsetX, ref int offsetY)
@@ -251,8 +251,8 @@ namespace BizHawk.Client.EmuHawk
 			while (currentHashes.Contains(_backupBranch.Uuid.GetHashCode()));
 
 			UndoBranchToolStripMenuItem.Enabled = UndoBranchButton.Enabled = true;
-			UndoBranchToolStripMenuItem.Text = "Undo Branch Load";
-			toolTip1.SetToolTip(UndoBranchButton, "Undo Branch Load");
+			UndoBranchToolStripMenuItem.Text = TheLocalizater.TranslateText("Undo Branch Load");
+			toolTip1.SetToolTip(UndoBranchButton, TheLocalizater.TranslateText("Undo Branch Load"));
 			_branchUndo = BranchUndo.Load;
 
 			if (!BranchView.AnyRowsSelected) return false; // why'd we do all that then
@@ -275,8 +275,8 @@ namespace BizHawk.Client.EmuHawk
 
 			_backupBranch = SelectedBranch.Clone();
 			UndoBranchToolStripMenuItem.Enabled = UndoBranchButton.Enabled = true;
-			UndoBranchToolStripMenuItem.Text = "Undo Branch Update";
-			toolTip1.SetToolTip(UndoBranchButton, "Undo Branch Update");
+			UndoBranchToolStripMenuItem.Text = TheLocalizater.TranslateText("Undo Branch Update");
+			toolTip1.SetToolTip(UndoBranchButton, TheLocalizater.TranslateText("Undo Branch Update"));
 			_branchUndo = BranchUndo.Update;
 
 			BranchView.ScrollToIndex(Branches.Current);
@@ -317,8 +317,8 @@ namespace BizHawk.Client.EmuHawk
 				_backupBranch = SelectedBranch.Clone();
 				_backupBranch.UserText = oldText;
 				UndoBranchToolStripMenuItem.Enabled = UndoBranchButton.Enabled = true;
-				UndoBranchToolStripMenuItem.Text = "Undo Branch Text Edit";
-				toolTip1.SetToolTip(UndoBranchButton, "Undo Branch Text Edit");
+				UndoBranchToolStripMenuItem.Text = TheLocalizater.TranslateText("Undo Branch Text Edit");
+				toolTip1.SetToolTip(UndoBranchButton, TheLocalizater.TranslateText("Undo Branch Text Edit"));
 				_branchUndo = BranchUndo.Text;
 
 				Tastudio.MainForm.AddOnScreenMessage($"Edited branch {index + 1}");
@@ -357,8 +357,8 @@ namespace BizHawk.Client.EmuHawk
 			}
 
 			UndoBranchToolStripMenuItem.Enabled = UndoBranchButton.Enabled = true;
-			UndoBranchToolStripMenuItem.Text = "Undo Branch Removal";
-			toolTip1.SetToolTip(UndoBranchButton, "Undo Branch Removal");
+			UndoBranchToolStripMenuItem.Text = TheLocalizater.TranslateText("Undo Branch Removal");
+			toolTip1.SetToolTip(UndoBranchButton, TheLocalizater.TranslateText("Undo Branch Removal"));
 			_branchUndo = BranchUndo.Remove;
 
 			BranchView.RowCount = Branches.Count;
@@ -557,9 +557,9 @@ namespace BizHawk.Client.EmuHawk
 
 			var i = new InputPrompt
 			{
-				Text = $"Text for branch {index + 1}",
+				Text = TheLocalizater.TranslateFormatString("Text for branch {0}", index + 1),
 				TextInputType = InputPrompt.InputType.Text,
-				Message = "Enter a message",
+				Message = TheLocalizater.TranslateText("Enter a message"),
 				InitialValue = branch.UserText,
 			};
 

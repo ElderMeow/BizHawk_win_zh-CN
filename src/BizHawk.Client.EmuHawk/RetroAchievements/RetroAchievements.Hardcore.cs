@@ -68,19 +68,19 @@ namespace BizHawk.Client.EmuHawk
 		{
 			if (!AllGamesVerified)
 			{
-				HandleHardcoreModeDisable("All loaded games were not verified.");
+				HandleHardcoreModeDisable(TheLocalizater.TranslateText("All loaded games were not verified."));
 				return;
 			}
 
 			if (MovieSession.Movie.IsPlaying())
 			{
-				HandleHardcoreModeDisable("Playing a movie while in hardcore mode is not allowed.");
+				HandleHardcoreModeDisable(TheLocalizater.TranslateText("Playing a movie while in hardcore mode is not allowed."));
 				return;
 			}
 
 			if (CheatList.AnyActive)
 			{
-				HandleHardcoreModeDisable("Using cheat codes while in hardcore mode is not allowed.");
+				HandleHardcoreModeDisable(TheLocalizater.TranslateText("Using cheat codes while in hardcore mode is not allowed."));
 				return;
 			}
 
@@ -95,21 +95,21 @@ namespace BizHawk.Client.EmuHawk
 			var speedPercent = fastForward ? _getConfig().SpeedPercentAlternate : _getConfig().SpeedPercent;
 			if (speedPercent < 100)
 			{
-				HandleHardcoreModeDisable("Slow motion in hardcore mode is not allowed.");
+				HandleHardcoreModeDisable(TheLocalizater.TranslateText("Slow motion in hardcore mode is not allowed."));
 				return;
 			}
 
 			foreach (var t in HardcoreProhibitedTools)
 			{
 				if (!_tools.IsLoaded(t)) continue;
-				HandleHardcoreModeDisable($"Using {t.Name} in hardcore mode is not allowed.");
+				HandleHardcoreModeDisable(TheLocalizater.TranslateFormatString("Using {0} in hardcore mode is not allowed.", t.Name));
 				return;
 			}
 
 			// can't know what external tools are doing, so just don't allow them here
 			if (_tools.IsLoaded<IExternalToolForm>())
 			{
-				HandleHardcoreModeDisable($"Using external tools in hardcore mode is not allowed.");
+				HandleHardcoreModeDisable(TheLocalizater.TranslateText("Using external tools in hardcore mode is not allowed."));
 				return;
 			}
 
@@ -117,22 +117,22 @@ namespace BizHawk.Client.EmuHawk
 			{
 				case SubNESHawk or SubBsnesCore or SubGBHawk:
 					// this is mostly due to wonkiness with subframes which can be used as pseudo slowdown
-					HandleHardcoreModeDisable("Using subframes in hardcore mode is not allowed.");
+					HandleHardcoreModeDisable(TheLocalizater.TranslateText("Using subframes in hardcore mode is not allowed."));
 					break;
 				case MAME:
 					// this is a very complicated case that needs special handling the future
-					HandleHardcoreModeDisable("Using MAME in hardcore mode is not allowed.");
+					HandleHardcoreModeDisable(TheLocalizater.TranslateText("Using MAME in hardcore mode is not allowed."));
 					break;
 				case NymaCore nyma:
 					if (nyma.GetSettings().DisabledLayers.Count is not 0)
 					{
-						HandleHardcoreModeDisable($"Disabling {Emu.GetType().Name}'s graphics layers in hardcore mode is not allowed.");
+						HandleHardcoreModeDisable(TheLocalizater.TranslateFormatString("Disabling {0}'s graphics layers in hardcore mode is not allowed.", Emu.GetType().Name));
 					}
 					break;
 				case GambatteLink gl:
 					if (gl.GetSyncSettings()._linkedSyncSettings.Any(ss => !ss.DisplayBG || !ss.DisplayOBJ || !ss.DisplayWindow))
 					{
-						HandleHardcoreModeDisable("Disabling GambatteLink's graphics layers in hardcore mode is not allowed.");
+						HandleHardcoreModeDisable(TheLocalizater.TranslateText("Disabling GambatteLink's graphics layers in hardcore mode is not allowed."));
 					}
 					break;
 				case Gameboy gb:
@@ -140,11 +140,11 @@ namespace BizHawk.Client.EmuHawk
 					var ss = gb.GetSyncSettings();
 					if (!ss.DisplayBG || !ss.DisplayOBJ || !ss.DisplayWindow)
 					{
-						HandleHardcoreModeDisable("Disabling Gambatte's graphics layers in hardcore mode is not allowed.");
+						HandleHardcoreModeDisable(TheLocalizater.TranslateText("Disabling Gambatte's graphics layers in hardcore mode is not allowed."));
 					}
 					else if (ss.FrameLength is Gameboy.GambatteSyncSettings.FrameLengthType.UserDefinedFrames)
 					{
-						HandleHardcoreModeDisable("Using subframes in hardcore mode is not allowed.");
+						HandleHardcoreModeDisable(TheLocalizater.TranslateText("Using subframes in hardcore mode is not allowed."));
 					}
 					break;
 				}
@@ -153,11 +153,11 @@ namespace BizHawk.Client.EmuHawk
 					var ss = nds.GetSyncSettings();
 					if (!ss.ClearNAND)
 					{
-						HandleHardcoreModeDisable("Disabling DSi NAND clear in hardcore mode is not allowed.");
+						HandleHardcoreModeDisable(TheLocalizater.TranslateText("Disabling DSi NAND clear in hardcore mode is not allowed."));
 					}
 					else if (!ss.SkipFirmware)
 					{
-						HandleHardcoreModeDisable("Disabling Skip Firmware in DSi mode in hardcore mode is not allowed.");
+						HandleHardcoreModeDisable(TheLocalizater.TranslateText("Disabling Skip Firmware in DSi mode in hardcore mode is not allowed."));
 					}
 					break;
 				}
@@ -172,7 +172,7 @@ namespace BizHawk.Client.EmuHawk
 							if ((bool)(t.GetProperty(layer)
 									?.GetValue(s) ?? t.GetField(layer)
 									.GetValue(s))) continue;
-							HandleHardcoreModeDisable($"Disabling {Emu.GetType().Name}'s {layer} in hardcore mode is not allowed.");
+							HandleHardcoreModeDisable(TheLocalizater.TranslateFormatString("Disabling {0}'s {1} in hardcore mode is not allowed.", Emu.GetType().Name, layer));
 							return;
 						}
 					}

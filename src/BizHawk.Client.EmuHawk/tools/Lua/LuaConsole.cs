@@ -36,7 +36,7 @@ namespace BizHawk.Client.EmuHawk
 		public static Icon ToolIcon
 			=> Resources.TextDocIcon;
 
-		private readonly ToolStripMenuItemEx DuplicateToStdoutMenuItem = new() { Text = "Copy All Logged Messages to Terminal/stdout" };
+		private readonly ToolStripMenuItemEx DuplicateToStdoutMenuItem = new() { Text = TheLocalizater.TranslateText("Copy All Logged Messages to Terminal/stdout") };
 
 		private readonly LuaAutocompleteInstaller _luaAutoInstaller = new();
 		private readonly Dictionary<LuaFile, FileSystemWatcher> _watches = new();
@@ -64,8 +64,8 @@ namespace BizHawk.Client.EmuHawk
 				Columns = new List<RollColumn>
 				{
 					new(name: IconColumnName, widthUnscaled: 22, text: " "),
-					new(name: ScriptColumnName, widthUnscaled: 92, text: "Script"),
-					new(name: PathColumnName, widthUnscaled: 300, text: "Path"),
+					new(name: ScriptColumnName, widthUnscaled: 92, text: TheLocalizater.TranslateText("Script")),
+					new(name: PathColumnName, widthUnscaled: 300, text: TheLocalizater.TranslateText("Path")),
 				};
 			}
 
@@ -86,7 +86,7 @@ namespace BizHawk.Client.EmuHawk
 		[ConfigPersist]
 		public LuaConsoleSettings Settings { get; set; }
 
-		protected override string WindowTitleStatic => "Lua Console";
+		protected override string WindowTitleStatic => TheLocalizater.TranslateText("Lua Console");
 
 		public LuaConsole()
 		{
@@ -495,15 +495,15 @@ namespace BizHawk.Client.EmuHawk
 
 			if (total == 1)
 			{
-				message += $"{total} script ({active} active, {paused} paused)";
+				message += TheLocalizater.TranslateFormatString("{0} script ({1} active, {2} paused)", total, active, paused);
 			}
 			else if (total == 0)
 			{
-				message += $"{total} scripts";
+				message += TheLocalizater.TranslateFormatString("{0} scripts", total);
 			}
 			else
 			{
-				message += $"{total} scripts ({active} active, {paused} paused)";
+				message += TheLocalizater.TranslateFormatString("{0} scripts ({1} active, {2} paused)", total, active, paused);
 			}
 
 			NumberOfScripts.Text = message;
@@ -703,12 +703,12 @@ namespace BizHawk.Client.EmuHawk
 				if (saveResult.IsError)
 				{
 					this.ErrorMessageBox(saveResult);
-					OutputMessages.Text = $"Lua session could not be saved to {file.Name}";
+					OutputMessages.Text = TheLocalizater.TranslateFormatString("Lua session could not be saved to {0}", file.Name);
 				}
 				else
 				{
 					Config.RecentLuaSession.Add(file.FullName);
-					OutputMessages.Text = $"{file.Name} saved.";
+					OutputMessages.Text = TheLocalizater.TranslateFormatString("{0} saved.", file.Name);
 				}
 				return saveResult;
 			}
@@ -736,13 +736,13 @@ namespace BizHawk.Client.EmuHawk
 		{
 			if (!_openedFiles.Changes || string.IsNullOrEmpty(_openedFiles.Filename)) return true;
 			var result = DialogController.DoWithTempMute(() => this.ModalMessageBox3(
-				caption: "Closing with Unsaved Changes",
+				caption: TheLocalizater.TranslateText("Closing with Unsaved Changes"),
 				icon: EMsgBoxIcon.Question,
-				text: $"Save {WindowTitleStatic} session?"));
+				text: TheLocalizater.TranslateFormatString("Save {0} session?", WindowTitleStatic)));
 			if (result is null) return false;
 			if (result.Value)
 			{
-				TryAgainResult saveResult = this.DoWithTryAgainBox(SaveOrSaveAs, "Failed to save Lua session.");
+				TryAgainResult saveResult = this.DoWithTryAgainBox(SaveOrSaveAs, TheLocalizater.TranslateText("Failed to save Lua session."));
 				return saveResult != TryAgainResult.Canceled;
 			}
 			else _openedFiles.Changes = false;
@@ -818,12 +818,12 @@ namespace BizHawk.Client.EmuHawk
 				FileWriteResult result = SaveOrSaveAs();
 				if (result.IsError)
 				{
-					this.ErrorMessageBox(result, "Failed to save Lua session.");
-					OutputMessages.Text = $"Failed to save {Path.GetFileName(_openedFiles.Filename)}";
+					this.ErrorMessageBox(result, TheLocalizater.TranslateText("Failed to save Lua session."));
+					OutputMessages.Text = TheLocalizater.TranslateFormatString("Failed to save {0}", Path.GetFileName(_openedFiles.Filename));
 				}
 				else
 				{
-					OutputMessages.Text = $"{Path.GetFileName(_openedFiles.Filename)} saved.";
+					OutputMessages.Text = TheLocalizater.TranslateFormatString("{0} saved.", Path.GetFileName(_openedFiles.Filename));
 				}
 			}
 		}
@@ -887,10 +887,10 @@ namespace BizHawk.Client.EmuHawk
 				// mostly due to weird behavior in other emulators with their lua implementations
 				// we'll warn again the first time, clarifying usage then let the OS handle warning the user
 				Settings.WarnedOnceOnOverwrite = true;
-				if (!this.ModalMessageBox2("You are about to overwrite an existing Lua script.\n" +
-						"Keep in mind the \"New Lua Script\" option is for creating a brand new Lua script, not for opening Lua scripts.\n" +
-						"This warning will not appear again! (the file manager would be warning you about an overwrite anyways)\n" +
-						"Proceed with overwrite?", "Overwrite", EMsgBoxIcon.Warning, useOKCancel: true))
+				if (!this.ModalMessageBox2(TheLocalizater.TranslateText("You are about to overwrite an existing Lua script.\n") +
+						TheLocalizater.TranslateText("Keep in mind the \"New Lua Script\" option is for creating a brand new Lua script, not for opening Lua scripts.\n") +
+						TheLocalizater.TranslateText("This warning will not appear again! (the file manager would be warning you about an overwrite anyways)\n") +
+						TheLocalizater.TranslateText("Proceed with overwrite?"), TheLocalizater.TranslateText("Overwrite"), EMsgBoxIcon.Warning, useOKCancel: true))
 				{
 					return;
 				}
@@ -1182,20 +1182,20 @@ namespace BizHawk.Client.EmuHawk
 			{
 				if (_luaAutoInstaller.IsBizLuaRegistered(LuaAutocompleteInstaller.TextEditors.Sublime2))
 				{
-					RegisterSublimeText2MenuItem.Text = "Sublime Text 2 (installed)";
+					RegisterSublimeText2MenuItem.Text = TheLocalizater.TranslateText("Sublime Text 2 (installed)");
 					RegisterSublimeText2MenuItem.SetStyle(FontStyle.Regular);
 					RegisterSublimeText2MenuItem.Image = Resources.GreenCheck;
 				}
 				else
 				{
-					RegisterSublimeText2MenuItem.Text = "Sublime Text 2 (detected)";
+					RegisterSublimeText2MenuItem.Text = TheLocalizater.TranslateText("Sublime Text 2 (detected)");
 					RegisterSublimeText2MenuItem.SetStyle(FontStyle.Italic);
 					RegisterSublimeText2MenuItem.Image = null;
 				}
 			}
 			else
 			{
-				RegisterSublimeText2MenuItem.Text = "Sublime Text 2";
+				RegisterSublimeText2MenuItem.Text = TheLocalizater.TranslateText("Sublime Text 2");
 				RegisterSublimeText2MenuItem.SetStyle(FontStyle.Regular);
 				RegisterSublimeText2MenuItem.Image = null;
 			}
@@ -1204,20 +1204,20 @@ namespace BizHawk.Client.EmuHawk
 			{
 				if (_luaAutoInstaller.IsBizLuaRegistered(LuaAutocompleteInstaller.TextEditors.NotePad))
 				{
-					RegisterNotePadMenuItem.Text = "Notepad++ (installed)";
+					RegisterNotePadMenuItem.Text = TheLocalizater.TranslateText("Notepad++ (installed)");
 					RegisterNotePadMenuItem.SetStyle(FontStyle.Regular);
 					RegisterNotePadMenuItem.Image = Resources.GreenCheck;
 				}
 				else
 				{
-					RegisterNotePadMenuItem.Text = "Notepad++ (detected)";
+					RegisterNotePadMenuItem.Text = TheLocalizater.TranslateText("Notepad++ (detected)");
 					RegisterNotePadMenuItem.SetStyle(FontStyle.Italic);
 					RegisterNotePadMenuItem.Image = null;
 				}
 			}
 			else
 			{
-				RegisterNotePadMenuItem.Text = "Notepad++";
+				RegisterNotePadMenuItem.Text = TheLocalizater.TranslateText("Notepad++");
 				RegisterNotePadMenuItem.SetStyle(FontStyle.Regular);
 				RegisterNotePadMenuItem.Image = null;
 			}

@@ -15,11 +15,11 @@ namespace BizHawk.Client.EmuHawk
 
 		public FFmpegDownloaderForm()
 		{
-			Description = "BizHawk relies on a specific version of FFmpeg. No other version will do. The wrong version will be ignored. There is no way to override this behavior."
-				+ "\n\nThe required version could not be found."
+			Description = TheLocalizater.TranslateText("BizHawk relies on a specific version of FFmpeg. No other version will do. The wrong version will be ignored. There is no way to override this behavior.")
+				+ TheLocalizater.TranslateText("\n\nThe required version could not be found.")
 				+ (OSTailoredCode.IsUnixHost
-					? "\n\n(Linux user: If installing manually, you can use a symlink.)"
-					: "\n\nUse this dialog to download it automatically, or download it yourself from the URL below and place it in the specified location.");
+					? TheLocalizater.TranslateText("\n\n(Linux user: If installing manually, you can use a symlink.)")
+					: TheLocalizater.TranslateText("\n\nUse this dialog to download it automatically, or download it yourself from the URL below and place it in the specified location."));
 			DownloadFrom = FFmpegService.Url;
 			DownloadTo = FFmpegService.FFmpegPath;
 		}

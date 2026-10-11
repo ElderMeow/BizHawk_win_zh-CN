@@ -24,7 +24,7 @@ namespace BizHawk.Client.EmuHawk
 		private const BROWSEINFOW.FLAGS BrowseOptions = BROWSEINFOW.FLAGS.RestrictToFilesystem | BROWSEINFOW.FLAGS.RestrictToDomain |
 			BROWSEINFOW.FLAGS.NewDialogStyle | BROWSEINFOW.FLAGS.ShowTextBox;
 
-		public string Description = "Please select a folder below:";
+		public string Description = TheLocalizater.TranslateText("Please select a folder below:");
 
 		public string SelectedPath;
 

@@ -65,20 +65,20 @@ namespace BizHawk.Client.EmuHawk
 			SingleRowFLP flpBindReadout = new() { Controls = { txtBoundPrefix, cbBoundChannel, new LabelEx { Text = vChannel } } };
 
 			Timer timer = new(_components);
-			SzButtonEx btnBind = new() { Size = new(75, 23), Text = "Bind!" };
+			SzButtonEx btnBind = new() { Size = new(75, 23), Text = TheLocalizater.TranslateText("Bind!") };
 			void UpdateListeningState(bool newState)
 			{
 				if (newState)
 				{
 					Input.Instance.StartListeningForAxisEvents();
 					timer.Start();
-					btnBind.Text = "Cancel!";
+					btnBind.Text = TheLocalizater.TranslateText("Cancel!");
 				}
 				else
 				{
 					timer.Stop();
 					Input.Instance.StopListeningForAxisEvents();
-					btnBind.Text = "Bind!";
+					btnBind.Text = TheLocalizater.TranslateText("Bind!");
 				}
 			}
 			var isListening = false;
@@ -90,7 +90,7 @@ namespace BizHawk.Client.EmuHawk
 				UpdateDropdownAndLabel(BoundGamepadPrefix = bindValue.SubstringBefore(' ') + ' ');
 			};
 			btnBind.Click += (_, _) => UpdateListeningState(isListening = !isListening);
-			SzButtonEx btnUnbind = new() { Size = new(75, 23), Text = "Unbind!" };
+			SzButtonEx btnUnbind = new() { Size = new(75, 23), Text = TheLocalizater.TranslateText("Unbind!") };
 			btnUnbind.Click += (_, _) => UpdateDropdownAndLabel(BoundGamepadPrefix = string.Empty);
 			LocSingleColumnFLP flpButtons = new() { Controls = { btnBind, btnUnbind } };
 
@@ -99,7 +99,7 @@ namespace BizHawk.Client.EmuHawk
 			tbPrescale.ValueChanged += (changedSender, _) =>
 			{
 				Prescale = ((TrackBar) changedSender).Value / 10.0f;
-				lblPrescale.Text = $"Pre-scaled by: {Prescale:F1}x";
+				lblPrescale.Text = TheLocalizater.TranslateFormatString("Pre-scaled by: {0:F1}x", Prescale);
 			};
 			tbPrescale.Value = (int) (Prescale * 10.0f);
 			LocSzSingleRowFLP flpPrescale = new() { Controls = { lblPrescale, tbPrescale }, Size = new(200, 32) };

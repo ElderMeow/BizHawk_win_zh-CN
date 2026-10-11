@@ -106,7 +106,7 @@ namespace BizHawk.Client.EmuHawk
 
 				if (systemName is VSystemID.Raw.PSX or VSystemID.Raw.PCFX or VSystemID.Raw.SAT)
 				{
-					DialogController.ShowMessageBox("Using archives with PSX, PCFX or SATURN is not currently recommended/supported.");
+					DialogController.ShowMessageBox(TheLocalizater.TranslateText("Using archives with PSX, PCFX or SATURN is not currently recommended/supported."));
 					return;
 				}
 

@@ -72,8 +72,8 @@ namespace BizHawk.Client.EmuHawk
 					{
 						if (!dialogParent.ModalMessageBox2(
 								text:
-								"An update is required to use RetroAchievements. Do you want to download the update now?",
-								caption: "Update",
+								TheLocalizater.TranslateText("An update is required to use RetroAchievements. Do you want to download the update now?"),
+								caption: TheLocalizater.TranslateText("Update"),
 								icon: EMsgBoxIcon.Question,
 								useOKCancel: false)) return false;
 						DetachDll();
@@ -86,8 +86,8 @@ namespace BizHawk.Client.EmuHawk
 
 					if (!dialogParent.ModalMessageBox2(
 							text:
-							"An optional update is available for RetroAchievements. Do you want to download the update now?",
-							caption: "Update",
+							TheLocalizater.TranslateText("An optional update is available for RetroAchievements. Do you want to download the update now?"),
+							caption: TheLocalizater.TranslateText("Update"),
 							icon: EMsgBoxIcon.Question,
 							useOKCancel: false)) return true;
 
@@ -98,8 +98,8 @@ namespace BizHawk.Client.EmuHawk
 				}
 
 				dialogParent.ModalMessageBox(
-					text: "Failed to fetch update information, cannot start RetroAchievements.",
-					caption: "Error",
+					text: TheLocalizater.TranslateText("Failed to fetch update information, cannot start RetroAchievements."),
+					caption: TheLocalizater.TranslateText("Error"),
 					icon: EMsgBoxIcon.Error);
 
 				return false;
@@ -108,8 +108,8 @@ namespace BizHawk.Client.EmuHawk
 			{
 				// is this needed?
 				dialogParent.ModalMessageBox(
-					text: $"Exception {ex.Message} occurred when fetching update information, cannot start RetroAchievements.",
-					caption: "Error",
+					text: TheLocalizater.TranslateFormatString("Exception {0} occurred when fetching update information, cannot start RetroAchievements.", ex.Message),
+					caption: TheLocalizater.TranslateText("Error"),
 					icon: EMsgBoxIcon.Error);
 
 				DetachDll();

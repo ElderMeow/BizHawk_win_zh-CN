@@ -30,21 +30,21 @@ namespace BizHawk.Client.EmuHawk
 			widget.CompositeWidget = this;
 		}
 
-		private static readonly string WidgetTooltipText = "* Escape clears a key mapping\r\n* Disable Auto Tab to multiply bind";
+		private static readonly string WidgetTooltipText = TheLocalizater.TranslateText("* Escape clears a key mapping\r\n* Disable Auto Tab to multiply bind");
 		private ToolTip _tooltip;
 		private string _bindingTooltipText;
 
 		public void SetupTooltip(ToolTip tip, string bindingText)
 		{
 			_tooltip = tip;
-			_tooltip.SetToolTip(btnSpecial, "Click here for special tricky bindings");
+			_tooltip.SetToolTip(btnSpecial, TheLocalizater.TranslateText("Click here for special tricky bindings"));
 			_bindingTooltipText = bindingText;
 			RefreshTooltip();
 		}
 
 		public void RefreshTooltip()
 		{
-			string widgetText = $"Current Binding: {widget.Text}";
+			string widgetText = TheLocalizater.TranslateFormatString("Current Binding: {0}", widget.Text);
 			if (_bindingTooltipText != null)
 			{
 				widgetText = $"{widgetText}\r\n---\r\n{_bindingTooltipText}";

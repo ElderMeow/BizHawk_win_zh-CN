@@ -26,11 +26,11 @@ namespace BizHawk.Client.EmuHawk
 		[RequiredService]
 		private IEmulator Emulator { get; set; }
 
-		private string _windowTitle = "Log Window";
+		private string _windowTitle = TheLocalizater.TranslateText("Log Window");
 
 		protected override string WindowTitle => _windowTitle;
 
-		protected override string WindowTitleStatic => "Log Window";
+		protected override string WindowTitleStatic => TheLocalizater.TranslateText("Log Window");
 
 		public LogWindow()
 		{
