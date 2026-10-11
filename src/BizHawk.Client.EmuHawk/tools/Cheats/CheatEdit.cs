@@ -16,6 +16,9 @@ namespace BizHawk.Client.EmuHawk
 			InitializeComponent();
 			AddressBox.Nullable = false;
 			ValueBox.Nullable = false;
+			// 本地化开启后 Designer 神奇的删除了这句，会导致 bug
+			// Designer magically deleted this sentence after localization was turned on, which will lead to bugs.
+			CompareTypeDropDown.SelectedIndex = 0; 
 		}
 
 		private const string HexInd = "0x";
