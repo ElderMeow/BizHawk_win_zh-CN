@@ -48,7 +48,7 @@ namespace BizHawk.Client.EmuHawk
 				var menuItem = new ToolStripMenuItem
 				{
 					Name = column.Name,
-					Text = TheLocalizater.TranslateFormatString("{0} ({1})", column.Text, column.Name),
+					Text = $"{column.Text} ({column.Name})",
 					Checked = column.Visible,
 					CheckOnClick = true,
 					Tag = column.Name,

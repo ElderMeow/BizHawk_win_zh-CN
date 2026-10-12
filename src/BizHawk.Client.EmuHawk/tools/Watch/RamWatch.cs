@@ -87,7 +87,7 @@ namespace BizHawk.Client.EmuHawk
 			MoveBottomMenuItem.Image = Resources.MoveBottom;
 			Icon = ToolIcon;
 
-			ToolStripMenuItemEx deduperMenuItem = new() { Text = "Purge Duplicate Watches" };
+			ToolStripMenuItemEx deduperMenuItem = new() { Text = TheLocalizater.TranslateText("Purge Duplicate Watches") };
 			deduperMenuItem.Click += (_, _) =>
 			{
 				if (!this.ModalMessageBox2(
@@ -166,14 +166,15 @@ namespace BizHawk.Client.EmuHawk
 			{
 				Columns = new List<RollColumn>
 				{
-					new(name: WatchList.Address, widthUnscaled: 60, text: TheLocalizater.TranslateText("Address")),
-					new(name: WatchList.Value, widthUnscaled: 59, text: TheLocalizater.TranslateText("Value")),
-					new(name: WatchList.Prev, widthUnscaled: 59, text: TheLocalizater.TranslateText("Prev")) { Visible = false },
-					new(name: WatchList.ChangesCol, widthUnscaled: 60, text: TheLocalizater.TranslateText("Changes")),
-					new(name: WatchList.Diff, widthUnscaled: 59, text: TheLocalizater.TranslateText("Diff")) { Visible = false },
-					new(name: WatchList.Type, widthUnscaled: 55, text: TheLocalizater.TranslateText("Type")) { Visible = false },
-					new(name: WatchList.Domain, widthUnscaled: 55, text: TheLocalizater.TranslateText("Domain")),
-					new(name: WatchList.Notes, widthUnscaled: 128, text: TheLocalizater.TranslateText("Notes")),
+					// Use raw text here, and translated in RollColumn constructor.
+					new(name: WatchList.Address, widthUnscaled: 60, text: "Address"),
+					new(name: WatchList.Value, widthUnscaled: 59, text: "Value"),
+					new(name: WatchList.Prev, widthUnscaled: 59, text: "Prev") { Visible = false },
+					new(name: WatchList.ChangesCol, widthUnscaled: 60, text: "Changes"),
+					new(name: WatchList.Diff, widthUnscaled: 59, text: "Diff") { Visible = false },
+					new(name: WatchList.Type, widthUnscaled: 55, text: "Type") { Visible = false },
+					new(name: WatchList.Domain, widthUnscaled: 55, text: "Domain"),
+					new(name: WatchList.Notes, widthUnscaled: 128, text: "Notes"),
 				};
 			}
 

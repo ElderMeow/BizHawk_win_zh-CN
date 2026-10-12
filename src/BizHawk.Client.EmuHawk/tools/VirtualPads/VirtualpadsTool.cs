@@ -97,7 +97,7 @@ namespace BizHawk.Client.EmuHawk
 			}
 
 			var padSchemata = ((IVirtualPadSchema) Activator.CreateInstance(schemaType))
-				.GetPadSchemas(Emulator, s => DialogController.ShowMessageBox(s))
+				.GetPadSchemas(Emulator, s => DialogController.ShowMessageBox(TheLocalizater.TranslateText(s)))
 				.ToList();
 
 			if (VersionInfo.DeveloperBuild)

@@ -754,7 +754,7 @@ namespace BizHawk.Client.EmuHawk
 
 			address += (p.Y / 8) * 256;
 			tile += (p.Y / 8) * 16;
-			var usage = "Usage: ";
+			var usage = TheLocalizater.TranslateFormatString("Usage: ");
 
 			if (_ppu.BGBaseHigh == address >= 0x1000) // bghigh
 			{

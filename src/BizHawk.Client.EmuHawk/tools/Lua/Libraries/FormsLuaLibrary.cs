@@ -291,7 +291,7 @@ namespace BizHawk.Client.EmuHawk
 			LuaFunction onClose = null)
 		{
 			if (OwnerForm is not IWin32Window ownerForm)
-				throw new Exception("IDialogParent must implement IWin32Window");
+				throw new Exception(TheLocalizater.TranslateText("IDialogParent must implement IWin32Window"));
 
 			var form = new LuaWinform(_luaLibsImpl.CurrentFile, _luaLibsImpl, WindowClosed, onClose);
 			_luaForms.Add(form);
@@ -1192,7 +1192,7 @@ namespace BizHawk.Client.EmuHawk
 			var c = FindFormOrControlWithHandle(handle);
 			if (c is null) return;
 			// relying on exceptions for error handling here
-			var pi = c.GetType().GetProperty(property) ?? throw new Exception($"no property with the identifier {property}");
+			var pi = c.GetType().GetProperty(property) ?? throw new Exception(TheLocalizater.TranslateFormatString("no property with the identifier {0}", property));
 			var pt = pi.PropertyType;
 			var o = pt.IsEnum
 				? Enum.Parse(pt, value.ToString(), true)

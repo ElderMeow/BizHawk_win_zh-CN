@@ -150,7 +150,7 @@ namespace BizHawk.Client.EmuHawk
 			{
 				if (_luaLibsImpl.ProhibitedApis.HasFlag(ApiGroup.STATES))
 				{
-					throw new InvalidOperationException("tastudio.setplayback() is not allowed during input/memory callbacks");
+					throw new InvalidOperationException(TheLocalizater.TranslateText("tastudio.setplayback() is not allowed during input/memory callbacks"));
 				}
 
 
@@ -335,7 +335,7 @@ namespace BizHawk.Client.EmuHawk
 			{
 				if (_luaLibsImpl.ProhibitedApis.HasFlag(ApiGroup.STATES))
 				{
-					throw new InvalidOperationException("tastudio.applyinputchanges() is not allowed during input/memory callbacks");
+					throw new InvalidOperationException(TheLocalizater.TranslateText("tastudio.applyinputchanges() is not allowed during input/memory callbacks"));
 				}
 
 				_luaLibsImpl.IsUpdateSupressed = true;
@@ -514,7 +514,7 @@ namespace BizHawk.Client.EmuHawk
 			{
 				if (_luaLibsImpl.ProhibitedApis.HasFlag(ApiGroup.STATES))
 				{
-					throw new InvalidOperationException("tastudio.loadbranch() is not allowed during input/memory callbacks");
+					throw new InvalidOperationException(TheLocalizater.TranslateText("tastudio.loadbranch() is not allowed during input/memory callbacks"));
 				}
 
 				_luaLibsImpl.IsUpdateSupressed = true;

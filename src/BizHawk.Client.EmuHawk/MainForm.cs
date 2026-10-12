@@ -60,7 +60,7 @@ namespace BizHawk.Client.EmuHawk
 		private readonly ToolStripMenuItemEx DumpStatusReportMenuItem = new()
 		{
 			Enabled = false,
-			Text = string.Format(FMT_STR_DUMP_STATUS_MENUITEM_LABEL, string.Empty),
+			Text = TheLocalizater.TranslateFormatString(FMT_STR_DUMP_STATUS_MENUITEM_LABEL, string.Empty),
 		};
 
 		private readonly ToolStripMenuItemEx NullHawkVSysSubmenu = new() { Enabled = false, Text = "—" };
@@ -3178,7 +3178,7 @@ namespace BizHawk.Client.EmuHawk
 		{
 			if (_currAviWriter != null) return;
 
-			if (Game.IsNullInstance()) throw new InvalidOperationException("how is an A/V recording starting with no game loaded? please report this including as much detail as possible");
+			if (Game.IsNullInstance()) throw new InvalidOperationException(TheLocalizater.TranslateText("how is an A/V recording starting with no game loaded? please report this including as much detail as possible"));
 
 			// select IVideoWriter to use
 			IVideoWriter aw;
@@ -3644,7 +3644,7 @@ namespace BizHawk.Client.EmuHawk
 
 					if (ioaRetro.CorePath == null)
 					{
-						throw new InvalidOperationException("Can't load a file via Libretro until a core is specified");
+						throw new InvalidOperationException(TheLocalizater.TranslateText("Can't load a file via Libretro until a core is specified"));
 					}
 				}
 				else if (forcedCoreName is not null)
@@ -3661,7 +3661,7 @@ namespace BizHawk.Client.EmuHawk
 							caption: TheLocalizater.TranslateText("No such core"),
 							icon: EMsgBoxIcon.Error,
 							text: string.Format(
-								FMT_STR_NO_SUCH_CORE,
+								TheLocalizater.TranslateText(FMT_STR_NO_SUCH_CORE),
 								forcedCoreName,
 								EmulatorExtensions.SystemIDToDisplayName(MovieSession.QueuedSysID))))
 						{
@@ -4508,8 +4508,8 @@ namespace BizHawk.Client.EmuHawk
 			throw new ArgumentException(
 				paramName: nameof(initDir),
 				message: File.Exists(initDir)
-					? $"file picker called with {nameof(initDir)} set to a non-dir"
-					: $"file picker called with {nameof(initDir)} set to a nonexistent path");
+					? TheLocalizater.TranslateFormatString("file picker called with {0} set to a non-dir", nameof(initDir))
+					: TheLocalizater.TranslateFormatString("file picker called with {0} set to a nonexistent path", nameof(initDir)));
 #else
 			return File.Exists(initDir) ? Path.GetDirectoryName(initDir) : string.Empty;
 #endif

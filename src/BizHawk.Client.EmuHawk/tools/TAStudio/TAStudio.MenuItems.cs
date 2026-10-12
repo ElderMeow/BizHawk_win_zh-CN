@@ -60,7 +60,7 @@ namespace BizHawk.Client.EmuHawk
 		{
 			if (AskSaveChanges())
 			{
-				var saveRam = SaveRamEmulator?.CloneSaveRam(clearDirty: false) ?? throw new Exception("No SaveRam");
+				var saveRam = SaveRamEmulator?.CloneSaveRam(clearDirty: false) ?? throw new Exception(TheLocalizater.TranslateText("No SaveRam"));
 				GoToFrame(AnyRowsSelected ? FirstSelectedRowIndex : 0);
 				var result = CurrentTasMovie.ConvertToSaveRamAnchoredMovie(saveRam);
 				DisplayMessageIfFailed(() => result, TheLocalizater.TranslateText("Failed to create movie."));

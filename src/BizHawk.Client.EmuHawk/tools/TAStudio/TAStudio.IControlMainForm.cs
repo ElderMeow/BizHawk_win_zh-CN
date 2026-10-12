@@ -93,7 +93,7 @@
 		}
 
 		public bool WantsToControlReboot => false;
-		public void RebootCore() => throw new NotSupportedException("This should never be called");
+		public void RebootCore() => throw new NotSupportedException(TheLocalizater.TranslateText("This should never be called"));
 
 		public bool WantsToBypassMovieEndAction => true;
 	}

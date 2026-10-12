@@ -64,7 +64,7 @@ namespace BizHawk.Client.EmuHawk
 				ToolStripButton tsb = new() {
 					DisplayStyle = ToolStripItemDisplayStyle.Image,
 					Image = icon ?? IconMissingIcon.Value,
-					Text = name,
+					Text = TheLocalizater.TranslateText(name),
 				};
 				tsb.Click += (_, _) => Tools.Load(t);
 				ToolBoxStrip.Items.Add(tsb);

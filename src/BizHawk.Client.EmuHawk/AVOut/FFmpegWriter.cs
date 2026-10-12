@@ -189,7 +189,7 @@ namespace BizHawk.Client.EmuHawk
 
 			if (_ffmpeg.HasExited)
 			{
-				throw new Exception($"unexpected ffmpeg death:\n{FfmpegGetError()}");
+				throw new Exception(TheLocalizater.TranslateFormatString("unexpected ffmpeg death:\n{0}", FfmpegGetError()));
 			}
 
 			var video = source.GetVideoBuffer();
@@ -227,7 +227,7 @@ namespace BizHawk.Client.EmuHawk
 			}
 			else
 			{
-				throw new ArgumentException(message: $"{nameof(FFmpegWriter)} can only take its own codec tokens!", paramName: nameof(token));
+				throw new ArgumentException(message: TheLocalizater.TranslateFormatString("{0} can only take its own codec tokens!", nameof(FFmpegWriter)), paramName: nameof(token));
 			}
 		}
 
@@ -278,7 +278,7 @@ namespace BizHawk.Client.EmuHawk
 		{
 			if (_ffmpeg.HasExited)
 			{
-				throw new Exception($"unexpected ffmpeg death:\n{FfmpegGetError()}");
+				throw new Exception(TheLocalizater.TranslateFormatString("unexpected ffmpeg death:\n{0}", FfmpegGetError()));
 			}
 
 			if (samples.Length == 0)
@@ -303,7 +303,7 @@ namespace BizHawk.Client.EmuHawk
 		{
 			if (bits != 16)
 			{
-				throw new ArgumentOutOfRangeException(nameof(bits), "Sampling depth must be 16 bits!");
+				throw new ArgumentOutOfRangeException(nameof(bits), TheLocalizater.TranslateText("Sampling depth must be 16 bits!"));
 			}
 
 			this._sampleRate = sampleRate;

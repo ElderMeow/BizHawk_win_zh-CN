@@ -106,7 +106,7 @@ namespace BizHawk.Client.EmuHawk
 
 			if (_s != null)
 			{
-				propertyGrid1.SelectedObject = _s;
+				propertyGrid1.SelectedObject = new TheLocalizedTypeDescriptorProxy(_s);
 				propertyGrid1.AdjustDescriptionHeightToFit();
 				propertyGrid1.EnableCategoriesIfUsed();
 			}
@@ -117,7 +117,7 @@ namespace BizHawk.Client.EmuHawk
 
 			if (_ss != null)
 			{
-				propertyGrid2.SelectedObject = _ss;
+				propertyGrid2.SelectedObject = new TheLocalizedTypeDescriptorProxy(_ss);
 				propertyGrid2.AdjustDescriptionHeightToFit();
 				propertyGrid2.EnableCategoriesIfUsed();
 			}

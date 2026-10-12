@@ -35,7 +35,7 @@ namespace BizHawk.Client.EmuHawk
 
 		private void PopulatePlatforms()
 		{
-			PlatformDropdown.Items.Add("Ask me on load");
+			PlatformDropdown.Items.Add(TheLocalizater.TranslateText("Ask me on load"));
 			foreach (var (systemId, fullName) in EmulatorExtensions.SystemIDDisplayNames)
 			{
 				PlatformDropdown.Items.Add(fullName);

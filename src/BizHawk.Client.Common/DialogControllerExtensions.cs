@@ -82,7 +82,7 @@ namespace BizHawk.Client.Common
 			string prefix = prefixMessage ?? "";
 			dialogParent.ModalMessageBox(
 				text: $"{prefix}\n{fileResult.UserFriendlyErrorMessage()}\n{fileResult.Exception!.Message}",
-				caption: "Error",
+				caption: "Error", // Can not translate here. This class has only been quoted in EmuHawk, and I think it should be more reasonable for it to appear in EmuHawk.
 				icon: EMsgBoxIcon.Error);
 		}
 
@@ -100,7 +100,7 @@ namespace BizHawk.Client.Common
 			while (fileResult.IsError)
 			{
 				bool? askResult = dialogParent.ModalMessageBox3(
-					caption: "Failed to write file",
+					caption: "Failed to write file", // Can not translate here. This class has only been quoted in EmuHawk, and I think it should be more reasonable for it to appear in EmuHawk.
 					text: $"{message} Do you want to try again?"
 						+ $"\nError details: {fileResult.UserFriendlyErrorMessage()}"
 						+ $"\n\nFull info for debugging:\n--------------------\n{fileResult.Exception}\n--------------------"

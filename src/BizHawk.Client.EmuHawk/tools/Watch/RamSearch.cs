@@ -965,11 +965,12 @@ namespace BizHawk.Client.EmuHawk
 			{
 				Columns = new List<RollColumn>
 				{
-					new(name: WatchList.Address, widthUnscaled: 60, text: TheLocalizater.TranslateText("Address")),
-					new(name: WatchList.Value, widthUnscaled: 59, text: TheLocalizater.TranslateText("Value")),
-					new(name: WatchList.Prev, widthUnscaled: 59, text: TheLocalizater.TranslateText("Prev")),
-					new(name: WatchList.ChangesCol, widthUnscaled: 60, text: TheLocalizater.TranslateText("Changes")),
-					new(name: WatchList.Diff, widthUnscaled: 59, text: TheLocalizater.TranslateText("Diff")) { Visible = false },
+					// Use raw text here, and translated in RollColumn constructor.
+					new(name: WatchList.Address, widthUnscaled: 60, text: "Address"),
+					new(name: WatchList.Value, widthUnscaled: 59, text: "Value"),
+					new(name: WatchList.Prev, widthUnscaled: 59, text: "Prev"),
+					new(name: WatchList.ChangesCol, widthUnscaled: 60, text: "Changes"),
+					new(name: WatchList.Diff, widthUnscaled: 59, text: "Diff") { Visible = false },
 				};
 
 				PreviewMode = true;

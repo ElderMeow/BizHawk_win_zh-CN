@@ -118,7 +118,7 @@ namespace BizHawk.Client.EmuHawk
 		private void ListBox1_SelectedIndexChanged(object sender, EventArgs e)
 		{
 			labelDescriptionBody.Text = listBox1.SelectedIndex != -1
-				? ((VideoWriterInfo)listBox1.SelectedItem).Attribs.Description
+				? TheLocalizater.TranslateText(((VideoWriterInfo)listBox1.SelectedItem).Attribs.Description)
 				: "";
 		}
 

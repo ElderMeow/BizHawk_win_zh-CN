@@ -63,11 +63,11 @@ namespace BizHawk.Client.EmuHawk.CustomControls
 		{
 			if (names == null)
 			{
-				throw new ArgumentNullException(nameof(names), "Button Text is null");
+				throw new ArgumentNullException(nameof(names), TheLocalizater.TranslateText("Button Text is null"));
 			}
 
 			int count = names.Length;
-			if (count is < 1 or > 3) throw new ArgumentException(message: "Invalid number of buttons. Must be between 1 and 3.", paramName: nameof(names));
+			if (count is < 1 or > 3) throw new ArgumentException(message: TheLocalizater.TranslateText("Invalid number of buttons. Must be between 1 and 3."), paramName: nameof(names));
 
 			//---- Set Button 1
 			_minButtonRowWidth += SetButtonParams(btn1, names[0], def == 1 ? 1 : 2, results[0]);

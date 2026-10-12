@@ -21,11 +21,11 @@ namespace BizHawk.Client.EmuHawk
 			// Sound refactor TODO: we could try set it here, but we want the client to be responsible for mode switching? There may be non-trivial complications with when to switch modes that we don't want this object worrying about
 			if (asyncSoundProvider.SyncMode != SyncSoundMode.Async)
 			{
-				throw new InvalidOperationException("Only async mode is supported, set async mode before passing in the sound provider");
+				throw new InvalidOperationException(TheLocalizater.TranslateText("Only async mode is supported, set async mode before passing in the sound provider"));
 			}
 
 			if (!ASet || !VSet)
-				throw new InvalidOperationException("Must set params first!");
+				throw new InvalidOperationException(TheLocalizater.TranslateText("Must set params first!"));
 
 			long nSampNum = Samplerate * (long)FpsDen + _soundRemainder;
 			long nsamp = nSampNum / FpsNum;
@@ -63,7 +63,7 @@ namespace BizHawk.Client.EmuHawk
 		{
 			if (!ASet || !VSet)
 			{
-				throw new InvalidOperationException("Must set params first!");
+				throw new InvalidOperationException(TheLocalizater.TranslateText("Must set params first!"));
 			}
 
 			if (!_pSet)
@@ -85,7 +85,7 @@ namespace BizHawk.Client.EmuHawk
 			// Sound refactor TODO: we could just set it here, but we want the client to be responsible for mode switching? There may be non-trivial complications with when to switch modes that we don't want this object worrying about
 			if (syncSoundProvider.SyncMode != SyncSoundMode.Sync)
 			{
-				throw new InvalidOperationException("Only sync mode is supported, set sync mode before passing in the sound provider");
+				throw new InvalidOperationException(TheLocalizater.TranslateText("Only sync mode is supported, set sync mode before passing in the sound provider"));
 			}
 
 			VerifyParams();
@@ -167,7 +167,7 @@ namespace BizHawk.Client.EmuHawk
 
 			if (bits != 16)
 			{
-				throw new InvalidOperationException("Only 16 bit audio is supported!");
+				throw new InvalidOperationException(TheLocalizater.TranslateText("Only 16 bit audio is supported!"));
 			}
 
 			ASet = true;
@@ -192,13 +192,13 @@ namespace BizHawk.Client.EmuHawk
 		/// <exception cref="InvalidOperationException">always</exception>
 		public new virtual void AddFrame(IVideoProvider source)
 		{
-			throw new InvalidOperationException("Must call AddAV()!");
+			throw new InvalidOperationException(TheLocalizater.TranslateText("Must call AddAV()!"));
 		}
 
 		/// <exception cref="InvalidOperationException">always</exception>
 		public new virtual void AddSamples(short[] samples)
 		{
-			throw new InvalidOperationException("Must call AddAV()!");
+			throw new InvalidOperationException(TheLocalizater.TranslateText("Must call AddAV()!"));
 		}
 	}
 

@@ -33,8 +33,12 @@ namespace BizHawk.Client.EmuHawk
 		/// <remarks>TODO rename to <c>Key</c>?</remarks>
 		public string Name { get; }
 
+
+		public string OriginalText { get; } // The original Text used as a key.
+
 		/// <remarks>TODO rename to <c>Label</c>?</remarks>
-		public string Text { get; set; }
+		[JsonIgnore]
+		public string Text { get; set; } = null!; // Its translated Text.
 
 		public bool Visible { get; set; } = true;
 
@@ -52,10 +56,11 @@ namespace BizHawk.Client.EmuHawk
 		public InputRoll? owner;
 
 		[JsonConstructor]
-		private RollColumn(string name, string text, int verticalWidth, int horizontalHeight)
+		private RollColumn(string name, string originalText, int verticalWidth, int horizontalHeight)
 		{
 			Name = name;
-			Text = text;
+			OriginalText = originalText;
+			Text = TheLocalizater.TranslateText(originalText); // The text needs to be translated
 			VerticalWidth = verticalWidth;
 			HorizontalHeight = horizontalHeight;
 		}
@@ -66,7 +71,8 @@ namespace BizHawk.Client.EmuHawk
 		public RollColumn(string name, int verticalWidth, int horizontalHeight, string text)
 		{
 			Name = name;
-			Text = text;
+			OriginalText = text;
+			Text = TheLocalizater.TranslateText(text); // The text needs to be translated
 			VerticalWidth = verticalWidth;
 			HorizontalHeight = horizontalHeight;
 			Width = VerticalWidth;

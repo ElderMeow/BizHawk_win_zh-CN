@@ -626,15 +626,16 @@ namespace BizHawk.Client.EmuHawk
 			{
 				Columns = new List<RollColumn>
 				{
-					new(name: NameColumn, widthUnscaled: 128, text: TheLocalizater.TranslateText("Names")),
-					new(name: AddressColumn, widthUnscaled: 60, text: TheLocalizater.TranslateText("Address")),
-					new(name: ValueColumn, widthUnscaled: 59, text: TheLocalizater.TranslateText("Value")),
-					new(name: CompareColumn, widthUnscaled: 63, text: TheLocalizater.TranslateText("Compare")),
-					new(name: ComparisonTypeColumn, widthUnscaled: 98, text: TheLocalizater.TranslateText("Compare Type")),
-					new(name: OnColumn, widthUnscaled: 28, text: TheLocalizater.TranslateText("On")) { Visible = false },
-					new(name: SizeColumn, widthUnscaled: 55, text: TheLocalizater.TranslateText("Size")),
-					new(name: EndianColumn, widthUnscaled: 55, text: TheLocalizater.TranslateText("Endian")) { Visible = false },
-					new(name: TypeColumn, widthUnscaled: 88, text: TheLocalizater.TranslateText("Display Type")) { Visible = false },
+					// Use raw text here, and translated in RollColumn constructor.
+					new(name: NameColumn, widthUnscaled: 128, text: "Names"),
+					new(name: AddressColumn, widthUnscaled: 60, text: "Address"),
+					new(name: ValueColumn, widthUnscaled: 59, text: "Value"),
+					new(name: CompareColumn, widthUnscaled: 63, text: "Compare"),
+					new(name: ComparisonTypeColumn, widthUnscaled: 98, text: "Compare Type"),
+					new(name: OnColumn, widthUnscaled: 28, text: "On") { Visible = false },
+					new(name: SizeColumn, widthUnscaled: 55, text: "Size"),
+					new(name: EndianColumn, widthUnscaled: 55, text: "Endian") { Visible = false },
+					new(name: TypeColumn, widthUnscaled: 88, text: "Display Type") { Visible = false },
 				};
 			}
 

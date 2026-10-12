@@ -19,7 +19,7 @@ namespace BizHawk.Client.EmuHawk
 			var downloadDomainName = downloadFrom.RemovePrefix("https://").SubstringBefore('/');
 			if (!(downloadDomainName is "retroachievements.org" || downloadDomainName.EndsWith(".retroachievements.org")))
 			{
-				throw new ArgumentException(paramName: nameof(downloadFrom), message: "untrusted hostname");
+				throw new ArgumentException(paramName: nameof(downloadFrom), message: TheLocalizater.TranslateText("untrusted hostname"));
 			}
 			Description = string.Empty;
 			DownloadFrom = downloadFrom;

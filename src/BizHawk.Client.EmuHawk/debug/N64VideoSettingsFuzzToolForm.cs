@@ -22,7 +22,7 @@ namespace BizHawk.Client.EmuHawk.ForDebugging
 			=> _maybeEmulator!;
 
 		protected override string WindowTitleStatic
-			=> TOOL_NAME;
+			=> TheLocalizater.TranslateText(TOOL_NAME);
 
 		public N64VideoSettingsFuzzToolForm()
 		{

@@ -46,7 +46,7 @@ namespace BizHawk.Client.EmuHawk
 		{
 			if (v < 0)
 			{
-				throw new ArgumentOutOfRangeException(nameof(v), "unsigned must be non-negative");
+				throw new ArgumentOutOfRangeException(nameof(v), TheLocalizater.TranslateText("unsigned must be non-negative"));
 			}
 
 			WriteVarU((ulong)v, stream);
@@ -59,7 +59,7 @@ namespace BizHawk.Client.EmuHawk
 		{
 			if (v < 0)
 			{
-				throw new ArgumentOutOfRangeException(nameof(v), "unsigned must be non-negative");
+				throw new ArgumentOutOfRangeException(nameof(v), TheLocalizater.TranslateText("unsigned must be non-negative"));
 			}
 
 			WriteVarU((ulong)v, stream);
@@ -477,7 +477,7 @@ namespace BizHawk.Client.EmuHawk
 		public void WriteVideoFrame(ReadOnlySpan<int> video)
 		{
 			if (_videoDone)
-				throw new InvalidOperationException("Can't write data after end of relevance!");
+				throw new InvalidOperationException(TheLocalizater.TranslateText("Can't write data after end of relevance!"));
 
 			var dataLen = video.Length * sizeof(int);
 			var data = ArrayPool<byte>.Shared.Rent(dataLen);
@@ -505,7 +505,7 @@ namespace BizHawk.Client.EmuHawk
 		{
 			if (_audioDone)
 			{
-				throw new Exception("Can't write audio after end of relevance!");
+				throw new Exception(TheLocalizater.TranslateText("Can't write audio after end of relevance!"));
 			}
 
 			int dataLen = samples.Length * sizeof(short);

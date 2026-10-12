@@ -58,7 +58,7 @@ namespace BizHawk.Client.EmuHawk.ToolExtensions
 
 					if (crazyStuff)
 					{
-						if (physicalPath is null) throw new Exception("this will probably never appear but I can't be bothered checking --yoshi");
+						if (physicalPath is null) throw new Exception(TheLocalizater.TranslateText("this will probably never appear but I can't be bothered checking --yoshi"));
 						var split = HawkFile.SplitArchiveMemberPath(physicalPath);
 						var (isArchive, filePathWithoutMember) = split is null
 							? (false, physicalPath)
@@ -187,7 +187,7 @@ namespace BizHawk.Client.EmuHawk.ToolExtensions
 
 			if (!noAutoload)
 			{
-				var auto = new ToolStripMenuItem { Text = TheLocalizater.TranslateFormatString("&Autoload {0}", entrySemantic), Checked = recent.AutoLoad };
+				var auto = new ToolStripMenuItem { Text = TheLocalizater.TranslateFormatString("&Autoload {0}", TheLocalizater.TranslateText(entrySemantic)), Checked = recent.AutoLoad };
 				auto.Click += (o, ev) => recent.ToggleAutoLoad();
 				items.Add(auto);
 			}

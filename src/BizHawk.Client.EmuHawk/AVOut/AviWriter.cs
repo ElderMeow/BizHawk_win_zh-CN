@@ -48,7 +48,7 @@ namespace BizHawk.Client.EmuHawk
 			}
 			else
 			{
-				throw new ArgumentException(message: $"{nameof(AviWriter)} only takes its own {nameof(CodecToken)}s!", paramName: nameof(token));
+				throw new ArgumentException(message: TheLocalizater.TranslateFormatString("{0} only takes its own {1}s!", nameof(AviWriter), nameof(CodecToken)), paramName: nameof(token));
 			}
 		}
 
@@ -65,7 +65,7 @@ namespace BizHawk.Client.EmuHawk
 
 			yield return Path.Combine(dir, $"{baseName}_{counter}{ext}");
 
-			throw new InvalidOperationException("Reached maximum names");
+			throw new InvalidOperationException(TheLocalizater.TranslateText("Reached maximum names"));
 		}
 
 		/// <summary>
@@ -145,7 +145,7 @@ namespace BizHawk.Client.EmuHawk
 			_nameProvider = nameProvider;
 			if (_currVideoCodecToken == null)
 			{
-				throw new InvalidOperationException("Tried to start recording an AVI with no video codec token set");
+				throw new InvalidOperationException(TheLocalizater.TranslateText("Tried to start recording an AVI with no video codec token set"));
 			}
 
 			_threadQ = new(30);
@@ -329,12 +329,12 @@ namespace BizHawk.Client.EmuHawk
 				{
 					16 => 2,
 					8 => 1,
-					_ => throw new InvalidOperationException($"only 8/16 bits audio are supported by {nameof(AviWriter)} and you chose: {a_bits}"),
+					_ => throw new InvalidOperationException(TheLocalizater.TranslateFormatString("only 8/16 bits audio are supported by {0} and you chose: {1}", nameof(AviWriter), a_bits)),
 				};
 
 				if (a_channels is not (1 or 2))
 				{
-					throw new InvalidOperationException($"only 1/2 channels audio are supported by {nameof(AviWriter)} and you chose: {a_channels}");
+					throw new InvalidOperationException(TheLocalizater.TranslateFormatString("only 1/2 channels audio are supported by {0} and you chose: {1}", nameof(AviWriter), a_channels));
 				}
 
 				wfex.Init();
@@ -656,7 +656,7 @@ namespace BizHawk.Client.EmuHawk
 				var hrEx = Marshal.GetExceptionForHR(hr);
 				if (hrEx != null)
 				{
-					throw new InvalidOperationException($"Couldnt open dest path for avi file: {destPath}", hrEx);
+					throw new InvalidOperationException(TheLocalizater.TranslateFormatString("Couldnt open dest path for avi file: {0}", destPath), hrEx);
 				}
 
 				// initialize the video stream
@@ -673,7 +673,7 @@ namespace BizHawk.Client.EmuHawk
 				if (hrEx != null)
 				{
 					CloseFile();
-					throw new InvalidOperationException("Failed opening raw video stream. Not sure how this could happen", hrEx);
+					throw new InvalidOperationException(TheLocalizater.TranslateText("Failed opening raw video stream. Not sure how this could happen"), hrEx);
 				}
 
 				// initialize audio stream
@@ -692,7 +692,7 @@ namespace BizHawk.Client.EmuHawk
 				if (hrEx != null)
 				{
 					CloseFile();
-					throw new InvalidOperationException("Failed opening raw audio stream. Not sure how this could happen", hrEx);
+					throw new InvalidOperationException(TheLocalizater.TranslateText("Failed opening raw audio stream. Not sure how this could happen"), hrEx);
 				}
 
 				_outStatus = new();
@@ -706,7 +706,7 @@ namespace BizHawk.Client.EmuHawk
 			{
 				if (!_isOpen)
 				{
-					throw new InvalidOperationException("File must be opened before acquiring a codec token (or else the stream formats wouldnt be known)");
+					throw new InvalidOperationException(TheLocalizater.TranslateText("File must be opened before acquiring a codec token (or else the stream formats wouldnt be known)"));
 				}
 
 				if (lastCodecToken != null)
@@ -739,7 +739,7 @@ namespace BizHawk.Client.EmuHawk
 			{
 				if (_currVideoCodecToken == null)
 				{
-					throw new InvalidOperationException("set a video codec token before opening the streams!");
+					throw new InvalidOperationException(TheLocalizater.TranslateText("set a video codec token before opening the streams!"));
 				}
 
 				// open compressed video stream
@@ -751,7 +751,7 @@ namespace BizHawk.Client.EmuHawk
 				if (hrEx != null)
 				{
 					CloseStreams();
-					throw new InvalidOperationException("Failed making compressed video stream", hrEx);
+					throw new InvalidOperationException(TheLocalizater.TranslateText("Failed making compressed video stream"), hrEx);
 				}
 
 				// set the compressed video stream input format
@@ -771,7 +771,7 @@ namespace BizHawk.Client.EmuHawk
 				{
 					_bit32 = true; // we'll try again
 					CloseStreams();
-					throw new InvalidOperationException("Failed setting compressed video stream input format", hrEx);
+					throw new InvalidOperationException(TheLocalizater.TranslateText("Failed setting compressed video stream input format"), hrEx);
 				}
 
 				// set audio stream input format
@@ -783,7 +783,7 @@ namespace BizHawk.Client.EmuHawk
 				if (hrEx != null)
 				{
 					CloseStreams();
-					throw new InvalidOperationException("Failed setting raw audio stream input format");
+					throw new InvalidOperationException(TheLocalizater.TranslateText("Failed setting raw audio stream input format"));
 				}
 			}
 
@@ -887,7 +887,7 @@ namespace BizHawk.Client.EmuHawk
 
 				if (_parameters.width != source.BufferWidth
 					|| _parameters.height != source.BufferHeight)
-					throw new InvalidOperationException("video buffer changed between start and now");
+					throw new InvalidOperationException(TheLocalizater.TranslateText("video buffer changed between start and now"));
 
 				var pitch_add = _parameters.pitch_add;
 
@@ -970,7 +970,7 @@ namespace BizHawk.Client.EmuHawk
 		public void SetDefaultVideoCodecToken(Config config)
 		{
 			var ct = CodecToken.DeSerialize(config.AviCodecToken);
-			_currVideoCodecToken = ct ?? throw new Exception($"No default {nameof(config.AviCodecToken)} in config!");
+			_currVideoCodecToken = ct ?? throw new Exception(TheLocalizater.TranslateFormatString("No default {0} in config!", nameof(config.AviCodecToken)));
 		}
 
 		public string DesiredExtension()

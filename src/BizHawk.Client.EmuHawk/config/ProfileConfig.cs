@@ -30,13 +30,13 @@ namespace BizHawk.Client.EmuHawk
 
 		private void ProfileConfig_Load(object sender, EventArgs e)
 		{
-			ProfileSelectComboBox.SelectedItem = _config.SelectedProfile switch
+			ProfileSelectComboBox.SelectedIndex = _config.SelectedProfile switch
 			{
-				ClientProfile.Casual => "Casual Gaming",
-				ClientProfile.Longplay => "Longplays",
-				ClientProfile.Tas => "Tool-assisted Speedruns",
-				ClientProfile.N64Tas => "N64 Tool-assisted Speedruns",
-				_ => "Casual Gaming",
+				ClientProfile.Casual => 0,   // "Casual Gaming", ## In order to translate, we should use index! ##
+				ClientProfile.Longplay => 1, // "Longplays",
+				ClientProfile.Tas => 2,      // "Tool-assisted Speedruns",
+				ClientProfile.N64Tas => 3,   // "N64 Tool-assisted Speedruns",
+				_ => 0,                      // "Casual Gaming",
 			};
 
 			AutoCheckForUpdates.Checked = _config.UpdateAutoCheckEnabled;
@@ -44,11 +44,11 @@ namespace BizHawk.Client.EmuHawk
 
 		private void OkBtn_Click(object sender, EventArgs e)
 		{
-			_config.SelectedProfile = ProfileSelectComboBox.SelectedItem.ToString() switch
+			_config.SelectedProfile = ProfileSelectComboBox.SelectedIndex switch
 			{
-				"Longplays" => ClientProfile.Longplay,
-				"Tool-assisted Speedruns" => ClientProfile.Tas,
-				"N64 Tool-assisted Speedruns" => ClientProfile.N64Tas,
+				1 => ClientProfile.Longplay,
+				2 => ClientProfile.Tas,
+				3 => ClientProfile.N64Tas,
 				_ => ClientProfile.Casual,
 			};
 

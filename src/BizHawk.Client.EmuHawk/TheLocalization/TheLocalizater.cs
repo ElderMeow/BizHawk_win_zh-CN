@@ -1,15 +1,18 @@
-﻿using System.Diagnostics;
-using System.Runtime.CompilerServices;
-
-namespace BizHawk.Client.EmuHawk
+﻿namespace BizHawk.Client.EmuHawk
 {
-	internal static class TheLocalizater
+	public static class TheLocalizater
 	{
 		// Translate a plain text. 翻译一条纯文本。
 		public static string TranslateText(string text)
 		{
 			// TODO: your translate implementation.
 			return "T_" + text;
+		}
+
+		public static string TranslateShortcutKeyDisplayString(string bindstring)
+		{
+			// TODO: your translate implementation.
+			return "TK_" + bindstring;
 		}
 
 		// Translate a format string. 翻译一条格式化字符串。

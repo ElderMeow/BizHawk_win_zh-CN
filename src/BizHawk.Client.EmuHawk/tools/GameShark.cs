@@ -57,7 +57,7 @@ namespace BizHawk.Client.EmuHawk
 					}
 					else
 					{
-						DialogController.ShowMessageBox(result.Error, TheLocalizater.TranslateText("Input Error"), EMsgBoxIcon.Error);
+						DialogController.ShowMessageBox(TheLocalizater.TranslateText(result.Error), TheLocalizater.TranslateText("Input Error"), EMsgBoxIcon.Error);
 					}
 				}
 				catch (Exception ex)

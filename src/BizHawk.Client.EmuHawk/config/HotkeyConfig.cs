@@ -81,7 +81,7 @@ namespace BizHawk.Client.EmuHawk
 					continue; // skip RA hotkeys if it can't be used
 				}
 
-				var tb = new TabPage { Name = tab, Text = tab };
+				var tb = new TabPage { Name = tab, Text = TheLocalizater.TranslateText(tab) };
 				var bindings = HotkeyInfo.AllHotkeys.Where(kvp => kvp.Value.TabGroup == tab)
 					.OrderBy(static kvp => kvp.Value.Ordinal).ThenBy(static kvp => kvp.Value.DisplayName);
 				int x = UIHelper.ScaleX(6);
@@ -96,7 +96,7 @@ namespace BizHawk.Client.EmuHawk
 				{
 					var l = new Label
 					{
-						Text = b.DisplayName,
+						Text = TheLocalizater.TranslateText(b.DisplayName),
 						Location = new Point(x, y),
 						Size = new(iwOffsetX - UIHelper.ScaleX(2), UIHelper.ScaleY(15)),
 					};
@@ -109,8 +109,8 @@ namespace BizHawk.Client.EmuHawk
 						WidgetName = k,
 					};
 
-					w.SetupTooltip(toolTip1, b.ToolTip);
-					toolTip1.SetToolTip(l, b.ToolTip);
+					w.SetupTooltip(toolTip1, TheLocalizater.TranslateText(b.ToolTip));
+					toolTip1.SetToolTip(l, TheLocalizater.TranslateText(b.ToolTip));
 
 					w.Bindings = _config.HotkeyBindings[k];
 

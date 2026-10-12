@@ -15,7 +15,7 @@ namespace BizHawk.Client.EmuHawk.ForDebugging
 		public const string TOOL_NAME = "Manual N64 ROM Byteswapping Tool";
 
 		protected override string WindowTitleStatic
-			=> TOOL_NAME;
+			=> TheLocalizater.TranslateText(TOOL_NAME);
 
 		public N64RomByteswapToolForm()
 		{

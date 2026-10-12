@@ -104,7 +104,7 @@ namespace BizHawk.Client.EmuHawk
 					if (_exiting) return;
 					exStream.CopyTo(fs);
 					fs.Position = 0L;
-					if (!PreChmodCheck(fs)) throw new Exception("download failed (pre-chmod validation)");
+					if (!PreChmodCheck(fs)) throw new Exception(TheLocalizater.TranslateText("download failed (pre-chmod validation)"));
 					fs.Dispose();
 					if (OSTailoredCode.IsUnixHost)
 					{
@@ -115,7 +115,7 @@ namespace BizHawk.Client.EmuHawk
 				}
 
 				//make sure it worked
-				if (!PostChmodCheck()) throw new Exception("download failed (post-chmod validation)");
+				if (!PostChmodCheck()) throw new Exception(TheLocalizater.TranslateText("download failed (post-chmod validation)"));
 
 				_succeeded = true;
 			}

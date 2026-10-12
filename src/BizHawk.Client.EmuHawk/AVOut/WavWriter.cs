@@ -161,7 +161,7 @@ namespace BizHawk.Client.EmuHawk
 		{
 			if (_sampleRate < 1 || _numChannels < 1)
 			{
-				throw new InvalidOperationException("Bad samplerate/numchannels");
+				throw new InvalidOperationException(TheLocalizater.TranslateText("Bad samplerate/numchannels"));
 			}
 		}
 
@@ -200,7 +200,7 @@ namespace BizHawk.Client.EmuHawk
 			// advance to first
 			if (!_fileChain.MoveNext())
 			{
-				throw new ArgumentException(message: "Iterator was empty!", paramName: nameof(ss));
+				throw new ArgumentException(message: TheLocalizater.TranslateText("Iterator was empty!"), paramName: nameof(ss));
 			}
 
 			OpenCurrent(ss.Current);
@@ -239,7 +239,7 @@ namespace BizHawk.Client.EmuHawk
 		{
 			_sampleRate = sampleRate;
 			_channels = channels;
-			if (bits is not 16) throw new ArgumentException(message: "Only support 16bit audio!", paramName: nameof(bits));
+			if (bits is not 16) throw new ArgumentException(message: TheLocalizater.TranslateText("Only support 16bit audio!"), paramName: nameof(bits));
 		}
 
 		public void SetMetaData(string gameName, string authors, ulong lengthMs, ulong rerecords)

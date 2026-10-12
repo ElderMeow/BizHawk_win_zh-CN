@@ -93,8 +93,8 @@ namespace BizHawk.Client.EmuHawk
 			_splitFile = FileSizeCap != 0;
 
 			TraceView.AllColumns.Clear();
-			TraceView.AllColumns.Add(new(name: DisasmColumnName, widthUnscaled: 239, text: DisasmColumnName));
-			TraceView.AllColumns.Add(new(name: RegistersColumnName, widthUnscaled: 357, text: RegistersColumnName));
+			TraceView.AllColumns.Add(new(name: DisasmColumnName, widthUnscaled: 239, text: TheLocalizater.TranslateText(DisasmColumnName)));
+			TraceView.AllColumns.Add(new(name: RegistersColumnName, widthUnscaled: 357, text: TheLocalizater.TranslateText(RegistersColumnName)));
 		}
 
 		private void SaveConfigSettings()
