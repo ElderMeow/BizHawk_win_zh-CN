@@ -118,50 +118,56 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="checkBoxResize.Location" type="System.Drawing.Point, System.Drawing">
-    <value>371, 32</value>
+  <data name="checkBoxASync.Size" type="System.Drawing.Size, System.Drawing">
+    <value>84, 16</value>
   </data>
-  <data name="checkBoxResize.Size" type="System.Drawing.Size, System.Drawing">
-    <value>72, 16</value>
+  <data name="buttonAuto.Text" xml:space="preserve">
+    <value>缩放到↑</value>
   </data>
   <data name="checkBoxResize.Text" xml:space="preserve">
     <value>缩放视频</value>
   </data>
-  <data name="buttonOK.Text" xml:space="preserve">
-    <value>确定</value>
+  <data name="label3.Text" xml:space="preserve">
+    <value>X</value>
   </data>
-  <data name="buttonCancel.Text" xml:space="preserve">
-    <value>取消</value>
+  <data name="checkBoxASync.Text" xml:space="preserve">
+    <value>同步至音频</value>
   </data>
-  <data name="labelDescription.Text" xml:space="preserve">
-    <value>描述：</value>
+  <data name="$this.Text" xml:space="preserve">
+    <value>选择 AVI/WAV 输出器</value>
   </data>
-  <data name="label4.Text" xml:space="preserve">
-    <value>新尺寸：</value>
-  </data>
-  <data name="buttonAuto.Text" xml:space="preserve">
-    <value>缩放到↑</value>
+  <data name="checkBoxASync.ToolTip" xml:space="preserve">
+    <value>为可变帧速率电影配置A/V同步策略。如果选中，将丢弃或重复帧以匹配音频同步。如果未选中，会拉伸音频以匹配视频同步，从而导致音高问题</value>
   </data>
   <data name="lblSize.Text" xml:space="preserve">
     <value>大小：
 TestxTest</value>
   </data>
+  <data name="checkBoxResize.Size" type="System.Drawing.Size, System.Drawing">
+    <value>72, 16</value>
+  </data>
+  <data name="buttonCancel.Text" xml:space="preserve">
+    <value>取消</value>
+  </data>
   <data name="checkBoxPad.Size" type="System.Drawing.Size, System.Drawing">
     <value>48, 16</value>
+  </data>
+  <data name="buttonOK.Text" xml:space="preserve">
+    <value>确定</value>
   </data>
   <data name="checkBoxPad.Text" xml:space="preserve">
     <value>摇杆</value>
   </data>
-  <data name="checkBoxASync.Size" type="System.Drawing.Size, System.Drawing">
-    <value>84, 16</value>
-  </data>
-  <data name="checkBoxASync.Text" xml:space="preserve">
-    <value>同步至音频</value>
-  </data>
   <data name="lblResolutionWarning.Text" xml:space="preserve">
     <value>分辨率不是4的倍数！奇数分辨率或非4倍数的分辨率会导致许多编码器无法正常工作。请仔细检查输出结果，如有必要，调整窗口大小或编码器设置。</value>
   </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>选择 AVI/WAV 输出器</value>
+  <data name="label4.Text" xml:space="preserve">
+    <value>新尺寸：</value>
+  </data>
+  <data name="checkBoxResize.Location" type="System.Drawing.Point, System.Drawing">
+    <value>371, 32</value>
+  </data>
+  <data name="labelDescription.Text" xml:space="preserve">
+    <value>描述：</value>
   </data>
 </root>

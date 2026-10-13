@@ -109,7 +109,7 @@ namespace BizHawk.Client.EmuHawk
 					Location = new(10, y),
 				};
 				row.Size = new Size(MessageTypeBox.Width - 12, row.Size.Height);
-				row.Bind(name, pos, e => SetMessagePosition(row, e));
+				row.Bind(TheLocalizater.TranslateText(name), pos, e => SetMessagePosition(row, e));
 				if (pos == _fps)
 				{
 					row.Checked = true;
@@ -131,7 +131,7 @@ namespace BizHawk.Client.EmuHawk
 				{
 					Name = name,
 					Location = new Point(10, y),
-					DisplayName = name,
+					DisplayName = TheLocalizater.TranslateText(name),
 					SelectedColor = argb,
 				};
 				row.Size = new Size(ColorBox.Width - 12, row.Size.Height);

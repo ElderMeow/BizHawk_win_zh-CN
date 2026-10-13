@@ -31,19 +31,32 @@ namespace BizHawk.Client.EmuHawk
 		}
 
 		// Translate a plain text. 翻译一条纯文本。
-		public static string TranslateText(string text)
+		public static string TranslateText(string text, string context = null)
 		{
+			if (text == null) { return null; }
 			string cultureName = getCultureName();
 			if (_translaters.TryGetValue(cultureName, out var theTranslater))
 			{
-				return theTranslater.TranslateText(text);
+				return theTranslater.TranslateText(text, context);
 			}
 			return text;
+		}
+
+		public static string TranslateShortcutKeyDisplayString(string bindstring)
+		{
+			if (bindstring == null) { return null; }
+			string cultureName = getCultureName();
+			if (_translaters.TryGetValue(cultureName, out var theTranslater))
+			{
+				return theTranslater.TranslateKeyDisplayString(bindstring);
+			}
+			return  bindstring;
 		}
 
 		// Translate a format string. 翻译一条格式化字符串。
 		public static string TranslateFormatString(string formatString, params object[] args)
 		{
+			if (formatString == null) { return null; }
 			string cultureName = getCultureName();
 			if (_translaters.TryGetValue(cultureName, out var theTranslater))
 			{

@@ -102,7 +102,7 @@ namespace BizHawk.Client.EmuHawk
 
 					var label = new Label
 					{
-						Text = path.Type,
+						Text = TheLocalizater.TranslateText(path.Type),
 						Location = new Point(widgetOffset + buttonWidth + padding, y + UIHelper.ScaleY(4)),
 						Size = new Size(UIHelper.ScaleX(100), UIHelper.ScaleY(15)),
 						Name = path.Type,

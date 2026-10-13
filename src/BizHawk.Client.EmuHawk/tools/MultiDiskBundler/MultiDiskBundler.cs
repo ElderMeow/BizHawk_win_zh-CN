@@ -232,16 +232,16 @@ namespace BizHawk.Client.EmuHawk
 
 					if (string.IsNullOrWhiteSpace(name))
 					{
-						throw new Exception("Xml Filename can not be blank");
+						throw new Exception(TheLocalizater.TranslateText("Xml Filename can not be blank"));
 					}
 
-					if (names.Exists(string.IsNullOrWhiteSpace)) throw new Exception("Rom Names can not be blank");
+					if (names.Exists(string.IsNullOrWhiteSpace)) throw new Exception(TheLocalizater.TranslateText("Rom Names can not be blank"));
 
 					var system = SystemDropDown.SelectedItem?.ToString();
 
 					if (string.IsNullOrWhiteSpace(system))
 					{
-						throw new Exception("System Id can not be blank");
+						throw new Exception(TheLocalizater.TranslateText("System Id can not be blank"));
 					}
 
 					var basePath = Path.GetDirectoryName(Path.GetFullPath(name.SubstringBefore('|')));

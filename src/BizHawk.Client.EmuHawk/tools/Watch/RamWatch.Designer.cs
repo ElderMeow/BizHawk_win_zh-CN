@@ -124,7 +124,6 @@ namespace BizHawk.Client.EmuHawk
             // 
             // ListViewContextMenu
             // 
-            resources.ApplyResources(this.ListViewContextMenu, "ListViewContextMenu");
             this.ListViewContextMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.newToolStripMenuItem,
             this.EditContextMenuItem,
@@ -145,6 +144,7 @@ namespace BizHawk.Client.EmuHawk
             this.MoveTopContextMenuItem,
             this.MoveBottomContextMenuItem});
             this.ListViewContextMenu.Name = "contextMenuStrip1";
+            resources.ApplyResources(this.ListViewContextMenu, "ListViewContextMenu");
             this.ListViewContextMenu.Opening += new System.ComponentModel.CancelEventHandler(this.ListViewContextMenu_Opening);
             // 
             // newToolStripMenuItem
@@ -192,10 +192,6 @@ namespace BizHawk.Client.EmuHawk
             resources.ApplyResources(this.ViewInHexEditorContextMenuItem, "ViewInHexEditorContextMenuItem");
             this.ViewInHexEditorContextMenuItem.Click += new System.EventHandler(this.ViewInHexEditorContextMenuItem_Click);
             // 
-            // Separator4
-            // 
-            resources.ApplyResources(this.Separator4, "Separator4");
-            // 
             // ReadBreakpointContextMenuItem
             // 
             resources.ApplyResources(this.ReadBreakpointContextMenuItem, "ReadBreakpointContextMenuItem");
@@ -205,10 +201,6 @@ namespace BizHawk.Client.EmuHawk
             // 
             resources.ApplyResources(this.WriteBreakpointContextMenuItem, "WriteBreakpointContextMenuItem");
             this.WriteBreakpointContextMenuItem.Click += new System.EventHandler(this.WriteBreakpointContextMenuItem_Click);
-            // 
-            // Separator6
-            // 
-            resources.ApplyResources(this.Separator6, "Separator6");
             // 
             // InsertSeperatorContextMenuItem
             // 
@@ -237,28 +229,27 @@ namespace BizHawk.Client.EmuHawk
             // 
             // statusStrip1
             // 
-            resources.ApplyResources(this.statusStrip1, "statusStrip1");
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ErrorIconButton,
             this.MessageLabel});
+            resources.ApplyResources(this.statusStrip1, "statusStrip1");
             this.statusStrip1.Name = "statusStrip1";
             // 
             // ErrorIconButton
             // 
-            resources.ApplyResources(this.ErrorIconButton, "ErrorIconButton");
             this.ErrorIconButton.BackColor = System.Drawing.Color.NavajoWhite;
             this.ErrorIconButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            resources.ApplyResources(this.ErrorIconButton, "ErrorIconButton");
             this.ErrorIconButton.Name = "ErrorIconButton";
             this.ErrorIconButton.Click += new System.EventHandler(this.ErrorIconButton_Click);
             // 
             // MessageLabel
             // 
-            resources.ApplyResources(this.MessageLabel, "MessageLabel");
             this.MessageLabel.Name = "MessageLabel";
+            resources.ApplyResources(this.MessageLabel, "MessageLabel");
             // 
             // toolStrip1
             // 
-            resources.ApplyResources(this.toolStrip1, "toolStrip1");
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.newToolStripButton,
             this.openToolStripButton,
@@ -277,130 +268,118 @@ namespace BizHawk.Client.EmuHawk
             this.moveUpToolStripButton,
             this.moveDownToolStripButton,
             this.toolStripSeparator5});
+            resources.ApplyResources(this.toolStrip1, "toolStrip1");
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.TabStop = true;
             // 
             // newToolStripButton
             // 
-            resources.ApplyResources(this.newToolStripButton, "newToolStripButton");
             this.newToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            resources.ApplyResources(this.newToolStripButton, "newToolStripButton");
             this.newToolStripButton.Name = "newToolStripButton";
             this.newToolStripButton.Click += new System.EventHandler(this.NewListMenuItem_Click);
             // 
             // openToolStripButton
             // 
-            resources.ApplyResources(this.openToolStripButton, "openToolStripButton");
             this.openToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            resources.ApplyResources(this.openToolStripButton, "openToolStripButton");
             this.openToolStripButton.Name = "openToolStripButton";
             this.openToolStripButton.Click += new System.EventHandler(this.OpenMenuItem_Click);
             // 
             // saveToolStripButton
             // 
-            resources.ApplyResources(this.saveToolStripButton, "saveToolStripButton");
             this.saveToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            resources.ApplyResources(this.saveToolStripButton, "saveToolStripButton");
             this.saveToolStripButton.Name = "saveToolStripButton";
             this.saveToolStripButton.Click += new System.EventHandler(this.SaveMenuItem_Click);
             // 
-            // toolStripSeparator
-            // 
-            resources.ApplyResources(this.toolStripSeparator, "toolStripSeparator");
-            // 
             // newWatchToolStripButton
             // 
-            resources.ApplyResources(this.newWatchToolStripButton, "newWatchToolStripButton");
             this.newWatchToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            resources.ApplyResources(this.newWatchToolStripButton, "newWatchToolStripButton");
             this.newWatchToolStripButton.Name = "newWatchToolStripButton";
             this.newWatchToolStripButton.Click += new System.EventHandler(this.NewWatchMenuItem_Click);
             // 
             // editWatchToolStripButton
             // 
-            resources.ApplyResources(this.editWatchToolStripButton, "editWatchToolStripButton");
             this.editWatchToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            resources.ApplyResources(this.editWatchToolStripButton, "editWatchToolStripButton");
             this.editWatchToolStripButton.Name = "editWatchToolStripButton";
             this.editWatchToolStripButton.Click += new System.EventHandler(this.EditWatchMenuItem_Click);
             // 
             // cutToolStripButton
             // 
-            resources.ApplyResources(this.cutToolStripButton, "cutToolStripButton");
             this.cutToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            resources.ApplyResources(this.cutToolStripButton, "cutToolStripButton");
             this.cutToolStripButton.Name = "cutToolStripButton";
             this.cutToolStripButton.Click += new System.EventHandler(this.RemoveWatchMenuItem_Click);
             // 
             // clearChangeCountsToolStripButton
             // 
-            resources.ApplyResources(this.clearChangeCountsToolStripButton, "clearChangeCountsToolStripButton");
             this.clearChangeCountsToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            resources.ApplyResources(this.clearChangeCountsToolStripButton, "clearChangeCountsToolStripButton");
             this.clearChangeCountsToolStripButton.Name = "clearChangeCountsToolStripButton";
             this.clearChangeCountsToolStripButton.Click += new System.EventHandler(this.ClearChangeCountsMenuItem_Click);
             // 
             // duplicateWatchToolStripButton
             // 
-            resources.ApplyResources(this.duplicateWatchToolStripButton, "duplicateWatchToolStripButton");
             this.duplicateWatchToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            resources.ApplyResources(this.duplicateWatchToolStripButton, "duplicateWatchToolStripButton");
             this.duplicateWatchToolStripButton.Name = "duplicateWatchToolStripButton";
             this.duplicateWatchToolStripButton.Click += new System.EventHandler(this.DuplicateWatchMenuItem_Click);
             // 
             // SplitWatchToolStripButton
             // 
-            resources.ApplyResources(this.SplitWatchToolStripButton, "SplitWatchToolStripButton");
             this.SplitWatchToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            resources.ApplyResources(this.SplitWatchToolStripButton, "SplitWatchToolStripButton");
             this.SplitWatchToolStripButton.Name = "SplitWatchToolStripButton";
             this.SplitWatchToolStripButton.Click += new System.EventHandler(this.SplitWatchMenuItem_Click);
             // 
             // PokeAddressToolBarItem
             // 
-            resources.ApplyResources(this.PokeAddressToolBarItem, "PokeAddressToolBarItem");
             this.PokeAddressToolBarItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            resources.ApplyResources(this.PokeAddressToolBarItem, "PokeAddressToolBarItem");
             this.PokeAddressToolBarItem.Name = "PokeAddressToolBarItem";
             this.PokeAddressToolBarItem.Click += new System.EventHandler(this.PokeAddressMenuItem_Click);
             // 
             // FreezeAddressToolBarItem
             // 
-            resources.ApplyResources(this.FreezeAddressToolBarItem, "FreezeAddressToolBarItem");
             this.FreezeAddressToolBarItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            resources.ApplyResources(this.FreezeAddressToolBarItem, "FreezeAddressToolBarItem");
             this.FreezeAddressToolBarItem.Name = "FreezeAddressToolBarItem";
             this.FreezeAddressToolBarItem.Click += new System.EventHandler(this.FreezeAddressMenuItem_Click);
             // 
             // seperatorToolStripButton
             // 
-            resources.ApplyResources(this.seperatorToolStripButton, "seperatorToolStripButton");
             this.seperatorToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            resources.ApplyResources(this.seperatorToolStripButton, "seperatorToolStripButton");
             this.seperatorToolStripButton.Name = "seperatorToolStripButton";
             this.seperatorToolStripButton.Click += new System.EventHandler(this.InsertSeparatorMenuItem_Click);
             // 
-            // toolStripSeparator6
-            // 
-            resources.ApplyResources(this.toolStripSeparator6, "toolStripSeparator6");
-            // 
             // moveUpToolStripButton
             // 
-            resources.ApplyResources(this.moveUpToolStripButton, "moveUpToolStripButton");
             this.moveUpToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            resources.ApplyResources(this.moveUpToolStripButton, "moveUpToolStripButton");
             this.moveUpToolStripButton.Name = "moveUpToolStripButton";
             this.moveUpToolStripButton.Click += new System.EventHandler(this.MoveUpMenuItem_Click);
             // 
             // moveDownToolStripButton
             // 
-            resources.ApplyResources(this.moveDownToolStripButton, "moveDownToolStripButton");
             this.moveDownToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            resources.ApplyResources(this.moveDownToolStripButton, "moveDownToolStripButton");
             this.moveDownToolStripButton.Name = "moveDownToolStripButton";
             this.moveDownToolStripButton.Click += new System.EventHandler(this.MoveDownMenuItem_Click);
             // 
-            // toolStripSeparator5
-            // 
-            resources.ApplyResources(this.toolStripSeparator5, "toolStripSeparator5");
-            // 
             // RamWatchMenu
             // 
-            resources.ApplyResources(this.RamWatchMenu, "RamWatchMenu");
             this.RamWatchMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.FileSubMenu,
             this.WatchesSubMenu,
             this.OptionsSubMenu});
+            resources.ApplyResources(this.RamWatchMenu, "RamWatchMenu");
             // 
             // FileSubMenu
             // 
-            resources.ApplyResources(this.FileSubMenu, "FileSubMenu");
             this.FileSubMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.NewListMenuItem,
             this.OpenMenuItem,
@@ -408,6 +387,7 @@ namespace BizHawk.Client.EmuHawk
             this.SaveAsMenuItem,
             this.AppendMenuItem,
             this.RecentSubMenu});
+            resources.ApplyResources(this.FileSubMenu, "FileSubMenu");
             this.FileSubMenu.DropDownOpened += new System.EventHandler(this.FileSubMenu_DropDownOpened);
             // 
             // NewListMenuItem
@@ -437,9 +417,9 @@ namespace BizHawk.Client.EmuHawk
             // 
             // RecentSubMenu
             // 
-            resources.ApplyResources(this.RecentSubMenu, "RecentSubMenu");
             this.RecentSubMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.noneToolStripMenuItem});
+            resources.ApplyResources(this.RecentSubMenu, "RecentSubMenu");
             this.RecentSubMenu.DropDownOpened += new System.EventHandler(this.RecentSubMenu_DropDownOpened);
             // 
             // noneToolStripMenuItem
@@ -448,7 +428,6 @@ namespace BizHawk.Client.EmuHawk
             // 
             // WatchesSubMenu
             // 
-            resources.ApplyResources(this.WatchesSubMenu, "WatchesSubMenu");
             this.WatchesSubMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.MemoryDomainsSubMenu,
             this.toolStripSeparator8,
@@ -467,22 +446,15 @@ namespace BizHawk.Client.EmuHawk
             this.MoveTopMenuItem,
             this.MoveBottomMenuItem,
             this.SelectAllMenuItem});
+            resources.ApplyResources(this.WatchesSubMenu, "WatchesSubMenu");
             this.WatchesSubMenu.DropDownOpened += new System.EventHandler(this.WatchesSubMenu_DropDownOpened);
             // 
             // MemoryDomainsSubMenu
             // 
-            resources.ApplyResources(this.MemoryDomainsSubMenu, "MemoryDomainsSubMenu");
             this.MemoryDomainsSubMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.Separator2});
+            resources.ApplyResources(this.MemoryDomainsSubMenu, "MemoryDomainsSubMenu");
             this.MemoryDomainsSubMenu.DropDownOpened += new System.EventHandler(this.MemoryDomainsSubMenu_DropDownOpened);
-            // 
-            // Separator2
-            // 
-            resources.ApplyResources(this.Separator2, "Separator2");
-            // 
-            // toolStripSeparator8
-            // 
-            resources.ApplyResources(this.toolStripSeparator8, "toolStripSeparator8");
             // 
             // NewWatchMenuItem
             // 
@@ -529,10 +501,6 @@ namespace BizHawk.Client.EmuHawk
             resources.ApplyResources(this.ClearChangeCountsMenuItem, "ClearChangeCountsMenuItem");
             this.ClearChangeCountsMenuItem.Click += new System.EventHandler(this.ClearChangeCountsMenuItem_Click);
             // 
-            // toolStripSeparator3
-            // 
-            resources.ApplyResources(this.toolStripSeparator3, "toolStripSeparator3");
-            // 
             // MoveUpMenuItem
             // 
             resources.ApplyResources(this.MoveUpMenuItem, "MoveUpMenuItem");
@@ -560,20 +528,20 @@ namespace BizHawk.Client.EmuHawk
             // 
             // OptionsSubMenu
             // 
-            resources.ApplyResources(this.OptionsSubMenu, "OptionsSubMenu");
             this.OptionsSubMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.DefinePreviousValueSubMenu,
             this.WatchesOnScreenMenuItem,
             this.DoubleClickActionSubMenu});
+            resources.ApplyResources(this.OptionsSubMenu, "OptionsSubMenu");
             this.OptionsSubMenu.DropDownOpened += new System.EventHandler(this.SettingsSubMenu_DropDownOpened);
             // 
             // DefinePreviousValueSubMenu
             // 
-            resources.ApplyResources(this.DefinePreviousValueSubMenu, "DefinePreviousValueSubMenu");
             this.DefinePreviousValueSubMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.PreviousFrameMenuItem,
             this.LastChangeMenuItem,
             this.OriginalMenuItem});
+            resources.ApplyResources(this.DefinePreviousValueSubMenu, "DefinePreviousValueSubMenu");
             this.DefinePreviousValueSubMenu.DropDownOpened += new System.EventHandler(this.DefinePreviousValueSubMenu_DropDownOpened);
             // 
             // PreviousFrameMenuItem
@@ -598,10 +566,10 @@ namespace BizHawk.Client.EmuHawk
             // 
             // DoubleClickActionSubMenu
             // 
-            resources.ApplyResources(this.DoubleClickActionSubMenu, "DoubleClickActionSubMenu");
             this.DoubleClickActionSubMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.DoubleClickToEditMenuItem,
             this.DoubleClickToPokeMenuItem});
+            resources.ApplyResources(this.DoubleClickActionSubMenu, "DoubleClickActionSubMenu");
             this.DoubleClickActionSubMenu.DropDownOpening += new System.EventHandler(this.DoubleClickActionSubMenu_DropDownOpening);
             // 
             // DoubleClickToEditMenuItem
@@ -616,11 +584,11 @@ namespace BizHawk.Client.EmuHawk
             // 
             // WatchListView
             // 
-            resources.ApplyResources(this.WatchListView, "WatchListView");
             this.WatchListView.AllowColumnReorder = true;
             this.WatchListView.AllowColumnResize = true;
             this.WatchListView.AllowDrop = true;
             this.WatchListView.AlwaysScroll = false;
+            resources.ApplyResources(this.WatchListView, "WatchListView");
             this.WatchListView.CellHeightPadding = 0;
             this.WatchListView.CellWidthPadding = 0;
             this.WatchListView.ContextMenuStrip = this.ListViewContextMenu;

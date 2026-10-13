@@ -124,10 +124,10 @@ namespace BizHawk.Client.EmuHawk
             // 
             // PatternGroup
             // 
-            resources.ApplyResources(this.PatternGroup, "PatternGroup");
             this.PatternGroup.Controls.Add(this.Table1PaletteLabel);
             this.PatternGroup.Controls.Add(this.Table0PaletteLabel);
             this.PatternGroup.Controls.Add(this.PatternView);
+            resources.ApplyResources(this.PatternGroup, "PatternGroup");
             this.PatternGroup.Name = "PatternGroup";
             this.PatternGroup.TabStop = false;
             // 
@@ -143,9 +143,9 @@ namespace BizHawk.Client.EmuHawk
             // 
             // PatternView
             // 
-            resources.ApplyResources(this.PatternView, "PatternView");
             this.PatternView.BackColor = System.Drawing.Color.Transparent;
             this.PatternView.ContextMenuStrip = this.PatternContext;
+            resources.ApplyResources(this.PatternView, "PatternView");
             this.PatternView.Name = "PatternView";
             this.PatternView.Pal0 = 0;
             this.PatternView.Pal1 = 0;
@@ -157,13 +157,13 @@ namespace BizHawk.Client.EmuHawk
             // 
             // PatternContext
             // 
-            resources.ApplyResources(this.PatternContext, "PatternContext");
             this.PatternContext.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.PatternContext.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.PatternSaveImageMenuItem,
             this.PatternImageToClipboardMenuItem,
             this.PatternRefreshMenuItem});
             this.PatternContext.Name = "PatternContext";
+            resources.ApplyResources(this.PatternContext, "PatternContext");
             // 
             // PatternSaveImageMenuItem
             // 
@@ -182,16 +182,16 @@ namespace BizHawk.Client.EmuHawk
             // 
             // PalettesGroup
             // 
-            resources.ApplyResources(this.PalettesGroup, "PalettesGroup");
             this.PalettesGroup.Controls.Add(this.PaletteView);
+            resources.ApplyResources(this.PalettesGroup, "PalettesGroup");
             this.PalettesGroup.Name = "PalettesGroup";
             this.PalettesGroup.TabStop = false;
             // 
             // PaletteView
             // 
-            resources.ApplyResources(this.PaletteView, "PaletteView");
             this.PaletteView.BackColor = System.Drawing.Color.Transparent;
             this.PaletteView.ContextMenuStrip = this.PaletteContext;
+            resources.ApplyResources(this.PaletteView, "PaletteView");
             this.PaletteView.Name = "PaletteView";
             this.PaletteView.MouseClick += new System.Windows.Forms.MouseEventHandler(this.PaletteView_MouseClick);
             this.PaletteView.MouseEnter += new System.EventHandler(this.PaletteView_MouseEnter);
@@ -200,13 +200,13 @@ namespace BizHawk.Client.EmuHawk
             // 
             // PaletteContext
             // 
-            resources.ApplyResources(this.PaletteContext, "PaletteContext");
             this.PaletteContext.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.PaletteContext.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.PaletteSaveImageMenuItem,
             this.PaletteImageToClipboardMenuItem,
             this.PaletteRefreshMenuItem});
             this.PaletteContext.Name = "PaletteContext";
+            resources.ApplyResources(this.PaletteContext, "PaletteContext");
             // 
             // PaletteSaveImageMenuItem
             // 
@@ -225,7 +225,6 @@ namespace BizHawk.Client.EmuHawk
             // 
             // DetailsBox
             // 
-            resources.ApplyResources(this.DetailsBox, "DetailsBox");
             this.DetailsBox.Controls.Add(this.label2);
             this.DetailsBox.Controls.Add(this.Value5Label);
             this.DetailsBox.Controls.Add(this.Value4Label);
@@ -235,6 +234,7 @@ namespace BizHawk.Client.EmuHawk
             this.DetailsBox.Controls.Add(this.Value2Label);
             this.DetailsBox.Controls.Add(this.ValueLabel);
             this.DetailsBox.Controls.Add(this.AddressLabel);
+            resources.ApplyResources(this.DetailsBox, "DetailsBox");
             this.DetailsBox.Name = "DetailsBox";
             this.DetailsBox.TabStop = false;
             // 
@@ -286,16 +286,16 @@ namespace BizHawk.Client.EmuHawk
             // 
             // SpriteViewerBox
             // 
-            resources.ApplyResources(this.SpriteViewerBox, "SpriteViewerBox");
             this.SpriteViewerBox.Controls.Add(this.SpriteView);
+            resources.ApplyResources(this.SpriteViewerBox, "SpriteViewerBox");
             this.SpriteViewerBox.Name = "SpriteViewerBox";
             this.SpriteViewerBox.TabStop = false;
             // 
             // SpriteView
             // 
-            resources.ApplyResources(this.SpriteView, "SpriteView");
             this.SpriteView.BackColor = System.Drawing.Color.Transparent;
             this.SpriteView.ContextMenuStrip = this.SpriteContext;
+            resources.ApplyResources(this.SpriteView, "SpriteView");
             this.SpriteView.Name = "SpriteView";
             this.SpriteView.Sprites = ((System.Drawing.Bitmap)(resources.GetObject("SpriteView.Sprites")));
             this.SpriteView.MouseClick += new System.Windows.Forms.MouseEventHandler(this.SpriteView_MouseClick);
@@ -305,13 +305,13 @@ namespace BizHawk.Client.EmuHawk
             // 
             // SpriteContext
             // 
-            resources.ApplyResources(this.SpriteContext, "SpriteContext");
             this.SpriteContext.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.SpriteContext.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.SpriteSaveImageMenuItem,
             this.SpriteImageToClipboardMenuItem,
             this.SpriteRefreshMenuItem});
             this.SpriteContext.Name = "SpriteContext";
+            resources.ApplyResources(this.SpriteContext, "SpriteContext");
             // 
             // SpriteSaveImageMenuItem
             // 
@@ -336,17 +336,17 @@ namespace BizHawk.Client.EmuHawk
             // 
             // groupBox1
             // 
-            resources.ApplyResources(this.groupBox1, "groupBox1");
             this.groupBox1.Controls.Add(this.txtScanline);
+            resources.ApplyResources(this.groupBox1, "groupBox1");
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.TabStop = false;
             // 
             // groupBox2
             // 
-            resources.ApplyResources(this.groupBox2, "groupBox2");
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.RefreshRate);
+            resources.ApplyResources(this.groupBox2, "groupBox2");
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.TabStop = false;
             // 
@@ -372,16 +372,15 @@ namespace BizHawk.Client.EmuHawk
             // 
             // NesPPUMenu
             // 
-            resources.ApplyResources(this.NesPPUMenu, "NesPPUMenu");
             this.NesPPUMenu.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.NesPPUMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.FileSubMenu,
             this.PatternSubMenu,
             this.SettingsSubMenu});
+            resources.ApplyResources(this.NesPPUMenu, "NesPPUMenu");
             // 
             // FileSubMenu
             // 
-            resources.ApplyResources(this.FileSubMenu, "FileSubMenu");
             this.FileSubMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.SavePaletteScreenshotMenuItem,
             this.SavePatternScreenshotMenuItem,
@@ -390,6 +389,7 @@ namespace BizHawk.Client.EmuHawk
             this.CopyPaletteToClipboardMenuItem,
             this.CopyPatternToClipboardMenuItem,
             this.CopySpriteToClipboardMenuItem});
+            resources.ApplyResources(this.FileSubMenu, "FileSubMenu");
             // 
             // SavePaletteScreenshotMenuItem
             // 
@@ -405,10 +405,6 @@ namespace BizHawk.Client.EmuHawk
             // 
             resources.ApplyResources(this.SaveSpriteScreenshotMenuItem, "SaveSpriteScreenshotMenuItem");
             this.SaveSpriteScreenshotMenuItem.Click += new System.EventHandler(this.SaveSpriteScreenshotMenuItem_Click);
-            // 
-            // toolStripSeparator1
-            // 
-            resources.ApplyResources(this.toolStripSeparator1, "toolStripSeparator1");
             // 
             // CopyPaletteToClipboardMenuItem
             // 
@@ -427,14 +423,13 @@ namespace BizHawk.Client.EmuHawk
             // 
             // PatternSubMenu
             // 
-            resources.ApplyResources(this.PatternSubMenu, "PatternSubMenu");
             this.PatternSubMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.Table0PaletteSubMenu,
             this.Table1PaletteSubMenu});
+            resources.ApplyResources(this.PatternSubMenu, "PatternSubMenu");
             // 
             // Table0PaletteSubMenu
             // 
-            resources.ApplyResources(this.Table0PaletteSubMenu, "Table0PaletteSubMenu");
             this.Table0PaletteSubMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.Table0P0MenuItem,
             this.Table0P1MenuItem,
@@ -444,6 +439,7 @@ namespace BizHawk.Client.EmuHawk
             this.Table0P5MenuItem,
             this.Table0P6MenuItem,
             this.Table0P7MenuItem});
+            resources.ApplyResources(this.Table0PaletteSubMenu, "Table0PaletteSubMenu");
             this.Table0PaletteSubMenu.DropDownOpened += new System.EventHandler(this.Table0PaletteSubMenu_DropDownOpened);
             // 
             // Table0P0MenuItem
@@ -488,7 +484,6 @@ namespace BizHawk.Client.EmuHawk
             // 
             // Table1PaletteSubMenu
             // 
-            resources.ApplyResources(this.Table1PaletteSubMenu, "Table1PaletteSubMenu");
             this.Table1PaletteSubMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.Table1P0MenuItem,
             this.Table1P1MenuItem,
@@ -498,6 +493,7 @@ namespace BizHawk.Client.EmuHawk
             this.Table1P5MenuItem,
             this.Table1P6MenuItem,
             this.Table1P7MenuItem});
+            resources.ApplyResources(this.Table1PaletteSubMenu, "Table1PaletteSubMenu");
             this.Table1PaletteSubMenu.DropDownOpened += new System.EventHandler(this.Table1PaletteSubMenu_DropDownOpened);
             // 
             // Table1P0MenuItem
@@ -542,9 +538,9 @@ namespace BizHawk.Client.EmuHawk
             // 
             // SettingsSubMenu
             // 
-            resources.ApplyResources(this.SettingsSubMenu, "SettingsSubMenu");
             this.SettingsSubMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.cHRROMTileViewerToolStripMenuItem});
+            resources.ApplyResources(this.SettingsSubMenu, "SettingsSubMenu");
             this.SettingsSubMenu.DropDownOpened += new System.EventHandler(this.SettingsSubMenu_DropDownOpened);
             // 
             // cHRROMTileViewerToolStripMenuItem
@@ -554,17 +550,17 @@ namespace BizHawk.Client.EmuHawk
             // 
             // NesPPUStatusBar
             // 
-            resources.ApplyResources(this.NesPPUStatusBar, "NesPPUStatusBar");
             this.NesPPUStatusBar.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.NesPPUStatusBar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel1});
+            resources.ApplyResources(this.NesPPUStatusBar, "NesPPUStatusBar");
             this.NesPPUStatusBar.Name = "NesPPUStatusBar";
             this.NesPPUStatusBar.SizingGrip = false;
             // 
             // toolStripStatusLabel1
             // 
-            resources.ApplyResources(this.toolStripStatusLabel1, "toolStripStatusLabel1");
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            resources.ApplyResources(this.toolStripStatusLabel1, "toolStripStatusLabel1");
             // 
             // Messagetimer
             // 
@@ -573,10 +569,10 @@ namespace BizHawk.Client.EmuHawk
             // 
             // CHRROMGroup
             // 
-            resources.ApplyResources(this.CHRROMGroup, "CHRROMGroup");
             this.CHRROMGroup.Controls.Add(this.label5);
             this.CHRROMGroup.Controls.Add(this.numericUpDownCHRROMBank);
             this.CHRROMGroup.Controls.Add(this.CHRROMView);
+            resources.ApplyResources(this.CHRROMGroup, "CHRROMGroup");
             this.CHRROMGroup.Name = "CHRROMGroup";
             this.CHRROMGroup.TabStop = false;
             // 
@@ -593,8 +589,8 @@ namespace BizHawk.Client.EmuHawk
             // 
             // CHRROMView
             // 
-            resources.ApplyResources(this.CHRROMView, "CHRROMView");
             this.CHRROMView.BackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.CHRROMView, "CHRROMView");
             this.CHRROMView.Name = "CHRROMView";
             this.CHRROMView.Pal0 = 0;
             this.CHRROMView.Pal1 = 0;

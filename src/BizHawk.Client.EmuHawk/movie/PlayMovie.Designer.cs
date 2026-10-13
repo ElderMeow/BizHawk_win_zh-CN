@@ -158,10 +158,10 @@
             // 
             // contextMenuStrip1
             // 
-            resources.ApplyResources(this.contextMenuStrip1, "contextMenuStrip1");
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.editToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
+            resources.ApplyResources(this.contextMenuStrip1, "contextMenuStrip1");
             // 
             // editToolStripMenuItem
             // 
@@ -177,8 +177,8 @@
             // 
             // MovieView
             // 
-            resources.ApplyResources(this.MovieView, "MovieView");
             this.MovieView.AllowDrop = true;
+            resources.ApplyResources(this.MovieView, "MovieView");
             this.MovieView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
             this.columnHeader2,

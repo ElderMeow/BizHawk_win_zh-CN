@@ -120,7 +120,7 @@ namespace BizHawk.Client.EmuHawk
 		{
 			if (len == 0)
 			{
-				throw new ArgumentException("Invalid len", nameof(len));
+				throw new ArgumentException(TheLocalizater.TranslateText("Invalid len"), nameof(len));
 			}
 
 			int numChunks = (s.Length + len - 1) / len;

@@ -74,7 +74,7 @@ namespace BizHawk.Client.EmuHawk
 				switch (_refCount)
 				{
 					case <= 0:
-						throw new InvalidOperationException($"Invalid {nameof(_refCount)}");
+						throw new InvalidOperationException(TheLocalizater.TranslateFormatString("Invalid {0}", nameof(_refCount)));
 					case 1:
 					{
 						lock (_memSync)
@@ -185,7 +185,7 @@ namespace BizHawk.Client.EmuHawk
 				// while rcheevos could go all the way to uint.MaxValue, RAIntegration is restricted to int.MaxValue
 				if (bankSize > int.MaxValue)
 				{
-					throw new OverflowException("bankSize is too big!");
+					throw new OverflowException(TheLocalizater.TranslateText("bankSize is too big!"));
 				}
 
 				BankSize = (uint)bankSize;

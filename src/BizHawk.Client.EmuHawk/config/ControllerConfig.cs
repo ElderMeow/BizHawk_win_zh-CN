@@ -155,7 +155,7 @@ namespace BizHawk.Client.EmuHawk
 				int pageIdx = 0;
 				foreach (var (tabName, buttons) in orderedBuckets)
 				{
-					tt.TabPages.Add(tabName);
+					tt.TabPages.Add(TheLocalizater.TranslateText(tabName));
 					tt.TabPages[pageIdx++].Controls.Add(createPanel(settings, buttons, tt.Size));
 				}
 			}

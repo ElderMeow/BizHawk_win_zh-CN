@@ -82,7 +82,7 @@ namespace BizHawk.Client.EmuHawk
 		{
 			if (!typeof(IToolForm).IsAssignableFrom(toolType))
 			{
-				throw new ArgumentException(message: $"Type {toolType.Name} does not implement {nameof(IToolForm)}.", paramName: nameof(toolType));
+				throw new ArgumentException(message: TheLocalizater.TranslateFormatString("Type {0} does not implement {1}.", toolType.Name, nameof(IToolForm)), paramName: nameof(toolType));
 			}
 			var mi = typeof(ToolManager).GetMethod(nameof(Load), new[] { typeof(bool), typeof(string) })!.MakeGenericMethod(toolType);
 			return (IToolForm) mi.Invoke(this, new object[] { focus, "" });
@@ -295,7 +295,7 @@ namespace BizHawk.Client.EmuHawk
 
 			if (dest == null)
 			{
-				throw new InvalidOperationException($"{nameof(IToolFormAutoConfig)} must have menu to bind to! (need {nameof(Form.MainMenuStrip)} or other {nameof(MenuStrip)} w/ menu labelled \"Settings\")");
+				throw new InvalidOperationException(TheLocalizater.TranslateFormatString("{0} must have menu to bind to! (need {1} or other {2} w/ menu labelled \"Settings\")", nameof(IToolFormAutoConfig), nameof(Form.MainMenuStrip), nameof(MenuStrip)));
 			}
 
 			int idx = dest.Count;

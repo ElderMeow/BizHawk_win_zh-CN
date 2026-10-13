@@ -133,7 +133,7 @@ namespace BizHawk.Client.EmuHawk
 				_bufferedAsync.RecalculateMagic(_getCoreVsyncRateCallback());
 				_bufferedProvider = _bufferedAsync;
 			}
-			else throw new InvalidOperationException("Unsupported sync mode.");
+			else throw new InvalidOperationException(TheLocalizater.TranslateText("Unsupported sync mode."));
 
 			_bufferedProvider.BaseSoundProvider = source;
 		}

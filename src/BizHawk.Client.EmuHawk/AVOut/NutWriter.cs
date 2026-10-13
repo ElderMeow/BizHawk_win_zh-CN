@@ -112,7 +112,7 @@ namespace BizHawk.Client.EmuHawk
 		{
 			if (bits != 16)
 			{
-				throw new ArgumentOutOfRangeException(nameof(bits), "Audio depth must be 16 bit!");
+				throw new ArgumentOutOfRangeException(nameof(bits), TheLocalizater.TranslateText("Audio depth must be 16 bit!"));
 			}
 
 			_sampleRate = sampleRate;

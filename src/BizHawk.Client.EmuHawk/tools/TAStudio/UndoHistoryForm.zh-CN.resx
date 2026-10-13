@@ -126,7 +126,19 @@
   <data name="RedoButton.Text" xml:space="preserve">
     <value>重做</value>
   </data>
+  <data name="undoHereToolStripMenuItem.Text" xml:space="preserve">
+    <value>撤销所选</value>
+  </data>
+  <data name="redoHereToolStripMenuItem.Text" xml:space="preserve">
+    <value>重做所选</value>
+  </data>
+  <data name="clearHistoryToHereToolStripMenuItem.Text" xml:space="preserve">
+    <value>清空所选历史</value>
+  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="RightClickMenu.Size" type="System.Drawing.Size, System.Drawing">
+    <value>149, 76</value>
+  </data>
   <data name="AutoScrollCheck.Size" type="System.Drawing.Size, System.Drawing">
     <value>72, 16</value>
   </data>

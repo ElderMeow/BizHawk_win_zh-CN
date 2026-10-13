@@ -117,32 +117,8 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="btnCancel.Text" xml:space="preserve">
-    <value>取消</value>
-  </data>
-  <data name="btnOk.Text" xml:space="preserve">
-    <value>确定</value>
-  </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="linkLabel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>29, 12</value>
-  </data>
-  <data name="linkLabel1.Text" xml:space="preserve">
-    <value>关于</value>
-  </data>
-  <data name="lblTweakedMednafen.Text" xml:space="preserve">
-    <value>画面按 400×300 整数倍缩放显示
- - 宽高比正确
- - 游戏观感较好
- - 1 倍窗口下丢失细节情况更少
- - 推荐游玩游戏
- - 需要特定显示配置：</value>
-  </data>
-  <data name="rbTweakedMednafenMode.Size" type="System.Drawing.Size, System.Drawing">
-    <value>209, 16</value>
-  </data>
-  <data name="rbTweakedMednafenMode.Text" xml:space="preserve">
-    <value>改良的 Mednafen 模式 (4:3 比例)</value>
+  <data name="groupBox2.Text" xml:space="preserve">
+    <value>绘制区域</value>
   </data>
   <data name="label3.Text" xml:space="preserve">
     <value>原样输出全部画面，不做修改
@@ -152,14 +128,128 @@
  - 适合分段音视频导出
  - 适合截图</value>
   </data>
-  <data name="rbDebugMode.Size" type="System.Drawing.Size, System.Drawing">
-    <value>95, 16</value>
+  <data name="groupBox6.Text" xml:space="preserve">
+    <value>模拟用户设置</value>
+  </data>
+  <data name="rbBob.ToolTip" xml:space="preserve">
+    <value>对引起头痛有好处，所有荣耀归于鲍勃。</value>
+  </data>
+  <data name="rbPixelPro.Text" xml:space="preserve">
+    <value>像素专业模式</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="linkLabel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>29, 12</value>
+  </data>
+  <data name="btnCancel.Text" xml:space="preserve">
+    <value>取消</value>
+  </data>
+  <data name="rbClipBasic.Text" xml:space="preserve">
+    <value>基础裁剪</value>
+  </data>
+  <data name="rbWeave.ToolTip" xml:space="preserve">
+    <value>适用于低运动视频</value>
   </data>
   <data name="rbDebugMode.Text" xml:space="preserve">
     <value>硬核调试模式</value>
   </data>
+  <data name="rbMednafenMode.Text" xml:space="preserve">
+    <value>Mednafen 模式 (4:3 比例)</value>
+  </data>
+  <data name="rbClipBasic.Size" type="System.Drawing.Size, System.Drawing">
+    <value>71, 16</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>首行：</value>
+  </data>
+  <data name="cbGpuLag.Text" xml:space="preserve">
+    <value>基于 GPU 帧判定延迟</value>
+  </data>
+  <data name="cbLEC.Size" type="System.Drawing.Size, System.Drawing">
+    <value>228, 28</value>
+  </data>
+  <data name="rbDebugMode.Size" type="System.Drawing.Size, System.Drawing">
+    <value>95, 16</value>
+  </data>
+  <data name="rbClipNone.Text" xml:space="preserve">
+    <value>无</value>
+  </data>
+  <data name="rbClipNone.ToolTip" xml:space="preserve">
+    <value>Mednafen 增加了相当多的过扫描，以密切模拟 psx 显示输出的怪东西。
+使用此选项可能会导致令人反感的黑条水平，但会修复游戏中一些罕见的怪东西。</value>
+  </data>
+  <data name="cbGpuLag.Size" type="System.Drawing.Size, System.Drawing">
+    <value>138, 16</value>
+  </data>
+  <data name="label4.Text" xml:space="preserve">
+    <value>尾行：</value>
+  </data>
+  <data name="rbClipNone.Size" type="System.Drawing.Size, System.Drawing">
+    <value>35, 16</value>
+  </data>
+  <data name="groupBox5.Text" xml:space="preserve">
+    <value>模拟同步设置</value>
+  </data>
+  <data name="rbTweakedMednafenMode.Size" type="System.Drawing.Size, System.Drawing">
+    <value>209, 16</value>
+  </data>
+  <data name="rbClipToFramebuffer.Text" xml:space="preserve">
+    <value>裁剪到帧缓冲</value>
+  </data>
+  <data name="lblPixelPro.Text" xml:space="preserve">
+    <value>使用最近邻插值渲染，适配 800×480 窗口
+ - 画面像素精准
+ - 宽高比通常不正确
+ - 推荐用于研究
+ - 游戏画面缩放会随显示模式变化</value>
+  </data>
+  <data name="linkLabel1.Text" xml:space="preserve">
+    <value>关于</value>
+  </data>
+  <data name="rbBobOffset.ToolTip" xml:space="preserve">
+    <value>适用于高动态视频，但有点闪烁；降低主观垂直分辨率。</value>
+  </data>
+  <data name="groupBox3.Text" xml:space="preserve">
+    <value>水平过扫描裁剪</value>
+  </data>
+  <data name="rbMednafenMode.Size" type="System.Drawing.Size, System.Drawing">
+    <value>167, 16</value>
+  </data>
+  <data name="btnAreaFull.Text" xml:space="preserve">
+    <value>完整 [0,239] 和 [0,287]</value>
+  </data>
+  <data name="lblTweakedMednafen.Text" xml:space="preserve">
+    <value>画面按 400×300 整数倍缩放显示
+ - 宽高比正确
+ - 游戏观感较好
+ - 1 倍窗口下丢失细节情况更少
+ - 推荐游玩游戏
+ - 需要特定显示配置：</value>
+  </data>
+  <data name="groupBox4.Text" xml:space="preserve">
+    <value>去隔行</value>
+  </data>
+  <data name="rbClipToFramebuffer.Size" type="System.Drawing.Size, System.Drawing">
+    <value>95, 16</value>
+  </data>
   <data name="btnNiceDisplayConfig.Text" xml:space="preserve">
     <value>修改显示选项</value>
+  </data>
+  <data name="cbLEC.Text" xml:space="preserve">
+    <value>模拟扇区错误校正
+(一般无需开启；会导致部分补丁失效)</value>
+  </data>
+  <data name="rbClipToFramebuffer.ToolTip" xml:space="preserve">
+    <value>绕过Mednafen内部的视频场模拟，仅显示游戏帧缓冲内容。在Mednafen分辨率模式下会重新添加水平黑边，保证正确宽高比。</value>
+  </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>分辨率管理</value>
+  </data>
+  <data name="btnOk.Text" xml:space="preserve">
+    <value>确定</value>
+  </data>
+  <data name="rbClipBasic.ToolTip" xml:space="preserve">
+    <value>Mednafen ，似乎是5.5%水平。</value>
   </data>
   <data name="lblMednafen.Text" xml:space="preserve">
     <value>画面按 320×240 整数倍缩放显示
@@ -169,81 +259,10 @@
  - 推荐用于对比测试
  - 需要特定显示配置：</value>
   </data>
-  <data name="rbMednafenMode.Size" type="System.Drawing.Size, System.Drawing">
-    <value>167, 16</value>
-  </data>
-  <data name="rbMednafenMode.Text" xml:space="preserve">
-    <value>Mednafen 模式 (4:3 比例)</value>
-  </data>
-  <data name="lblPixelPro.Text" xml:space="preserve">
-    <value>使用最近邻插值渲染，适配 800×480 窗口
- - 画面像素精准
- - 宽高比通常不正确
- - 推荐用于研究
- - 游戏画面缩放会随显示模式变化</value>
-  </data>
   <data name="rbPixelPro.Size" type="System.Drawing.Size, System.Drawing">
     <value>95, 16</value>
   </data>
-  <data name="rbPixelPro.Text" xml:space="preserve">
-    <value>像素专业模式</value>
-  </data>
-  <data name="groupBox1.Text" xml:space="preserve">
-    <value>分辨率管理</value>
-  </data>
-  <data name="groupBox2.Text" xml:space="preserve">
-    <value>绘制区域</value>
-  </data>
-  <data name="groupBox3.Text" xml:space="preserve">
-    <value>水平过扫描裁剪</value>
-  </data>
-  <data name="rbClipNone.Size" type="System.Drawing.Size, System.Drawing">
-    <value>35, 16</value>
-  </data>
-  <data name="rbClipNone.Text" xml:space="preserve">
-    <value>无</value>
-  </data>
-  <data name="rbClipToFramebuffer.Size" type="System.Drawing.Size, System.Drawing">
-    <value>95, 16</value>
-  </data>
-  <data name="rbClipToFramebuffer.Text" xml:space="preserve">
-    <value>裁剪到帧缓冲</value>
-  </data>
-  <data name="rbClipBasic.Size" type="System.Drawing.Size, System.Drawing">
-    <value>71, 16</value>
-  </data>
-  <data name="rbClipBasic.Text" xml:space="preserve">
-    <value>基础裁剪</value>
-  </data>
-  <data name="btnAreaFull.Text" xml:space="preserve">
-    <value>完整 [0,239] 和 [0,287]</value>
-  </data>
-  <data name="label4.Text" xml:space="preserve">
-    <value>尾行：</value>
-  </data>
-  <data name="label1.Text" xml:space="preserve">
-    <value>首行：</value>
-  </data>
-  <data name="groupBox4.Text" xml:space="preserve">
-    <value>去隔行</value>
-  </data>
-  <data name="cbLEC.Size" type="System.Drawing.Size, System.Drawing">
-    <value>228, 28</value>
-  </data>
-  <data name="cbLEC.Text" xml:space="preserve">
-    <value>模拟扇区错误校正
-(一般无需开启；会导致部分补丁失效)</value>
-  </data>
-  <data name="groupBox5.Text" xml:space="preserve">
-    <value>模拟同步设置</value>
-  </data>
-  <data name="cbGpuLag.Size" type="System.Drawing.Size, System.Drawing">
-    <value>138, 16</value>
-  </data>
-  <data name="cbGpuLag.Text" xml:space="preserve">
-    <value>基于 GPU 帧判定延迟</value>
-  </data>
-  <data name="groupBox6.Text" xml:space="preserve">
-    <value>模拟用户设置</value>
+  <data name="rbTweakedMednafenMode.Text" xml:space="preserve">
+    <value>改良的 Mednafen 模式 (4:3 比例)</value>
   </data>
 </root>

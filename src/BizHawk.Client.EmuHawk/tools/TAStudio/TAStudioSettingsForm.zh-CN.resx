@@ -118,168 +118,428 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="label10.Size" type="System.Drawing.Size, System.Drawing">
-    <value>101, 12</value>
-  </data>
-  <data name="label10.Text" xml:space="preserve">
-    <value>隐藏的延迟帧数：</value>
-  </data>
-  <data name="label9.Size" type="System.Drawing.Size, System.Drawing">
-    <value>96, 25</value>
-  </data>
-  <data name="label9.Text" xml:space="preserve">
-    <value>影片设置</value>
-  </data>
-  <data name="ColorsButton.Text" xml:space="preserve">
-    <value>设置颜色</value>
-  </data>
   <data name="MarkerColorCheckbox.Size" type="System.Drawing.Size, System.Drawing">
     <value>144, 16</value>
   </data>
-  <data name="MarkerColorCheckbox.Text" xml:space="preserve">
-    <value>在帧列用颜色标示标记</value>
+  <data name="AutosaveBk2Checkbox.ToolTip" xml:space="preserve">
+    <value>自动保存会导出为.bk2录像文件，而非.tasproj工程文件。</value>
   </data>
-  <data name="MarkerIconsCheckbox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>108, 16</value>
+  <data name="FastRewindNum.ToolTip" xml:space="preserve">
+    <value>按住快进/加速快捷键，同时按下回退快捷键时，向后回退的帧数。</value>
   </data>
-  <data name="MarkerIconsCheckbox.Text" xml:space="preserve">
-    <value>用图标标示标记</value>
+  <data name="BindMarkersCheckbox.ToolTip" xml:space="preserve">
+    <value>开启后，插入/删除帧会同步移动位于后续帧的标记。若删除带有标记的帧，标记也会被一并删除。</value>
   </data>
-  <data name="StateColorCheckbox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>132, 16</value>
+  <data name="label3.Text" xml:space="preserve">
+    <value>帧</value>
   </data>
-  <data name="StateColorCheckbox.Text" xml:space="preserve">
-    <value>用背景颜色标示状态</value>
+  <data name="ScrollToCenterRadio.ToolTip" xml:space="preserve">
+    <value>滚动视图，使光标处于可视帧区域的中间位置。</value>
   </data>
-  <data name="StateIconsCheckbox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>108, 16</value>
+  <data name="PatternPaintAlwaysRadioButton.ToolTip" xml:space="preserve">
+    <value>在全部按键列进行绘制时，将使用连发模式；若选择「自定义」，则使用自定义绘制模板。</value>
   </data>
-  <data name="StateIconsCheckbox.Text" xml:space="preserve">
-    <value>用图标标示状态</value>
-  </data>
-  <data name="HideWasLagCheckbox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>84, 16</value>
-  </data>
-  <data name="HideWasLagCheckbox.Text" xml:space="preserve">
-    <value>隐藏延迟帧</value>
-  </data>
-  <data name="RotateCheckbox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>96, 16</value>
-  </data>
-  <data name="RotateCheckbox.Text" xml:space="preserve">
-    <value>旋转输入卷帘</value>
-  </data>
-  <data name="FontButton.Text" xml:space="preserve">
-    <value>设置字体</value>
-  </data>
-  <data name="tabPage2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
-  </data>
-  <data name="tabPage2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>369, 374</value>
-  </data>
-  <data name="tabPage2.Text" xml:space="preserve">
-    <value>外观</value>
-  </data>
-  <data name="label11.Size" type="System.Drawing.Size, System.Drawing">
-    <value>131, 12</value>
-  </data>
-  <data name="label11.Text" xml:space="preserve">
-    <value>设为 0 禁用自动保存。</value>
-  </data>
-  <data name="BackupOnSaveCheckbox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>192, 16</value>
-  </data>
-  <data name="BackupOnSaveCheckbox.Text" xml:space="preserve">
-    <value>手动保存时，同时保存 .backup</value>
-  </data>
-  <data name="AutosaveBackupCheckbox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>198, 16</value>
-  </data>
-  <data name="AutosaveBackupCheckbox.Text" xml:space="preserve">
-    <value>保存为 .backup (无 greenzone)</value>
-  </data>
-  <data name="AutosaveBk2Checkbox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>90, 16</value>
-  </data>
-  <data name="AutosaveBk2Checkbox.Text" xml:space="preserve">
-    <value>保存为 .bk2</value>
-  </data>
-  <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>17, 12</value>
-  </data>
-  <data name="label5.Text" xml:space="preserve">
-    <value>秒</value>
-  </data>
-  <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>101, 12</value>
-  </data>
-  <data name="label4.Text" xml:space="preserve">
-    <value>自动保存频率：每</value>
-  </data>
-  <data name="tabPage5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
-  </data>
-  <data name="tabPage5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>369, 374</value>
-  </data>
-  <data name="tabPage5.Text" xml:space="preserve">
-    <value>自动保存</value>
-  </data>
-  <data name="label12.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 327</value>
-  </data>
-  <data name="label12.Size" type="System.Drawing.Size, System.Drawing">
-    <value>161, 12</value>
-  </data>
-  <data name="label12.Text" xml:space="preserve">
-    <value>每个影片拥有独立的存档设置</value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="DefaultManagerSettingsAppliedLabel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Left</value>
-  </data>
-  <data name="DefaultManagerSettingsAppliedLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>148, 354</value>
-  </data>
-  <data name="DefaultManagerSettingsAppliedLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>53, 12</value>
-  </data>
-  <data name="DefaultManagerSettingsAppliedLabel.Text" xml:space="preserve">
-    <value>已应用！</value>
-  </data>
-  <data name="SetDefaultStateSettingsButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>201, 350</value>
-  </data>
-  <data name="SetDefaultStateSettingsButton.Text" xml:space="preserve">
-    <value>将这些设置用作默认设置</value>
-  </data>
-  <data name="DefaultStateSettingsButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>9, 350</value>
-  </data>
-  <data name="DefaultStateSettingsButton.Text" xml:space="preserve">
-    <value>使用默认设置</value>
-  </data>
-  <data name="ManagerSettingsPropertyGrid.Size" type="System.Drawing.Size, System.Drawing">
-    <value>347, 294</value>
-  </data>
-  <data name="label6.Location" type="System.Drawing.Point, System.Drawing">
-    <value>53, 9</value>
-  </data>
-  <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>65, 12</value>
-  </data>
-  <data name="label6.Text" xml:space="preserve">
-    <value>管理策略：</value>
+  <data name="label8.Text" xml:space="preserve">
+    <value>快速倒带步数：</value>
   </data>
   <data name="tabPage4.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 22</value>
   </data>
+  <data name="AlwaysScrollCheckbox.Text" xml:space="preserve">
+    <value>跟随光标时，逐帧滚动</value>
+  </data>
+  <data name="SetDefaultStateSettingsButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>201, 350</value>
+  </data>
+  <data name="MarkerIconsCheckbox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>108, 16</value>
+  </data>
+  <data name="tabPage1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>369, 374</value>
+  </data>
+  <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
+    <value>65, 12</value>
+  </data>
+  <data name="UndoCountNum.ToolTip" xml:space="preserve">
+    <value>TAStudio撤销历史可保留的最大编辑操作数量。</value>
+  </data>
+  <data name="HideWasLagCheckbox.Text" xml:space="preserve">
+    <value>隐藏延迟帧</value>
+  </data>
+  <data name="RewindNum.ToolTip" xml:space="preserve">
+    <value>按下回退按钮或热键时，向后回退的帧数。</value>
+  </data>
+  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>101, 12</value>
+  </data>
+  <data name="DefaultStateSettingsButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>9, 350</value>
+  </data>
+  <data name="EditInvisibleColumnsCheckbox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>288, 16</value>
+  </data>
+  <data name="AutosaveBackupCheckbox.ToolTip" xml:space="preserve">
+    <value>自动保存会将录像备份至备份文件夹，文件名附带时间戳，不会覆盖原有文件。备份文件不包含绿区存档，体积比普通tasproj更小。</value>
+  </data>
+  <data name="IncludeFrameNumberCheckbox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>132, 16</value>
+  </data>
+  <data name="label10.Text" xml:space="preserve">
+    <value>隐藏的延迟帧数：</value>
+  </data>
+  <data name="label4.Text" xml:space="preserve">
+    <value>自动保存频率：每</value>
+  </data>
+  <data name="tabPage3.Text" xml:space="preserve">
+    <value>杂项</value>
+  </data>
+  <data name="ApplyButton.Text" xml:space="preserve">
+    <value>应用</value>
+  </data>
+  <data name="DefaultManagerSettingsAppliedLabel.Text" xml:space="preserve">
+    <value>已应用！</value>
+  </data>
+  <data name="LagBox.Text" xml:space="preserve">
+    <value>考虑延迟帧</value>
+  </data>
+  <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>17, 12</value>
+  </data>
+  <data name="BackupOnSaveCheckbox.ToolTip" xml:space="preserve">
+    <value>每次手动保存文件后，自动生成一份tasproj备份文件。</value>
+  </data>
+  <data name="InsertButton.Text" xml:space="preserve">
+    <value>插入</value>
+  </data>
+  <data name="label10.Size" type="System.Drawing.Size, System.Drawing">
+    <value>101, 12</value>
+  </data>
+  <data name="label8.Size" type="System.Drawing.Size, System.Drawing">
+    <value>89, 12</value>
+  </data>
+  <data name="OldBranchesCheckbox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>120, 16</value>
+  </data>
+  <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>17, 12</value>
+  </data>
+  <data name="PatternPaintAlwaysRadioButton.Text" xml:space="preserve">
+    <value>总是</value>
+  </data>
+  <data name="AlwaysScrollCheckbox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>144, 16</value>
+  </data>
+  <data name="PatternPaintAutoColumnsOnlyRadioButton.Text" xml:space="preserve">
+    <value>仅连发列</value>
+  </data>
+  <data name="ScrollToCenterRadio.Size" type="System.Drawing.Size, System.Drawing">
+    <value>83, 16</value>
+  </data>
+  <data name="BackupOnSaveCheckbox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>192, 16</value>
+  </data>
+  <data name="ScrollSyncCheckbox.ToolTip" xml:space="preserve">
+    <value>开启后，滚动一条输入轨道，所有输入轨道会同步跟随滚动。</value>
+  </data>
+  <data name="PatternCustomRadioButton.ToolTip" xml:space="preserve">
+    <value>在录像末尾之后新模拟出的帧，连发按键将使用自定义模板。</value>
+  </data>
+  <data name="PatternList.Items2" xml:space="preserve">
+    <value>循环到 0</value>
+  </data>
+  <data name="label6.Text" xml:space="preserve">
+    <value>管理策略：</value>
+  </data>
+  <data name="StatesForMarkersCheckbox.ToolTip" xml:space="preserve">
+    <value>TAStudio可为每个标记自动维护存档。开启后新建标记默认启用存档关联。
+注意：存档需要放置在标记的前一帧。在当前帧新建标记不会自动生成存档。存档放在前一帧是为了避免存档额外附带截图。</value>
+  </data>
+  <data name="AutosaveBackupCheckbox.Text" xml:space="preserve">
+    <value>保存为 .backup (无 greenzone)</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>最大撤销数：</value>
+  </data>
   <data name="tabPage4.Size" type="System.Drawing.Size, System.Drawing">
     <value>369, 374</value>
   </data>
+  <data name="LagBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>84, 16</value>
+  </data>
+  <data name="StateIconsCheckbox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>108, 16</value>
+  </data>
+  <data name="MarkerIconsCheckbox.ToolTip" xml:space="preserve">
+    <value>开启后，存在标记的帧会在帧列显示标记图标。</value>
+  </data>
+  <data name="MarkerIconsCheckbox.Text" xml:space="preserve">
+    <value>用图标标示标记</value>
+  </data>
+  <data name="RotateCheckbox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>96, 16</value>
+  </data>
+  <data name="CustomPatternsGroupBox.Text" xml:space="preserve">
+    <value>设置自定义模版 (为每个影片)</value>
+  </data>
+  <data name="MarkerColorCheckbox.ToolTip" xml:space="preserve">
+    <value>开启后，存在标记的帧会使用特殊背景色。</value>
+  </data>
+  <data name="ScrollToTopRadio.Size" type="System.Drawing.Size, System.Drawing">
+    <value>83, 16</value>
+  </data>
+  <data name="StateIconsCheckbox.Text" xml:space="preserve">
+    <value>用图标标示状态</value>
+  </data>
+  <data name="PatternCustomRadioButton.Text" xml:space="preserve">
+    <value>自定义</value>
+  </data>
+  <data name="PatternAutoFireRadioButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>47, 16</value>
+  </data>
+  <data name="PatternAutoFireRadioButton.ToolTip" xml:space="preserve">
+    <value>录像结束后新模拟的帧，连发按键会交替按下/松开。</value>
+  </data>
+  <data name="tabPage6.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="PatternAutoFireRadioButton.Text" xml:space="preserve">
+    <value>连发</value>
+  </data>
+  <data name="ScrollToTopRadio.Text" xml:space="preserve">
+    <value>滚动到顶部</value>
+  </data>
+  <data name="ScrollSyncCheckbox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>144, 16</value>
+  </data>
+  <data name="ScrollToViewRadio.Text" xml:space="preserve">
+    <value>滚动到视图</value>
+  </data>
+  <data name="AutopauseCheckbox.Text" xml:space="preserve">
+    <value>影片结束时自动暂停</value>
+  </data>
+  <data name="tabPage2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="DeleteButton.Text" xml:space="preserve">
+    <value>删除</value>
+  </data>
+  <data name="PatternPaintNeverRadioButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>47, 16</value>
+  </data>
+  <data name="DefaultStateSettingsButton.Text" xml:space="preserve">
+    <value>使用默认设置</value>
+  </data>
+  <data name="label12.Size" type="System.Drawing.Size, System.Drawing">
+    <value>161, 12</value>
+  </data>
+  <data name="AutosaveIntervalNum.ToolTip" xml:space="preserve">
+    <value>TAStudio自动保存的间隔秒数。若没有勾选导出相关选项，自动保存会覆盖当前打开的工程。
+未打开任何录像工程时，自动保存不会执行任何操作。</value>
+  </data>
+  <data name="tabPage6.Text" xml:space="preserve">
+    <value>输入卷帘</value>
+  </data>
+  <data name="BindMarkersCheckbox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>108, 16</value>
+  </data>
+  <data name="tabPage5.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="groupBox4.Text" xml:space="preserve">
+    <value>光标定位滚动方式</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>滚动速度：每周期</value>
+  </data>
+  <data name="tabPage3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="label12.Text" xml:space="preserve">
+    <value>每个影片拥有独立的存档设置</value>
+  </data>
+  <data name="ScrollToBottomRadio.Text" xml:space="preserve">
+    <value>滚动到底部</value>
+  </data>
+  <data name="PatternPaintAutoColumnsOnlyRadioButton.ToolTip" xml:space="preserve">
+    <value>仅在连发按键列绘制时生效，使用连发模式；选择「自定义」时使用自定义模板。</value>
+  </data>
+  <data name="SettingsCancelButton.Text" xml:space="preserve">
+    <value>取消</value>
+  </data>
+  <data name="ScrollSyncCheckbox.Text" xml:space="preserve">
+    <value>所有输入卷帘同步滚动</value>
+  </data>
+  <data name="tabPage1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="groupBox2.Text" xml:space="preserve">
+    <value>选择模板</value>
+  </data>
+  <data name="DefaultManagerSettingsAppliedLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>53, 12</value>
+  </data>
+  <data name="locLabelEx2.Text" xml:space="preserve">
+    <value>值</value>
+  </data>
+  <data name="ManagerSettingsPropertyGrid.Size" type="System.Drawing.Size, System.Drawing">
+    <value>347, 294</value>
+  </data>
+  <data name="SetDefaultStateSettingsButton.Text" xml:space="preserve">
+    <value>将这些设置用作默认设置</value>
+  </data>
+  <data name="BackupOnSaveCheckbox.Text" xml:space="preserve">
+    <value>手动保存时，同时保存 .backup</value>
+  </data>
   <data name="tabPage4.Text" xml:space="preserve">
     <value>进度</value>
+  </data>
+  <data name="PatternHoldRadioButton.Text" xml:space="preserve">
+    <value>按住</value>
+  </data>
+  <data name="MarkerColorCheckbox.Text" xml:space="preserve">
+    <value>在帧列用颜色标示标记</value>
+  </data>
+  <data name="AlwaysScrollCheckbox.ToolTip" xml:space="preserve">
+    <value>关闭此项后，当光标已经在可视区域内，「跟随光标」就不会再滚动视图。</value>
+  </data>
+  <data name="label9.Text" xml:space="preserve">
+    <value>影片设置</value>
+  </data>
+  <data name="FontButton.Text" xml:space="preserve">
+    <value>设置字体</value>
+  </data>
+  <data name="label9.Size" type="System.Drawing.Size, System.Drawing">
+    <value>96, 25</value>
+  </data>
+  <data name="tabPage5.Text" xml:space="preserve">
+    <value>自动保存</value>
+  </data>
+  <data name="ColorsButton.Text" xml:space="preserve">
+    <value>设置颜色</value>
+  </data>
+  <data name="label12.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 327</value>
+  </data>
+  <data name="DefaultManagerSettingsAppliedLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>148, 354</value>
+  </data>
+  <data name="StateColorCheckbox.Text" xml:space="preserve">
+    <value>用背景颜色标示状态</value>
+  </data>
+  <data name="tabPage2.Text" xml:space="preserve">
+    <value>外观</value>
+  </data>
+  <data name="label11.Text" xml:space="preserve">
+    <value>设为 0 禁用自动保存。</value>
+  </data>
+  <data name="StateColorCheckbox.ToolTip" xml:space="preserve">
+    <value>开启后，已经存在存档的帧行会显示特殊背景色。</value>
+  </data>
+  <data name="label5.Text" xml:space="preserve">
+    <value>秒</value>
+  </data>
+  <data name="PatternHoldRadioButton.ToolTip" xml:space="preserve">
+    <value>录像结束后新模拟的帧，连发按键将保持按住状态。</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="StrategyBox.ToolTip" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="PatternList.Items" xml:space="preserve">
+    <value>0: 开	(x1)</value>
+  </data>
+  <data name="label11.Size" type="System.Drawing.Size, System.Drawing">
+    <value>131, 12</value>
+  </data>
+  <data name="tabPage6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>369, 374</value>
+  </data>
+  <data name="PatternPaintAutoColumnsOnlyRadioButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>71, 16</value>
+  </data>
+  <data name="StateIconsCheckbox.ToolTip" xml:space="preserve">
+    <value>开启后，存在存档的帧会在帧列显示存档图标。</value>
+  </data>
+  <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>65, 12</value>
+  </data>
+  <data name="BindMarkersCheckbox.Text" xml:space="preserve">
+    <value>绑定标记到输入</value>
+  </data>
+  <data name="BranchDoubleClickCheckbox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>96, 16</value>
+  </data>
+  <data name="EditInvisibleColumnsCheckbox.Text" xml:space="preserve">
+    <value>允许编辑隐藏列（支持清除、录制、粘贴等操作）</value>
+  </data>
+  <data name="ScrollSpeedNum.ToolTip" xml:space="preserve">
+    <value>鼠标滚轮每滚动一格移动的帧数。填0使用系统默认值。</value>
+  </data>
+  <data name="PatternPaintAlwaysRadioButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>47, 16</value>
+  </data>
+  <data name="tabPage2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>369, 374</value>
+  </data>
+  <data name="BranchDoubleClickCheckbox.Text" xml:space="preserve">
+    <value>双击载入分支</value>
+  </data>
+  <data name="AutosaveBackupCheckbox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>198, 16</value>
+  </data>
+  <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>101, 12</value>
+  </data>
+  <data name="tabPage5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>369, 374</value>
+  </data>
+  <data name="ScrollToBottomRadio.Size" type="System.Drawing.Size, System.Drawing">
+    <value>83, 16</value>
+  </data>
+  <data name="tabPage3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>369, 374</value>
+  </data>
+  <data name="HideWasLagCheckbox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>84, 16</value>
+  </data>
+  <data name="PatternPaintNeverRadioButton.ToolTip" xml:space="preserve">
+    <value>普通绘制模式。</value>
+  </data>
+  <data name="StatesForMarkersCheckbox.Text" xml:space="preserve">
+    <value>标记默认保留状态</value>
+  </data>
+  <data name="HideWasLagCheckbox.ToolTip" xml:space="preserve">
+    <value>取消勾选时，不再隐藏绿区之后的延迟帧。即不会隐藏重模拟后不确定是否仍为延迟帧的帧。</value>
+  </data>
+  <data name="OldBranchesCheckbox.ToolTip" xml:space="preserve">
+    <value>开启后，非录制模式下无法加载分支，只会跳转至分支所在帧；录制模式下加载分支，录像会在分支帧处截断。</value>
+  </data>
+  <data name="label6.Location" type="System.Drawing.Point, System.Drawing">
+    <value>53, 9</value>
+  </data>
+  <data name="ScrollToViewRadio.ToolTip" xml:space="preserve">
+    <value>最小幅度滚动，让光标进入可视范围。</value>
+  </data>
+  <data name="OldBranchesCheckbox.Text" xml:space="preserve">
+    <value>旧的分支控制方案</value>
+  </data>
+  <data name="AutosaveBk2Checkbox.Text" xml:space="preserve">
+    <value>保存为 .bk2</value>
+  </data>
+  <data name="ScrollToCenterRadio.Text" xml:space="preserve">
+    <value>滚动到中间</value>
+  </data>
+  <data name="AutopauseCheckbox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>132, 16</value>
+  </data>
+  <data name="AutosaveBk2Checkbox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>90, 16</value>
+  </data>
+  <data name="IncludeFrameNumberCheckbox.Text" xml:space="preserve">
+    <value>复制输入时包括帧数</value>
+  </data>
+  <data name="ScrollToViewRadio.Size" type="System.Drawing.Size, System.Drawing">
+    <value>83, 16</value>
   </data>
   <data name="OnOffBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>26, 172</value>
@@ -287,212 +547,45 @@
   <data name="locLabelEx1.Text" xml:space="preserve">
     <value>计数：</value>
   </data>
-  <data name="locLabelEx2.Text" xml:space="preserve">
-    <value>值</value>
+  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>77, 12</value>
   </data>
-  <data name="LagBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>84, 16</value>
+  <data name="ScrollToBottomRadio.ToolTip" xml:space="preserve">
+    <value>滚动视图，使光标处于可视帧区域底部。</value>
   </data>
-  <data name="LagBox.Text" xml:space="preserve">
-    <value>考虑延迟帧</value>
-  </data>
-  <data name="DeleteButton.Text" xml:space="preserve">
-    <value>删除</value>
-  </data>
-  <data name="InsertButton.Text" xml:space="preserve">
-    <value>插入</value>
-  </data>
-  <data name="PatternList.Items" xml:space="preserve">
-    <value>0: 开	(x1)</value>
-  </data>
-  <data name="PatternList.Items1" xml:space="preserve">
-    <value>1: 关	(x1)</value>
-  </data>
-  <data name="PatternList.Items2" xml:space="preserve">
-    <value>循环到 0</value>
-  </data>
-  <data name="CustomPatternsGroupBox.Text" xml:space="preserve">
-    <value>设置自定义模版 (为每个影片)</value>
-  </data>
-  <data name="PatternCustomRadioButton.Text" xml:space="preserve">
-    <value>自定义</value>
-  </data>
-  <data name="PatternHoldRadioButton.Text" xml:space="preserve">
-    <value>按住</value>
-  </data>
-  <data name="PatternAutoFireRadioButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>47, 16</value>
-  </data>
-  <data name="PatternAutoFireRadioButton.Text" xml:space="preserve">
-    <value>连发</value>
-  </data>
-  <data name="groupBox2.Text" xml:space="preserve">
-    <value>选择模板</value>
-  </data>
-  <data name="PatternPaintAlwaysRadioButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>47, 16</value>
-  </data>
-  <data name="PatternPaintAlwaysRadioButton.Text" xml:space="preserve">
-    <value>总是</value>
-  </data>
-  <data name="PatternPaintAutoColumnsOnlyRadioButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>71, 16</value>
-  </data>
-  <data name="PatternPaintAutoColumnsOnlyRadioButton.Text" xml:space="preserve">
-    <value>仅连发列</value>
-  </data>
-  <data name="PatternPaintNeverRadioButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>47, 16</value>
+  <data name="StateColorCheckbox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>132, 16</value>
   </data>
   <data name="PatternPaintNeverRadioButton.Text" xml:space="preserve">
     <value>从不</value>
   </data>
-  <data name="groupBox1.Text" xml:space="preserve">
-    <value>何时使用模版</value>
+  <data name="StatesForMarkersCheckbox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>120, 16</value>
   </data>
-  <data name="tabPage1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
-  </data>
-  <data name="tabPage1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>369, 374</value>
+  <data name="RotateCheckbox.Text" xml:space="preserve">
+    <value>旋转输入卷帘</value>
   </data>
   <data name="tabPage1.Text" xml:space="preserve">
     <value>输入模版</value>
   </data>
-  <data name="ScrollSyncCheckbox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>144, 16</value>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>何时使用模版</value>
   </data>
-  <data name="ScrollSyncCheckbox.Text" xml:space="preserve">
-    <value>所有输入卷帘同步滚动</value>
+  <data name="EditInvisibleColumnsCheckbox.ToolTip" xml:space="preserve">
+    <value>关闭此项，则无法编辑当前输入轨道里被隐藏的按键列。举例：隐藏玩家2全部列之后，可以对玩家1轨道增删帧，而不会改动玩家2输入。
+右键列表头可以隐藏列、新建删除输入轨道。标记不与按键列绑定，关闭该选项建议同时关闭「标记绑定输入」，否则标记会出现异常移位。该功能为实验性功能，但已可正常使用。</value>
   </data>
-  <data name="EditInvisibleColumnsCheckbox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>288, 16</value>
-  </data>
-  <data name="EditInvisibleColumnsCheckbox.Text" xml:space="preserve">
-    <value>允许编辑隐藏列（支持清除、录制、粘贴等操作）</value>
-  </data>
-  <data name="ScrollToCenterRadio.Size" type="System.Drawing.Size, System.Drawing">
-    <value>83, 16</value>
-  </data>
-  <data name="ScrollToCenterRadio.Text" xml:space="preserve">
-    <value>滚动到中间</value>
-  </data>
-  <data name="ScrollToBottomRadio.Size" type="System.Drawing.Size, System.Drawing">
-    <value>83, 16</value>
-  </data>
-  <data name="ScrollToBottomRadio.Text" xml:space="preserve">
-    <value>滚动到底部</value>
-  </data>
-  <data name="ScrollToTopRadio.Size" type="System.Drawing.Size, System.Drawing">
-    <value>83, 16</value>
-  </data>
-  <data name="ScrollToTopRadio.Text" xml:space="preserve">
-    <value>滚动到顶部</value>
-  </data>
-  <data name="ScrollToViewRadio.Size" type="System.Drawing.Size, System.Drawing">
-    <value>83, 16</value>
-  </data>
-  <data name="ScrollToViewRadio.Text" xml:space="preserve">
-    <value>滚动到视图</value>
-  </data>
-  <data name="groupBox4.Text" xml:space="preserve">
-    <value>光标定位滚动方式</value>
-  </data>
-  <data name="AlwaysScrollCheckbox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>144, 16</value>
-  </data>
-  <data name="AlwaysScrollCheckbox.Text" xml:space="preserve">
-    <value>跟随光标时，逐帧滚动</value>
-  </data>
-  <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>17, 12</value>
-  </data>
-  <data name="label3.Text" xml:space="preserve">
-    <value>帧</value>
-  </data>
-  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>101, 12</value>
-  </data>
-  <data name="label2.Text" xml:space="preserve">
-    <value>滚动速度：每周期</value>
-  </data>
-  <data name="tabPage6.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
-  </data>
-  <data name="tabPage6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>369, 374</value>
-  </data>
-  <data name="tabPage6.Text" xml:space="preserve">
-    <value>输入卷帘</value>
-  </data>
-  <data name="StatesForMarkersCheckbox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>120, 16</value>
-  </data>
-  <data name="StatesForMarkersCheckbox.Text" xml:space="preserve">
-    <value>标记默认保留状态</value>
-  </data>
-  <data name="OldBranchesCheckbox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>120, 16</value>
-  </data>
-  <data name="OldBranchesCheckbox.Text" xml:space="preserve">
-    <value>旧的分支控制方案</value>
-  </data>
-  <data name="BranchDoubleClickCheckbox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>96, 16</value>
-  </data>
-  <data name="BranchDoubleClickCheckbox.Text" xml:space="preserve">
-    <value>双击载入分支</value>
-  </data>
-  <data name="label8.Size" type="System.Drawing.Size, System.Drawing">
-    <value>89, 12</value>
-  </data>
-  <data name="label8.Text" xml:space="preserve">
-    <value>快速倒带步数：</value>
-  </data>
-  <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
-    <value>65, 12</value>
+  <data name="PatternList.Items1" xml:space="preserve">
+    <value>1: 关	(x1)</value>
   </data>
   <data name="label7.Text" xml:space="preserve">
     <value>倒带步数：</value>
   </data>
-  <data name="BindMarkersCheckbox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>108, 16</value>
+  <data name="HideLagNum.ToolTip" xml:space="preserve">
+    <value>每组连续延迟帧最多隐藏的帧数。适用于60Hz主机运行30FPS游戏的场景。</value>
   </data>
-  <data name="BindMarkersCheckbox.Text" xml:space="preserve">
-    <value>绑定标记到输入</value>
-  </data>
-  <data name="IncludeFrameNumberCheckbox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>132, 16</value>
-  </data>
-  <data name="IncludeFrameNumberCheckbox.Text" xml:space="preserve">
-    <value>复制输入时包括帧数</value>
-  </data>
-  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>77, 12</value>
-  </data>
-  <data name="label1.Text" xml:space="preserve">
-    <value>最大撤销数：</value>
-  </data>
-  <data name="AutopauseCheckbox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>132, 16</value>
-  </data>
-  <data name="AutopauseCheckbox.Text" xml:space="preserve">
-    <value>影片结束时自动暂停</value>
-  </data>
-  <data name="tabPage3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
-  </data>
-  <data name="tabPage3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>369, 374</value>
-  </data>
-  <data name="tabPage3.Text" xml:space="preserve">
-    <value>杂项</value>
-  </data>
-  <data name="SettingsCancelButton.Text" xml:space="preserve">
-    <value>取消</value>
-  </data>
-  <data name="ApplyButton.Text" xml:space="preserve">
-    <value>应用</value>
+  <data name="DefaultManagerSettingsAppliedLabel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
   </data>
   <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>

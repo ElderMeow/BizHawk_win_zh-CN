@@ -246,27 +246,27 @@ namespace BizHawk.Client.EmuHawk
 
 		public override void HandleHotkeyUpdate()
 		{
-			UndoMenuItem.ShortcutKeyDisplayString = Config.HotkeyBindings["Undo"];
-			RedoMenuItem.ShortcutKeyDisplayString = Config.HotkeyBindings["Redo"];
-			SelectBetweenMarkersMenuItem.ShortcutKeyDisplayString = Config.HotkeyBindings["Sel. bet. Markers"];
-			SelectAllMenuItem.ShortcutKeyDisplayString = Config.HotkeyBindings["Select All"];
-			ReselectClipboardMenuItem.ShortcutKeyDisplayString = Config.HotkeyBindings["Reselect Clip."];
-			GoToFrameMenuItem.ShortcutKeyDisplayString = Config.HotkeyBindings["Seek To..."];
-			ClearFramesMenuItem.ShortcutKeyDisplayString = Config.HotkeyBindings["Clear Frames"];
-			DeleteFramesMenuItem.ShortcutKeyDisplayString = Config.HotkeyBindings["Delete Frames"];
-			InsertFrameMenuItem.ShortcutKeyDisplayString = Config.HotkeyBindings["Insert Frame"];
-			InsertNumFramesMenuItem.ShortcutKeyDisplayString = Config.HotkeyBindings["Insert # Frames"];
-			CloneFramesMenuItem.ShortcutKeyDisplayString = Config.HotkeyBindings["Clone Frames"];
-			CloneFramesXTimesMenuItem.ShortcutKeyDisplayString = Config.HotkeyBindings["Clone # Times"];
+			UndoMenuItem.ShortcutKeyDisplayString = TheLocalizater.TranslateShortcutKeyDisplayString(Config.HotkeyBindings["Undo"]);
+			RedoMenuItem.ShortcutKeyDisplayString = TheLocalizater.TranslateShortcutKeyDisplayString(Config.HotkeyBindings["Redo"]);
+			SelectBetweenMarkersMenuItem.ShortcutKeyDisplayString = TheLocalizater.TranslateShortcutKeyDisplayString(Config.HotkeyBindings["Sel. bet. Markers"]);
+			SelectAllMenuItem.ShortcutKeyDisplayString = TheLocalizater.TranslateShortcutKeyDisplayString(Config.HotkeyBindings["Select All"]);
+			ReselectClipboardMenuItem.ShortcutKeyDisplayString = TheLocalizater.TranslateShortcutKeyDisplayString(Config.HotkeyBindings["Reselect Clip."]);
+			GoToFrameMenuItem.ShortcutKeyDisplayString = TheLocalizater.TranslateShortcutKeyDisplayString(Config.HotkeyBindings["Seek To..."]);
+			ClearFramesMenuItem.ShortcutKeyDisplayString = TheLocalizater.TranslateShortcutKeyDisplayString(Config.HotkeyBindings["Clear Frames"]);
+			DeleteFramesMenuItem.ShortcutKeyDisplayString = TheLocalizater.TranslateShortcutKeyDisplayString(Config.HotkeyBindings["Delete Frames"]);
+			InsertFrameMenuItem.ShortcutKeyDisplayString = TheLocalizater.TranslateShortcutKeyDisplayString(Config.HotkeyBindings["Insert Frame"]);
+			InsertNumFramesMenuItem.ShortcutKeyDisplayString = TheLocalizater.TranslateShortcutKeyDisplayString(Config.HotkeyBindings["Insert # Frames"]);
+			CloneFramesMenuItem.ShortcutKeyDisplayString = TheLocalizater.TranslateShortcutKeyDisplayString(Config.HotkeyBindings["Clone Frames"]);
+			CloneFramesXTimesMenuItem.ShortcutKeyDisplayString = TheLocalizater.TranslateShortcutKeyDisplayString(Config.HotkeyBindings["Clone # Times"]);
 
-			SelectBetweenMarkersContextMenuItem.ShortcutKeyDisplayString = Config.HotkeyBindings["Sel. bet. Markers"];
-			ClearContextMenuItem.ShortcutKeyDisplayString = Config.HotkeyBindings["Clear Frames"];
-			DeleteFramesContextMenuItem.ShortcutKeyDisplayString = Config.HotkeyBindings["Delete Frames"];
-			InsertFrameContextMenuItem.ShortcutKeyDisplayString = Config.HotkeyBindings["Insert Frame"];
-			InsertNumFramesContextMenuItem.ShortcutKeyDisplayString = Config.HotkeyBindings["Insert # Frames"];
-			CloneContextMenuItem.ShortcutKeyDisplayString = Config.HotkeyBindings["Clone Frames"];
-			CloneXTimesContextMenuItem.ShortcutKeyDisplayString = Config.HotkeyBindings["Clone # Times"];
-			PasteInsertMenuItem.ShortcutKeyDisplayString = Config.HotkeyBindings["Paste Insert"];
+			SelectBetweenMarkersContextMenuItem.ShortcutKeyDisplayString = TheLocalizater.TranslateShortcutKeyDisplayString(Config.HotkeyBindings["Sel. bet. Markers"]);
+			ClearContextMenuItem.ShortcutKeyDisplayString = TheLocalizater.TranslateShortcutKeyDisplayString(Config.HotkeyBindings["Clear Frames"]);
+			DeleteFramesContextMenuItem.ShortcutKeyDisplayString = TheLocalizater.TranslateShortcutKeyDisplayString(Config.HotkeyBindings["Delete Frames"]);
+			InsertFrameContextMenuItem.ShortcutKeyDisplayString = TheLocalizater.TranslateShortcutKeyDisplayString(Config.HotkeyBindings["Insert Frame"]);
+			InsertNumFramesContextMenuItem.ShortcutKeyDisplayString = TheLocalizater.TranslateShortcutKeyDisplayString(Config.HotkeyBindings["Insert # Frames"]);
+			CloneContextMenuItem.ShortcutKeyDisplayString = TheLocalizater.TranslateShortcutKeyDisplayString(Config.HotkeyBindings["Clone Frames"]);
+			CloneXTimesContextMenuItem.ShortcutKeyDisplayString = TheLocalizater.TranslateShortcutKeyDisplayString(Config.HotkeyBindings["Clone # Times"]);
+			PasteInsertMenuItem.ShortcutKeyDisplayString = TheLocalizater.TranslateShortcutKeyDisplayString(Config.HotkeyBindings["Paste Insert"]);
 
 			TasPlaybackBox.UpdateHotkeyTooltips(Config);
 			BookMarkControl.UpdateHotkeyTooltips(Config);
@@ -499,7 +499,7 @@ namespace BizHawk.Client.EmuHawk
 
 			// All final widths are computed in UpdateColumnWidths, after column creation.
 			roll.AllColumns.Add(new(name: CursorColumnName, widthUnscaled: 10, text: string.Empty));
-			roll.AllColumns.Add(new(name: FrameColumnName, widthUnscaled: 10, text: "Frame#")
+			roll.AllColumns.Add(new(name: FrameColumnName, widthUnscaled: 10, text: TheLocalizater.TranslateText("Frame#"))
 			{
 				Rotatable = true,
 			});
@@ -716,7 +716,7 @@ namespace BizHawk.Client.EmuHawk
 				return false;
 			}
 
-			if (Game.IsNullInstance()) throw new InvalidOperationException("how is TAStudio open with no game loaded? please report this including as much detail as possible");
+			if (Game.IsNullInstance()) throw new InvalidOperationException(TheLocalizater.TranslateText("how is TAStudio open with no game loaded? please report this including as much detail as possible"));
 
 			var filename = DefaultTasProjName(); // TODO don't do this, take over any mainform actions that can crash without a filename
 			var tasMovie = (ITasMovie)MovieSession.Get(filename);
@@ -935,7 +935,7 @@ namespace BizHawk.Client.EmuHawk
 			if (result.IsError)
 			{
 				DialogController.ShowMessageBox(
-					$"{message}\n{result.UserFriendlyErrorMessage()}\n{result.Exception.Message}",
+					TheLocalizater.TranslateFormatString("{0}\n{1}\n{2}", message, result.UserFriendlyErrorMessage(), result.Exception.Message),
 					TheLocalizater.TranslateText("Error"),
 					EMsgBoxIcon.Error);
 			}
@@ -1134,9 +1134,9 @@ namespace BizHawk.Client.EmuHawk
 		{
 			// TODO: columns selected?
 			var selectedRowCount = GetSelection().Count();
-			var temp = TheLocalizater.TranslateFormatString("Selected: {0} {1}, States: {2}", selectedRowCount, (selectedRowCount == 1 ? "frame" : "frames"), CurrentTasMovie.TasStateManager.Count);
+			var temp = TheLocalizater.TranslateFormatString("Selected: {0} {1}, States: {2}", selectedRowCount, (selectedRowCount == 1 ? TheLocalizater.TranslateText("frame") : TheLocalizater.TranslateText("frames")), CurrentTasMovie.TasStateManager.Count);
 			var clipboardCount = _tasClipboard.Count;
-			if (clipboardCount is not 0) temp += TheLocalizater.TranslateFormatString(", Clipboard: {0} {1}", clipboardCount, (clipboardCount is 1 ? "frame" : "frames"));
+			if (clipboardCount is not 0) temp += TheLocalizater.TranslateFormatString(", Clipboard: {0} {1}", clipboardCount, (clipboardCount is 1 ? TheLocalizater.TranslateText("frame") : TheLocalizater.TranslateText("frames")));
 			SplicerStatusLabel.Text = temp;
 		}
 
@@ -1308,7 +1308,7 @@ namespace BizHawk.Client.EmuHawk
 		private IEnumerable<(string Name, string Mnemonic, int MaxLength)> MnemonicMap()
 		{
 			if (MovieSession.MovieController.Definition.MnemonicsCache is null)
-				throw new InvalidOperationException("Can't build mnemonic map with empty mnemonics cache");
+				throw new InvalidOperationException(TheLocalizater.TranslateText("Can't build mnemonic map with empty mnemonics cache"));
 
 			foreach (var playerControls in MovieSession.MovieController.Definition.ControlsOrdered)
 			{

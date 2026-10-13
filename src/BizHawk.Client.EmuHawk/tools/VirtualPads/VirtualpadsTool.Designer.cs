@@ -60,11 +60,11 @@ namespace BizHawk.Client.EmuHawk
             // 
             // PadBoxContextMenu
             // 
-            resources.ApplyResources(this.PadBoxContextMenu, "PadBoxContextMenu");
             this.PadBoxContextMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.clearAllToolStripMenuItem,
             this.StickyContextMenuItem});
             this.PadBoxContextMenu.Name = "PadBoxContextMenu";
+            resources.ApplyResources(this.PadBoxContextMenu, "PadBoxContextMenu");
             this.PadBoxContextMenu.Opening += new System.ComponentModel.CancelEventHandler(this.PadBoxContextMenu_Opening);
             // 
             // clearAllToolStripMenuItem
@@ -84,19 +84,19 @@ namespace BizHawk.Client.EmuHawk
             // 
             // PadMenu
             // 
-            resources.ApplyResources(this.PadMenu, "PadMenu");
             this.PadMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.PadsSubMenu,
             this.SettingsSubMenu});
+            resources.ApplyResources(this.PadMenu, "PadMenu");
             // 
             // PadsSubMenu
             // 
-            resources.ApplyResources(this.PadsSubMenu, "PadsSubMenu");
             this.PadsSubMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ClearAllMenuItem,
             this.StickyMenuItem,
             this.toolStripSeparator4,
             this.ExitMenuItem});
+            resources.ApplyResources(this.PadsSubMenu, "PadsSubMenu");
             this.PadsSubMenu.DropDownOpened += new System.EventHandler(this.PadsSubMenu_DropDownOpened);
             // 
             // ClearAllMenuItem
@@ -109,10 +109,6 @@ namespace BizHawk.Client.EmuHawk
             resources.ApplyResources(this.StickyMenuItem, "StickyMenuItem");
             this.StickyMenuItem.Click += new System.EventHandler(this.StickyMenuItem_Click);
             // 
-            // toolStripSeparator4
-            // 
-            resources.ApplyResources(this.toolStripSeparator4, "toolStripSeparator4");
-            // 
             // ExitMenuItem
             // 
             resources.ApplyResources(this.ExitMenuItem, "ExitMenuItem");
@@ -120,9 +116,9 @@ namespace BizHawk.Client.EmuHawk
             // 
             // SettingsSubMenu
             // 
-            resources.ApplyResources(this.SettingsSubMenu, "SettingsSubMenu");
             this.SettingsSubMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ClearClearsAnalogInputMenuItem});
+            resources.ApplyResources(this.SettingsSubMenu, "SettingsSubMenu");
             this.SettingsSubMenu.DropDownOpened += new System.EventHandler(this.OptionsSubMenu_DropDownOpened);
             // 
             // ClearClearsAnalogInputMenuItem

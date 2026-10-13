@@ -69,13 +69,13 @@
             // 
             // RightClickMenu
             // 
-            resources.ApplyResources(this.RightClickMenu, "RightClickMenu");
             this.RightClickMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.undoHereToolStripMenuItem,
             this.redoHereToolStripMenuItem,
             this.sepToolStripMenuItem,
             this.clearHistoryToHereToolStripMenuItem});
             this.RightClickMenu.Name = "RightClickMenu";
+            resources.ApplyResources(this.RightClickMenu, "RightClickMenu");
             // 
             // undoHereToolStripMenuItem
             // 
@@ -86,10 +86,6 @@
             // 
             resources.ApplyResources(this.redoHereToolStripMenuItem, "redoHereToolStripMenuItem");
             this.redoHereToolStripMenuItem.Click += new System.EventHandler(this.RedoHereMenuItem_Click);
-            // 
-            // sepToolStripMenuItem
-            // 
-            resources.ApplyResources(this.sepToolStripMenuItem, "sepToolStripMenuItem");
             // 
             // clearHistoryToHereToolStripMenuItem
             // 
@@ -132,10 +128,10 @@
             // 
             // HistoryView
             // 
-            resources.ApplyResources(this.HistoryView, "HistoryView");
             this.HistoryView.AllowColumnReorder = false;
             this.HistoryView.AllowColumnResize = false;
             this.HistoryView.AlwaysScroll = false;
+            resources.ApplyResources(this.HistoryView, "HistoryView");
             this.HistoryView.CellHeightPadding = 0;
             this.HistoryView.CellWidthPadding = 0;
             this.HistoryView.FullRowSelect = true;

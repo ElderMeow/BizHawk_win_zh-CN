@@ -69,13 +69,13 @@ namespace BizHawk.Client.EmuHawk
 				string raw = config.HotkeyBindings[hotkey];
 				if (raw.Length == 0)
 				{
-					return TheLocalizater.TranslateFormatString("Hotkey: {0}", hardcodedBinding ?? "unbound");
+					return TheLocalizater.TranslateFormatString("Hotkey: {0}", hardcodedBinding ?? TheLocalizater.TranslateText("unbound"));
 				}
 				else if (hardcodedBinding != null)
 				{
-					return TheLocalizater.TranslateFormatString("Hotkey: {0} or {1}", hardcodedBinding, raw.Replace(",", " or "));
+					return TheLocalizater.TranslateFormatString("Hotkey: {0} or {1}", hardcodedBinding, raw.Replace(",", TheLocalizater.TranslateText(" or ")));
 				}
-				return TheLocalizater.TranslateFormatString("Hotkey: {0}", raw.Replace(",", " or "));
+				return TheLocalizater.TranslateFormatString("Hotkey: {0}", raw.Replace(",", TheLocalizater.TranslateText(" or ")));
 			}
 
 			toolTip1.SetToolTip(NextMarkerButton, GetBindingText("Seek To Next Marker")

@@ -117,17 +117,14 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="clearAllToolStripMenuItem.Text" xml:space="preserve">
+    <value>清空所有</value>
+  </data>
+  <data name="StickyContextMenuItem.Text" xml:space="preserve">
+    <value>粘滞</value>
+  </data>
   <data name="ControllerBox.Text" xml:space="preserve">
     <value>控制器</value>
-  </data>
-  <data name="PadsSubMenu.Text" xml:space="preserve">
-    <value>手柄(&amp;P)</value>
-  </data>
-  <data name="ClearClearsAnalogInputMenuItem.Text" xml:space="preserve">
-    <value>清空时同时清空模拟输入(&amp;C)</value>
-  </data>
-  <data name="SettingsSubMenu.Text" xml:space="preserve">
-    <value>设置(&amp;S)</value>
   </data>
   <data name="ClearAllMenuItem.Text" xml:space="preserve">
     <value>清空所有(&amp;C)</value>
@@ -137,5 +134,14 @@
   </data>
   <data name="ExitMenuItem.Text" xml:space="preserve">
     <value>退出(&amp;X)</value>
+  </data>
+  <data name="PadsSubMenu.Text" xml:space="preserve">
+    <value>手柄(&amp;P)</value>
+  </data>
+  <data name="ClearClearsAnalogInputMenuItem.Text" xml:space="preserve">
+    <value>清空时同时清空模拟输入(&amp;C)</value>
+  </data>
+  <data name="SettingsSubMenu.Text" xml:space="preserve">
+    <value>设置(&amp;S)</value>
   </data>
 </root>

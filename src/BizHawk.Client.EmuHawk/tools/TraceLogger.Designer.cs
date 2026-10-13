@@ -70,10 +70,10 @@ namespace BizHawk.Client.EmuHawk
             // 
             // TraceView
             // 
-            resources.ApplyResources(this.TraceView, "TraceView");
             this.TraceView.AllowColumnReorder = false;
             this.TraceView.AllowColumnResize = true;
             this.TraceView.AlwaysScroll = false;
+            resources.ApplyResources(this.TraceView, "TraceView");
             this.TraceView.CellHeightPadding = 0;
             this.TraceView.CellWidthPadding = 0;
             this.TraceView.ContextMenuStrip = this.TraceContextMenu;
@@ -87,12 +87,12 @@ namespace BizHawk.Client.EmuHawk
             // 
             // TraceContextMenu
             // 
-            resources.ApplyResources(this.TraceContextMenu, "TraceContextMenu");
             this.TraceContextMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.CopyContextMenu,
             this.SelectAllContextMenu,
             this.ClearContextMenu});
             this.TraceContextMenu.Name = "TraceContextMenu";
+            resources.ApplyResources(this.TraceContextMenu, "TraceContextMenu");
             // 
             // CopyContextMenu
             // 
@@ -111,17 +111,17 @@ namespace BizHawk.Client.EmuHawk
             // 
             // menuStrip1
             // 
-            resources.ApplyResources(this.menuStrip1, "menuStrip1");
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.FileSubMenu,
             this.EditSubMenu,
             this.OptionsSubMenu});
+            resources.ApplyResources(this.menuStrip1, "menuStrip1");
             // 
             // FileSubMenu
             // 
-            resources.ApplyResources(this.FileSubMenu, "FileSubMenu");
             this.FileSubMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.SaveLogMenuItem});
+            resources.ApplyResources(this.FileSubMenu, "FileSubMenu");
             // 
             // SaveLogMenuItem
             // 
@@ -130,11 +130,11 @@ namespace BizHawk.Client.EmuHawk
             // 
             // EditSubMenu
             // 
-            resources.ApplyResources(this.EditSubMenu, "EditSubMenu");
             this.EditSubMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.CopyMenuItem,
             this.SelectAllMenuItem,
             this.ClearMenuItem});
+            resources.ApplyResources(this.EditSubMenu, "EditSubMenu");
             // 
             // CopyMenuItem
             // 
@@ -153,10 +153,10 @@ namespace BizHawk.Client.EmuHawk
             // 
             // OptionsSubMenu
             // 
-            resources.ApplyResources(this.OptionsSubMenu, "OptionsSubMenu");
             this.OptionsSubMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.MaxLinesMenuItem,
             this.SegmentSizeMenuItem});
+            resources.ApplyResources(this.OptionsSubMenu, "OptionsSubMenu");
             // 
             // MaxLinesMenuItem
             // 

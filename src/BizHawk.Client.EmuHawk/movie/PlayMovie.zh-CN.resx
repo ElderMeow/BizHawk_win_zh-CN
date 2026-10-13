@@ -129,14 +129,14 @@
   <data name="columnHeader6.Text" xml:space="preserve">
     <value>值</value>
   </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>详细信息</value>
+  </data>
   <data name="SubtitlesBtn.Text" xml:space="preserve">
     <value>字幕</value>
   </data>
   <data name="CommentsBtn.Text" xml:space="preserve">
     <value>注释</value>
-  </data>
-  <data name="groupBox1.Text" xml:space="preserve">
-    <value>详细信息</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="ReadOnlyCheckBox.Location" type="System.Drawing.Point, System.Drawing">
@@ -159,6 +159,12 @@
   </data>
   <data name="MatchHashCheckBox.Text" xml:space="preserve">
     <value>检查游戏哈希</value>
+  </data>
+  <data name="editToolStripMenuItem.Text" xml:space="preserve">
+    <value>编辑(&amp;E)</value>
+  </data>
+  <data name="contextMenuStrip1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>116, 26</value>
   </data>
   <data name="StopOnFrameCheckbox.Location" type="System.Drawing.Point, System.Drawing">
     <value>231, 330</value>

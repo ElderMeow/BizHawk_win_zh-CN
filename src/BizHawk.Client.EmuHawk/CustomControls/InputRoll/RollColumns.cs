@@ -71,7 +71,7 @@ namespace BizHawk.Client.EmuHawk
 		{
 			if (this.Any(c => c.Name == column.Name))
 			{
-				throw new InvalidOperationException("A column with this name already exists.");
+				throw new InvalidOperationException(TheLocalizater.TranslateText("A column with this name already exists."));
 			}
 
 			base.Insert(index, column);
@@ -86,7 +86,7 @@ namespace BizHawk.Client.EmuHawk
 			{
 				if (this.Any(c => c.Name == column.Name))
 				{
-					throw new InvalidOperationException("A column with this name already exists.");
+					throw new InvalidOperationException(TheLocalizater.TranslateText("A column with this name already exists."));
 				}
 			}
 

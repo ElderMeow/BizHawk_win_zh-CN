@@ -107,7 +107,7 @@ namespace BizHawk.Client.EmuHawk
 
 			Size = UIHelper.Scale(_schema.Size);
 			MaximumSize = UIHelper.Scale(_schema.Size);
-			PadBox.Text = _schema.DisplayName;
+			PadBox.Text = TheLocalizater.TranslateText(_schema.DisplayName);
 
 			if (_schema.IsConsole)
 			{
@@ -122,7 +122,7 @@ namespace BizHawk.Client.EmuHawk
 					SingleAxisSchema singleAxis => new VirtualPadAnalogButton(
 						_inputManager.StickyHoldController,
 						singleAxis.Name,
-						singleAxis.DisplayName,
+						TheLocalizater.TranslateText(singleAxis.DisplayName),
 						singleAxis.MinValue,
 						singleAxis.MaxValue,
 						singleAxis.IsVertical ? Orientation.Vertical : Orientation.Horizontal

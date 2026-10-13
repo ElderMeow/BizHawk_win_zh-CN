@@ -53,20 +53,19 @@
             // 
             // lvOptions
             // 
-            resources.ApplyResources(this.lvOptions, "lvOptions");
             this.lvOptions.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.colSize,
             this.colHash,
             this.colStandardFilename,
             this.colDescription,
             this.colInfo});
+            resources.ApplyResources(this.lvOptions, "lvOptions");
             this.lvOptions.FullRowSelect = true;
             this.lvOptions.GridLines = true;
             this.lvOptions.HideSelection = false;
             this.lvOptions.Name = "lvOptions";
             this.lvOptions.ShowItemToolTips = true;
             this.lvOptions.SmallImageList = this.imageList1;
-            this.toolTip1.SetToolTip(this.lvOptions, resources.GetString("lvOptions.ToolTip"));
             this.lvOptions.UseCompatibleStateImageBehavior = false;
             this.lvOptions.View = System.Windows.Forms.View.Details;
             this.lvOptions.KeyDown += new System.Windows.Forms.KeyEventHandler(this.LvOptions_KeyDown);
@@ -106,20 +105,17 @@
             this.tableLayoutPanel1.Controls.Add(this.btnClose, 0, 3);
             this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel1, 0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.toolTip1.SetToolTip(this.tableLayoutPanel1, resources.GetString("tableLayoutPanel1.ToolTip"));
             // 
             // label1
             // 
             resources.ApplyResources(this.label1, "label1");
             this.label1.Name = "label1";
-            this.toolTip1.SetToolTip(this.label1, resources.GetString("label1.ToolTip"));
             // 
             // btnClose
             // 
             resources.ApplyResources(this.btnClose, "btnClose");
             this.btnClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnClose.Name = "btnClose";
-            this.toolTip1.SetToolTip(this.btnClose, resources.GetString("btnClose.ToolTip"));
             this.btnClose.UseVisualStyleBackColor = true;
             // 
             // flowLayoutPanel1
@@ -128,27 +124,23 @@
             this.flowLayoutPanel1.Controls.Add(this.label2);
             this.flowLayoutPanel1.Controls.Add(this.lblFirmware);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.toolTip1.SetToolTip(this.flowLayoutPanel1, resources.GetString("flowLayoutPanel1.ToolTip"));
             // 
             // label2
             // 
             resources.ApplyResources(this.label2, "label2");
             this.label2.Name = "label2";
-            this.toolTip1.SetToolTip(this.label2, resources.GetString("label2.ToolTip"));
             // 
             // lblFirmware
             // 
             resources.ApplyResources(this.lblFirmware, "lblFirmware");
             this.lblFirmware.Name = "lblFirmware";
-            this.toolTip1.SetToolTip(this.lblFirmware, resources.GetString("lblFirmware.ToolTip"));
             // 
             // lvmiOptionsContextMenuStrip
             // 
-            resources.ApplyResources(this.lvmiOptionsContextMenuStrip, "lvmiOptionsContextMenuStrip");
             this.lvmiOptionsContextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmiOptionsCopy});
             this.lvmiOptionsContextMenuStrip.Name = "lvmiOptionsContextMenuStrip";
-            this.toolTip1.SetToolTip(this.lvmiOptionsContextMenuStrip, resources.GetString("lvmiOptionsContextMenuStrip.ToolTip"));
+            resources.ApplyResources(this.lvmiOptionsContextMenuStrip, "lvmiOptionsContextMenuStrip");
             // 
             // tsmiOptionsCopy
             // 
@@ -164,7 +156,6 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "FirmwareConfigInfo";
             this.ShowIcon = false;
-            this.toolTip1.SetToolTip(this, resources.GetString("$this.ToolTip"));
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.flowLayoutPanel1.ResumeLayout(false);

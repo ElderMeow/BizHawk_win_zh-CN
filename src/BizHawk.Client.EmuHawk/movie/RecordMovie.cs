@@ -43,7 +43,7 @@ namespace BizHawk.Client.EmuHawk
 			IEmulator core,
 			IMovieSession movieSession)
 		{
-			if (game.IsNullInstance()) throw new InvalidOperationException("how is the traditional Record dialog open with no game loaded? please report this including as much detail as possible");
+			if (game.IsNullInstance()) throw new InvalidOperationException(TheLocalizater.TranslateFormatString("how is the traditional Record dialog open with no game loaded? please report this including as much detail as possible"));
 
 			_mainForm = mainForm;
 			_config = config;

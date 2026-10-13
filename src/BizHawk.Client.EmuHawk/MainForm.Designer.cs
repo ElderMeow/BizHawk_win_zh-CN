@@ -387,7 +387,6 @@ namespace BizHawk.Client.EmuHawk
             // 
             // MainformMenu
             // 
-            resources.ApplyResources(this.MainformMenu, "MainformMenu");
             this.MainformMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.FileSubMenu,
             this.EmulationSubMenu,
@@ -412,12 +411,12 @@ namespace BizHawk.Client.EmuHawk
             this.amstradCPCToolStripMenuItem,
             this.HelpSubMenu});
             this.MainformMenu.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow;
+            resources.ApplyResources(this.MainformMenu, "MainformMenu");
             this.MainformMenu.MenuActivate += new System.EventHandler(this.MainformMenu_MenuActivate);
             this.MainformMenu.MenuDeactivate += new System.EventHandler(this.MainformMenu_MenuDeactivate);
             // 
             // FileSubMenu
             // 
-            resources.ApplyResources(this.FileSubMenu, "FileSubMenu");
             this.FileSubMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.OpenRomMenuItem,
             this.RecentRomSubMenu,
@@ -434,6 +433,7 @@ namespace BizHawk.Client.EmuHawk
             this.ScreenshotSubMenu,
             this.toolStripSeparator4,
             this.ExitMenuItem});
+            resources.ApplyResources(this.FileSubMenu, "FileSubMenu");
             this.FileSubMenu.DropDownOpened += new System.EventHandler(this.FileSubMenu_DropDownOpened);
             // 
             // OpenRomMenuItem
@@ -443,14 +443,10 @@ namespace BizHawk.Client.EmuHawk
             // 
             // RecentRomSubMenu
             // 
-            resources.ApplyResources(this.RecentRomSubMenu, "RecentRomSubMenu");
             this.RecentRomSubMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripSeparator3});
+            resources.ApplyResources(this.RecentRomSubMenu, "RecentRomSubMenu");
             this.RecentRomSubMenu.DropDownOpened += new System.EventHandler(this.RecentRomMenuItem_DropDownOpened);
-            // 
-            // toolStripSeparator3
-            // 
-            resources.ApplyResources(this.toolStripSeparator3, "toolStripSeparator3");
             // 
             // OpenAdvancedMenuItem
             // 
@@ -462,13 +458,8 @@ namespace BizHawk.Client.EmuHawk
             resources.ApplyResources(this.CloseRomMenuItem, "CloseRomMenuItem");
             this.CloseRomMenuItem.Click += new System.EventHandler(this.CloseRomMenuItem_Click);
             // 
-            // toolStripMenuItem1
-            // 
-            resources.ApplyResources(this.toolStripMenuItem1, "toolStripMenuItem1");
-            // 
             // SaveStateSubMenu
             // 
-            resources.ApplyResources(this.SaveStateSubMenu, "SaveStateSubMenu");
             this.SaveStateSubMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.SaveState1MenuItem,
             this.SaveState2MenuItem,
@@ -484,6 +475,7 @@ namespace BizHawk.Client.EmuHawk
             this.SaveNamedStateMenuItem,
             this.toolStripSeparator24,
             this.AutosaveLastSlotMenuItem});
+            resources.ApplyResources(this.SaveStateSubMenu, "SaveStateSubMenu");
             this.SaveStateSubMenu.DropDownOpened += new System.EventHandler(this.SaveStateSubMenu_DropDownOpened);
             // 
             // SaveState1MenuItem
@@ -536,18 +528,10 @@ namespace BizHawk.Client.EmuHawk
             resources.ApplyResources(this.SaveState0MenuItem, "SaveState0MenuItem");
             this.SaveState0MenuItem.Click += new System.EventHandler(this.QuickSavestateMenuItem_Click);
             // 
-            // toolStripSeparator6
-            // 
-            resources.ApplyResources(this.toolStripSeparator6, "toolStripSeparator6");
-            // 
             // SaveNamedStateMenuItem
             // 
             resources.ApplyResources(this.SaveNamedStateMenuItem, "SaveNamedStateMenuItem");
             this.SaveNamedStateMenuItem.Click += new System.EventHandler(this.SaveNamedStateMenuItem_Click);
-            // 
-            // toolStripSeparator24
-            // 
-            resources.ApplyResources(this.toolStripSeparator24, "toolStripSeparator24");
             // 
             // AutosaveLastSlotMenuItem
             // 
@@ -556,7 +540,6 @@ namespace BizHawk.Client.EmuHawk
             // 
             // LoadStateSubMenu
             // 
-            resources.ApplyResources(this.LoadStateSubMenu, "LoadStateSubMenu");
             this.LoadStateSubMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.LoadState1MenuItem,
             this.LoadState2MenuItem,
@@ -572,6 +555,7 @@ namespace BizHawk.Client.EmuHawk
             this.LoadNamedStateMenuItem,
             this.toolStripSeparator21,
             this.AutoloadLastSlotMenuItem});
+            resources.ApplyResources(this.LoadStateSubMenu, "LoadStateSubMenu");
             this.LoadStateSubMenu.DropDownOpened += new System.EventHandler(this.LoadStateSubMenu_DropDownOpened);
             // 
             // LoadState1MenuItem
@@ -624,18 +608,10 @@ namespace BizHawk.Client.EmuHawk
             resources.ApplyResources(this.LoadState0MenuItem, "LoadState0MenuItem");
             this.LoadState0MenuItem.Click += new System.EventHandler(this.QuickLoadstateMenuItem_Click);
             // 
-            // toolStripSeparator7
-            // 
-            resources.ApplyResources(this.toolStripSeparator7, "toolStripSeparator7");
-            // 
             // LoadNamedStateMenuItem
             // 
             resources.ApplyResources(this.LoadNamedStateMenuItem, "LoadNamedStateMenuItem");
             this.LoadNamedStateMenuItem.Click += new System.EventHandler(this.LoadNamedStateMenuItem_Click);
-            // 
-            // toolStripSeparator21
-            // 
-            resources.ApplyResources(this.toolStripSeparator21, "toolStripSeparator21");
             // 
             // AutoloadLastSlotMenuItem
             // 
@@ -644,7 +620,6 @@ namespace BizHawk.Client.EmuHawk
             // 
             // SaveSlotSubMenu
             // 
-            resources.ApplyResources(this.SaveSlotSubMenu, "SaveSlotSubMenu");
             this.SaveSlotSubMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.SelectSlot1MenuItem,
             this.SelectSlot2MenuItem,
@@ -661,6 +636,7 @@ namespace BizHawk.Client.EmuHawk
             this.toolStripSeparator5,
             this.SaveToCurrentSlotMenuItem,
             this.LoadCurrentSlotMenuItem});
+            resources.ApplyResources(this.SaveSlotSubMenu, "SaveSlotSubMenu");
             this.SaveSlotSubMenu.DropDownOpened += new System.EventHandler(this.SaveSlotSubMenu_DropDownOpened);
             // 
             // SelectSlot1MenuItem
@@ -723,10 +699,6 @@ namespace BizHawk.Client.EmuHawk
             resources.ApplyResources(this.NextSlotMenuItem, "NextSlotMenuItem");
             this.NextSlotMenuItem.Click += new System.EventHandler(this.NextSlotMenuItem_Click);
             // 
-            // toolStripSeparator5
-            // 
-            resources.ApplyResources(this.toolStripSeparator5, "toolStripSeparator5");
-            // 
             // SaveToCurrentSlotMenuItem
             // 
             resources.ApplyResources(this.SaveToCurrentSlotMenuItem, "SaveToCurrentSlotMenuItem");
@@ -739,9 +711,9 @@ namespace BizHawk.Client.EmuHawk
             // 
             // SaveRAMSubMenu
             // 
-            resources.ApplyResources(this.SaveRAMSubMenu, "SaveRAMSubMenu");
             this.SaveRAMSubMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.FlushSaveRAMMenuItem});
+            resources.ApplyResources(this.SaveRAMSubMenu, "SaveRAMSubMenu");
             this.SaveRAMSubMenu.DropDownOpened += new System.EventHandler(this.SaveRamSubMenu_DropDownOpened);
             // 
             // FlushSaveRAMMenuItem
@@ -749,13 +721,8 @@ namespace BizHawk.Client.EmuHawk
             resources.ApplyResources(this.FlushSaveRAMMenuItem, "FlushSaveRAMMenuItem");
             this.FlushSaveRAMMenuItem.Click += new System.EventHandler(this.FlushSaveRAMMenuItem_Click);
             // 
-            // toolStripMenuItem2
-            // 
-            resources.ApplyResources(this.toolStripMenuItem2, "toolStripMenuItem2");
-            // 
             // MovieSubMenu
             // 
-            resources.ApplyResources(this.MovieSubMenu, "MovieSubMenu");
             this.MovieSubMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ReadonlyMenuItem,
             this.toolStripSeparator15,
@@ -773,6 +740,7 @@ namespace BizHawk.Client.EmuHawk
             this.AutomaticallyBackupMoviesMenuItem,
             this.FullMovieLoadstatesMenuItem,
             this.MovieEndSubMenu});
+            resources.ApplyResources(this.MovieSubMenu, "MovieSubMenu");
             this.MovieSubMenu.DropDownOpened += new System.EventHandler(this.MovieSubMenu_DropDownOpened);
             // 
             // ReadonlyMenuItem
@@ -780,20 +748,12 @@ namespace BizHawk.Client.EmuHawk
             resources.ApplyResources(this.ReadonlyMenuItem, "ReadonlyMenuItem");
             this.ReadonlyMenuItem.Click += new System.EventHandler(this.ReadonlyMenuItem_Click);
             // 
-            // toolStripSeparator15
-            // 
-            resources.ApplyResources(this.toolStripSeparator15, "toolStripSeparator15");
-            // 
             // RecentMovieSubMenu
             // 
-            resources.ApplyResources(this.RecentMovieSubMenu, "RecentMovieSubMenu");
             this.RecentMovieSubMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripSeparator16});
+            resources.ApplyResources(this.RecentMovieSubMenu, "RecentMovieSubMenu");
             this.RecentMovieSubMenu.DropDownOpened += new System.EventHandler(this.RecentMovieSubMenu_DropDownOpened);
-            // 
-            // toolStripSeparator16
-            // 
-            resources.ApplyResources(this.toolStripSeparator16, "toolStripSeparator16");
             // 
             // RecordMovieMenuItem
             // 
@@ -832,17 +792,13 @@ namespace BizHawk.Client.EmuHawk
             // 
             // toolStripSeparator25
             // 
-            resources.ApplyResources(this.toolStripSeparator25, "toolStripSeparator25");
             this.toolStripSeparator25.Name = "toolStripSeparator25";
+            resources.ApplyResources(this.toolStripSeparator25, "toolStripSeparator25");
             // 
             // ImportMoviesMenuItem
             // 
             resources.ApplyResources(this.ImportMoviesMenuItem, "ImportMoviesMenuItem");
             this.ImportMoviesMenuItem.Click += new System.EventHandler(this.ImportMovieMenuItem_Click);
-            // 
-            // toolStripSeparator14
-            // 
-            resources.ApplyResources(this.toolStripSeparator14, "toolStripSeparator14");
             // 
             // AutomaticallyBackupMoviesMenuItem
             // 
@@ -856,7 +812,6 @@ namespace BizHawk.Client.EmuHawk
             // 
             // MovieEndSubMenu
             // 
-            resources.ApplyResources(this.MovieEndSubMenu, "MovieEndSubMenu");
             this.MovieEndSubMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.MovieEndFinishMenuItem,
             this.MovieEndRecordMenuItem,
@@ -864,6 +819,7 @@ namespace BizHawk.Client.EmuHawk
             this.MovieEndPauseMenuItem,
             this.toolStripSeparator32,
             this.MovieEndPlaySoundMenuItem});
+            resources.ApplyResources(this.MovieEndSubMenu, "MovieEndSubMenu");
             this.MovieEndSubMenu.DropDownOpened += new System.EventHandler(this.MovieEndSubMenu_DropDownOpened);
             // 
             // MovieEndFinishMenuItem
@@ -888,18 +844,17 @@ namespace BizHawk.Client.EmuHawk
             // 
             // toolStripSeparator32
             // 
-            resources.ApplyResources(this.toolStripSeparator32, "toolStripSeparator32");
             this.toolStripSeparator32.Name = "toolStripSeparator32";
+            resources.ApplyResources(this.toolStripSeparator32, "toolStripSeparator32");
             // 
             // MovieEndPlaySoundMenuItem
             // 
-            resources.ApplyResources(this.MovieEndPlaySoundMenuItem, "MovieEndPlaySoundMenuItem");
             this.MovieEndPlaySoundMenuItem.Name = "MovieEndPlaySoundMenuItem";
+            resources.ApplyResources(this.MovieEndPlaySoundMenuItem, "MovieEndPlaySoundMenuItem");
             this.MovieEndPlaySoundMenuItem.Click += new System.EventHandler(this.MovieEndPlaySoundMenuItem_Click);
             // 
             // AVSubMenu
             // 
-            resources.ApplyResources(this.AVSubMenu, "AVSubMenu");
             this.AVSubMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.RecordAVMenuItem,
             this.ConfigAndRecordAVMenuItem,
@@ -908,6 +863,7 @@ namespace BizHawk.Client.EmuHawk
             this.CaptureOSDMenuItem,
             this.CaptureLuaMenuItem,
             this.SynclessRecordingMenuItem});
+            resources.ApplyResources(this.AVSubMenu, "AVSubMenu");
             this.AVSubMenu.DropDownOpened += new System.EventHandler(this.AVSubMenu_DropDownOpened);
             // 
             // RecordAVMenuItem
@@ -925,21 +881,17 @@ namespace BizHawk.Client.EmuHawk
             resources.ApplyResources(this.StopAVMenuItem, "StopAVMenuItem");
             this.StopAVMenuItem.Click += new System.EventHandler(this.StopAVMenuItem_Click);
             // 
-            // toolStripSeparator19
-            // 
-            resources.ApplyResources(this.toolStripSeparator19, "toolStripSeparator19");
-            // 
             // CaptureOSDMenuItem
             // 
-            resources.ApplyResources(this.CaptureOSDMenuItem, "CaptureOSDMenuItem");
             this.CaptureOSDMenuItem.CheckOnClick = true;
+            resources.ApplyResources(this.CaptureOSDMenuItem, "CaptureOSDMenuItem");
             this.CaptureOSDMenuItem.Click += new System.EventHandler(this.CaptureOSDMenuItem_Click);
             // 
             // CaptureLuaMenuItem
             // 
-            resources.ApplyResources(this.CaptureLuaMenuItem, "CaptureLuaMenuItem");
             this.CaptureLuaMenuItem.CheckOnClick = true;
             this.CaptureLuaMenuItem.Name = "CaptureLuaMenuItem";
+            resources.ApplyResources(this.CaptureLuaMenuItem, "CaptureLuaMenuItem");
             this.CaptureLuaMenuItem.Click += new System.EventHandler(this.CaptureLuaMenuItem_Click);
             // 
             // SynclessRecordingMenuItem
@@ -948,7 +900,6 @@ namespace BizHawk.Client.EmuHawk
             // 
             // ScreenshotSubMenu
             // 
-            resources.ApplyResources(this.ScreenshotSubMenu, "ScreenshotSubMenu");
             this.ScreenshotSubMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ScreenshotMenuItem,
             this.ScreenshotAsMenuItem,
@@ -956,6 +907,7 @@ namespace BizHawk.Client.EmuHawk
             this.ScreenshotClientClipboardMenuItem,
             this.toolStripSeparator20,
             this.ScreenshotCaptureOSDMenuItem1});
+            resources.ApplyResources(this.ScreenshotSubMenu, "ScreenshotSubMenu");
             this.ScreenshotSubMenu.DropDownOpening += new System.EventHandler(this.ScreenshotSubMenu_DropDownOpening);
             // 
             // ScreenshotMenuItem
@@ -978,18 +930,10 @@ namespace BizHawk.Client.EmuHawk
             resources.ApplyResources(this.ScreenshotClientClipboardMenuItem, "ScreenshotClientClipboardMenuItem");
             this.ScreenshotClientClipboardMenuItem.Click += new System.EventHandler(this.ScreenshotClientClipboardMenuItem_Click);
             // 
-            // toolStripSeparator20
-            // 
-            resources.ApplyResources(this.toolStripSeparator20, "toolStripSeparator20");
-            // 
             // ScreenshotCaptureOSDMenuItem1
             // 
             resources.ApplyResources(this.ScreenshotCaptureOSDMenuItem1, "ScreenshotCaptureOSDMenuItem1");
             this.ScreenshotCaptureOSDMenuItem1.Click += new System.EventHandler(this.ScreenshotCaptureOSDMenuItem_Click);
-            // 
-            // toolStripSeparator4
-            // 
-            resources.ApplyResources(this.toolStripSeparator4, "toolStripSeparator4");
             // 
             // ExitMenuItem
             // 
@@ -998,7 +942,6 @@ namespace BizHawk.Client.EmuHawk
             // 
             // EmulationSubMenu
             // 
-            resources.ApplyResources(this.EmulationSubMenu, "EmulationSubMenu");
             this.EmulationSubMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.PauseMenuItem,
             this.toolStripSeparator1,
@@ -1007,16 +950,13 @@ namespace BizHawk.Client.EmuHawk
             this.HardResetMenuItem,
             this.EmulatorMenuSeparator2,
             this.LoadedCoreNameMenuItem});
+            resources.ApplyResources(this.EmulationSubMenu, "EmulationSubMenu");
             this.EmulationSubMenu.DropDownOpened += new System.EventHandler(this.EmulationMenuItem_DropDownOpened);
             // 
             // PauseMenuItem
             // 
             resources.ApplyResources(this.PauseMenuItem, "PauseMenuItem");
             this.PauseMenuItem.Click += new System.EventHandler(this.PauseMenuItem_Click);
-            // 
-            // toolStripSeparator1
-            // 
-            resources.ApplyResources(this.toolStripSeparator1, "toolStripSeparator1");
             // 
             // RebootCoreMenuItem
             // 
@@ -1033,17 +973,12 @@ namespace BizHawk.Client.EmuHawk
             resources.ApplyResources(this.HardResetMenuItem, "HardResetMenuItem");
             this.HardResetMenuItem.Click += new System.EventHandler(this.HardResetMenuItem_Click);
             // 
-            // EmulatorMenuSeparator2
-            // 
-            resources.ApplyResources(this.EmulatorMenuSeparator2, "EmulatorMenuSeparator2");
-            // 
             // LoadedCoreNameMenuItem
             // 
             resources.ApplyResources(this.LoadedCoreNameMenuItem, "LoadedCoreNameMenuItem");
             // 
             // ViewSubMenu
             // 
-            resources.ApplyResources(this.ViewSubMenu, "ViewSubMenu");
             this.ViewSubMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.WindowSizeSubMenu,
             this.SwitchToFullscreenMenuItem,
@@ -1059,34 +994,27 @@ namespace BizHawk.Client.EmuHawk
             this.DisplayMessagesMenuItem,
             this.toolStripSeparator8,
             this.DisplayLogWindowMenuItem});
+            resources.ApplyResources(this.ViewSubMenu, "ViewSubMenu");
             this.ViewSubMenu.DropDownOpened += new System.EventHandler(this.ViewSubMenu_DropDownOpened);
             // 
             // WindowSizeSubMenu
             // 
-            resources.ApplyResources(this.WindowSizeSubMenu, "WindowSizeSubMenu");
             this.WindowSizeSubMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripSeparator26,
             this.DisableResizeWithFramebufferMenuItem});
+            resources.ApplyResources(this.WindowSizeSubMenu, "WindowSizeSubMenu");
             this.WindowSizeSubMenu.DropDownOpened += new System.EventHandler(this.WindowSizeSubMenu_DropDownOpened);
-            // 
-            // toolStripSeparator26
-            // 
-            resources.ApplyResources(this.toolStripSeparator26, "toolStripSeparator26");
             // 
             // DisableResizeWithFramebufferMenuItem
             // 
-            resources.ApplyResources(this.DisableResizeWithFramebufferMenuItem, "DisableResizeWithFramebufferMenuItem");
             this.DisableResizeWithFramebufferMenuItem.CheckOnClick = true;
+            resources.ApplyResources(this.DisableResizeWithFramebufferMenuItem, "DisableResizeWithFramebufferMenuItem");
             this.DisableResizeWithFramebufferMenuItem.Click += new System.EventHandler(this.DisableResizeWithFramebufferMenuItem_Click);
             // 
             // SwitchToFullscreenMenuItem
             // 
             resources.ApplyResources(this.SwitchToFullscreenMenuItem, "SwitchToFullscreenMenuItem");
             this.SwitchToFullscreenMenuItem.Click += new System.EventHandler(this.SwitchToFullscreenMenuItem_Click);
-            // 
-            // toolStripSeparator2
-            // 
-            resources.ApplyResources(this.toolStripSeparator2, "toolStripSeparator2");
             // 
             // DisplayFPSMenuItem
             // 
@@ -1118,10 +1046,6 @@ namespace BizHawk.Client.EmuHawk
             resources.ApplyResources(this.DisplaySubtitlesMenuItem, "DisplaySubtitlesMenuItem");
             this.DisplaySubtitlesMenuItem.Click += new System.EventHandler(this.DisplaySubtitlesMenuItem_Click);
             // 
-            // toolStripMenuItem4
-            // 
-            resources.ApplyResources(this.toolStripMenuItem4, "toolStripMenuItem4");
-            // 
             // DisplayStatusBarMenuItem
             // 
             resources.ApplyResources(this.DisplayStatusBarMenuItem, "DisplayStatusBarMenuItem");
@@ -1132,10 +1056,6 @@ namespace BizHawk.Client.EmuHawk
             resources.ApplyResources(this.DisplayMessagesMenuItem, "DisplayMessagesMenuItem");
             this.DisplayMessagesMenuItem.Click += new System.EventHandler(this.DisplayMessagesMenuItem_Click);
             // 
-            // toolStripSeparator8
-            // 
-            resources.ApplyResources(this.toolStripSeparator8, "toolStripSeparator8");
-            // 
             // DisplayLogWindowMenuItem
             // 
             resources.ApplyResources(this.DisplayLogWindowMenuItem, "DisplayLogWindowMenuItem");
@@ -1143,7 +1063,6 @@ namespace BizHawk.Client.EmuHawk
             // 
             // ConfigSubMenu
             // 
-            resources.ApplyResources(this.ConfigSubMenu, "ConfigSubMenu");
             this.ConfigSubMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ControllersMenuItem,
             this.HotkeysMenuItem,
@@ -1166,6 +1085,7 @@ namespace BizHawk.Client.EmuHawk
             this.SaveConfigAsMenuItem,
             this.LoadConfigMenuItem,
             this.LoadConfigFromMenuItem});
+            resources.ApplyResources(this.ConfigSubMenu, "ConfigSubMenu");
             this.ConfigSubMenu.DropDownOpened += new System.EventHandler(this.ConfigSubMenu_DropDownOpened);
             // 
             // ControllersMenuItem
@@ -1228,13 +1148,8 @@ namespace BizHawk.Client.EmuHawk
             resources.ApplyResources(this.ProfilesMenuItem, "ProfilesMenuItem");
             this.ProfilesMenuItem.Click += new System.EventHandler(this.ProfilesMenuItem_Click);
             // 
-            // toolStripSeparator9
-            // 
-            resources.ApplyResources(this.toolStripSeparator9, "toolStripSeparator9");
-            // 
             // SpeedSkipSubMenu
             // 
-            resources.ApplyResources(this.SpeedSkipSubMenu, "SpeedSkipSubMenu");
             this.SpeedSkipSubMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ClockThrottleMenuItem,
             this.AudioThrottleMenuItem,
@@ -1253,6 +1168,7 @@ namespace BizHawk.Client.EmuHawk
             this.Speed150MenuItem,
             this.Speed200MenuItem,
             this.Speed400MenuItem});
+            resources.ApplyResources(this.SpeedSkipSubMenu, "SpeedSkipSubMenu");
             this.SpeedSkipSubMenu.DropDownOpened += new System.EventHandler(this.FrameSkipMenuItem_DropDownOpened);
             // 
             // ClockThrottleMenuItem
@@ -1270,18 +1186,10 @@ namespace BizHawk.Client.EmuHawk
             resources.ApplyResources(this.VsyncThrottleMenuItem, "VsyncThrottleMenuItem");
             this.VsyncThrottleMenuItem.Click += new System.EventHandler(this.VsyncThrottleMenuItem_Click);
             // 
-            // toolStripSeparator27
-            // 
-            resources.ApplyResources(this.toolStripSeparator27, "toolStripSeparator27");
-            // 
             // VsyncEnabledMenuItem
             // 
             resources.ApplyResources(this.VsyncEnabledMenuItem, "VsyncEnabledMenuItem");
             this.VsyncEnabledMenuItem.Click += new System.EventHandler(this.VsyncEnabledMenuItem_Click);
-            // 
-            // toolStripMenuItem3
-            // 
-            resources.ApplyResources(this.toolStripMenuItem3, "toolStripMenuItem3");
             // 
             // miUnthrottled
             // 
@@ -1300,7 +1208,6 @@ namespace BizHawk.Client.EmuHawk
             // 
             // toolStripMenuItem17
             // 
-            resources.ApplyResources(this.toolStripMenuItem17, "toolStripMenuItem17");
             this.toolStripMenuItem17.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.Frameskip1MenuItem,
             this.Frameskip2MenuItem,
@@ -1311,6 +1218,7 @@ namespace BizHawk.Client.EmuHawk
             this.Frameskip7MenuItem,
             this.Frameskip8MenuItem,
             this.Frameskip9MenuItem});
+            resources.ApplyResources(this.toolStripMenuItem17, "toolStripMenuItem17");
             // 
             // Frameskip1MenuItem
             // 
@@ -1357,10 +1265,6 @@ namespace BizHawk.Client.EmuHawk
             resources.ApplyResources(this.Frameskip9MenuItem, "Frameskip9MenuItem");
             this.Frameskip9MenuItem.Click += new System.EventHandler(this.Frameskip9MenuItem_Click);
             // 
-            // toolStripMenuItem5
-            // 
-            resources.ApplyResources(this.toolStripMenuItem5, "toolStripMenuItem5");
-            // 
             // Speed50MenuItem
             // 
             resources.ApplyResources(this.Speed50MenuItem, "Speed50MenuItem");
@@ -1393,11 +1297,11 @@ namespace BizHawk.Client.EmuHawk
             // 
             // KeyPrioritySubMenu
             // 
-            resources.ApplyResources(this.KeyPrioritySubMenu, "KeyPrioritySubMenu");
             this.KeyPrioritySubMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.BothHkAndControllerMenuItem,
             this.InputOverHkMenuItem,
             this.HkOverInputMenuItem});
+            resources.ApplyResources(this.KeyPrioritySubMenu, "KeyPrioritySubMenu");
             this.KeyPrioritySubMenu.DropDownOpened += new System.EventHandler(this.KeyPriorityMenuItem_DropDownOpened);
             // 
             // BothHkAndControllerMenuItem
@@ -1418,10 +1322,6 @@ namespace BizHawk.Client.EmuHawk
             // CoresSubMenu
             // 
             resources.ApplyResources(this.CoresSubMenu, "CoresSubMenu");
-            // 
-            // toolStripSeparator10
-            // 
-            resources.ApplyResources(this.toolStripSeparator10, "toolStripSeparator10");
             // 
             // SaveConfigMenuItem
             // 
@@ -1445,7 +1345,6 @@ namespace BizHawk.Client.EmuHawk
             // 
             // ToolsSubMenu
             // 
-            resources.ApplyResources(this.ToolsSubMenu, "ToolsSubMenu");
             this.ToolsSubMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ToolBoxMenuItem,
             this.toolStripSeparator12,
@@ -1468,16 +1367,13 @@ namespace BizHawk.Client.EmuHawk
             this.BatchRunnerMenuItem,
             this.ExternalToolMenuItem,
             this.RetroAchievementsMenuItem});
+            resources.ApplyResources(this.ToolsSubMenu, "ToolsSubMenu");
             this.ToolsSubMenu.DropDownOpened += new System.EventHandler(this.ToolsSubMenu_DropDownOpened);
             // 
             // ToolBoxMenuItem
             // 
             resources.ApplyResources(this.ToolBoxMenuItem, "ToolBoxMenuItem");
             this.ToolBoxMenuItem.Click += new System.EventHandler(this.ToolBoxMenuItem_Click);
-            // 
-            // toolStripSeparator12
-            // 
-            resources.ApplyResources(this.toolStripSeparator12, "toolStripSeparator12");
             // 
             // RamWatchMenuItem
             // 
@@ -1534,10 +1430,6 @@ namespace BizHawk.Client.EmuHawk
             resources.ApplyResources(this.BasicBotMenuItem, "BasicBotMenuItem");
             this.BasicBotMenuItem.Click += new System.EventHandler(this.BasicBotMenuItem_Click);
             // 
-            // toolStripSeparator11
-            // 
-            resources.ApplyResources(this.toolStripSeparator11, "toolStripSeparator11");
-            // 
             // CheatsMenuItem
             // 
             resources.ApplyResources(this.CheatsMenuItem, "CheatsMenuItem");
@@ -1547,10 +1439,6 @@ namespace BizHawk.Client.EmuHawk
             // 
             resources.ApplyResources(this.GameSharkConverterMenuItem, "GameSharkConverterMenuItem");
             this.GameSharkConverterMenuItem.Click += new System.EventHandler(this.CheatCodeConverterMenuItem_Click);
-            // 
-            // toolStripSeparator29
-            // 
-            resources.ApplyResources(this.toolStripSeparator29, "toolStripSeparator29");
             // 
             // MultiDiskBundlerFileMenuItem
             // 
@@ -1564,9 +1452,9 @@ namespace BizHawk.Client.EmuHawk
             // 
             // ExternalToolMenuItem
             // 
-            resources.ApplyResources(this.ExternalToolMenuItem, "ExternalToolMenuItem");
             this.ExternalToolMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.dummyExternalTool});
+            resources.ApplyResources(this.ExternalToolMenuItem, "ExternalToolMenuItem");
             this.ExternalToolMenuItem.DropDownOpening += new System.EventHandler(this.ExternalToolMenuItem_DropDownOpening);
             // 
             // dummyExternalTool
@@ -1575,9 +1463,9 @@ namespace BizHawk.Client.EmuHawk
             // 
             // RetroAchievementsMenuItem
             // 
-            resources.ApplyResources(this.RetroAchievementsMenuItem, "RetroAchievementsMenuItem");
             this.RetroAchievementsMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.StartRetroAchievementsMenuItem});
+            resources.ApplyResources(this.RetroAchievementsMenuItem, "RetroAchievementsMenuItem");
             // 
             // StartRetroAchievementsMenuItem
             // 
@@ -1586,7 +1474,6 @@ namespace BizHawk.Client.EmuHawk
             // 
             // NESSubMenu
             // 
-            resources.ApplyResources(this.NESSubMenu, "NESSubMenu");
             this.NESSubMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.NESPPUViewerMenuItem,
             this.NESNametableViewerMenuItem,
@@ -1601,6 +1488,7 @@ namespace BizHawk.Client.EmuHawk
             this.FDSControlsMenuItem,
             this.VSControlsMenuItem,
             this.BarcodeReaderMenuItem});
+            resources.ApplyResources(this.NESSubMenu, "NESSubMenu");
             this.NESSubMenu.DropDownOpened += new System.EventHandler(this.NesSubMenu_DropDownOpened);
             // 
             // NESPPUViewerMenuItem
@@ -1617,10 +1505,6 @@ namespace BizHawk.Client.EmuHawk
             // 
             resources.ApplyResources(this.MusicRipperMenuItem, "MusicRipperMenuItem");
             this.MusicRipperMenuItem.Click += new System.EventHandler(this.MusicRipperMenuItem_Click);
-            // 
-            // toolStripSeparator17
-            // 
-            resources.ApplyResources(this.toolStripSeparator17, "toolStripSeparator17");
             // 
             // NesControllerSettingsMenuItem
             // 
@@ -1647,15 +1531,11 @@ namespace BizHawk.Client.EmuHawk
             resources.ApplyResources(this.MovieSettingsMenuItem, "MovieSettingsMenuItem");
             this.MovieSettingsMenuItem.Click += new System.EventHandler(this.MovieSettingsMenuItem_Click);
             // 
-            // toolStripSeparator22
-            // 
-            resources.ApplyResources(this.toolStripSeparator22, "toolStripSeparator22");
-            // 
             // FDSControlsMenuItem
             // 
-            resources.ApplyResources(this.FDSControlsMenuItem, "FDSControlsMenuItem");
             this.FDSControlsMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.FdsEjectDiskMenuItem});
+            resources.ApplyResources(this.FDSControlsMenuItem, "FDSControlsMenuItem");
             this.FDSControlsMenuItem.DropDownOpened += new System.EventHandler(this.FdsControlsMenuItem_DropDownOpened);
             // 
             // FdsEjectDiskMenuItem
@@ -1665,11 +1545,11 @@ namespace BizHawk.Client.EmuHawk
             // 
             // VSControlsMenuItem
             // 
-            resources.ApplyResources(this.VSControlsMenuItem, "VSControlsMenuItem");
             this.VSControlsMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.VSInsertCoinP1MenuItem,
             this.VSInsertCoinP2MenuItem,
             this.VSServiceSwitchMenuItem});
+            resources.ApplyResources(this.VSControlsMenuItem, "VSControlsMenuItem");
             // 
             // VSInsertCoinP1MenuItem
             // 
@@ -1693,12 +1573,12 @@ namespace BizHawk.Client.EmuHawk
             // 
             // TI83SubMenu
             // 
-            resources.ApplyResources(this.TI83SubMenu, "TI83SubMenu");
             this.TI83SubMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.KeypadMenuItem,
             this.LoadTIFileMenuItem,
             this.toolStripSeparator13,
             this.paletteToolStripMenuItem});
+            resources.ApplyResources(this.TI83SubMenu, "TI83SubMenu");
             // 
             // KeypadMenuItem
             // 
@@ -1710,10 +1590,6 @@ namespace BizHawk.Client.EmuHawk
             resources.ApplyResources(this.LoadTIFileMenuItem, "LoadTIFileMenuItem");
             this.LoadTIFileMenuItem.Click += new System.EventHandler(this.Ti83LoadTIFileMenuItem_Click);
             // 
-            // toolStripSeparator13
-            // 
-            resources.ApplyResources(this.toolStripSeparator13, "toolStripSeparator13");
-            // 
             // paletteToolStripMenuItem
             // 
             resources.ApplyResources(this.paletteToolStripMenuItem, "paletteToolStripMenuItem");
@@ -1721,10 +1597,10 @@ namespace BizHawk.Client.EmuHawk
             // 
             // A7800SubMenu
             // 
-            resources.ApplyResources(this.A7800SubMenu, "A7800SubMenu");
             this.A7800SubMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.A7800ControllerSettingsMenuItem,
             this.A7800FilterSettingsMenuItem});
+            resources.ApplyResources(this.A7800SubMenu, "A7800SubMenu");
             this.A7800SubMenu.DropDownOpened += new System.EventHandler(this.A7800SubMenu_DropDownOpened);
             // 
             // A7800ControllerSettingsMenuItem
@@ -1739,13 +1615,13 @@ namespace BizHawk.Client.EmuHawk
             // 
             // GBSubMenu
             // 
-            resources.ApplyResources(this.GBSubMenu, "GBSubMenu");
             this.GBSubMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.GBcoreSettingsToolStripMenuItem,
             this.SameBoyColorChooserMenuItem,
             this.toolStripSeparator28,
             this.GBGPUViewerMenuItem,
             this.GBPrinterViewerMenuItem});
+            resources.ApplyResources(this.GBSubMenu, "GBSubMenu");
             // 
             // GBcoreSettingsToolStripMenuItem
             // 
@@ -1756,10 +1632,6 @@ namespace BizHawk.Client.EmuHawk
             // 
             resources.ApplyResources(this.SameBoyColorChooserMenuItem, "SameBoyColorChooserMenuItem");
             this.SameBoyColorChooserMenuItem.Click += new System.EventHandler(this.SameboyColorChooserMenuItem_Click);
-            // 
-            // toolStripSeparator28
-            // 
-            resources.ApplyResources(this.toolStripSeparator28, "toolStripSeparator28");
             // 
             // GBGPUViewerMenuItem
             // 
@@ -1773,12 +1645,12 @@ namespace BizHawk.Client.EmuHawk
             // 
             // PSXSubMenu
             // 
-            resources.ApplyResources(this.PSXSubMenu, "PSXSubMenu");
             this.PSXSubMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.PSXControllerSettingsMenuItem,
             this.PSXOptionsMenuItem,
             this.PSXDiscControlsMenuItem,
             this.PSXHashDiscsToolStripMenuItem});
+            resources.ApplyResources(this.PSXSubMenu, "PSXSubMenu");
             this.PSXSubMenu.DropDownOpened += new System.EventHandler(this.PsxSubMenu_DropDownOpened);
             // 
             // PSXControllerSettingsMenuItem
@@ -1803,22 +1675,18 @@ namespace BizHawk.Client.EmuHawk
             // 
             // SNESSubMenu
             // 
-            resources.ApplyResources(this.SNESSubMenu, "SNESSubMenu");
             this.SNESSubMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.SNESControllerConfigurationMenuItem,
             this.toolStripSeparator18,
             this.SnesGfxDebuggerMenuItem,
             this.SnesOptionsMenuItem});
+            resources.ApplyResources(this.SNESSubMenu, "SNESSubMenu");
             this.SNESSubMenu.DropDownOpened += new System.EventHandler(this.SnesSubMenu_DropDownOpened);
             // 
             // SNESControllerConfigurationMenuItem
             // 
             resources.ApplyResources(this.SNESControllerConfigurationMenuItem, "SNESControllerConfigurationMenuItem");
             this.SNESControllerConfigurationMenuItem.Click += new System.EventHandler(this.SNESControllerConfigurationMenuItem_Click);
-            // 
-            // toolStripSeparator18
-            // 
-            resources.ApplyResources(this.toolStripSeparator18, "toolStripSeparator18");
             // 
             // SnesGfxDebuggerMenuItem
             // 
@@ -1832,22 +1700,18 @@ namespace BizHawk.Client.EmuHawk
             // 
             // ColecoSubMenu
             // 
-            resources.ApplyResources(this.ColecoSubMenu, "ColecoSubMenu");
             this.ColecoSubMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ColecoControllerSettingsMenuItem,
             this.toolStripSeparator35,
             this.ColecoSkipBiosMenuItem,
             this.ColecoUseSGMMenuItem});
+            resources.ApplyResources(this.ColecoSubMenu, "ColecoSubMenu");
             this.ColecoSubMenu.DropDownOpened += new System.EventHandler(this.ColecoSubMenu_DropDownOpened);
             // 
             // ColecoControllerSettingsMenuItem
             // 
             resources.ApplyResources(this.ColecoControllerSettingsMenuItem, "ColecoControllerSettingsMenuItem");
             this.ColecoControllerSettingsMenuItem.Click += new System.EventHandler(this.ColecoControllerSettingsMenuItem_Click);
-            // 
-            // toolStripSeparator35
-            // 
-            resources.ApplyResources(this.toolStripSeparator35, "toolStripSeparator35");
             // 
             // ColecoSkipBiosMenuItem
             // 
@@ -1861,7 +1725,6 @@ namespace BizHawk.Client.EmuHawk
             // 
             // N64SubMenu
             // 
-            resources.ApplyResources(this.N64SubMenu, "N64SubMenu");
             this.N64SubMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.N64PluginSettingsMenuItem,
             this.N64ControllerSettingsMenuItem,
@@ -1869,6 +1732,7 @@ namespace BizHawk.Client.EmuHawk
             this.N64CircularAnalogRangeMenuItem,
             this.MupenStyleLagMenuItem,
             this.N64ExpansionSlotMenuItem});
+            resources.ApplyResources(this.N64SubMenu, "N64SubMenu");
             this.N64SubMenu.DropDownOpened += new System.EventHandler(this.N64SubMenu_DropDownOpened);
             // 
             // N64PluginSettingsMenuItem
@@ -1880,10 +1744,6 @@ namespace BizHawk.Client.EmuHawk
             // 
             resources.ApplyResources(this.N64ControllerSettingsMenuItem, "N64ControllerSettingsMenuItem");
             this.N64ControllerSettingsMenuItem.Click += new System.EventHandler(this.N64ControllerSettingsMenuItem_Click);
-            // 
-            // toolStripSeparator23
-            // 
-            resources.ApplyResources(this.toolStripSeparator23, "toolStripSeparator23");
             // 
             // N64CircularAnalogRangeMenuItem
             // 
@@ -1902,10 +1762,10 @@ namespace BizHawk.Client.EmuHawk
             // 
             // Ares64SubMenu
             // 
-            resources.ApplyResources(this.Ares64SubMenu, "Ares64SubMenu");
             this.Ares64SubMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.Ares64SettingsMenuItem,
             this.Ares64CircularAnalogRangeMenuItem});
+            resources.ApplyResources(this.Ares64SubMenu, "Ares64SubMenu");
             this.Ares64SubMenu.DropDownOpened += new System.EventHandler(this.Ares64SubMenu_DropDownOpened);
             // 
             // Ares64SettingsMenuItem
@@ -1920,9 +1780,9 @@ namespace BizHawk.Client.EmuHawk
             // 
             // GBLSubMenu
             // 
-            resources.ApplyResources(this.GBLSubMenu, "GBLSubMenu");
             this.GBLSubMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.GBLsettingsToolStripMenuItem});
+            resources.ApplyResources(this.GBLSubMenu, "GBLSubMenu");
             // 
             // GBLsettingsToolStripMenuItem
             // 
@@ -1931,22 +1791,18 @@ namespace BizHawk.Client.EmuHawk
             // 
             // AppleSubMenu
             // 
-            resources.ApplyResources(this.AppleSubMenu, "AppleSubMenu");
             this.AppleSubMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.AppleDisksSubMenu,
             this.settingsToolStripMenuItem1});
+            resources.ApplyResources(this.AppleSubMenu, "AppleSubMenu");
             this.AppleSubMenu.DropDownOpened += new System.EventHandler(this.AppleSubMenu_DropDownOpened);
             // 
             // AppleDisksSubMenu
             // 
-            resources.ApplyResources(this.AppleDisksSubMenu, "AppleDisksSubMenu");
             this.AppleDisksSubMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripSeparator31});
+            resources.ApplyResources(this.AppleDisksSubMenu, "AppleDisksSubMenu");
             this.AppleDisksSubMenu.DropDownOpened += new System.EventHandler(this.AppleDisksSubMenu_DropDownOpened);
-            // 
-            // toolStripSeparator31
-            // 
-            resources.ApplyResources(this.toolStripSeparator31, "toolStripSeparator31");
             // 
             // settingsToolStripMenuItem1
             // 
@@ -1955,22 +1811,18 @@ namespace BizHawk.Client.EmuHawk
             // 
             // C64SubMenu
             // 
-            resources.ApplyResources(this.C64SubMenu, "C64SubMenu");
             this.C64SubMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.C64DisksSubMenu,
             this.C64SettingsMenuItem});
+            resources.ApplyResources(this.C64SubMenu, "C64SubMenu");
             this.C64SubMenu.DropDownOpened += new System.EventHandler(this.C64SubMenu_DropDownOpened);
             // 
             // C64DisksSubMenu
             // 
-            resources.ApplyResources(this.C64DisksSubMenu, "C64DisksSubMenu");
             this.C64DisksSubMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripSeparator36});
+            resources.ApplyResources(this.C64DisksSubMenu, "C64DisksSubMenu");
             this.C64DisksSubMenu.DropDownOpened += new System.EventHandler(this.C64DisksSubMenu_DropDownOpened);
-            // 
-            // toolStripSeparator36
-            // 
-            resources.ApplyResources(this.toolStripSeparator36, "toolStripSeparator36");
             // 
             // C64SettingsMenuItem
             // 
@@ -1979,9 +1831,9 @@ namespace BizHawk.Client.EmuHawk
             // 
             // IntvSubMenu
             // 
-            resources.ApplyResources(this.IntvSubMenu, "IntvSubMenu");
             this.IntvSubMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.IntVControllerSettingsMenuItem});
+            resources.ApplyResources(this.IntvSubMenu, "IntvSubMenu");
             this.IntvSubMenu.DropDownOpened += new System.EventHandler(this.IntVSubMenu_DropDownOpened);
             // 
             // IntVControllerSettingsMenuItem
@@ -1991,13 +1843,13 @@ namespace BizHawk.Client.EmuHawk
             // 
             // zXSpectrumToolStripMenuItem
             // 
-            resources.ApplyResources(this.zXSpectrumToolStripMenuItem, "zXSpectrumToolStripMenuItem");
             this.zXSpectrumToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ZXSpectrumCoreEmulationSettingsMenuItem,
             this.ZXSpectrumControllerConfigurationMenuItem,
             this.ZXSpectrumAudioSettingsMenuItem,
             this.ZXSpectrumNonSyncSettingsMenuItem,
             this.ZXSpectrumMediaMenuItem});
+            resources.ApplyResources(this.zXSpectrumToolStripMenuItem, "zXSpectrumToolStripMenuItem");
             // 
             // ZXSpectrumCoreEmulationSettingsMenuItem
             // 
@@ -2021,18 +1873,18 @@ namespace BizHawk.Client.EmuHawk
             // 
             // ZXSpectrumMediaMenuItem
             // 
-            resources.ApplyResources(this.ZXSpectrumMediaMenuItem, "ZXSpectrumMediaMenuItem");
             this.ZXSpectrumMediaMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ZXSpectrumTapesSubMenu,
             this.ZXSpectrumDisksSubMenu,
             this.ZXSpectrumExportSnapshotMenuItemMenuItem});
+            resources.ApplyResources(this.ZXSpectrumMediaMenuItem, "ZXSpectrumMediaMenuItem");
             this.ZXSpectrumMediaMenuItem.DropDownOpened += new System.EventHandler(this.ZXSpectrumMediaMenuItem_DropDownOpened);
             // 
             // ZXSpectrumTapesSubMenu
             // 
-            resources.ApplyResources(this.ZXSpectrumTapesSubMenu, "ZXSpectrumTapesSubMenu");
             this.ZXSpectrumTapesSubMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.zxt1ToolStripMenuItem});
+            resources.ApplyResources(this.ZXSpectrumTapesSubMenu, "ZXSpectrumTapesSubMenu");
             this.ZXSpectrumTapesSubMenu.DropDownOpened += new System.EventHandler(this.ZXSpectrumTapesSubMenu_DropDownOpened);
             // 
             // zxt1ToolStripMenuItem
@@ -2041,9 +1893,9 @@ namespace BizHawk.Client.EmuHawk
             // 
             // ZXSpectrumDisksSubMenu
             // 
-            resources.ApplyResources(this.ZXSpectrumDisksSubMenu, "ZXSpectrumDisksSubMenu");
             this.ZXSpectrumDisksSubMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.zxt2ToolStripMenuItem});
+            resources.ApplyResources(this.ZXSpectrumDisksSubMenu, "ZXSpectrumDisksSubMenu");
             this.ZXSpectrumDisksSubMenu.DropDownOpened += new System.EventHandler(this.ZXSpectrumDisksSubMenu_DropDownOpened);
             // 
             // zxt2ToolStripMenuItem
@@ -2061,12 +1913,12 @@ namespace BizHawk.Client.EmuHawk
             // 
             // amstradCPCToolStripMenuItem
             // 
-            resources.ApplyResources(this.amstradCPCToolStripMenuItem, "amstradCPCToolStripMenuItem");
             this.amstradCPCToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.amstradCPCCoreEmulationSettingsToolStripMenuItem,
             this.AmstradCPCAudioSettingsToolStripMenuItem,
             this.AmstradCPCNonSyncSettingsToolStripMenuItem,
             this.AmstradCPCMediaToolStripMenuItem});
+            resources.ApplyResources(this.amstradCPCToolStripMenuItem, "amstradCPCToolStripMenuItem");
             // 
             // amstradCPCCoreEmulationSettingsToolStripMenuItem
             // 
@@ -2085,17 +1937,17 @@ namespace BizHawk.Client.EmuHawk
             // 
             // AmstradCPCMediaToolStripMenuItem
             // 
-            resources.ApplyResources(this.AmstradCPCMediaToolStripMenuItem, "AmstradCPCMediaToolStripMenuItem");
             this.AmstradCPCMediaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.AmstradCPCTapesSubMenu,
             this.AmstradCPCDisksSubMenu});
+            resources.ApplyResources(this.AmstradCPCMediaToolStripMenuItem, "AmstradCPCMediaToolStripMenuItem");
             this.AmstradCPCMediaToolStripMenuItem.DropDownOpened += new System.EventHandler(this.AmstradCpcMediaMenuItem_DropDownOpened);
             // 
             // AmstradCPCTapesSubMenu
             // 
-            resources.ApplyResources(this.AmstradCPCTapesSubMenu, "AmstradCPCTapesSubMenu");
             this.AmstradCPCTapesSubMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.cpct1ToolStripMenuItem});
+            resources.ApplyResources(this.AmstradCPCTapesSubMenu, "AmstradCPCTapesSubMenu");
             this.AmstradCPCTapesSubMenu.DropDownOpened += new System.EventHandler(this.AmstradCpcTapesSubMenu_DropDownOpened);
             // 
             // cpct1ToolStripMenuItem
@@ -2104,9 +1956,9 @@ namespace BizHawk.Client.EmuHawk
             // 
             // AmstradCPCDisksSubMenu
             // 
-            resources.ApplyResources(this.AmstradCPCDisksSubMenu, "AmstradCPCDisksSubMenu");
             this.AmstradCPCDisksSubMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.cpcd1ToolStripMenuItem});
+            resources.ApplyResources(this.AmstradCPCDisksSubMenu, "AmstradCPCDisksSubMenu");
             this.AmstradCPCDisksSubMenu.DropDownOpened += new System.EventHandler(this.AmstradCpcDisksSubMenu_DropDownOpened);
             // 
             // cpcd1ToolStripMenuItem
@@ -2115,12 +1967,12 @@ namespace BizHawk.Client.EmuHawk
             // 
             // HelpSubMenu
             // 
-            resources.ApplyResources(this.HelpSubMenu, "HelpSubMenu");
             this.HelpSubMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.OnlineHelpMenuItem,
             this.ForumsMenuItem,
             this.FeaturesMenuItem,
             this.AboutMenuItem});
+            resources.ApplyResources(this.HelpSubMenu, "HelpSubMenu");
             this.HelpSubMenu.DropDownOpened += new System.EventHandler(this.HelpSubMenu_DropDownOpened);
             // 
             // OnlineHelpMenuItem
@@ -2149,7 +2001,6 @@ namespace BizHawk.Client.EmuHawk
             // 
             // MainStatusBar
             // 
-            resources.ApplyResources(this.MainStatusBar, "MainStatusBar");
             this.MainStatusBar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.DumpStatusButton,
             this.EmuStatus,
@@ -2176,48 +2027,45 @@ namespace BizHawk.Client.EmuHawk
             this.LinkConnectStatusBarButton,
             this.UpdateNotification,
             this.toolStripStatusLabel1});
+            resources.ApplyResources(this.MainStatusBar, "MainStatusBar");
             this.MainStatusBar.Name = "MainStatusBar";
             this.MainStatusBar.ShowItemToolTips = true;
             this.MainStatusBar.SizingGrip = false;
             // 
             // DumpStatusButton
             // 
-            resources.ApplyResources(this.DumpStatusButton, "DumpStatusButton");
             this.DumpStatusButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            resources.ApplyResources(this.DumpStatusButton, "DumpStatusButton");
             this.DumpStatusButton.Name = "DumpStatusButton";
             this.DumpStatusButton.ShowDropDownArrow = false;
             this.DumpStatusButton.Click += new System.EventHandler(this.DumpStatusButton_Click);
             // 
-            // EmuStatus
-            // 
-            resources.ApplyResources(this.EmuStatus, "EmuStatus");
-            // 
             // PlayRecordStatusButton
             // 
-            resources.ApplyResources(this.PlayRecordStatusButton, "PlayRecordStatusButton");
             this.PlayRecordStatusButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            resources.ApplyResources(this.PlayRecordStatusButton, "PlayRecordStatusButton");
             this.PlayRecordStatusButton.Name = "PlayRecordStatusButton";
             this.PlayRecordStatusButton.ShowDropDownArrow = false;
             // 
             // PauseStatusButton
             // 
-            resources.ApplyResources(this.PauseStatusButton, "PauseStatusButton");
             this.PauseStatusButton.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.PauseStatusButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            resources.ApplyResources(this.PauseStatusButton, "PauseStatusButton");
             this.PauseStatusButton.Name = "PauseStatusButton";
             this.PauseStatusButton.ShowDropDownArrow = false;
             this.PauseStatusButton.Click += new System.EventHandler(this.PauseMenuItem_Click);
             // 
             // RebootStatusBarIcon
             // 
-            resources.ApplyResources(this.RebootStatusBarIcon, "RebootStatusBarIcon");
             this.RebootStatusBarIcon.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            resources.ApplyResources(this.RebootStatusBarIcon, "RebootStatusBarIcon");
             this.RebootStatusBarIcon.Click += new System.EventHandler(this.PowerMenuItem_Click);
             // 
             // AVStatusLabel
             // 
-            resources.ApplyResources(this.AVStatusLabel, "AVStatusLabel");
             this.AVStatusLabel.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            resources.ApplyResources(this.AVStatusLabel, "AVStatusLabel");
             // 
             // LedLightStatusLabel
             // 
@@ -2225,8 +2073,8 @@ namespace BizHawk.Client.EmuHawk
             // 
             // SaveSlotsStatusLabel
             // 
-            resources.ApplyResources(this.SaveSlotsStatusLabel, "SaveSlotsStatusLabel");
             this.SaveSlotsStatusLabel.BackColor = System.Drawing.SystemColors.Control;
+            resources.ApplyResources(this.SaveSlotsStatusLabel, "SaveSlotsStatusLabel");
             // 
             // Slot1StatusButton
             // 
@@ -2280,14 +2128,13 @@ namespace BizHawk.Client.EmuHawk
             // 
             // CheatStatusButton
             // 
-            resources.ApplyResources(this.CheatStatusButton, "CheatStatusButton");
             this.CheatStatusButton.Click += new System.EventHandler(this.FreezeStatus_Click);
             // 
             // KeyPriorityStatusLabel
             // 
-            resources.ApplyResources(this.KeyPriorityStatusLabel, "KeyPriorityStatusLabel");
             this.KeyPriorityStatusLabel.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.KeyPriorityStatusLabel.Margin = new System.Windows.Forms.Padding(5, 3, 5, 0);
+            resources.ApplyResources(this.KeyPriorityStatusLabel, "KeyPriorityStatusLabel");
             this.KeyPriorityStatusLabel.Click += new System.EventHandler(this.KeyPriorityStatusLabel_Click);
             // 
             // CoreNameStatusBarButton
@@ -2296,32 +2143,31 @@ namespace BizHawk.Client.EmuHawk
             // 
             // ProfileFirstBootLabel
             // 
-            resources.ApplyResources(this.ProfileFirstBootLabel, "ProfileFirstBootLabel");
             this.ProfileFirstBootLabel.AutoToolTip = true;
             this.ProfileFirstBootLabel.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            resources.ApplyResources(this.ProfileFirstBootLabel, "ProfileFirstBootLabel");
             this.ProfileFirstBootLabel.Click += new System.EventHandler(this.ProfileFirstBootLabel_Click);
             // 
             // LinkConnectStatusBarButton
             // 
-            resources.ApplyResources(this.LinkConnectStatusBarButton, "LinkConnectStatusBarButton");
             this.LinkConnectStatusBarButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            resources.ApplyResources(this.LinkConnectStatusBarButton, "LinkConnectStatusBarButton");
             this.LinkConnectStatusBarButton.Click += new System.EventHandler(this.LinkConnectStatusBarButton_Click);
             // 
             // UpdateNotification
             // 
-            resources.ApplyResources(this.UpdateNotification, "UpdateNotification");
             this.UpdateNotification.IsLink = true;
             this.UpdateNotification.Spring = true;
+            resources.ApplyResources(this.UpdateNotification, "UpdateNotification");
             this.UpdateNotification.Click += new System.EventHandler(this.UpdateNotification_Click);
             // 
             // toolStripStatusLabel1
             // 
-            resources.ApplyResources(this.toolStripStatusLabel1, "toolStripStatusLabel1");
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            resources.ApplyResources(this.toolStripStatusLabel1, "toolStripStatusLabel1");
             // 
             // MainFormContextMenu
             // 
-            resources.ApplyResources(this.MainFormContextMenu, "MainFormContextMenu");
             this.MainFormContextMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.OpenRomContextMenuItem,
             this.LoadLastRomContextMenuItem,
@@ -2349,6 +2195,7 @@ namespace BizHawk.Client.EmuHawk
             this.ShowMenuContextMenuSeparator,
             this.ShowMenuContextMenuItem});
             this.MainFormContextMenu.Name = "contextMenuStrip1";
+            resources.ApplyResources(this.MainFormContextMenu, "MainFormContextMenu");
             this.MainFormContextMenu.Closing += new System.Windows.Forms.ToolStripDropDownClosingEventHandler(this.MainFormContextMenu_Closing);
             this.MainFormContextMenu.Opening += new System.ComponentModel.CancelEventHandler(this.MainFormContextMenu_Opening);
             // 
@@ -2366,10 +2213,6 @@ namespace BizHawk.Client.EmuHawk
             // 
             resources.ApplyResources(this.StopAVContextMenuItem, "StopAVContextMenuItem");
             this.StopAVContextMenuItem.Click += new System.EventHandler(this.StopAVMenuItem_Click);
-            // 
-            // ContextSeparator_AfterROM
-            // 
-            resources.ApplyResources(this.ContextSeparator_AfterROM, "ContextSeparator_AfterROM");
             // 
             // RecordMovieContextMenuItem
             // 
@@ -2431,22 +2274,13 @@ namespace BizHawk.Client.EmuHawk
             resources.ApplyResources(this.SaveMovieAsContextMenuItem, "SaveMovieAsContextMenuItem");
             this.SaveMovieAsContextMenuItem.Click += new System.EventHandler(this.SaveMovieAsMenuItem_Click);
             // 
-            // ContextSeparator_AfterMovie
-            // 
-            resources.ApplyResources(this.ContextSeparator_AfterMovie, "ContextSeparator_AfterMovie");
-            // 
             // UndoSavestateContextMenuItem
             // 
             resources.ApplyResources(this.UndoSavestateContextMenuItem, "UndoSavestateContextMenuItem");
             this.UndoSavestateContextMenuItem.Click += new System.EventHandler(this.UndoSavestateContextMenuItem_Click);
             // 
-            // ContextSeparator_AfterUndo
-            // 
-            resources.ApplyResources(this.ContextSeparator_AfterUndo, "ContextSeparator_AfterUndo");
-            // 
             // ConfigContextMenuItem
             // 
-            resources.ApplyResources(this.ConfigContextMenuItem, "ConfigContextMenuItem");
             this.ConfigContextMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItem6,
             this.toolStripMenuItem7,
@@ -2462,6 +2296,7 @@ namespace BizHawk.Client.EmuHawk
             this.toolStripSeparator30,
             this.toolStripMenuItem66,
             this.toolStripMenuItem67});
+            resources.ApplyResources(this.ConfigContextMenuItem, "ConfigContextMenuItem");
             // 
             // toolStripMenuItem6
             // 
@@ -2518,10 +2353,6 @@ namespace BizHawk.Client.EmuHawk
             resources.ApplyResources(this.customizeToolStripMenuItem, "customizeToolStripMenuItem");
             this.customizeToolStripMenuItem.Click += new System.EventHandler(this.CustomizeMenuItem_Click);
             // 
-            // toolStripSeparator30
-            // 
-            resources.ApplyResources(this.toolStripSeparator30, "toolStripSeparator30");
-            // 
             // toolStripMenuItem66
             // 
             resources.ApplyResources(this.toolStripMenuItem66, "toolStripMenuItem66");
@@ -2547,10 +2378,6 @@ namespace BizHawk.Client.EmuHawk
             resources.ApplyResources(this.ClearSRAMContextMenuItem, "ClearSRAMContextMenuItem");
             this.ClearSRAMContextMenuItem.Click += new System.EventHandler(this.ClearSramContextMenuItem_Click);
             // 
-            // ShowMenuContextMenuSeparator
-            // 
-            resources.ApplyResources(this.ShowMenuContextMenuSeparator, "ShowMenuContextMenuSeparator");
-            // 
             // ShowMenuContextMenuItem
             // 
             resources.ApplyResources(this.ShowMenuContextMenuItem, "ShowMenuContextMenuItem");
@@ -2564,8 +2391,8 @@ namespace BizHawk.Client.EmuHawk
             // 
             // MainForm
             // 
-            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            resources.ApplyResources(this, "$this");
             this.Controls.Add(this.MainformMenu);
             this.Controls.Add(this.MainStatusBar);
             this.MainMenuStrip = this.MainformMenu;

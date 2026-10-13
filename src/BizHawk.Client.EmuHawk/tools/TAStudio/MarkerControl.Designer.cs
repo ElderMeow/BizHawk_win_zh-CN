@@ -54,7 +54,6 @@
             // 
             // MarkerContextMenu
             // 
-            resources.ApplyResources(this.MarkerContextMenu, "MarkerContextMenu");
             this.MarkerContextMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.JumpToMarkerToolStripMenuItem,
             this.ScrollToMarkerToolStripMenuItem,
@@ -64,7 +63,7 @@
             this.toolStripSeparator1,
             this.RemoveMarkerToolStripMenuItem});
             this.MarkerContextMenu.Name = "MarkerContextMenu";
-            this.toolTip1.SetToolTip(this.MarkerContextMenu, resources.GetString("MarkerContextMenu.ToolTip"));
+            resources.ApplyResources(this.MarkerContextMenu, "MarkerContextMenu");
             this.MarkerContextMenu.Opening += new System.ComponentModel.CancelEventHandler(this.MarkerContextMenu_Opening);
             // 
             // JumpToMarkerToolStripMenuItem
@@ -91,10 +90,6 @@
             // 
             resources.ApplyResources(this.AddMarkerToolStripMenuItem, "AddMarkerToolStripMenuItem");
             this.AddMarkerToolStripMenuItem.Click += new System.EventHandler(this.AddMarkerToolStripMenuItem_Click);
-            // 
-            // toolStripSeparator1
-            // 
-            resources.ApplyResources(this.toolStripSeparator1, "toolStripSeparator1");
             // 
             // RemoveMarkerToolStripMenuItem
             // 
@@ -153,16 +148,15 @@
             // 
             resources.ApplyResources(this.RemoveMarkerButton, "RemoveMarkerButton");
             this.RemoveMarkerButton.Name = "RemoveMarkerButton";
-            this.toolTip1.SetToolTip(this.RemoveMarkerButton, resources.GetString("RemoveMarkerButton.ToolTip"));
             this.RemoveMarkerButton.UseVisualStyleBackColor = true;
             this.RemoveMarkerButton.Click += new System.EventHandler(this.RemoveMarkerToolStripMenuItem_Click);
             // 
             // MarkerView
             // 
-            resources.ApplyResources(this.MarkerView, "MarkerView");
             this.MarkerView.AllowColumnReorder = false;
             this.MarkerView.AllowColumnResize = false;
             this.MarkerView.AlwaysScroll = false;
+            resources.ApplyResources(this.MarkerView, "MarkerView");
             this.MarkerView.CellHeightPadding = 0;
             this.MarkerView.ContextMenuStrip = this.MarkerContextMenu;
             this.MarkerView.FullRowSelect = true;
@@ -172,14 +166,12 @@
             this.MarkerView.RowCount = 0;
             this.MarkerView.ScrollSpeed = 1;
             this.MarkerView.TabStop = false;
-            this.toolTip1.SetToolTip(this.MarkerView, resources.GetString("MarkerView.ToolTip"));
             this.MarkerView.SelectedIndexChanged += new System.EventHandler(this.MarkerView_SelectedIndexChanged);
             this.MarkerView.DoubleClick += new System.EventHandler(this.MarkerView_MouseDoubleClick);
             this.MarkerView.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MarkerView_MouseDown);
             // 
             // MarkersGroupBox
             // 
-            resources.ApplyResources(this.MarkersGroupBox, "MarkersGroupBox");
             this.MarkersGroupBox.Controls.Add(this.MarkerView);
             this.MarkersGroupBox.Controls.Add(this.AddMarkerButton);
             this.MarkersGroupBox.Controls.Add(this.AddMarkerWithTextButton);
@@ -188,17 +180,16 @@
             this.MarkersGroupBox.Controls.Add(this.EditMarkerButton);
             this.MarkersGroupBox.Controls.Add(this.EditMarkerFrameButton);
             this.MarkersGroupBox.Controls.Add(this.JumpToMarkerButton);
+            resources.ApplyResources(this.MarkersGroupBox, "MarkersGroupBox");
             this.MarkersGroupBox.Name = "MarkersGroupBox";
             this.MarkersGroupBox.TabStop = false;
-            this.toolTip1.SetToolTip(this.MarkersGroupBox, resources.GetString("MarkersGroupBox.ToolTip"));
             // 
             // MarkerControl
             // 
-            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.Controls.Add(this.MarkersGroupBox);
             this.Name = "MarkerControl";
-            this.toolTip1.SetToolTip(this, resources.GetString("$this.ToolTip"));
+            resources.ApplyResources(this, "$this");
             this.MarkerContextMenu.ResumeLayout(false);
             this.MarkersGroupBox.ResumeLayout(false);
             this.ResumeLayout(false);

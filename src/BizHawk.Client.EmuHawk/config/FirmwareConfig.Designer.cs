@@ -80,7 +80,6 @@ namespace BizHawk.Client.EmuHawk
             // 
             // lvFirmware
             // 
-            resources.ApplyResources(this.lvFirmware, "lvFirmware");
             this.lvFirmware.AllowDrop = true;
             this.lvFirmware.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader5,
@@ -92,13 +91,13 @@ namespace BizHawk.Client.EmuHawk
             this.columnHeader8,
             this.columnHeader7});
             this.lvFirmware.ContextMenuStrip = this.lvFirmwareContextMenuStrip;
+            resources.ApplyResources(this.lvFirmware, "lvFirmware");
             this.lvFirmware.FullRowSelect = true;
             this.lvFirmware.GridLines = true;
             this.lvFirmware.HideSelection = false;
             this.lvFirmware.Name = "lvFirmware";
             this.lvFirmware.ShowItemToolTips = true;
             this.lvFirmware.SmallImageList = this.imageList1;
-            this.toolTip1.SetToolTip(this.lvFirmware, resources.GetString("lvFirmware.ToolTip"));
             this.lvFirmware.UseCompatibleStateImageBehavior = false;
             this.lvFirmware.View = System.Windows.Forms.View.Details;
             this.lvFirmware.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.LvFirmware_ColumnClick);
@@ -141,14 +140,13 @@ namespace BizHawk.Client.EmuHawk
             // 
             // lvFirmwareContextMenuStrip
             // 
-            resources.ApplyResources(this.lvFirmwareContextMenuStrip, "lvFirmwareContextMenuStrip");
             this.lvFirmwareContextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmiSetCustomization,
             this.tsmiClearCustomization,
             this.tsmiInfo,
             this.tsmiCopy});
             this.lvFirmwareContextMenuStrip.Name = "lvFirmwareContextMenuStrip";
-            this.toolTip1.SetToolTip(this.lvFirmwareContextMenuStrip, resources.GetString("lvFirmwareContextMenuStrip.ToolTip"));
+            resources.ApplyResources(this.lvFirmwareContextMenuStrip, "lvFirmwareContextMenuStrip");
             this.lvFirmwareContextMenuStrip.Opening += new System.ComponentModel.CancelEventHandler(this.LvFirmwareContextMenuStrip_Opening);
             // 
             // tsmiSetCustomization
@@ -173,15 +171,13 @@ namespace BizHawk.Client.EmuHawk
             // 
             // panel1
             // 
-            resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Controls.Add(this.lvFirmware);
             this.panel1.Controls.Add(this.toolStrip1);
+            resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Name = "panel1";
-            this.toolTip1.SetToolTip(this.panel1, resources.GetString("panel1.ToolTip"));
             // 
             // toolStrip1
             // 
-            resources.ApplyResources(this.toolStrip1, "toolStrip1");
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tbbGroup,
             this.toolStripSeparator2,
@@ -193,78 +189,74 @@ namespace BizHawk.Client.EmuHawk
             this.tbbCloseReload,
             this.tbbOpenFolder,
             this._cbAllowImport});
+            resources.ApplyResources(this.toolStrip1, "toolStrip1");
             this.toolStrip1.Name = "toolStrip1";
-            this.toolTip1.SetToolTip(this.toolStrip1, resources.GetString("toolStrip1.ToolTip"));
             // 
             // tbbGroup
             // 
-            resources.ApplyResources(this.tbbGroup, "tbbGroup");
             this.tbbGroup.Checked = true;
             this.tbbGroup.CheckOnClick = true;
             this.tbbGroup.CheckState = System.Windows.Forms.CheckState.Checked;
             this.tbbGroup.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            resources.ApplyResources(this.tbbGroup, "tbbGroup");
             this.tbbGroup.Name = "tbbGroup";
             this.tbbGroup.Click += new System.EventHandler(this.TbbGroup_Click);
             // 
-            // toolStripSeparator2
-            // 
-            resources.ApplyResources(this.toolStripSeparator2, "toolStripSeparator2");
-            // 
             // tbbScan
             // 
-            resources.ApplyResources(this.tbbScan, "tbbScan");
             this.tbbScan.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            resources.ApplyResources(this.tbbScan, "tbbScan");
             this.tbbScan.Name = "tbbScan";
             this.tbbScan.Click += new System.EventHandler(this.TbbScan_Click);
             // 
             // tbbOrganize
             // 
-            resources.ApplyResources(this.tbbOrganize, "tbbOrganize");
             this.tbbOrganize.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            resources.ApplyResources(this.tbbOrganize, "tbbOrganize");
             this.tbbOrganize.Name = "tbbOrganize";
             this.tbbOrganize.Click += new System.EventHandler(this.TbbOrganize_Click);
             // 
             // tbbImport
             // 
-            resources.ApplyResources(this.tbbImport, "tbbImport");
             this.tbbImport.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            resources.ApplyResources(this.tbbImport, "tbbImport");
             this.tbbImport.Name = "tbbImport";
             this.tbbImport.Click += new System.EventHandler(this.TbbImport_Click);
             // 
             // tbbClose
             // 
-            resources.ApplyResources(this.tbbClose, "tbbClose");
             this.tbbClose.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.tbbClose.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            resources.ApplyResources(this.tbbClose, "tbbClose");
             this.tbbClose.Margin = new System.Windows.Forms.Padding(0, 1, 2, 2);
             this.tbbClose.Name = "tbbClose";
             this.tbbClose.Click += new System.EventHandler(this.TbbClose_Click);
             // 
             // toolStripSeparator1
             // 
-            resources.ApplyResources(this.toolStripSeparator1, "toolStripSeparator1");
             this.toolStripSeparator1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            resources.ApplyResources(this.toolStripSeparator1, "toolStripSeparator1");
             // 
             // tbbCloseReload
             // 
-            resources.ApplyResources(this.tbbCloseReload, "tbbCloseReload");
             this.tbbCloseReload.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.tbbCloseReload.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            resources.ApplyResources(this.tbbCloseReload, "tbbCloseReload");
             this.tbbCloseReload.Name = "tbbCloseReload";
             this.tbbCloseReload.Click += new System.EventHandler(this.TbbCloseReload_Click);
             // 
             // tbbOpenFolder
             // 
-            resources.ApplyResources(this.tbbOpenFolder, "tbbOpenFolder");
             this.tbbOpenFolder.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            resources.ApplyResources(this.tbbOpenFolder, "tbbOpenFolder");
             this.tbbOpenFolder.Name = "tbbOpenFolder";
             this.tbbOpenFolder.Click += new System.EventHandler(this.TbbOpenFolder_Click);
             // 
             // _cbAllowImport
             // 
-            resources.ApplyResources(this._cbAllowImport, "_cbAllowImport");
             this._cbAllowImport.CheckOnClick = true;
             this._cbAllowImport.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            resources.ApplyResources(this._cbAllowImport, "_cbAllowImport");
             this._cbAllowImport.Name = "_cbAllowImport";
             // 
             // tableLayoutPanel1
@@ -274,7 +266,6 @@ namespace BizHawk.Client.EmuHawk
             this.tableLayoutPanel1.Controls.Add(this.panel2, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.label2, 0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.toolTip1.SetToolTip(this.tableLayoutPanel1, resources.GetString("tableLayoutPanel1.ToolTip"));
             // 
             // panel2
             // 
@@ -283,26 +274,22 @@ namespace BizHawk.Client.EmuHawk
             this.panel2.Controls.Add(this.linkBasePath);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Name = "panel2";
-            this.toolTip1.SetToolTip(this.panel2, resources.GetString("panel2.ToolTip"));
             // 
             // linkBasePath
             // 
             resources.ApplyResources(this.linkBasePath, "linkBasePath");
             this.linkBasePath.Name = "linkBasePath";
             this.linkBasePath.TabStop = true;
-            this.toolTip1.SetToolTip(this.linkBasePath, resources.GetString("linkBasePath.ToolTip"));
             // 
             // label1
             // 
             resources.ApplyResources(this.label1, "label1");
             this.label1.Name = "label1";
-            this.toolTip1.SetToolTip(this.label1, resources.GetString("label1.ToolTip"));
             // 
             // label2
             // 
             resources.ApplyResources(this.label2, "label2");
             this.label2.Name = "label2";
-            this.toolTip1.SetToolTip(this.label2, resources.GetString("label2.ToolTip"));
             // 
             // FirmwareConfig
             // 
@@ -311,7 +298,6 @@ namespace BizHawk.Client.EmuHawk
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "FirmwareConfig";
             this.ShowIcon = false;
-            this.toolTip1.SetToolTip(this, resources.GetString("$this.ToolTip"));
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FirmwareConfig_FormClosed);
             this.Load += new System.EventHandler(this.FirmwareConfig_Load);
             this.lvFirmwareContextMenuStrip.ResumeLayout(false);

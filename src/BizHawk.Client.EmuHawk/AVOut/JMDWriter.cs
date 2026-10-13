@@ -175,7 +175,7 @@ namespace BizHawk.Client.EmuHawk
 			{
 				if (!f.CanWrite)
 				{
-					throw new ArgumentException(message: $"{nameof(Stream)} must be writable!", paramName: nameof(f));
+					throw new ArgumentException(message: TheLocalizater.TranslateFormatString("{0} must be writable!", nameof(Stream)), paramName: nameof(f));
 				}
 
 				_f = f;
@@ -317,7 +317,7 @@ namespace BizHawk.Client.EmuHawk
 			/// </summary>
 			private void WriteVar(int v)
 			{
-				if (v < 0) throw new ArgumentException(message: "length cannot be less than 0!", paramName: nameof(v));
+				if (v < 0) throw new ArgumentException(message: TheLocalizater.TranslateText("length cannot be less than 0!"), paramName: nameof(v));
 				WriteVar((ulong)v);
 			}
 
@@ -346,7 +346,7 @@ namespace BizHawk.Client.EmuHawk
 			{
 				if (j.Timestamp < _timestampOff)
 				{
-					throw new ArithmeticException("JMD Timestamp problem?");
+					throw new ArithmeticException(TheLocalizater.TranslateText("JMD Timestamp problem?"));
 				}
 
 				var timeStampOut = j.Timestamp - _timestampOff;
@@ -532,7 +532,7 @@ namespace BizHawk.Client.EmuHawk
 			}
 			else
 			{
-				throw new ArgumentException(message: "codec token must be of right type", paramName: nameof(token));
+				throw new ArgumentException(message: TheLocalizater.TranslateText("codec token must be of right type"), paramName: nameof(token));
 			}
 		}
 
@@ -581,9 +581,9 @@ namespace BizHawk.Client.EmuHawk
 			// the sampleRate limits are arbitrary, just to catch things which are probably silly-wrong
 			// if a larger range of sampling rates is needed, it should be supported
 			const string ERR_MSG_INVALID_ARG = "Audio parameters out of range!";
-			if (sampleRate is < 8000 or > 96000) throw new ArgumentOutOfRangeException(paramName: nameof(sampleRate), sampleRate, message: ERR_MSG_INVALID_ARG);
-			if (channels is < 1 or > 2) throw new ArgumentOutOfRangeException(paramName: nameof(channels), channels, message: ERR_MSG_INVALID_ARG);
-			if (bits is not 16) throw new ArgumentException(message: ERR_MSG_INVALID_ARG, paramName: nameof(bits));
+			if (sampleRate is < 8000 or > 96000) throw new ArgumentOutOfRangeException(paramName: nameof(sampleRate), sampleRate, message: TheLocalizater.TranslateText(ERR_MSG_INVALID_ARG));
+			if (channels is < 1 or > 2) throw new ArgumentOutOfRangeException(paramName: nameof(channels), channels, message: TheLocalizater.TranslateText(ERR_MSG_INVALID_ARG));
+			if (bits is not 16) throw new ArgumentException(message: TheLocalizater.TranslateText(ERR_MSG_INVALID_ARG), paramName: nameof(bits));
 
 			_audioSampleRate = sampleRate;
 			_audioChannels = channels;

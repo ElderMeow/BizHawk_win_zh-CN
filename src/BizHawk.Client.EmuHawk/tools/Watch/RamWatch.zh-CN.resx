@@ -120,6 +120,58 @@
   <data name="WatchCountLabel.Text" xml:space="preserve">
     <value>0 监视</value>
   </data>
+  <data name="newToolStripMenuItem.Text" xml:space="preserve">
+    <value>新建监视(&amp;N)</value>
+  </data>
+  <data name="EditContextMenuItem.Text" xml:space="preserve">
+    <value>编辑(&amp;E)</value>
+  </data>
+  <data name="RemoveContextMenuItem.Text" xml:space="preserve">
+    <value>移除(&amp;R)</value>
+  </data>
+  <data name="DuplicateContextMenuItem.Text" xml:space="preserve">
+    <value>克隆(&amp;D)</value>
+  </data>
+  <data name="SplitContextMenuItem.Text" xml:space="preserve">
+    <value>拆分(&amp;L)</value>
+  </data>
+  <data name="PokeContextMenuItem.Text" xml:space="preserve">
+    <value>写入(&amp;P)</value>
+  </data>
+  <data name="FreezeContextMenuItem.Text" xml:space="preserve">
+    <value>冻结地址(&amp;F)</value>
+  </data>
+  <data name="UnfreezeAllContextMenuItem.Text" xml:space="preserve">
+    <value>解冻所有(&amp;A)</value>
+  </data>
+  <data name="ViewInHexEditorContextMenuItem.Text" xml:space="preserve">
+    <value>在十六进制编辑器查看</value>
+  </data>
+  <data name="ReadBreakpointContextMenuItem.Text" xml:space="preserve">
+    <value>设置读断点</value>
+  </data>
+  <data name="WriteBreakpointContextMenuItem.Text" xml:space="preserve">
+    <value>设置写断点</value>
+  </data>
+  <data name="InsertSeperatorContextMenuItem.Text" xml:space="preserve">
+    <value>插入分隔符(&amp;I)</value>
+  </data>
+  <data name="MoveUpContextMenuItem.Text" xml:space="preserve">
+    <value>上移(&amp;U)</value>
+  </data>
+  <data name="MoveDownContextMenuItem.Text" xml:space="preserve">
+    <value>下移(&amp;D)</value>
+  </data>
+  <data name="MoveTopContextMenuItem.Text" xml:space="preserve">
+    <value>移到顶部(&amp;T)</value>
+  </data>
+  <data name="MoveBottomContextMenuItem.Text" xml:space="preserve">
+    <value>移到底部(&amp;B)</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="ListViewContextMenu.Size" type="System.Drawing.Size, System.Drawing">
+    <value>245, 368</value>
+  </data>
   <data name="newToolStripButton.Text" xml:space="preserve">
     <value>新建(&amp;N)</value>
   </data>
@@ -180,6 +232,9 @@
   <data name="moveDownToolStripButton.Text" xml:space="preserve">
     <value>下移</value>
   </data>
+  <data name="FileSubMenu.Text" xml:space="preserve">
+    <value>文件(&amp;F)</value>
+  </data>
   <data name="NewListMenuItem.Text" xml:space="preserve">
     <value>新建列表(&amp;N)</value>
   </data>
@@ -198,8 +253,8 @@
   <data name="RecentSubMenu.Text" xml:space="preserve">
     <value>历史</value>
   </data>
-  <data name="FileSubMenu.Text" xml:space="preserve">
-    <value>文件(&amp;F)</value>
+  <data name="WatchesSubMenu.Text" xml:space="preserve">
+    <value>监视(&amp;W)</value>
   </data>
   <data name="MemoryDomainsSubMenu.Text" xml:space="preserve">
     <value>默认内存域</value>
@@ -246,8 +301,11 @@
   <data name="SelectAllMenuItem.Text" xml:space="preserve">
     <value>全选(&amp;A)</value>
   </data>
-  <data name="WatchesSubMenu.Text" xml:space="preserve">
-    <value>监视(&amp;W)</value>
+  <data name="OptionsSubMenu.Text" xml:space="preserve">
+    <value>设置(&amp;S)</value>
+  </data>
+  <data name="DefinePreviousValueSubMenu.Text" xml:space="preserve">
+    <value>定义前值</value>
   </data>
   <data name="PreviousFrameMenuItem.Text" xml:space="preserve">
     <value>前一帧</value>
@@ -258,22 +316,16 @@
   <data name="OriginalMenuItem.Text" xml:space="preserve">
     <value>原始值(&amp;O)</value>
   </data>
-  <data name="DefinePreviousValueSubMenu.Text" xml:space="preserve">
-    <value>定义前值</value>
-  </data>
   <data name="WatchesOnScreenMenuItem.Text" xml:space="preserve">
     <value>在屏幕上显示监视</value>
+  </data>
+  <data name="DoubleClickActionSubMenu.Text" xml:space="preserve">
+    <value>双击监视时</value>
   </data>
   <data name="DoubleClickToEditMenuItem.Text" xml:space="preserve">
     <value>编辑监视</value>
   </data>
   <data name="DoubleClickToPokeMenuItem.Text" xml:space="preserve">
     <value>写入地址</value>
-  </data>
-  <data name="DoubleClickActionSubMenu.Text" xml:space="preserve">
-    <value>双击监视时</value>
-  </data>
-  <data name="OptionsSubMenu.Text" xml:space="preserve">
-    <value>设置(&amp;S)</value>
   </data>
 </root>

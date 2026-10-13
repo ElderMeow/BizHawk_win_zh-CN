@@ -117,17 +117,17 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="CancelBtn.Text" xml:space="preserve">
-    <value>取消(&amp;C)</value>
-  </data>
-  <data name="OkBtn.Text" xml:space="preserve">
-    <value>确定(&amp;O)</value>
-  </data>
   <data name="label1.Text" xml:space="preserve">
     <value>作者：</value>
   </data>
-  <data name="DefaultAuthorButton.Text" xml:space="preserve">
-    <value>默认</value>
+  <data name="label5.Text" xml:space="preserve">
+    <value>基板名称：</value>
+  </data>
+  <data name="label6.Text" xml:space="preserve">
+    <value>游戏名：</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Emu 版本：</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="MakeDefaultCheckbox.Size" type="System.Drawing.Size, System.Drawing">
@@ -136,16 +136,19 @@
   <data name="MakeDefaultCheckbox.Text" xml:space="preserve">
     <value>设为默认</value>
   </data>
-  <data name="label2.Text" xml:space="preserve">
-    <value>Emu 版本：</value>
+  <data name="$this.Text" xml:space="preserve">
+    <value>头部信息</value>
+  </data>
+  <data name="CancelBtn.Text" xml:space="preserve">
+    <value>取消(&amp;C)</value>
   </data>
   <data name="label4.Text" xml:space="preserve">
     <value>内核：</value>
   </data>
-  <data name="label5.Text" xml:space="preserve">
-    <value>基板名称：</value>
+  <data name="OkBtn.Text" xml:space="preserve">
+    <value>确定(&amp;O)</value>
   </data>
-  <data name="label6.Text" xml:space="preserve">
-    <value>游戏名：</value>
+  <data name="DefaultAuthorButton.Text" xml:space="preserve">
+    <value>默认</value>
   </data>
 </root>

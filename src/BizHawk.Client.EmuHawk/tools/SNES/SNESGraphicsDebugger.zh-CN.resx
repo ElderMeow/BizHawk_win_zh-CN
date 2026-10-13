@@ -117,37 +117,50 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="comboPalette.ToolTip" xml:space="preserve">
+    <value>颜色可以通过几种方式从snes 555格式转换为PC标准888。 Snes9x真的没有做出任何努力来说得通； bsnes似乎在努力，但对我们来说毫无意义； bizhawk对我们来说很有意义。 这里提供了不同的调色板，以便您在使用bizhawk来翻录图片时可以实现旧数据的一致性。</value>
+  </data>
+  <data name="checkScanlineControl.ToolTip" xml:space="preserve">
+    <value>启用扫描线控制。 对大多数用户来说，禁用这个选项是没问题的，而且会提高速度和稳定性。 对于在某些扫描线上改变背景参数的游戏，启用它是必要的。</value>
+  </data>
   <data name="fileToolStripMenuItem.Text" xml:space="preserve">
     <value>文件(&amp;F)</value>
   </data>
-  <data name="saveScreenshotAsToolStripMenuItem.Text" xml:space="preserve">
-    <value>截图另存为</value>
+  <data name="check2x.ToolTip" xml:space="preserve">
+    <value>将图形视口大小设置为1024(未选中为512)。
+内容将被缩放以填充指定大小</value>
   </data>
-  <data name="saveScreenshotToClipboardToolStripMenuItem.Text" xml:space="preserve">
-    <value>保存截图到剪贴板</value>
+  <data name="labelClipboard.Text" xml:space="preserve">
+    <value>的内容要剪贴板</value>
   </data>
   <data name="groupFreeze.Text" xml:space="preserve">
     <value>冻结</value>
   </data>
-  <data name="label47.Text" xml:space="preserve">
-    <value>调色板</value>
+  <data name="saveScreenshotToClipboardToolStripMenuItem.Text" xml:space="preserve">
+    <value>保存截图到剪贴板</value>
   </data>
   <data name="label19.Text" xml:space="preserve">
     <value>扫描线</value>
   </data>
-  <data name="label24.Text" xml:space="preserve">
-    <value>使用用户背景</value>
-  </data>
   <data name="groupBox6.Text" xml:space="preserve">
     <value>使用CTRL+C复制鼠标下方面板</value>
   </data>
-  <data name="groupBox5.Text" xml:space="preserve">
-    <value>调色板</value>
+  <data name="saveScreenshotAsToolStripMenuItem.Text" xml:space="preserve">
+    <value>截图另存为</value>
   </data>
   <data name="labelMemory.Text" xml:space="preserve">
     <value>右击一个项目将其显示在这里。</value>
   </data>
-  <data name="labelClipboard.Text" xml:space="preserve">
-    <value>的内容要剪贴板</value>
+  <data name="label47.Text" xml:space="preserve">
+    <value>调色板</value>
+  </data>
+  <data name="lblBG3.ToolTip" xml:space="preserve">
+    <value>测试</value>
+  </data>
+  <data name="groupBox5.Text" xml:space="preserve">
+    <value>调色板</value>
+  </data>
+  <data name="label24.Text" xml:space="preserve">
+    <value>使用用户背景</value>
   </data>
 </root>

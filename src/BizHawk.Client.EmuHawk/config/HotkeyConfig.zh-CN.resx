@@ -151,6 +151,24 @@
   <data name="label3.Text" xml:space="preserve">
     <value>提示：</value>
   </data>
+  <data name="restoreDefaultsToolStripMenuItem.Text" xml:space="preserve">
+    <value>恢复默认值</value>
+  </data>
+  <data name="restoreDefaultsForCurrentTabToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 22</value>
+  </data>
+  <data name="restoreDefaultsForCurrentTabToolStripMenuItem.Text" xml:space="preserve">
+    <value>回复当前页默认值</value>
+  </data>
+  <data name="clearAllToolStripMenuItem.Text" xml:space="preserve">
+    <value>清空所有</value>
+  </data>
+  <data name="clearCurrentTabToolStripMenuItem.Text" xml:space="preserve">
+    <value>清空当前页</value>
+  </data>
+  <data name="clearBtnContextMenu.Size" type="System.Drawing.Size, System.Drawing">
+    <value>173, 98</value>
+  </data>
   <data name="clearBtnContextMenu.ToolTip" xml:space="preserve">
     <value />
   </data>

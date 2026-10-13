@@ -48,9 +48,11 @@ namespace BizHawk.Client.EmuHawk
 		public bool AutoTab { get; set; }
 		public string WidgetName { get; set; }
 
+		private string _bindText; // Text should be translated, so use bindText
+
 		public string Bindings
 		{
-			get => Text;
+			get => _bindText;
 			set
 			{
 				ClearBindings();
@@ -111,6 +113,7 @@ namespace BizHawk.Client.EmuHawk
 		private void EraseMappings()
 		{
 			ClearBindings();
+			_bindText = "";
 			Text = "";
 		}
 
@@ -214,7 +217,9 @@ namespace BizHawk.Client.EmuHawk
 
 		public void UpdateLabel()
 		{
-			Text = string.Join(",", _bindings.Where(str => !string.IsNullOrWhiteSpace(str)));
+			_bindText = string.Join(",", _bindings.Where(str => !string.IsNullOrWhiteSpace(str)));
+			// The binding text is joined with the plus sign and needs to be split and then translated.
+			Text = string.Join(",", _bindings.Where(str => !string.IsNullOrWhiteSpace(str)).Select((s => TheLocalizater.TranslateShortcutKeyDisplayString(s))) );
 			CompositeWidget?.RefreshTooltip();
 		}
 

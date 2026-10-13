@@ -112,15 +112,15 @@
             // 
             // CopyMenu
             // 
-            resources.ApplyResources(this.CopyMenu, "CopyMenu");
             this.CopyMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.CopyMenuItem});
             this.CopyMenu.Name = "CopyMenu";
+            resources.ApplyResources(this.CopyMenu, "CopyMenu");
             // 
             // CopyMenuItem
             // 
-            resources.ApplyResources(this.CopyMenuItem, "CopyMenuItem");
             this.CopyMenuItem.Name = "CopyMenuItem";
+            resources.ApplyResources(this.CopyMenuItem, "CopyMenuItem");
             this.CopyMenuItem.Click += new System.EventHandler(this.FunctionView_Copy);
             // 
             // LuaFunctionsForm

@@ -56,7 +56,6 @@
             // 
             // BookmarksBranchesGroupBox
             // 
-            resources.ApplyResources(this.BookmarksBranchesGroupBox, "BookmarksBranchesGroupBox");
             this.BookmarksBranchesGroupBox.Controls.Add(this.UndoBranchButton);
             this.BookmarksBranchesGroupBox.Controls.Add(this.JumpToBranchButton);
             this.BookmarksBranchesGroupBox.Controls.Add(this.UpdateBranchButton);
@@ -64,15 +63,14 @@
             this.BookmarksBranchesGroupBox.Controls.Add(this.AddBranchButton);
             this.BookmarksBranchesGroupBox.Controls.Add(this.LoadBranchButton);
             this.BookmarksBranchesGroupBox.Controls.Add(this.BranchView);
+            resources.ApplyResources(this.BookmarksBranchesGroupBox, "BookmarksBranchesGroupBox");
             this.BookmarksBranchesGroupBox.Name = "BookmarksBranchesGroupBox";
             this.BookmarksBranchesGroupBox.TabStop = false;
-            this.toolTip1.SetToolTip(this.BookmarksBranchesGroupBox, resources.GetString("BookmarksBranchesGroupBox.ToolTip"));
             // 
             // UndoBranchButton
             // 
             resources.ApplyResources(this.UndoBranchButton, "UndoBranchButton");
             this.UndoBranchButton.Name = "UndoBranchButton";
-            this.toolTip1.SetToolTip(this.UndoBranchButton, resources.GetString("UndoBranchButton.ToolTip"));
             this.UndoBranchButton.UseVisualStyleBackColor = true;
             this.UndoBranchButton.Click += new System.EventHandler(this.UndoBranchToolStripMenuItem_Click);
             // 
@@ -104,7 +102,6 @@
             // 
             resources.ApplyResources(this.AddBranchButton, "AddBranchButton");
             this.AddBranchButton.Name = "AddBranchButton";
-            this.toolTip1.SetToolTip(this.AddBranchButton, resources.GetString("AddBranchButton.ToolTip"));
             this.AddBranchButton.UseVisualStyleBackColor = true;
             this.AddBranchButton.Click += new System.EventHandler(this.AddBranchToolStripMenuItem_Click);
             // 
@@ -118,10 +115,10 @@
             // 
             // BranchView
             // 
-            resources.ApplyResources(this.BranchView, "BranchView");
             this.BranchView.AllowColumnReorder = false;
             this.BranchView.AllowColumnResize = false;
             this.BranchView.AlwaysScroll = false;
+            resources.ApplyResources(this.BranchView, "BranchView");
             this.BranchView.CellHeightPadding = 0;
             this.BranchView.ChangeSelectionWhenPaging = false;
             this.BranchView.ContextMenuStrip = this.BranchesContextMenu;
@@ -131,7 +128,6 @@
             this.BranchView.Name = "BranchView";
             this.BranchView.RowCount = 0;
             this.BranchView.ScrollSpeed = 1;
-            this.toolTip1.SetToolTip(this.BranchView, resources.GetString("BranchView.ToolTip"));
             this.BranchView.PointedCellChanged += new BizHawk.Client.EmuHawk.InputRoll.CellChangeEventHandler(this.BranchView_PointedCellChanged);
             this.BranchView.SelectedIndexChanged += new System.EventHandler(this.BranchView_SelectedIndexChanged);
             this.BranchView.CellDropped += new BizHawk.Client.EmuHawk.InputRoll.CellDroppedEvent(this.BranchView_CellDropped);
@@ -143,7 +139,6 @@
             // 
             // BranchesContextMenu
             // 
-            resources.ApplyResources(this.BranchesContextMenu, "BranchesContextMenu");
             this.BranchesContextMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.AddBranchContextMenu,
             this.AddBranchWithTextContextMenuItem,
@@ -156,7 +151,7 @@
             this.toolStripSeparator2,
             this.RemoveBranchContextMenuItem});
             this.BranchesContextMenu.Name = "BranchesContextMenu";
-            this.toolTip1.SetToolTip(this.BranchesContextMenu, resources.GetString("BranchesContextMenu.ToolTip"));
+            resources.ApplyResources(this.BranchesContextMenu, "BranchesContextMenu");
             this.BranchesContextMenu.Opening += new System.ComponentModel.CancelEventHandler(this.BranchesContextMenu_Opening);
             // 
             // AddBranchContextMenu
@@ -181,8 +176,8 @@
             // 
             // UpdateWithTextToolStripMenuItem
             // 
-            resources.ApplyResources(this.UpdateWithTextToolStripMenuItem, "UpdateWithTextToolStripMenuItem");
             this.UpdateWithTextToolStripMenuItem.Name = "UpdateWithTextToolStripMenuItem";
+            resources.ApplyResources(this.UpdateWithTextToolStripMenuItem, "UpdateWithTextToolStripMenuItem");
             this.UpdateWithTextToolStripMenuItem.Click += new System.EventHandler(this.UpdateWithTextToolStripMenuItem_Click);
             // 
             // EditBranchTextContextMenuItem
@@ -200,10 +195,6 @@
             resources.ApplyResources(this.UndoBranchToolStripMenuItem, "UndoBranchToolStripMenuItem");
             this.UndoBranchToolStripMenuItem.Click += new System.EventHandler(this.UndoBranchToolStripMenuItem_Click);
             // 
-            // toolStripSeparator2
-            // 
-            resources.ApplyResources(this.toolStripSeparator2, "toolStripSeparator2");
-            // 
             // RemoveBranchContextMenuItem
             // 
             resources.ApplyResources(this.RemoveBranchContextMenuItem, "RemoveBranchContextMenuItem");
@@ -211,11 +202,10 @@
             // 
             // BookmarksBranchesBox
             // 
-            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.Controls.Add(this.BookmarksBranchesGroupBox);
             this.Name = "BookmarksBranchesBox";
-            this.toolTip1.SetToolTip(this, resources.GetString("$this.ToolTip"));
+            resources.ApplyResources(this, "$this");
             this.BookmarksBranchesGroupBox.ResumeLayout(false);
             this.BranchesContextMenu.ResumeLayout(false);
             this.ResumeLayout(false);

@@ -130,22 +130,21 @@ namespace BizHawk.Client.EmuHawk
             // 
             // BotMenu
             // 
-            resources.ApplyResources(this.BotMenu, "BotMenu");
             this.BotMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.FileSubMenu,
             this.OptionsSubMenu,
             this.helpToolStripMenuItem});
-            this.toolTip1.SetToolTip(this.BotMenu, resources.GetString("BotMenu.ToolTip"));
+            resources.ApplyResources(this.BotMenu, "BotMenu");
             // 
             // FileSubMenu
             // 
-            resources.ApplyResources(this.FileSubMenu, "FileSubMenu");
             this.FileSubMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.NewMenuItem,
             this.OpenMenuItem,
             this.SaveMenuItem,
             this.SaveAsMenuItem,
             this.RecentSubMenu});
+            resources.ApplyResources(this.FileSubMenu, "FileSubMenu");
             this.FileSubMenu.DropDownOpened += new System.EventHandler(this.FileSubMenu_DropDownOpened);
             // 
             // NewMenuItem
@@ -170,44 +169,36 @@ namespace BizHawk.Client.EmuHawk
             // 
             // RecentSubMenu
             // 
-            resources.ApplyResources(this.RecentSubMenu, "RecentSubMenu");
             this.RecentSubMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripSeparator2});
+            resources.ApplyResources(this.RecentSubMenu, "RecentSubMenu");
             this.RecentSubMenu.DropDownOpened += new System.EventHandler(this.RecentSubMenu_DropDownOpened);
-            // 
-            // toolStripSeparator2
-            // 
-            resources.ApplyResources(this.toolStripSeparator2, "toolStripSeparator2");
             // 
             // OptionsSubMenu
             // 
-            resources.ApplyResources(this.OptionsSubMenu, "OptionsSubMenu");
             this.OptionsSubMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.MemoryDomainsMenuItem,
             this.DataSizeMenuItem,
             this.BigEndianMenuItem,
             this.toolStripSeparator4,
             this.TurboWhileBottingMenuItem});
+            resources.ApplyResources(this.OptionsSubMenu, "OptionsSubMenu");
             this.OptionsSubMenu.DropDownOpened += new System.EventHandler(this.OptionsSubMenu_DropDownOpened);
             // 
             // MemoryDomainsMenuItem
             // 
-            resources.ApplyResources(this.MemoryDomainsMenuItem, "MemoryDomainsMenuItem");
             this.MemoryDomainsMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripSeparator3});
+            resources.ApplyResources(this.MemoryDomainsMenuItem, "MemoryDomainsMenuItem");
             this.MemoryDomainsMenuItem.DropDownOpened += new System.EventHandler(this.MemoryDomainsMenuItem_DropDownOpened);
-            // 
-            // toolStripSeparator3
-            // 
-            resources.ApplyResources(this.toolStripSeparator3, "toolStripSeparator3");
             // 
             // DataSizeMenuItem
             // 
-            resources.ApplyResources(this.DataSizeMenuItem, "DataSizeMenuItem");
             this.DataSizeMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this._1ByteMenuItem,
             this._2ByteMenuItem,
             this._4ByteMenuItem});
+            resources.ApplyResources(this.DataSizeMenuItem, "DataSizeMenuItem");
             this.DataSizeMenuItem.DropDownOpened += new System.EventHandler(this.DataSizeMenuItem_DropDownOpened);
             // 
             // _1ByteMenuItem
@@ -230,10 +221,6 @@ namespace BizHawk.Client.EmuHawk
             resources.ApplyResources(this.BigEndianMenuItem, "BigEndianMenuItem");
             this.BigEndianMenuItem.Click += new System.EventHandler(this.BigEndianMenuItem_Click);
             // 
-            // toolStripSeparator4
-            // 
-            resources.ApplyResources(this.toolStripSeparator4, "toolStripSeparator4");
-            // 
             // TurboWhileBottingMenuItem
             // 
             resources.ApplyResources(this.TurboWhileBottingMenuItem, "TurboWhileBottingMenuItem");
@@ -248,29 +235,27 @@ namespace BizHawk.Client.EmuHawk
             // 
             resources.ApplyResources(this.RunBtn, "RunBtn");
             this.RunBtn.Name = "RunBtn";
-            this.toolTip1.SetToolTip(this.RunBtn, resources.GetString("RunBtn.ToolTip"));
             this.RunBtn.UseVisualStyleBackColor = true;
             this.RunBtn.Click += new System.EventHandler(this.RunBtn_Click);
             // 
             // BotStatusStrip
             // 
-            resources.ApplyResources(this.BotStatusStrip, "BotStatusStrip");
             this.BotStatusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.BotStatusButton,
             this.MessageLabel});
+            resources.ApplyResources(this.BotStatusStrip, "BotStatusStrip");
             this.BotStatusStrip.Name = "BotStatusStrip";
-            this.toolTip1.SetToolTip(this.BotStatusStrip, resources.GetString("BotStatusStrip.ToolTip"));
             // 
             // BotStatusButton
             // 
-            resources.ApplyResources(this.BotStatusButton, "BotStatusButton");
             this.BotStatusButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            resources.ApplyResources(this.BotStatusButton, "BotStatusButton");
             this.BotStatusButton.Name = "BotStatusButton";
             // 
             // MessageLabel
             // 
-            resources.ApplyResources(this.MessageLabel, "MessageLabel");
             this.MessageLabel.Name = "MessageLabel";
+            resources.ApplyResources(this.MessageLabel, "MessageLabel");
             // 
             // ControlsBox
             // 
@@ -278,13 +263,11 @@ namespace BizHawk.Client.EmuHawk
             this.ControlsBox.Controls.Add(this.ControlProbabilityPanel);
             this.ControlsBox.Name = "ControlsBox";
             this.ControlsBox.TabStop = false;
-            this.toolTip1.SetToolTip(this.ControlsBox, resources.GetString("ControlsBox.ToolTip"));
             // 
             // ControlProbabilityPanel
             // 
             resources.ApplyResources(this.ControlProbabilityPanel, "ControlProbabilityPanel");
             this.ControlProbabilityPanel.Name = "ControlProbabilityPanel";
-            this.toolTip1.SetToolTip(this.ControlProbabilityPanel, resources.GetString("ControlProbabilityPanel.ToolTip"));
             // 
             // BestGroupBox
             // 
@@ -305,7 +288,6 @@ namespace BizHawk.Client.EmuHawk
             this.BestGroupBox.Controls.Add(this.label13);
             this.BestGroupBox.Name = "BestGroupBox";
             this.BestGroupBox.TabStop = false;
-            this.toolTip1.SetToolTip(this.BestGroupBox, resources.GetString("BestGroupBox.ToolTip"));
             // 
             // btnCopyBestInput
             // 
@@ -319,7 +301,6 @@ namespace BizHawk.Client.EmuHawk
             // 
             resources.ApplyResources(this.PlayBestButton, "PlayBestButton");
             this.PlayBestButton.Name = "PlayBestButton";
-            this.toolTip1.SetToolTip(this.PlayBestButton, resources.GetString("PlayBestButton.ToolTip"));
             this.PlayBestButton.UseVisualStyleBackColor = true;
             this.PlayBestButton.Click += new System.EventHandler(this.PlayBestButton_Click);
             // 
@@ -327,7 +308,6 @@ namespace BizHawk.Client.EmuHawk
             // 
             resources.ApplyResources(this.ClearBestButton, "ClearBestButton");
             this.ClearBestButton.Name = "ClearBestButton";
-            this.toolTip1.SetToolTip(this.ClearBestButton, resources.GetString("ClearBestButton.ToolTip"));
             this.ClearBestButton.UseVisualStyleBackColor = true;
             this.ClearBestButton.Click += new System.EventHandler(this.ClearBestButton_Click);
             // 
@@ -335,13 +315,11 @@ namespace BizHawk.Client.EmuHawk
             // 
             resources.ApplyResources(this.BestAttemptNumberLabel, "BestAttemptNumberLabel");
             this.BestAttemptNumberLabel.Name = "BestAttemptNumberLabel";
-            this.toolTip1.SetToolTip(this.BestAttemptNumberLabel, resources.GetString("BestAttemptNumberLabel.ToolTip"));
             // 
             // label17
             // 
             resources.ApplyResources(this.label17, "label17");
             this.label17.Name = "label17";
-            this.toolTip1.SetToolTip(this.label17, resources.GetString("label17.ToolTip"));
             // 
             // panel1
             // 
@@ -349,13 +327,11 @@ namespace BizHawk.Client.EmuHawk
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel1.Controls.Add(this.BestAttemptLogLabel);
             this.panel1.Name = "panel1";
-            this.toolTip1.SetToolTip(this.panel1, resources.GetString("panel1.ToolTip"));
             // 
             // BestAttemptLogLabel
             // 
             resources.ApplyResources(this.BestAttemptLogLabel, "BestAttemptLogLabel");
             this.BestAttemptLogLabel.Name = "BestAttemptLogLabel";
-            this.toolTip1.SetToolTip(this.BestAttemptLogLabel, resources.GetString("BestAttemptLogLabel.ToolTip"));
             // 
             // BestTieBreak3Box
             // 
@@ -363,7 +339,6 @@ namespace BizHawk.Client.EmuHawk
             this.BestTieBreak3Box.Name = "BestTieBreak3Box";
             this.BestTieBreak3Box.ReadOnly = true;
             this.BestTieBreak3Box.TabStop = false;
-            this.toolTip1.SetToolTip(this.BestTieBreak3Box, resources.GetString("BestTieBreak3Box.ToolTip"));
             // 
             // BestTieBreak2Box
             // 
@@ -371,7 +346,6 @@ namespace BizHawk.Client.EmuHawk
             this.BestTieBreak2Box.Name = "BestTieBreak2Box";
             this.BestTieBreak2Box.ReadOnly = true;
             this.BestTieBreak2Box.TabStop = false;
-            this.toolTip1.SetToolTip(this.BestTieBreak2Box, resources.GetString("BestTieBreak2Box.ToolTip"));
             // 
             // BestTieBreak1Box
             // 
@@ -379,7 +353,6 @@ namespace BizHawk.Client.EmuHawk
             this.BestTieBreak1Box.Name = "BestTieBreak1Box";
             this.BestTieBreak1Box.ReadOnly = true;
             this.BestTieBreak1Box.TabStop = false;
-            this.toolTip1.SetToolTip(this.BestTieBreak1Box, resources.GetString("BestTieBreak1Box.ToolTip"));
             // 
             // BestMaximizeBox
             // 
@@ -387,55 +360,46 @@ namespace BizHawk.Client.EmuHawk
             this.BestMaximizeBox.Name = "BestMaximizeBox";
             this.BestMaximizeBox.ReadOnly = true;
             this.BestMaximizeBox.TabStop = false;
-            this.toolTip1.SetToolTip(this.BestMaximizeBox, resources.GetString("BestMaximizeBox.ToolTip"));
             // 
             // label16
             // 
             resources.ApplyResources(this.label16, "label16");
             this.label16.Name = "label16";
-            this.toolTip1.SetToolTip(this.label16, resources.GetString("label16.ToolTip"));
             // 
             // label15
             // 
             resources.ApplyResources(this.label15, "label15");
             this.label15.Name = "label15";
-            this.toolTip1.SetToolTip(this.label15, resources.GetString("label15.ToolTip"));
             // 
             // label14
             // 
             resources.ApplyResources(this.label14, "label14");
             this.label14.Name = "label14";
-            this.toolTip1.SetToolTip(this.label14, resources.GetString("label14.ToolTip"));
             // 
             // label13
             // 
             resources.ApplyResources(this.label13, "label13");
             this.label13.Name = "label13";
-            this.toolTip1.SetToolTip(this.label13, resources.GetString("label13.ToolTip"));
             // 
             // label1
             // 
             resources.ApplyResources(this.label1, "label1");
             this.label1.Name = "label1";
-            this.toolTip1.SetToolTip(this.label1, resources.GetString("label1.ToolTip"));
             // 
             // label2
             // 
             resources.ApplyResources(this.label2, "label2");
             this.label2.Name = "label2";
-            this.toolTip1.SetToolTip(this.label2, resources.GetString("label2.ToolTip"));
             // 
             // AttemptsLabel
             // 
             resources.ApplyResources(this.AttemptsLabel, "AttemptsLabel");
             this.AttemptsLabel.Name = "AttemptsLabel";
-            this.toolTip1.SetToolTip(this.AttemptsLabel, resources.GetString("AttemptsLabel.ToolTip"));
             // 
             // FramesLabel
             // 
             resources.ApplyResources(this.FramesLabel, "FramesLabel");
             this.FramesLabel.Name = "FramesLabel";
-            this.toolTip1.SetToolTip(this.FramesLabel, resources.GetString("FramesLabel.ToolTip"));
             // 
             // GoalGroupBox
             // 
@@ -449,13 +413,11 @@ namespace BizHawk.Client.EmuHawk
             this.GoalGroupBox.Controls.Add(this.panel6);
             this.GoalGroupBox.Name = "GoalGroupBox";
             this.GoalGroupBox.TabStop = false;
-            this.toolTip1.SetToolTip(this.GoalGroupBox, resources.GetString("GoalGroupBox.ToolTip"));
             // 
             // label4
             // 
             resources.ApplyResources(this.label4, "label4");
             this.label4.Name = "label4";
-            this.toolTip1.SetToolTip(this.label4, resources.GetString("label4.ToolTip"));
             // 
             // FrameLengthNumeric
             // 
@@ -466,7 +428,6 @@ namespace BizHawk.Client.EmuHawk
             0,
             0});
             this.FrameLengthNumeric.Name = "FrameLengthNumeric";
-            this.toolTip1.SetToolTip(this.FrameLengthNumeric, resources.GetString("FrameLengthNumeric.ToolTip"));
             this.FrameLengthNumeric.Value = new decimal(new int[] {
             100,
             0,
@@ -478,11 +439,9 @@ namespace BizHawk.Client.EmuHawk
             // 
             resources.ApplyResources(this.label3, "label3");
             this.label3.Name = "label3";
-            this.toolTip1.SetToolTip(this.label3, resources.GetString("label3.ToolTip"));
             // 
             // panel3
             // 
-            resources.ApplyResources(this.panel3, "panel3");
             this.panel3.Controls.Add(this.MainValueNumeric);
             this.panel3.Controls.Add(this.MainValueRadio);
             this.panel3.Controls.Add(this.MainBestRadio);
@@ -490,8 +449,8 @@ namespace BizHawk.Client.EmuHawk
             this.panel3.Controls.Add(this.label9);
             this.panel3.Controls.Add(this.MaximizeAddressBox);
             this.panel3.Controls.Add(this.maximizeLabeltext);
+            resources.ApplyResources(this.panel3, "panel3");
             this.panel3.Name = "panel3";
-            this.toolTip1.SetToolTip(this.panel3, resources.GetString("panel3.ToolTip"));
             // 
             // MainValueNumeric
             // 
@@ -507,14 +466,12 @@ namespace BizHawk.Client.EmuHawk
             0,
             -2147483648});
             this.MainValueNumeric.Name = "MainValueNumeric";
-            this.toolTip1.SetToolTip(this.MainValueNumeric, resources.GetString("MainValueNumeric.ToolTip"));
             this.MainValueNumeric.ValueChanged += new System.EventHandler(this.MainValueNumeric_ValueChanged);
             // 
             // MainValueRadio
             // 
             resources.ApplyResources(this.MainValueRadio, "MainValueRadio");
             this.MainValueRadio.Name = "MainValueRadio";
-            this.toolTip1.SetToolTip(this.MainValueRadio, resources.GetString("MainValueRadio.ToolTip"));
             this.MainValueRadio.UseVisualStyleBackColor = true;
             this.MainValueRadio.CheckedChanged += new System.EventHandler(this.MainValueRadio_CheckedChanged);
             // 
@@ -524,13 +481,11 @@ namespace BizHawk.Client.EmuHawk
             this.MainBestRadio.Checked = true;
             this.MainBestRadio.Name = "MainBestRadio";
             this.MainBestRadio.TabStop = true;
-            this.toolTip1.SetToolTip(this.MainBestRadio, resources.GetString("MainBestRadio.ToolTip"));
             this.MainBestRadio.UseVisualStyleBackColor = true;
             this.MainBestRadio.CheckedChanged += new System.EventHandler(this.MainBestRadio_CheckedChanged);
             // 
             // MainOperator
             // 
-            resources.ApplyResources(this.MainOperator, "MainOperator");
             this.MainOperator.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.MainOperator.FormattingEnabled = true;
             this.MainOperator.Items.AddRange(new object[] {
@@ -540,14 +495,13 @@ namespace BizHawk.Client.EmuHawk
             resources.GetString("MainOperator.Items3"),
             resources.GetString("MainOperator.Items4"),
             resources.GetString("MainOperator.Items5")});
+            resources.ApplyResources(this.MainOperator, "MainOperator");
             this.MainOperator.Name = "MainOperator";
-            this.toolTip1.SetToolTip(this.MainOperator, resources.GetString("MainOperator.ToolTip"));
             // 
             // label9
             // 
             resources.ApplyResources(this.label9, "label9");
             this.label9.Name = "label9";
-            this.toolTip1.SetToolTip(this.label9, resources.GetString("label9.ToolTip"));
             // 
             // MaximizeAddressBox
             // 
@@ -555,18 +509,15 @@ namespace BizHawk.Client.EmuHawk
             this.MaximizeAddressBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.MaximizeAddressBox.Name = "MaximizeAddressBox";
             this.MaximizeAddressBox.Nullable = true;
-            this.toolTip1.SetToolTip(this.MaximizeAddressBox, resources.GetString("MaximizeAddressBox.ToolTip"));
             this.MaximizeAddressBox.TextChanged += new System.EventHandler(this.MaximizeAddressBox_TextChanged);
             // 
             // maximizeLabeltext
             // 
             resources.ApplyResources(this.maximizeLabeltext, "maximizeLabeltext");
             this.maximizeLabeltext.Name = "maximizeLabeltext";
-            this.toolTip1.SetToolTip(this.maximizeLabeltext, resources.GetString("maximizeLabeltext.ToolTip"));
             // 
             // panel4
             // 
-            resources.ApplyResources(this.panel4, "panel4");
             this.panel4.Controls.Add(this.TieBreak1Numeric);
             this.panel4.Controls.Add(this.TieBreak1ValueRadio);
             this.panel4.Controls.Add(this.Tiebreak1Operator);
@@ -574,8 +525,8 @@ namespace BizHawk.Client.EmuHawk
             this.panel4.Controls.Add(this.label5);
             this.panel4.Controls.Add(this.TieBreaker1Box);
             this.panel4.Controls.Add(this.label10);
+            resources.ApplyResources(this.panel4, "panel4");
             this.panel4.Name = "panel4";
-            this.toolTip1.SetToolTip(this.panel4, resources.GetString("panel4.ToolTip"));
             // 
             // TieBreak1Numeric
             // 
@@ -591,20 +542,17 @@ namespace BizHawk.Client.EmuHawk
             0,
             -2147483648});
             this.TieBreak1Numeric.Name = "TieBreak1Numeric";
-            this.toolTip1.SetToolTip(this.TieBreak1Numeric, resources.GetString("TieBreak1Numeric.ToolTip"));
             this.TieBreak1Numeric.ValueChanged += new System.EventHandler(this.TieBreak1Numeric_ValueChanged);
             // 
             // TieBreak1ValueRadio
             // 
             resources.ApplyResources(this.TieBreak1ValueRadio, "TieBreak1ValueRadio");
             this.TieBreak1ValueRadio.Name = "TieBreak1ValueRadio";
-            this.toolTip1.SetToolTip(this.TieBreak1ValueRadio, resources.GetString("TieBreak1ValueRadio.ToolTip"));
             this.TieBreak1ValueRadio.UseVisualStyleBackColor = true;
             this.TieBreak1ValueRadio.CheckedChanged += new System.EventHandler(this.TieBreak1ValueRadio_CheckedChanged);
             // 
             // Tiebreak1Operator
             // 
-            resources.ApplyResources(this.Tiebreak1Operator, "Tiebreak1Operator");
             this.Tiebreak1Operator.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.Tiebreak1Operator.FormattingEnabled = true;
             this.Tiebreak1Operator.Items.AddRange(new object[] {
@@ -614,8 +562,8 @@ namespace BizHawk.Client.EmuHawk
             resources.GetString("Tiebreak1Operator.Items3"),
             resources.GetString("Tiebreak1Operator.Items4"),
             resources.GetString("Tiebreak1Operator.Items5")});
+            resources.ApplyResources(this.Tiebreak1Operator, "Tiebreak1Operator");
             this.Tiebreak1Operator.Name = "Tiebreak1Operator";
-            this.toolTip1.SetToolTip(this.Tiebreak1Operator, resources.GetString("Tiebreak1Operator.ToolTip"));
             // 
             // TieBreak1BestRadio
             // 
@@ -623,7 +571,6 @@ namespace BizHawk.Client.EmuHawk
             this.TieBreak1BestRadio.Checked = true;
             this.TieBreak1BestRadio.Name = "TieBreak1BestRadio";
             this.TieBreak1BestRadio.TabStop = true;
-            this.toolTip1.SetToolTip(this.TieBreak1BestRadio, resources.GetString("TieBreak1BestRadio.ToolTip"));
             this.TieBreak1BestRadio.UseVisualStyleBackColor = true;
             this.TieBreak1BestRadio.CheckedChanged += new System.EventHandler(this.Tiebreak1BestRadio_CheckedChanged);
             // 
@@ -631,7 +578,6 @@ namespace BizHawk.Client.EmuHawk
             // 
             resources.ApplyResources(this.label5, "label5");
             this.label5.Name = "label5";
-            this.toolTip1.SetToolTip(this.label5, resources.GetString("label5.ToolTip"));
             // 
             // TieBreaker1Box
             // 
@@ -639,17 +585,14 @@ namespace BizHawk.Client.EmuHawk
             this.TieBreaker1Box.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.TieBreaker1Box.Name = "TieBreaker1Box";
             this.TieBreaker1Box.Nullable = true;
-            this.toolTip1.SetToolTip(this.TieBreaker1Box, resources.GetString("TieBreaker1Box.ToolTip"));
             // 
             // label10
             // 
             resources.ApplyResources(this.label10, "label10");
             this.label10.Name = "label10";
-            this.toolTip1.SetToolTip(this.label10, resources.GetString("label10.ToolTip"));
             // 
             // panel5
             // 
-            resources.ApplyResources(this.panel5, "panel5");
             this.panel5.Controls.Add(this.TieBreak2Numeric);
             this.panel5.Controls.Add(this.Tiebreak2Operator);
             this.panel5.Controls.Add(this.TieBreak2ValueRadio);
@@ -657,8 +600,8 @@ namespace BizHawk.Client.EmuHawk
             this.panel5.Controls.Add(this.label11);
             this.panel5.Controls.Add(this.label6);
             this.panel5.Controls.Add(this.TieBreaker2Box);
+            resources.ApplyResources(this.panel5, "panel5");
             this.panel5.Name = "panel5";
-            this.toolTip1.SetToolTip(this.panel5, resources.GetString("panel5.ToolTip"));
             // 
             // TieBreak2Numeric
             // 
@@ -674,12 +617,10 @@ namespace BizHawk.Client.EmuHawk
             0,
             -2147483648});
             this.TieBreak2Numeric.Name = "TieBreak2Numeric";
-            this.toolTip1.SetToolTip(this.TieBreak2Numeric, resources.GetString("TieBreak2Numeric.ToolTip"));
             this.TieBreak2Numeric.ValueChanged += new System.EventHandler(this.TieBreak2Numeric_ValueChanged);
             // 
             // Tiebreak2Operator
             // 
-            resources.ApplyResources(this.Tiebreak2Operator, "Tiebreak2Operator");
             this.Tiebreak2Operator.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.Tiebreak2Operator.FormattingEnabled = true;
             this.Tiebreak2Operator.Items.AddRange(new object[] {
@@ -689,14 +630,13 @@ namespace BizHawk.Client.EmuHawk
             resources.GetString("Tiebreak2Operator.Items3"),
             resources.GetString("Tiebreak2Operator.Items4"),
             resources.GetString("Tiebreak2Operator.Items5")});
+            resources.ApplyResources(this.Tiebreak2Operator, "Tiebreak2Operator");
             this.Tiebreak2Operator.Name = "Tiebreak2Operator";
-            this.toolTip1.SetToolTip(this.Tiebreak2Operator, resources.GetString("Tiebreak2Operator.ToolTip"));
             // 
             // TieBreak2ValueRadio
             // 
             resources.ApplyResources(this.TieBreak2ValueRadio, "TieBreak2ValueRadio");
             this.TieBreak2ValueRadio.Name = "TieBreak2ValueRadio";
-            this.toolTip1.SetToolTip(this.TieBreak2ValueRadio, resources.GetString("TieBreak2ValueRadio.ToolTip"));
             this.TieBreak2ValueRadio.UseVisualStyleBackColor = true;
             this.TieBreak2ValueRadio.CheckedChanged += new System.EventHandler(this.TieBreak2ValueRadio_CheckedChanged);
             // 
@@ -706,7 +646,6 @@ namespace BizHawk.Client.EmuHawk
             this.TieBreak2BestRadio.Checked = true;
             this.TieBreak2BestRadio.Name = "TieBreak2BestRadio";
             this.TieBreak2BestRadio.TabStop = true;
-            this.toolTip1.SetToolTip(this.TieBreak2BestRadio, resources.GetString("TieBreak2BestRadio.ToolTip"));
             this.TieBreak2BestRadio.UseVisualStyleBackColor = true;
             this.TieBreak2BestRadio.CheckedChanged += new System.EventHandler(this.Tiebreak2BestRadio_CheckedChanged);
             // 
@@ -714,13 +653,11 @@ namespace BizHawk.Client.EmuHawk
             // 
             resources.ApplyResources(this.label11, "label11");
             this.label11.Name = "label11";
-            this.toolTip1.SetToolTip(this.label11, resources.GetString("label11.ToolTip"));
             // 
             // label6
             // 
             resources.ApplyResources(this.label6, "label6");
             this.label6.Name = "label6";
-            this.toolTip1.SetToolTip(this.label6, resources.GetString("label6.ToolTip"));
             // 
             // TieBreaker2Box
             // 
@@ -728,11 +665,9 @@ namespace BizHawk.Client.EmuHawk
             this.TieBreaker2Box.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.TieBreaker2Box.Name = "TieBreaker2Box";
             this.TieBreaker2Box.Nullable = true;
-            this.toolTip1.SetToolTip(this.TieBreaker2Box, resources.GetString("TieBreaker2Box.ToolTip"));
             // 
             // panel6
             // 
-            resources.ApplyResources(this.panel6, "panel6");
             this.panel6.Controls.Add(this.label12);
             this.panel6.Controls.Add(this.label7);
             this.panel6.Controls.Add(this.TieBreaker3Box);
@@ -740,20 +675,18 @@ namespace BizHawk.Client.EmuHawk
             this.panel6.Controls.Add(this.TieBreak3ValueRadio);
             this.panel6.Controls.Add(this.TieBreak3BestRadio);
             this.panel6.Controls.Add(this.Tiebreak3Operator);
+            resources.ApplyResources(this.panel6, "panel6");
             this.panel6.Name = "panel6";
-            this.toolTip1.SetToolTip(this.panel6, resources.GetString("panel6.ToolTip"));
             // 
             // label12
             // 
             resources.ApplyResources(this.label12, "label12");
             this.label12.Name = "label12";
-            this.toolTip1.SetToolTip(this.label12, resources.GetString("label12.ToolTip"));
             // 
             // label7
             // 
             resources.ApplyResources(this.label7, "label7");
             this.label7.Name = "label7";
-            this.toolTip1.SetToolTip(this.label7, resources.GetString("label7.ToolTip"));
             // 
             // TieBreaker3Box
             // 
@@ -761,7 +694,6 @@ namespace BizHawk.Client.EmuHawk
             this.TieBreaker3Box.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.TieBreaker3Box.Name = "TieBreaker3Box";
             this.TieBreaker3Box.Nullable = true;
-            this.toolTip1.SetToolTip(this.TieBreaker3Box, resources.GetString("TieBreaker3Box.ToolTip"));
             // 
             // TieBreak3Numeric
             // 
@@ -777,14 +709,12 @@ namespace BizHawk.Client.EmuHawk
             0,
             -2147483648});
             this.TieBreak3Numeric.Name = "TieBreak3Numeric";
-            this.toolTip1.SetToolTip(this.TieBreak3Numeric, resources.GetString("TieBreak3Numeric.ToolTip"));
             this.TieBreak3Numeric.ValueChanged += new System.EventHandler(this.TieBreak3Numeric_ValueChanged);
             // 
             // TieBreak3ValueRadio
             // 
             resources.ApplyResources(this.TieBreak3ValueRadio, "TieBreak3ValueRadio");
             this.TieBreak3ValueRadio.Name = "TieBreak3ValueRadio";
-            this.toolTip1.SetToolTip(this.TieBreak3ValueRadio, resources.GetString("TieBreak3ValueRadio.ToolTip"));
             this.TieBreak3ValueRadio.UseVisualStyleBackColor = true;
             this.TieBreak3ValueRadio.CheckedChanged += new System.EventHandler(this.TieBreak3ValueRadio_CheckedChanged);
             // 
@@ -794,13 +724,11 @@ namespace BizHawk.Client.EmuHawk
             this.TieBreak3BestRadio.Checked = true;
             this.TieBreak3BestRadio.Name = "TieBreak3BestRadio";
             this.TieBreak3BestRadio.TabStop = true;
-            this.toolTip1.SetToolTip(this.TieBreak3BestRadio, resources.GetString("TieBreak3BestRadio.ToolTip"));
             this.TieBreak3BestRadio.UseVisualStyleBackColor = true;
             this.TieBreak3BestRadio.CheckedChanged += new System.EventHandler(this.Tiebreak3BestRadio_CheckedChanged);
             // 
             // Tiebreak3Operator
             // 
-            resources.ApplyResources(this.Tiebreak3Operator, "Tiebreak3Operator");
             this.Tiebreak3Operator.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.Tiebreak3Operator.FormattingEnabled = true;
             this.Tiebreak3Operator.Items.AddRange(new object[] {
@@ -810,14 +738,13 @@ namespace BizHawk.Client.EmuHawk
             resources.GetString("Tiebreak3Operator.Items3"),
             resources.GetString("Tiebreak3Operator.Items4"),
             resources.GetString("Tiebreak3Operator.Items5")});
+            resources.ApplyResources(this.Tiebreak3Operator, "Tiebreak3Operator");
             this.Tiebreak3Operator.Name = "Tiebreak3Operator";
-            this.toolTip1.SetToolTip(this.Tiebreak3Operator, resources.GetString("Tiebreak3Operator.ToolTip"));
             // 
             // StopBtn
             // 
             resources.ApplyResources(this.StopBtn, "StopBtn");
             this.StopBtn.Name = "StopBtn";
-            this.toolTip1.SetToolTip(this.StopBtn, resources.GetString("StopBtn.ToolTip"));
             this.StopBtn.UseVisualStyleBackColor = true;
             this.StopBtn.Click += new System.EventHandler(this.StopBtn_Click);
             // 
@@ -825,11 +752,9 @@ namespace BizHawk.Client.EmuHawk
             // 
             resources.ApplyResources(this.label8, "label8");
             this.label8.Name = "label8";
-            this.toolTip1.SetToolTip(this.label8, resources.GetString("label8.ToolTip"));
             // 
             // StartFromSlotBox
             // 
-            resources.ApplyResources(this.StartFromSlotBox, "StartFromSlotBox");
             this.StartFromSlotBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.StartFromSlotBox.FormattingEnabled = true;
             this.StartFromSlotBox.Items.AddRange(new object[] {
@@ -843,8 +768,8 @@ namespace BizHawk.Client.EmuHawk
             resources.GetString("StartFromSlotBox.Items7"),
             resources.GetString("StartFromSlotBox.Items8"),
             resources.GetString("StartFromSlotBox.Items9")});
+            resources.ApplyResources(this.StartFromSlotBox, "StartFromSlotBox");
             this.StartFromSlotBox.Name = "StartFromSlotBox";
-            this.toolTip1.SetToolTip(this.StartFromSlotBox, resources.GetString("StartFromSlotBox.ToolTip"));
             // 
             // ControlGroupBox
             // 
@@ -856,26 +781,23 @@ namespace BizHawk.Client.EmuHawk
             this.ControlGroupBox.Controls.Add(this.label8);
             this.ControlGroupBox.Name = "ControlGroupBox";
             this.ControlGroupBox.TabStop = false;
-            this.toolTip1.SetToolTip(this.ControlGroupBox, resources.GetString("ControlGroupBox.ToolTip"));
             // 
             // panel2
             // 
-            resources.ApplyResources(this.panel2, "panel2");
             this.panel2.ContextMenuStrip = this.StatsContextMenu;
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.FramesLabel);
             this.panel2.Controls.Add(this.AttemptsLabel);
+            resources.ApplyResources(this.panel2, "panel2");
             this.panel2.Name = "panel2";
-            this.toolTip1.SetToolTip(this.panel2, resources.GetString("panel2.ToolTip"));
             // 
             // StatsContextMenu
             // 
-            resources.ApplyResources(this.StatsContextMenu, "StatsContextMenu");
             this.StatsContextMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ClearStatsContextMenuItem});
             this.StatsContextMenu.Name = "StatsContextMenu";
-            this.toolTip1.SetToolTip(this.StatsContextMenu, resources.GetString("StatsContextMenu.ToolTip"));
+            resources.ApplyResources(this.StatsContextMenu, "StatsContextMenu");
             // 
             // ClearStatsContextMenuItem
             // 
@@ -894,7 +816,6 @@ namespace BizHawk.Client.EmuHawk
             this.Controls.Add(this.BotMenu);
             this.MainMenuStrip = this.BotMenu;
             this.Name = "BasicBot";
-            this.toolTip1.SetToolTip(this, resources.GetString("$this.ToolTip"));
             this.Load += new System.EventHandler(this.BasicBot_Load);
             this.BotMenu.ResumeLayout(false);
             this.BotMenu.PerformLayout();

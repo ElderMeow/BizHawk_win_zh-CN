@@ -63,6 +63,7 @@ namespace BizHawk.Client.EmuHawk
 			{
 				Columns = new List<RollColumn>
 				{
+					// Use raw text here, and translated in RollColumn constructor.
 					new(name: IconColumnName, widthUnscaled: 22, text: " "),
 					new(name: ScriptColumnName, widthUnscaled: 92, text: TheLocalizater.TranslateText("Script")),
 					new(name: PathColumnName, widthUnscaled: 300, text: TheLocalizater.TranslateText("Path")),

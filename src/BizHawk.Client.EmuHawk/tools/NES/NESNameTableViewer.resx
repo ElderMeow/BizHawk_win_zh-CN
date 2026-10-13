@@ -127,8 +127,8 @@
   <data name="label7.ToolTip" xml:space="preserve">
     <value />
   </data>
-  <data name="label3.ToolTip" xml:space="preserve">
-    <value />
+  <data name="&gt;&gt;rbNametableSW.Name" xml:space="preserve">
+    <value>rbNametableSW</value>
   </data>
   <data name="&gt;&gt;ScreenshotMenuItem.Type" xml:space="preserve">
     <value>BizHawk.WinForms.Controls.ToolStripMenuItemEx, BizHawk.WinForms.Controls, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
@@ -142,6 +142,9 @@
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="RefreshRate.Orientation" type="System.Windows.Forms.Orientation, System.Windows.Forms">
     <value>Vertical</value>
+  </data>
+  <data name="&gt;&gt;groupBox4.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
   <data name="&gt;&gt;PPUAddressLabel.Name" xml:space="preserve">
     <value>PPUAddressLabel</value>
@@ -164,11 +167,11 @@
   <data name="&gt;&gt;label4.Type" xml:space="preserve">
     <value>BizHawk.WinForms.Controls.LocLabelEx, BizHawk.WinForms.Controls, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
-  <data name="groupBox4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>563, 165</value>
+  <data name="&gt;&gt;NameTableView.Name" xml:space="preserve">
+    <value>NameTableView</value>
   </data>
-  <data name="rbNametableNW.ToolTip" xml:space="preserve">
-    <value>0x2000</value>
+  <data name="NameTableView.Size" type="System.Drawing.Size, System.Drawing">
+    <value>512, 443</value>
   </data>
   <data name="&gt;&gt;SaveImageClipboardMenuItem.Name" xml:space="preserve">
     <value>SaveImageClipboardMenuItem</value>
@@ -182,8 +185,9 @@
   <data name="&gt;&gt;SaveImageClipboardMenuItem.Type" xml:space="preserve">
     <value>BizHawk.WinForms.Controls.ToolStripMenuItemEx, BizHawk.WinForms.Controls, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
-  <data name="&gt;&gt;rbNametableSW.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="groupBox3.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
   </data>
   <data name="label6.Location" type="System.Drawing.Point, System.Drawing">
     <value>7, 30</value>
@@ -206,13 +210,9 @@
   <data name="&gt;&gt;rbNametableNW.Name" xml:space="preserve">
     <value>rbNametableNW</value>
   </data>
-  <data name="&gt;&gt;rbNametableSW.Name" xml:space="preserve">
-    <value>rbNametableSW</value>
-  </data>
   <data name="txtScanline.Text" xml:space="preserve">
     <value>0</value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="txtScanline.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
@@ -225,8 +225,14 @@
   <data name="&gt;&gt;txtScanline.Name" xml:space="preserve">
     <value>txtScanline</value>
   </data>
+  <data name="&gt;&gt;rbNametableNW.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;XYLabel.Parent" xml:space="preserve">
     <value>groupBox4</value>
+  </data>
+  <data name="groupBox5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>108, 218</value>
   </data>
   <data name="&gt;&gt;FileSubMenu.Name" xml:space="preserve">
     <value>FileSubMenu</value>
@@ -258,6 +264,9 @@
   <data name="&gt;&gt;label7.Parent" xml:space="preserve">
     <value>groupBox5</value>
   </data>
+  <data name="RefreshRate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>45, 126</value>
+  </data>
   <data name="&gt;&gt;rbNametableSE.Name" xml:space="preserve">
     <value>rbNametableSE</value>
   </data>
@@ -267,14 +276,17 @@
   <data name="&gt;&gt;ScreenshotMenuItem.Name" xml:space="preserve">
     <value>ScreenshotMenuItem</value>
   </data>
+  <data name="&gt;&gt;TableLabel.Parent" xml:space="preserve">
+    <value>groupBox4</value>
+  </data>
   <data name="RefreshRate.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
   <data name="XYLabel.Text" xml:space="preserve">
     <value>     </value>
   </data>
-  <data name="rbNametableAll.Location" type="System.Drawing.Point, System.Drawing">
-    <value>31, 35</value>
+  <data name="groupBox2.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
     <value>Tile ID:</value>
@@ -282,14 +294,14 @@
   <data name="&gt;&gt;rbNametableSW.Parent" xml:space="preserve">
     <value>groupBox2</value>
   </data>
-  <data name="&gt;&gt;groupBox5.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="&gt;&gt;label6.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="rbNametableNE.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="&gt;&gt;groupBox5.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="&gt;&gt;groupBox4.Name" xml:space="preserve">
     <value>groupBox4</value>
@@ -297,8 +309,8 @@
   <data name="RefreshRate.ToolTip" xml:space="preserve">
     <value />
   </data>
-  <data name="label4.Text" xml:space="preserve">
-    <value>Table:</value>
+  <data name="groupBox4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>563, 165</value>
   </data>
   <data name="rbNametableNE.ToolTip" xml:space="preserve">
     <value>0x2400</value>
@@ -306,8 +318,8 @@
   <data name="&gt;&gt;label5.Type" xml:space="preserve">
     <value>BizHawk.WinForms.Controls.LocLabelEx, BizHawk.WinForms.Controls, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
-  <data name="&gt;&gt;TableLabel.Parent" xml:space="preserve">
-    <value>groupBox4</value>
+  <data name="rbNametableAll.Location" type="System.Drawing.Point, System.Drawing">
+    <value>31, 35</value>
   </data>
   <data name="&gt;&gt;rbNametableSE.Type" xml:space="preserve">
     <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -324,8 +336,8 @@
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterParent</value>
   </data>
-  <data name="&gt;&gt;rbNametableNE.Parent" xml:space="preserve">
-    <value>groupBox2</value>
+  <data name="menuStrip1.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
   </data>
   <data name="rbNametableAll.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
@@ -342,8 +354,8 @@
   <data name="rbNametableAll.ToolTip" xml:space="preserve">
     <value>All</value>
   </data>
-  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 24</value>
+  <data name="&gt;&gt;groupBox1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="SaveImageClipboardMenuItem.ShortcutKeyDisplayString" xml:space="preserve">
     <value>Ctrl+C</value>
@@ -366,17 +378,14 @@
   <data name="&gt;&gt;FileSubMenu.Type" xml:space="preserve">
     <value>BizHawk.WinForms.Controls.ToolStripMenuItemEx, BizHawk.WinForms.Controls, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
-  <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>NESNameTableViewer</value>
+  <data name="&gt;&gt;TileIDLabel.ZOrder" xml:space="preserve">
+    <value>6</value>
   </data>
   <data name="&gt;&gt;label2.Name" xml:space="preserve">
     <value>label2</value>
   </data>
   <data name="&gt;&gt;groupBox3.Name" xml:space="preserve">
     <value>groupBox3</value>
-  </data>
-  <data name="&gt;&gt;TileIDLabel.ZOrder" xml:space="preserve">
-    <value>6</value>
   </data>
   <data name="ScreenshotMenuItem.Text" xml:space="preserve">
     <value>Save Screenshot &amp;As...</value>
@@ -385,7 +394,10 @@
     <value>More</value>
   </data>
   <data name="&gt;&gt;menuStrip1.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
+  </data>
+  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 24</value>
   </data>
   <data name="rbNametableSW.Size" type="System.Drawing.Size, System.Drawing">
     <value>14, 13</value>
@@ -432,14 +444,14 @@
   <data name="&gt;&gt;label4.Parent" xml:space="preserve">
     <value>groupBox4</value>
   </data>
-  <data name="PaletteLabel.ToolTip" xml:space="preserve">
-    <value />
+  <data name="&gt;&gt;TileIDLabel.Name" xml:space="preserve">
+    <value>TileIDLabel</value>
   </data>
-  <data name="&gt;&gt;rbNametableNW.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;rbNametableNE.Parent" xml:space="preserve">
+    <value>groupBox2</value>
   </data>
-  <data name="&gt;&gt;label2.Parent" xml:space="preserve">
-    <value>groupBox4</value>
+  <data name="ScreenshotAsContextMenuItem.Text" xml:space="preserve">
+    <value>&amp;Save Image...</value>
   </data>
   <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
     <value>3</value>
@@ -465,8 +477,14 @@
   <data name="ScreenshotToClipboardMenuItem.Text" xml:space="preserve">
     <value>Screenshot to &amp;Clipboard</value>
   </data>
-  <data name="groupBox5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>108, 218</value>
+  <data name="groupBox4.Text" xml:space="preserve">
+    <value>Properties</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>NESNameTableViewer</value>
+  </data>
+  <data name="ScreenshotToClipboardMenuItem.ShortcutKeyDisplayString" xml:space="preserve">
+    <value>Ctrl+C</value>
   </data>
   <data name="&gt;&gt;NameTableView.Parent" xml:space="preserve">
     <value>groupBox1</value>
@@ -487,7 +505,7 @@
     <value>12, 33</value>
   </data>
   <data name="&gt;&gt;groupBox2.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="&gt;&gt;contextMenuStrip1.Type" xml:space="preserve">
     <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -510,14 +528,20 @@
   <data name="&gt;&gt;label1.Parent" xml:space="preserve">
     <value>groupBox4</value>
   </data>
+  <data name="&gt;&gt;groupBox5.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
   <data name="&gt;&gt;groupBox4.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="&gt;&gt;rbNametableNE.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
   <data name="&gt;&gt;label5.Name" xml:space="preserve">
     <value>label5</value>
+  </data>
+  <data name="&gt;&gt;label2.Parent" xml:space="preserve">
+    <value>groupBox4</value>
   </data>
   <data name="groupBox1.ToolTip" xml:space="preserve">
     <value />
@@ -527,6 +551,9 @@
   </data>
   <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
     <value>9</value>
+  </data>
+  <data name="PaletteLabel.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="NameTableView.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -540,6 +567,9 @@
   <data name="rbNametableNW.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
+  <data name="&gt;&gt;rbNametableSW.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="PaletteLabel.Location" type="System.Drawing.Point, System.Drawing">
     <value>64, 89</value>
   </data>
@@ -552,8 +582,8 @@
   <data name="&gt;&gt;label6.Parent" xml:space="preserve">
     <value>groupBox5</value>
   </data>
-  <data name="&gt;&gt;groupBox4.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="groupBox3.Text" xml:space="preserve">
+    <value>Scanline</value>
   </data>
   <data name="&gt;&gt;RefreshRate.Type" xml:space="preserve">
     <value>System.Windows.Forms.TrackBar, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -567,20 +597,20 @@
   <data name="&gt;&gt;PaletteLabel.Name" xml:space="preserve">
     <value>PaletteLabel</value>
   </data>
-  <data name="&gt;&gt;label6.ZOrder" xml:space="preserve">
-    <value>1</value>
+  <data name="&gt;&gt;rbNametableNW.Parent" xml:space="preserve">
+    <value>groupBox2</value>
   </data>
   <data name="rbNametableSE.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="groupBox2.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
+  <data name="&gt;&gt;rbNametableNE.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;groupBox3.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
-  <data name="groupBox3.TabIndex" type="System.Int32, mscorlib">
-    <value>12</value>
+  <data name="&gt;&gt;rbNametableAll.Parent" xml:space="preserve">
+    <value>groupBox2</value>
   </data>
   <data name="menuStrip1.ToolTip" xml:space="preserve">
     <value />
@@ -591,26 +621,26 @@
   <data name="label7.Location" type="System.Drawing.Point, System.Drawing">
     <value>7, 172</value>
   </data>
-  <data name="NameTableView.Size" type="System.Drawing.Size, System.Drawing">
-    <value>512, 443</value>
+  <data name="&gt;&gt;NameTableView.Type" xml:space="preserve">
+    <value>BizHawk.Client.EmuHawk.NameTableViewer, BizHawk.Client.EmuHawk, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="groupBox1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;rbNametableNE.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="label3.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="TableLabel.Location" type="System.Drawing.Point, System.Drawing">
     <value>64, 72</value>
   </data>
-  <data name="RefreshRate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>45, 126</value>
+  <data name="&gt;&gt;label7.Type" xml:space="preserve">
+    <value>BizHawk.WinForms.Controls.LocLabelEx, BizHawk.WinForms.Controls, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;label1.Type" xml:space="preserve">
     <value>BizHawk.WinForms.Controls.LocLabelEx, BizHawk.WinForms.Controls, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
-  <data name="groupBox4.Text" xml:space="preserve">
-    <value>Properties</value>
+  <data name="&gt;&gt;groupBox2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="groupBox4.ToolTip" xml:space="preserve">
     <value />
@@ -624,20 +654,14 @@
   <data name="&gt;&gt;label3.Type" xml:space="preserve">
     <value>BizHawk.WinForms.Controls.LocLabelEx, BizHawk.WinForms.Controls, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
-  <data name="TileIDLabel.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="groupBox2.Location" type="System.Drawing.Point, System.Drawing">
     <value>563, 87</value>
   </data>
-  <data name="&gt;&gt;label7.Type" xml:space="preserve">
+  <data name="&gt;&gt;label6.Type" xml:space="preserve">
     <value>BizHawk.WinForms.Controls.LocLabelEx, BizHawk.WinForms.Controls, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;groupBox1.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;rbNametableNW.Parent" xml:space="preserve">
-    <value>groupBox2</value>
+    <value>5</value>
   </data>
   <data name="groupBox5.Location" type="System.Drawing.Point, System.Drawing">
     <value>563, 289</value>
@@ -705,8 +729,8 @@
   <data name="&gt;&gt;groupBox5.Type" xml:space="preserve">
     <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;rbNametableAll.Parent" xml:space="preserve">
-    <value>groupBox2</value>
+  <data name="label4.Text" xml:space="preserve">
+    <value>Table:</value>
   </data>
   <data name="txtScanline.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 18</value>
@@ -717,14 +741,8 @@
   <data name="rbNametableSE.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
   </data>
-  <data name="ScreenshotToClipboardMenuItem.ShortcutKeyDisplayString" xml:space="preserve">
-    <value>Ctrl+C</value>
-  </data>
   <data name="&gt;&gt;txtScanline.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="groupBox3.Text" xml:space="preserve">
-    <value>Scanline</value>
   </data>
   <data name="&gt;&gt;NameTableView.ZOrder" xml:space="preserve">
     <value>0</value>
@@ -741,8 +759,8 @@
   <data name="rbNametableNE.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
   </data>
-  <data name="&gt;&gt;groupBox2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="TileIDLabel.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="&gt;&gt;rbNametableNE.Name" xml:space="preserve">
     <value>rbNametableNE</value>
@@ -777,9 +795,6 @@
   <data name="groupBox2.Text" xml:space="preserve">
     <value>Nametable</value>
   </data>
-  <data name="&gt;&gt;groupBox1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="groupBox5.Text" xml:space="preserve">
     <value>Refresh</value>
   </data>
@@ -792,35 +807,20 @@
   <data name="&gt;&gt;rbNametableAll.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="ScreenshotAsContextMenuItem.Text" xml:space="preserve">
-    <value>&amp;Save Image...</value>
-  </data>
   <data name="&gt;&gt;label3.Name" xml:space="preserve">
     <value>label3</value>
   </data>
   <data name="TileIDLabel.Location" type="System.Drawing.Point, System.Drawing">
     <value>64, 24</value>
   </data>
-  <data name="&gt;&gt;NameTableView.Name" xml:space="preserve">
-    <value>NameTableView</value>
-  </data>
-  <data name="menuStrip1.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
   <data name="&gt;&gt;contextMenuStrip1.Name" xml:space="preserve">
     <value>contextMenuStrip1</value>
-  </data>
-  <data name="&gt;&gt;NameTableView.Type" xml:space="preserve">
-    <value>BizHawk.Client.EmuHawk.NameTableViewer, BizHawk.Client.EmuHawk, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 40</value>
   </data>
-  <data name="&gt;&gt;TileIDLabel.Name" xml:space="preserve">
-    <value>TileIDLabel</value>
-  </data>
-  <data name="&gt;&gt;label6.Type" xml:space="preserve">
-    <value>BizHawk.WinForms.Controls.LocLabelEx, BizHawk.WinForms.Controls, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  <data name="rbNametableNW.ToolTip" xml:space="preserve">
+    <value>0x2000</value>
   </data>
   <data name="rbNametableSE.ToolTip" xml:space="preserve">
     <value>0x2C00</value>

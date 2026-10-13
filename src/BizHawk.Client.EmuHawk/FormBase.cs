@@ -57,7 +57,7 @@ namespace BizHawk.Client.EmuHawk
 			set
 			{
 				if (DesignMode) return;
-				throw new InvalidOperationException("window title can only be changed by calling " + nameof(UpdateWindowTitle) + " (which calls " + nameof(WindowTitle) + " getter)");
+				throw new InvalidOperationException(TheLocalizater.TranslateFormatString("window title can only be changed by calling {0} (which calls {1} getter)", nameof(UpdateWindowTitle), nameof(WindowTitle)));
 			}
 		}
 
@@ -70,7 +70,7 @@ namespace BizHawk.Client.EmuHawk
 			{
 				if (DesignMode) return PLACEHOLDER_TITLE;
 #pragma warning disable CA1065 // yes, really throw
-				throw new NotImplementedException("you have to implement this; the Designer prevents this from being an abstract method");
+				throw new NotImplementedException(TheLocalizater.TranslateText("you have to implement this; the Designer prevents this from being an abstract method"));
 #pragma warning restore CA1065
 			}
 		}

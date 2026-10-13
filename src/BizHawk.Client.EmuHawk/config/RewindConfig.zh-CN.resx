@@ -117,21 +117,93 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="label8.Text" xml:space="preserve">
+    <value>预估存储：</value>
+  </data>
+  <data name="label20.Text" xml:space="preserve">
+    <value>时使用低分辨率截图，提升保存/加载性能。</value>
+  </data>
   <data name="OK.Text" xml:space="preserve">
     <value>确定(&amp;O)</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="label11.Location" type="System.Drawing.Point, System.Drawing">
+    <value>209, 30</value>
+  </data>
+  <data name="TargetRewindIntervalNumeric.Location" type="System.Drawing.Point, System.Drawing">
+    <value>176, 149</value>
+  </data>
+  <data name="btnResetCompression.ToolTip" xml:space="preserve">
+    <value>重置为默认值</value>
   </data>
   <data name="Cancel.Text" xml:space="preserve">
     <value>取消(&amp;C)</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="rbStatesBinary.Text" xml:space="preserve">
+    <value>二进制</value>
+  </data>
+  <data name="ScreenshotInStatesCheckbox.Text" xml:space="preserve">
+    <value>保存进度时截图</value>
+  </data>
+  <data name="TargetFrameLengthRadioButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>155, 16</value>
+  </data>
+  <data name="label16.Text" xml:space="preserve">
+    <value>覆盖进度前自动创建备份。</value>
+  </data>
+  <data name="groupBox7.Text" xml:space="preserve">
+    <value>存档选项</value>
+  </data>
+  <data name="label14.Text" xml:space="preserve">
+    <value>保存进度时保存截图数据，在读取存档时加载，</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>平均进度大小：</value>
+  </data>
+  <data name="label15.Text" xml:space="preserve">
+    <value>    </value>
+  </data>
+  <data name="TargetFrameLengthNumeric.Location" type="System.Drawing.Point, System.Drawing">
+    <value>176, 126</value>
+  </data>
+  <data name="BackupSavestatesCheckbox.Text" xml:space="preserve">
+    <value>备份进度</value>
+  </data>
+  <data name="label6.Location" type="System.Drawing.Point, System.Drawing">
+    <value>48, 44</value>
+  </data>
+  <data name="BigScreenshotNumeric.Location" type="System.Drawing.Point, System.Drawing">
+    <value>105, 245</value>
+  </data>
+  <data name="label7.Text" xml:space="preserve">
+    <value>已存储帧数：</value>
+  </data>
+  <data name="label7.Location" type="System.Drawing.Point, System.Drawing">
+    <value>24, 30</value>
+  </data>
+  <data name="ApproxFramesLabel.Text" xml:space="preserve">
+    <value>0 帧</value>
+  </data>
+  <data name="EstTimeLabel.Text" xml:space="preserve">
+    <value>0 分钟</value>
+  </data>
+  <data name="cbDeltaCompression.Text" xml:space="preserve">
+    <value>使用差分压缩 (减少缓冲区占用，占用更多 CPU)</value>
+  </data>
+  <data name="TargetRewindIntervalRadioButton.Text" xml:space="preserve">
+    <value>创建倒带快照的帧间隔：</value>
+  </data>
   <data name="RewindEnabledBox.Size" type="System.Drawing.Size, System.Drawing">
     <value>48, 16</value>
   </data>
-  <data name="RewindEnabledBox.Text" xml:space="preserve">
-    <value>启用</value>
+  <data name="KbLabel.Text" xml:space="preserve">
+    <value>KB 时，</value>
   </data>
-  <data name="UseCompression.Size" type="System.Drawing.Size, System.Drawing">
-    <value>294, 16</value>
+  <data name="BackupSavestatesCheckbox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>72, 16</value>
+  </data>
+  <data name="groupBox6.Text" xml:space="preserve">
+    <value>类型</value>
   </data>
   <data name="UseCompression.Text" xml:space="preserve">
     <value>使用 zstd 压缩 (减少缓冲区占用，占用更多 CPU)</value>
@@ -139,83 +211,14 @@
   <data name="label3.Text" xml:space="preserve">
     <value>最大缓存大小：</value>
   </data>
-  <data name="label1.Text" xml:space="preserve">
-    <value>平均进度大小：</value>
-  </data>
-  <data name="label6.Location" type="System.Drawing.Point, System.Drawing">
-    <value>48, 44</value>
-  </data>
-  <data name="label6.Text" xml:space="preserve">
-    <value>已占用：</value>
-  </data>
-  <data name="groupBox4.Text" xml:space="preserve">
-    <value>倒带选项</value>
-  </data>
-  <data name="TargetRewindIntervalRadioButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>155, 16</value>
-  </data>
-  <data name="TargetRewindIntervalRadioButton.Text" xml:space="preserve">
-    <value>创建倒带快照的帧间隔：</value>
-  </data>
-  <data name="TargetFrameLengthRadioButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>155, 16</value>
-  </data>
-  <data name="TargetFrameLengthRadioButton.Text" xml:space="preserve">
-    <value>期望最小倒带帧数范围：</value>
-  </data>
-  <data name="cbDeltaCompression.Size" type="System.Drawing.Size, System.Drawing">
-    <value>282, 16</value>
-  </data>
-  <data name="cbDeltaCompression.Text" xml:space="preserve">
-    <value>使用差分压缩 (减少缓冲区占用，占用更多 CPU)</value>
-  </data>
-  <data name="TargetFrameLengthNumeric.Location" type="System.Drawing.Point, System.Drawing">
-    <value>176, 126</value>
-  </data>
-  <data name="TargetRewindIntervalNumeric.Location" type="System.Drawing.Point, System.Drawing">
-    <value>176, 149</value>
-  </data>
-  <data name="EstTimeLabel.Text" xml:space="preserve">
-    <value>0 分钟</value>
-  </data>
-  <data name="label11.Location" type="System.Drawing.Point, System.Drawing">
-    <value>209, 30</value>
-  </data>
-  <data name="label11.Text" xml:space="preserve">
-    <value>预估时长：</value>
-  </data>
-  <data name="ApproxFramesLabel.Text" xml:space="preserve">
-    <value>0 帧</value>
-  </data>
-  <data name="label8.Text" xml:space="preserve">
-    <value>预估存储：</value>
-  </data>
-  <data name="label7.Location" type="System.Drawing.Point, System.Drawing">
-    <value>24, 30</value>
-  </data>
-  <data name="label7.Text" xml:space="preserve">
-    <value>已存储帧数：</value>
-  </data>
-  <data name="groupBox6.Text" xml:space="preserve">
-    <value>类型</value>
+  <data name="trackBarCompression.ToolTip" xml:space="preserve">
+    <value>0 为不启用， 9 为最大</value>
   </data>
   <data name="rbStatesText.Text" xml:space="preserve">
     <value>文本</value>
   </data>
-  <data name="rbStatesBinary.Text" xml:space="preserve">
-    <value>二进制</value>
-  </data>
-  <data name="label20.Text" xml:space="preserve">
-    <value>时使用低分辨率截图，提升保存/加载性能。</value>
-  </data>
-  <data name="KbLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>171, 249</value>
-  </data>
-  <data name="KbLabel.Text" xml:space="preserve">
-    <value>KB 时，</value>
-  </data>
-  <data name="BigScreenshotNumeric.Location" type="System.Drawing.Point, System.Drawing">
-    <value>105, 245</value>
+  <data name="cbDeltaCompression.Size" type="System.Drawing.Size, System.Drawing">
+    <value>282, 16</value>
   </data>
   <data name="LowResLargeScreenshotsCheckbox.Size" type="System.Drawing.Size, System.Drawing">
     <value>78, 16</value>
@@ -223,37 +226,40 @@
   <data name="LowResLargeScreenshotsCheckbox.Text" xml:space="preserve">
     <value>当缓存 &gt;=</value>
   </data>
+  <data name="groupBox4.Text" xml:space="preserve">
+    <value>倒带选项</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>倒带与进度配置</value>
+  </data>
   <data name="label13.Text" xml:space="preserve">
     <value>防止读取瞬间黑屏。</value>
   </data>
-  <data name="label14.Text" xml:space="preserve">
-    <value>保存进度时保存截图数据，在读取存档时加载，</value>
+  <data name="label6.Text" xml:space="preserve">
+    <value>已占用：</value>
   </data>
-  <data name="ScreenshotInStatesCheckbox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>108, 16</value>
+  <data name="label11.Text" xml:space="preserve">
+    <value>预估时长：</value>
   </data>
-  <data name="ScreenshotInStatesCheckbox.Text" xml:space="preserve">
-    <value>保存进度时截图</value>
-  </data>
-  <data name="label15.Text" xml:space="preserve">
-    <value>    </value>
-  </data>
-  <data name="label16.Text" xml:space="preserve">
-    <value>覆盖进度前自动创建备份。</value>
-  </data>
-  <data name="BackupSavestatesCheckbox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>72, 16</value>
-  </data>
-  <data name="BackupSavestatesCheckbox.Text" xml:space="preserve">
-    <value>备份进度</value>
+  <data name="TargetRewindIntervalRadioButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>155, 16</value>
   </data>
   <data name="label12.Text" xml:space="preserve">
     <value>压缩级别</value>
   </data>
-  <data name="groupBox7.Text" xml:space="preserve">
-    <value>存档选项</value>
+  <data name="KbLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>171, 249</value>
   </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>倒带与进度配置</value>
+  <data name="ScreenshotInStatesCheckbox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>108, 16</value>
+  </data>
+  <data name="TargetFrameLengthRadioButton.Text" xml:space="preserve">
+    <value>期望最小倒带帧数范围：</value>
+  </data>
+  <data name="UseCompression.Size" type="System.Drawing.Size, System.Drawing">
+    <value>294, 16</value>
+  </data>
+  <data name="RewindEnabledBox.Text" xml:space="preserve">
+    <value>启用</value>
   </data>
 </root>

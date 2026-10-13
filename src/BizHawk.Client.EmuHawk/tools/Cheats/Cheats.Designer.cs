@@ -87,11 +87,11 @@ namespace BizHawk.Client.EmuHawk
             // 
             // CheatListView
             // 
-            resources.ApplyResources(this.CheatListView, "CheatListView");
             this.CheatListView.AllowColumnReorder = true;
             this.CheatListView.AllowColumnResize = true;
             this.CheatListView.AllowDrop = true;
             this.CheatListView.AlwaysScroll = false;
+            resources.ApplyResources(this.CheatListView, "CheatListView");
             this.CheatListView.CellHeightPadding = 0;
             this.CheatListView.ContextMenuStrip = this.CheatsContextMenu;
             this.CheatListView.FullRowSelect = true;
@@ -109,13 +109,13 @@ namespace BizHawk.Client.EmuHawk
             // 
             // CheatsContextMenu
             // 
-            resources.ApplyResources(this.CheatsContextMenu, "CheatsContextMenu");
             this.CheatsContextMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ToggleContextMenuItem,
             this.RemoveContextMenuItem,
             this.DisableAllContextMenuItem,
             this.ViewInHexEditorContextMenuItem});
             this.CheatsContextMenu.Name = "contextMenuStrip1";
+            resources.ApplyResources(this.CheatsContextMenu, "CheatsContextMenu");
             this.CheatsContextMenu.Opening += new System.ComponentModel.CancelEventHandler(this.CheatsContextMenu_Opening);
             // 
             // ToggleContextMenuItem
@@ -140,15 +140,14 @@ namespace BizHawk.Client.EmuHawk
             // 
             // CheatsMenu
             // 
-            resources.ApplyResources(this.CheatsMenu, "CheatsMenu");
             this.CheatsMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.FileSubMenu,
             this.CheatsSubMenu,
             this.OptionsSubMenu});
+            resources.ApplyResources(this.CheatsMenu, "CheatsMenu");
             // 
             // FileSubMenu
             // 
-            resources.ApplyResources(this.FileSubMenu, "FileSubMenu");
             this.FileSubMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.NewMenuItem,
             this.OpenMenuItem,
@@ -156,6 +155,7 @@ namespace BizHawk.Client.EmuHawk
             this.SaveAsMenuItem,
             this.AppendMenuItem,
             this.RecentSubMenu});
+            resources.ApplyResources(this.FileSubMenu, "FileSubMenu");
             this.FileSubMenu.DropDownOpened += new System.EventHandler(this.FileSubMenu_DropDownOpened);
             // 
             // NewMenuItem
@@ -184,18 +184,13 @@ namespace BizHawk.Client.EmuHawk
             // 
             // RecentSubMenu
             // 
-            resources.ApplyResources(this.RecentSubMenu, "RecentSubMenu");
             this.RecentSubMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripSeparator4});
+            resources.ApplyResources(this.RecentSubMenu, "RecentSubMenu");
             this.RecentSubMenu.DropDownOpened += new System.EventHandler(this.RecentSubMenu_DropDownOpened);
-            // 
-            // toolStripSeparator4
-            // 
-            resources.ApplyResources(this.toolStripSeparator4, "toolStripSeparator4");
             // 
             // CheatsSubMenu
             // 
-            resources.ApplyResources(this.CheatsSubMenu, "CheatsSubMenu");
             this.CheatsSubMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.RemoveCheatMenuItem,
             this.InsertSeparatorMenuItem,
@@ -208,6 +203,7 @@ namespace BizHawk.Client.EmuHawk
             this.DisableAllCheatsMenuItem,
             this.GameGenieSeparator,
             this.OpenGameGenieEncoderDecoderMenuItem});
+            resources.ApplyResources(this.CheatsSubMenu, "CheatsSubMenu");
             this.CheatsSubMenu.DropDownOpened += new System.EventHandler(this.CheatsSubMenu_DropDownOpened);
             // 
             // RemoveCheatMenuItem
@@ -219,10 +215,6 @@ namespace BizHawk.Client.EmuHawk
             // 
             resources.ApplyResources(this.InsertSeparatorMenuItem, "InsertSeparatorMenuItem");
             this.InsertSeparatorMenuItem.Click += new System.EventHandler(this.InsertSeparatorMenuItem_Click);
-            // 
-            // toolStripSeparator3
-            // 
-            resources.ApplyResources(this.toolStripSeparator3, "toolStripSeparator3");
             // 
             // MoveUpMenuItem
             // 
@@ -239,10 +231,6 @@ namespace BizHawk.Client.EmuHawk
             resources.ApplyResources(this.SelectAllMenuItem, "SelectAllMenuItem");
             this.SelectAllMenuItem.Click += new System.EventHandler(this.SelectAllMenuItem_Click);
             // 
-            // toolStripSeparator6
-            // 
-            resources.ApplyResources(this.toolStripSeparator6, "toolStripSeparator6");
-            // 
             // ToggleMenuItem
             // 
             resources.ApplyResources(this.ToggleMenuItem, "ToggleMenuItem");
@@ -253,10 +241,6 @@ namespace BizHawk.Client.EmuHawk
             resources.ApplyResources(this.DisableAllCheatsMenuItem, "DisableAllCheatsMenuItem");
             this.DisableAllCheatsMenuItem.Click += new System.EventHandler(this.DisableAllCheatsMenuItem_Click);
             // 
-            // GameGenieSeparator
-            // 
-            resources.ApplyResources(this.GameGenieSeparator, "GameGenieSeparator");
-            // 
             // OpenGameGenieEncoderDecoderMenuItem
             // 
             resources.ApplyResources(this.OpenGameGenieEncoderDecoderMenuItem, "OpenGameGenieEncoderDecoderMenuItem");
@@ -264,11 +248,11 @@ namespace BizHawk.Client.EmuHawk
             // 
             // OptionsSubMenu
             // 
-            resources.ApplyResources(this.OptionsSubMenu, "OptionsSubMenu");
             this.OptionsSubMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.AlwaysLoadCheatsMenuItem,
             this.AutoSaveCheatsMenuItem,
             this.DisableCheatsOnLoadMenuItem});
+            resources.ApplyResources(this.OptionsSubMenu, "OptionsSubMenu");
             this.OptionsSubMenu.DropDownOpened += new System.EventHandler(this.SettingsSubMenu_DropDownOpened);
             // 
             // AlwaysLoadCheatsMenuItem
@@ -288,7 +272,6 @@ namespace BizHawk.Client.EmuHawk
             // 
             // toolStrip1
             // 
-            resources.ApplyResources(this.toolStrip1, "toolStrip1");
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.NewToolBarItem,
             this.OpenToolBarItem,
@@ -301,73 +284,62 @@ namespace BizHawk.Client.EmuHawk
             this.MoveDownToolbarItem,
             this.GameGenieToolbarSeparator,
             this.LoadGameGenieToolbarItem});
+            resources.ApplyResources(this.toolStrip1, "toolStrip1");
             this.toolStrip1.Name = "toolStrip1";
             // 
             // NewToolBarItem
             // 
-            resources.ApplyResources(this.NewToolBarItem, "NewToolBarItem");
             this.NewToolBarItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            resources.ApplyResources(this.NewToolBarItem, "NewToolBarItem");
             this.NewToolBarItem.Name = "NewToolBarItem";
             this.NewToolBarItem.Click += new System.EventHandler(this.NewMenuItem_Click);
             // 
             // OpenToolBarItem
             // 
-            resources.ApplyResources(this.OpenToolBarItem, "OpenToolBarItem");
             this.OpenToolBarItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            resources.ApplyResources(this.OpenToolBarItem, "OpenToolBarItem");
             this.OpenToolBarItem.Name = "OpenToolBarItem";
             this.OpenToolBarItem.Click += new System.EventHandler(this.OpenMenuItem_Click);
             // 
             // SaveToolBarItem
             // 
-            resources.ApplyResources(this.SaveToolBarItem, "SaveToolBarItem");
             this.SaveToolBarItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            resources.ApplyResources(this.SaveToolBarItem, "SaveToolBarItem");
             this.SaveToolBarItem.Name = "SaveToolBarItem";
             this.SaveToolBarItem.Click += new System.EventHandler(this.SaveMenuItem_Click);
             // 
-            // toolStripSeparator
-            // 
-            resources.ApplyResources(this.toolStripSeparator, "toolStripSeparator");
-            // 
             // RemoveToolbarItem
             // 
-            resources.ApplyResources(this.RemoveToolbarItem, "RemoveToolbarItem");
             this.RemoveToolbarItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            resources.ApplyResources(this.RemoveToolbarItem, "RemoveToolbarItem");
             this.RemoveToolbarItem.Name = "RemoveToolbarItem";
             this.RemoveToolbarItem.Click += new System.EventHandler(this.RemoveCheatMenuItem_Click);
             // 
             // SeparatorToolbarItem
             // 
-            resources.ApplyResources(this.SeparatorToolbarItem, "SeparatorToolbarItem");
             this.SeparatorToolbarItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            resources.ApplyResources(this.SeparatorToolbarItem, "SeparatorToolbarItem");
             this.SeparatorToolbarItem.Name = "SeparatorToolbarItem";
             this.SeparatorToolbarItem.Click += new System.EventHandler(this.InsertSeparatorMenuItem_Click);
             // 
-            // toolStripSeparator2
-            // 
-            resources.ApplyResources(this.toolStripSeparator2, "toolStripSeparator2");
-            // 
             // MoveUpToolbarItem
             // 
-            resources.ApplyResources(this.MoveUpToolbarItem, "MoveUpToolbarItem");
             this.MoveUpToolbarItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            resources.ApplyResources(this.MoveUpToolbarItem, "MoveUpToolbarItem");
             this.MoveUpToolbarItem.Name = "MoveUpToolbarItem";
             this.MoveUpToolbarItem.Click += new System.EventHandler(this.MoveUpMenuItem_Click);
             // 
             // MoveDownToolbarItem
             // 
-            resources.ApplyResources(this.MoveDownToolbarItem, "MoveDownToolbarItem");
             this.MoveDownToolbarItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            resources.ApplyResources(this.MoveDownToolbarItem, "MoveDownToolbarItem");
             this.MoveDownToolbarItem.Name = "MoveDownToolbarItem";
             this.MoveDownToolbarItem.Click += new System.EventHandler(this.MoveDownMenuItem_Click);
             // 
-            // GameGenieToolbarSeparator
-            // 
-            resources.ApplyResources(this.GameGenieToolbarSeparator, "GameGenieToolbarSeparator");
-            // 
             // LoadGameGenieToolbarItem
             // 
-            resources.ApplyResources(this.LoadGameGenieToolbarItem, "LoadGameGenieToolbarItem");
             this.LoadGameGenieToolbarItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            resources.ApplyResources(this.LoadGameGenieToolbarItem, "LoadGameGenieToolbarItem");
             this.LoadGameGenieToolbarItem.Name = "LoadGameGenieToolbarItem";
             this.LoadGameGenieToolbarItem.Click += new System.EventHandler(this.OpenGameGenieEncoderDecoderMenuItem_Click);
             // 

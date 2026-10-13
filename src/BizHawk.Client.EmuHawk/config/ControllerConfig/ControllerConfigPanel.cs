@@ -140,7 +140,7 @@ namespace BizHawk.Client.EmuHawk
 				{
 					Location = new Point(x + _inputSize + _labelPadding, y + UIHelper.ScaleY(3)),
 					Size = new Size(labelWidth, UIHelper.ScaleY(15)),
-					Text = _buttons[i].Replace('_', ' ').Trim(),
+					Text = TheLocalizater.TranslateText(_buttons[i].Replace('_', ' ').Trim(), context:"controllerkey"),
 				};
 
 				Tooltip.SetToolTip(label, label.Text);

@@ -151,6 +151,12 @@
   <data name="label1.Text" xml:space="preserve">
     <value>CPU：使用 '[' 或 ']' 来改变地址，按住 'shift' 加速。</value>
   </data>
+  <data name="AddBreakpointContextMenuItem.Text" xml:space="preserve">
+    <value>添加断点</value>
+  </data>
+  <data name="DisassemblerContextMenu.Size" type="System.Drawing.Size, System.Drawing">
+    <value>125, 26</value>
+  </data>
   <data name="DisassemblerBox.Text" xml:space="preserve">
     <value>反汇编器</value>
   </data>
@@ -166,10 +172,22 @@
   <data name="SeekToBtn.Text" xml:space="preserve">
     <value>搜索至：</value>
   </data>
+  <data name="SeekToBtn.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SeekToBox.ToolTip" xml:space="preserve">
+    <value />
+  </data>
   <data name="CancelSeekBtn.Text" xml:space="preserve">
     <value>取消</value>
   </data>
+  <data name="CancelSeekBtn.ToolTip" xml:space="preserve">
+    <value />
+  </data>
   <data name="RunBtn.Text" xml:space="preserve">
     <value>运行</value>
+  </data>
+  <data name="RunBtn.ToolTip" xml:space="preserve">
+    <value />
   </data>
 </root>

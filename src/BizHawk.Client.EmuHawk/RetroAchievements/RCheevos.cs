@@ -234,7 +234,7 @@ namespace BizHawk.Client.EmuHawk
 			_runtime = _lib.rc_runtime_alloc();
 			if (_runtime == IntPtr.Zero)
 			{
-				throw new Exception("rc_runtime_alloc returned NULL!");
+				throw new Exception(TheLocalizater.TranslateText("rc_runtime_alloc returned NULL!"));
 			}
 
 			_eventcb = EventHandlerCallback;
@@ -369,7 +369,7 @@ namespace BizHawk.Client.EmuHawk
 			_runtime = _lib.rc_runtime_alloc();
 			if (_runtime == IntPtr.Zero)
 			{
-				throw new Exception("rc_runtime_alloc returned NULL!");
+				throw new Exception(TheLocalizater.TranslateText("rc_runtime_alloc returned NULL!"));
 			}
 
 			// get console id
@@ -383,7 +383,7 @@ namespace BizHawk.Client.EmuHawk
 				_memFunctions = CreateMemoryBanks(_consoleId, Domains);
 				if (_memFunctions.Count > 255)
 				{
-					throw new InvalidOperationException("_memFunctions must have less than 256 memory banks");
+					throw new InvalidOperationException(TheLocalizater.TranslateText("_memFunctions must have less than 256 memory banks"));
 				}
 
 				// this is kind of poop, it would prevent having >2GiB total banksize
@@ -662,7 +662,7 @@ namespace BizHawk.Client.EmuHawk
 				(byte) Peek(address + 2),
 				(byte) Peek(address + 3),
 			})),
-			_ => throw new InvalidOperationException($"Requested {num_bytes} in {nameof(PeekCallback)}"),
+			_ => throw new InvalidOperationException(TheLocalizater.TranslateFormatString("Requested {0} in {1}", num_bytes, nameof(PeekCallback))),
 		};
 
 		public override void OnFrameAdvance()

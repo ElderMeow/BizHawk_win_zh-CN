@@ -117,193 +117,193 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="&gt;&gt;ControllerBox.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;ClearClearsAnalogInputMenuItem.Type" xml:space="preserve">
-    <value>BizHawk.WinForms.Controls.ToolStripMenuItemEx, BizHawk.WinForms.Controls, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="ClearAllMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Delete</value>
+  <data name="ControllerBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
   </data>
-  <data name="&gt;&gt;StickyMenuItem.Type" xml:space="preserve">
-    <value>BizHawk.WinForms.Controls.ToolStripMenuItemEx, BizHawk.WinForms.Controls, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  <metadata name="PadBoxContextMenu.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>121, 17</value>
+  </metadata>
+  <data name="clearAllToolStripMenuItem.ShortcutKeyDisplayString" xml:space="preserve">
+    <value>Del</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>452, 288</value>
-  </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="ControllerBox.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
+  <data name="clearAllToolStripMenuItem.Text" xml:space="preserve">
+    <value>Clear All</value>
   </data>
   <data name="StickyContextMenuItem.Text" xml:space="preserve">
     <value>Sticky</value>
   </data>
-  <data name="&gt;&gt;toolStripSeparator4.Name" xml:space="preserve">
-    <value>toolStripSeparator4</value>
-  </data>
-  <data name="&gt;&gt;clearAllToolStripMenuItem.Name" xml:space="preserve">
-    <value>clearAllToolStripMenuItem</value>
-  </data>
-  <data name="ControllerPanel.AutoScroll" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="SettingsSubMenu.Text" xml:space="preserve">
-    <value>&amp;Settings</value>
-  </data>
-  <data name="&gt;&gt;PadMenu.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;ControllerBox.Name" xml:space="preserve">
-    <value>ControllerBox</value>
-  </data>
-  <data name="&gt;&gt;ControllerBox.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;ExitMenuItem.Type" xml:space="preserve">
-    <value>BizHawk.WinForms.Controls.ToolStripMenuItemEx, BizHawk.WinForms.Controls, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="ControllerPanel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="ExitMenuItem.Text" xml:space="preserve">
-    <value>E&amp;xit</value>
-  </data>
-  <data name="&gt;&gt;ControllerPanel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ControllerPanel.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;ClearAllMenuItem.Name" xml:space="preserve">
-    <value>ClearAllMenuItem</value>
-  </data>
-  <data name="StickyMenuItem.Text" xml:space="preserve">
-    <value>Sticky</value>
-  </data>
-  <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>VirtualpadTool</value>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="PadBoxContextMenu.Size" type="System.Drawing.Size, System.Drawing">
+    <value>152, 48</value>
   </data>
   <data name="&gt;&gt;PadBoxContextMenu.Name" xml:space="preserve">
     <value>PadBoxContextMenu</value>
   </data>
-  <data name="PadsSubMenu.Text" xml:space="preserve">
-    <value>&amp;Pads</value>
+  <data name="&gt;&gt;PadBoxContextMenu.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;StickyMenuItem.Name" xml:space="preserve">
-    <value>StickyMenuItem</value>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="ControllerPanel.AutoScroll" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
-  <data name="ControllerBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left, Right</value>
+  <data name="ControllerPanel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
   </data>
-  <data name="&gt;&gt;PadsSubMenu.Name" xml:space="preserve">
-    <value>PadsSubMenu</value>
+  <data name="ControllerPanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 17</value>
   </data>
-  <data name="&gt;&gt;StickyContextMenuItem.Type" xml:space="preserve">
-    <value>BizHawk.WinForms.Controls.ToolStripMenuItemEx, BizHawk.WinForms.Controls, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  <data name="ControllerPanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>425, 236</value>
   </data>
-  <data name="ControllerBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>431, 256</value>
+  <data name="ControllerPanel.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;ControllerPanel.Name" xml:space="preserve">
+    <value>ControllerPanel</value>
+  </data>
+  <data name="&gt;&gt;ControllerPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;ControllerPanel.Parent" xml:space="preserve">
     <value>ControllerBox</value>
   </data>
+  <data name="&gt;&gt;ControllerPanel.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="ControllerBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 25</value>
+  </data>
+  <data name="ControllerBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>431, 256</value>
+  </data>
+  <data name="ControllerBox.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="ControllerBox.Text" xml:space="preserve">
+    <value>Controllers</value>
+  </data>
+  <data name="&gt;&gt;ControllerBox.Name" xml:space="preserve">
+    <value>ControllerBox</value>
+  </data>
+  <data name="&gt;&gt;ControllerBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ControllerBox.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;ControllerBox.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="PadMenu.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <data name="ClearAllMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
+    <value>Delete</value>
+  </data>
   <data name="ClearAllMenuItem.Text" xml:space="preserve">
     <value>&amp;Clear All</value>
   </data>
-  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>6, 12</value>
+  <data name="StickyMenuItem.Text" xml:space="preserve">
+    <value>Sticky</value>
+  </data>
+  <data name="ExitMenuItem.ShortcutKeyDisplayString" xml:space="preserve">
+    <value>Alt+F4</value>
+  </data>
+  <data name="ExitMenuItem.Text" xml:space="preserve">
+    <value>E&amp;xit</value>
+  </data>
+  <data name="PadsSubMenu.Text" xml:space="preserve">
+    <value>&amp;Pads</value>
+  </data>
+  <data name="ClearClearsAnalogInputMenuItem.Text" xml:space="preserve">
+    <value>&amp;Clear also clears Analog Input</value>
+  </data>
+  <data name="SettingsSubMenu.Text" xml:space="preserve">
+    <value>&amp;Settings</value>
+  </data>
+  <data name="PadMenu.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
   </data>
   <data name="&gt;&gt;PadMenu.Name" xml:space="preserve">
     <value>PadMenu</value>
   </data>
-  <data name="&gt;&gt;SettingsSubMenu.Type" xml:space="preserve">
+  <data name="&gt;&gt;PadMenu.Type" xml:space="preserve">
+    <value>BizHawk.WinForms.Controls.MenuStripEx, BizHawk.WinForms.Controls, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;PadMenu.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;PadMenu.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 12</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>452, 288</value>
+  </data>
+  <data name="&gt;&gt;clearAllToolStripMenuItem.Name" xml:space="preserve">
+    <value>clearAllToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;clearAllToolStripMenuItem.Type" xml:space="preserve">
     <value>BizHawk.WinForms.Controls.ToolStripMenuItemEx, BizHawk.WinForms.Controls, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;StickyContextMenuItem.Name" xml:space="preserve">
     <value>StickyContextMenuItem</value>
   </data>
-  <data name="&gt;&gt;ControllerBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="ControllerPanel.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;ClearAllMenuItem.Type" xml:space="preserve">
+  <data name="&gt;&gt;StickyContextMenuItem.Type" xml:space="preserve">
     <value>BizHawk.WinForms.Controls.ToolStripMenuItemEx, BizHawk.WinForms.Controls, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
-  <data name="&gt;&gt;PadMenu.Type" xml:space="preserve">
-    <value>BizHawk.WinForms.Controls.MenuStripEx, BizHawk.WinForms.Controls, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;SettingsSubMenu.Name" xml:space="preserve">
-    <value>SettingsSubMenu</value>
-  </data>
-  <data name="&gt;&gt;PadBoxContextMenu.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ControllerPanel.Name" xml:space="preserve">
-    <value>ControllerPanel</value>
-  </data>
-  <data name="ControllerBox.Text" xml:space="preserve">
-    <value>Controllers</value>
-  </data>
-  <data name="&gt;&gt;ExitMenuItem.Name" xml:space="preserve">
-    <value>ExitMenuItem</value>
-  </data>
-  <data name="&gt;&gt;PadMenu.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="PadMenu.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="ControllerPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>425, 236</value>
-  </data>
-  <data name="ControllerPanel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 17</value>
-  </data>
-  <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>BizHawk.Client.EmuHawk.ToolFormBase, BizHawk.Client.EmuHawk, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  <data name="&gt;&gt;PadsSubMenu.Name" xml:space="preserve">
+    <value>PadsSubMenu</value>
   </data>
   <data name="&gt;&gt;PadsSubMenu.Type" xml:space="preserve">
     <value>BizHawk.WinForms.Controls.ToolStripMenuItemEx, BizHawk.WinForms.Controls, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
-  <data name="ControllerBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 25</value>
+  <data name="&gt;&gt;ClearAllMenuItem.Name" xml:space="preserve">
+    <value>ClearAllMenuItem</value>
   </data>
-  <data name="&gt;&gt;ClearClearsAnalogInputMenuItem.Name" xml:space="preserve">
-    <value>ClearClearsAnalogInputMenuItem</value>
+  <data name="&gt;&gt;ClearAllMenuItem.Type" xml:space="preserve">
+    <value>BizHawk.WinForms.Controls.ToolStripMenuItemEx, BizHawk.WinForms.Controls, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;StickyMenuItem.Name" xml:space="preserve">
+    <value>StickyMenuItem</value>
+  </data>
+  <data name="&gt;&gt;StickyMenuItem.Type" xml:space="preserve">
+    <value>BizHawk.WinForms.Controls.ToolStripMenuItemEx, BizHawk.WinForms.Controls, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator4.Name" xml:space="preserve">
+    <value>toolStripSeparator4</value>
   </data>
   <data name="&gt;&gt;toolStripSeparator4.Type" xml:space="preserve">
     <value>BizHawk.WinForms.Controls.ToolStripSeparatorEx, BizHawk.WinForms.Controls, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
-  <data name="clearAllToolStripMenuItem.Text" xml:space="preserve">
-    <value>Clear All</value>
+  <data name="&gt;&gt;ExitMenuItem.Name" xml:space="preserve">
+    <value>ExitMenuItem</value>
   </data>
-  <data name="clearAllToolStripMenuItem.ShortcutKeyDisplayString" xml:space="preserve">
-    <value>Del</value>
-  </data>
-  <data name="PadBoxContextMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 48</value>
-  </data>
-  <data name="ExitMenuItem.ShortcutKeyDisplayString" xml:space="preserve">
-    <value>Alt+F4</value>
-  </data>
-  <data name="&gt;&gt;clearAllToolStripMenuItem.Type" xml:space="preserve">
+  <data name="&gt;&gt;ExitMenuItem.Type" xml:space="preserve">
     <value>BizHawk.WinForms.Controls.ToolStripMenuItemEx, BizHawk.WinForms.Controls, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
-  <data name="ClearClearsAnalogInputMenuItem.Text" xml:space="preserve">
-    <value>&amp;Clear also clears Analog Input</value>
+  <data name="&gt;&gt;SettingsSubMenu.Name" xml:space="preserve">
+    <value>SettingsSubMenu</value>
   </data>
-  <metadata name="PadMenu.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
-  <metadata name="PadBoxContextMenu.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>121, 17</value>
-  </metadata>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
+  <data name="&gt;&gt;SettingsSubMenu.Type" xml:space="preserve">
+    <value>BizHawk.WinForms.Controls.ToolStripMenuItemEx, BizHawk.WinForms.Controls, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;ClearClearsAnalogInputMenuItem.Name" xml:space="preserve">
+    <value>ClearClearsAnalogInputMenuItem</value>
+  </data>
+  <data name="&gt;&gt;ClearClearsAnalogInputMenuItem.Type" xml:space="preserve">
+    <value>BizHawk.WinForms.Controls.ToolStripMenuItemEx, BizHawk.WinForms.Controls, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>VirtualpadTool</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>BizHawk.Client.EmuHawk.ToolFormBase, BizHawk.Client.EmuHawk, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
 </root>

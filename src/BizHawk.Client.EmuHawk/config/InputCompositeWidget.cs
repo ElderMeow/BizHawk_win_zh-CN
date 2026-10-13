@@ -21,7 +21,7 @@ namespace BizHawk.Client.EmuHawk
 			_dropdownMenu.PreviewKeyDown += DropdownMenu_PreviewKeyDown;
 			foreach (var spec in InputWidget.SpecialBindings)
 			{
-				var tsi = new ToolStripMenuItem(spec.BindingName) { ToolTipText = spec.TooltipText };
+				var tsi = new ToolStripMenuItem(TheLocalizater.TranslateText(spec.BindingName)) { ToolTipText = spec.TooltipText };
 				_dropdownMenu.Items.Add(tsi);
 			}
 

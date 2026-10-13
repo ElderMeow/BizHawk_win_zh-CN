@@ -47,7 +47,7 @@ namespace BizHawk.Client.EmuHawk
 						.IsData) return toc.TOCItems[t].LBA;
 				}
 
-				throw new InvalidOperationException("Could not find first data track for hashing");
+				throw new InvalidOperationException(TheLocalizater.TranslateText("Could not find first data track for hashing"));
 			}
 
 			switch (consoleID)
@@ -298,7 +298,7 @@ namespace BizHawk.Client.EmuHawk
 				var eqpos = line.IndexOf('=');
 				if (eqpos == -1 || eqpos != line.LastIndexOf('='))
 				{
-					throw new InvalidOperationException("Malformed key list");
+					throw new InvalidOperationException(TheLocalizater.TranslateText("Malformed key list"));
 				}
 
 				if (key1Str is null)
@@ -308,7 +308,7 @@ namespace BizHawk.Client.EmuHawk
 						key1Str = line[(eqpos + 1)..];
 						if (key1Str.Length != 32)
 						{
-							throw new InvalidOperationException("Invalid key length");
+							throw new InvalidOperationException(TheLocalizater.TranslateText("Invalid key length"));
 						}
 					}
 				}
@@ -320,7 +320,7 @@ namespace BizHawk.Client.EmuHawk
 						key2Str = line[(eqpos + 1)..];
 						if (key2Str.Length != 32)
 						{
-							throw new InvalidOperationException("Invalid key length");
+							throw new InvalidOperationException(TheLocalizater.TranslateText("Invalid key length"));
 						}
 					}
 				}
@@ -328,7 +328,7 @@ namespace BizHawk.Client.EmuHawk
 
 			if (key1Str is null || key2Str is null)
 			{
-				throw new InvalidOperationException("Couldn't find requested keys");
+				throw new InvalidOperationException(TheLocalizater.TranslateText("Couldn't find requested keys"));
 			}
 
 			var key1 = BigInteger.Parse($"0{key1Str}", NumberStyles.HexNumber, CultureInfo.InvariantCulture);

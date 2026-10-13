@@ -48,12 +48,12 @@
             this.label3 = new BizHawk.WinForms.Controls.LocLabelEx();
             this.label2 = new BizHawk.WinForms.Controls.LocLabelEx();
             this.label38 = new BizHawk.WinForms.Controls.LocLabelEx();
-            this.btnMisc = new BizHawk.Client.EmuHawk.MenuButton();
             this.flpUDLR = new BizHawk.WinForms.Controls.LocSingleRowFLP();
             this.lblUDLR = new BizHawk.WinForms.Controls.LabelEx();
             this.rbUDLRForbid = new BizHawk.WinForms.Controls.RadioButtonEx();
             this.rbUDLRPriority = new BizHawk.WinForms.Controls.RadioButtonEx();
             this.rbUDLRAllow = new BizHawk.WinForms.Controls.RadioButtonEx();
+            this.btnMisc = new BizHawk.Client.EmuHawk.MenuButton();
             this.tabControl1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -63,48 +63,42 @@
             // 
             // tabControl1
             // 
-            resources.ApplyResources(this.tabControl1, "tabControl1");
             this.tabControl1.Controls.Add(this.NormalControlsTab);
             this.tabControl1.Controls.Add(this.AutofireControlsTab);
             this.tabControl1.Controls.Add(this.AnalogControlsTab);
             this.tabControl1.Controls.Add(this.FeedbacksTab);
+            resources.ApplyResources(this.tabControl1, "tabControl1");
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.toolTip1.SetToolTip(this.tabControl1, resources.GetString("tabControl1.ToolTip"));
             // 
             // NormalControlsTab
             // 
             resources.ApplyResources(this.NormalControlsTab, "NormalControlsTab");
             this.NormalControlsTab.Name = "NormalControlsTab";
-            this.toolTip1.SetToolTip(this.NormalControlsTab, resources.GetString("NormalControlsTab.ToolTip"));
             this.NormalControlsTab.UseVisualStyleBackColor = true;
             // 
             // AutofireControlsTab
             // 
             resources.ApplyResources(this.AutofireControlsTab, "AutofireControlsTab");
             this.AutofireControlsTab.Name = "AutofireControlsTab";
-            this.toolTip1.SetToolTip(this.AutofireControlsTab, resources.GetString("AutofireControlsTab.ToolTip"));
             this.AutofireControlsTab.UseVisualStyleBackColor = true;
             // 
             // AnalogControlsTab
             // 
             resources.ApplyResources(this.AnalogControlsTab, "AnalogControlsTab");
             this.AnalogControlsTab.Name = "AnalogControlsTab";
-            this.toolTip1.SetToolTip(this.AnalogControlsTab, resources.GetString("AnalogControlsTab.ToolTip"));
             this.AnalogControlsTab.UseVisualStyleBackColor = true;
             // 
             // FeedbacksTab
             // 
             resources.ApplyResources(this.FeedbacksTab, "FeedbacksTab");
             this.FeedbacksTab.Name = "FeedbacksTab";
-            this.toolTip1.SetToolTip(this.FeedbacksTab, resources.GetString("FeedbacksTab.ToolTip"));
             this.FeedbacksTab.UseVisualStyleBackColor = true;
             // 
             // checkBoxAutoTab
             // 
             resources.ApplyResources(this.checkBoxAutoTab, "checkBoxAutoTab");
             this.checkBoxAutoTab.Name = "checkBoxAutoTab";
-            this.toolTip1.SetToolTip(this.checkBoxAutoTab, resources.GetString("checkBoxAutoTab.ToolTip"));
             this.checkBoxAutoTab.UseVisualStyleBackColor = true;
             this.checkBoxAutoTab.CheckedChanged += new System.EventHandler(this.CheckBoxAutoTab_CheckedChanged);
             // 
@@ -112,7 +106,6 @@
             // 
             resources.ApplyResources(this.buttonOK, "buttonOK");
             this.buttonOK.Name = "buttonOK";
-            this.toolTip1.SetToolTip(this.buttonOK, resources.GetString("buttonOK.ToolTip"));
             this.buttonOK.UseVisualStyleBackColor = true;
             this.buttonOK.Click += new System.EventHandler(this.ButtonOk_Click);
             // 
@@ -121,7 +114,6 @@
             resources.ApplyResources(this.buttonCancel, "buttonCancel");
             this.buttonCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.buttonCancel.Name = "buttonCancel";
-            this.toolTip1.SetToolTip(this.buttonCancel, resources.GetString("buttonCancel.ToolTip"));
             this.buttonCancel.UseVisualStyleBackColor = true;
             this.buttonCancel.Click += new System.EventHandler(this.ButtonCancel_Click);
             // 
@@ -131,25 +123,22 @@
             this.tableLayoutPanel1.Controls.Add(this.tabControl1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.pictureBox1, 1, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.toolTip1.SetToolTip(this.tableLayoutPanel1, resources.GetString("tableLayoutPanel1.ToolTip"));
             // 
             // pictureBox1
             // 
-            resources.ApplyResources(this.pictureBox1, "pictureBox1");
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            resources.ApplyResources(this.pictureBox1, "pictureBox1");
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.TabStop = false;
-            this.toolTip1.SetToolTip(this.pictureBox1, resources.GetString("pictureBox1.ToolTip"));
             // 
             // contextMenuStrip1
             // 
-            resources.ApplyResources(this.contextMenuStrip1, "contextMenuStrip1");
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.testToolStripMenuItem,
             this.loadDefaultsToolStripMenuItem,
             this.clearToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.toolTip1.SetToolTip(this.contextMenuStrip1, resources.GetString("contextMenuStrip1.ToolTip"));
+            resources.ApplyResources(this.contextMenuStrip1, "contextMenuStrip1");
             // 
             // testToolStripMenuItem
             // 
@@ -170,27 +159,16 @@
             // 
             resources.ApplyResources(this.label3, "label3");
             this.label3.Name = "label3";
-            this.toolTip1.SetToolTip(this.label3, resources.GetString("label3.ToolTip"));
             // 
             // label2
             // 
             resources.ApplyResources(this.label2, "label2");
             this.label2.Name = "label2";
-            this.toolTip1.SetToolTip(this.label2, resources.GetString("label2.ToolTip"));
             // 
             // label38
             // 
             resources.ApplyResources(this.label38, "label38");
             this.label38.Name = "label38";
-            this.toolTip1.SetToolTip(this.label38, resources.GetString("label38.ToolTip"));
-            // 
-            // btnMisc
-            // 
-            resources.ApplyResources(this.btnMisc, "btnMisc");
-            this.btnMisc.Menu = this.contextMenuStrip1;
-            this.btnMisc.Name = "btnMisc";
-            this.toolTip1.SetToolTip(this.btnMisc, resources.GetString("btnMisc.ToolTip"));
-            this.btnMisc.UseVisualStyleBackColor = true;
             // 
             // flpUDLR
             // 
@@ -200,31 +178,33 @@
             this.flpUDLR.Controls.Add(this.rbUDLRPriority);
             this.flpUDLR.Controls.Add(this.rbUDLRAllow);
             this.flpUDLR.Name = "flpUDLR";
-            this.toolTip1.SetToolTip(this.flpUDLR, resources.GetString("flpUDLR.ToolTip"));
             // 
             // lblUDLR
             // 
-            resources.ApplyResources(this.lblUDLR, "lblUDLR");
             this.lblUDLR.Name = "lblUDLR";
-            this.toolTip1.SetToolTip(this.lblUDLR, resources.GetString("lblUDLR.ToolTip"));
+            resources.ApplyResources(this.lblUDLR, "lblUDLR");
             // 
             // rbUDLRForbid
             // 
             resources.ApplyResources(this.rbUDLRForbid, "rbUDLRForbid");
             this.rbUDLRForbid.Name = "rbUDLRForbid";
-            this.toolTip1.SetToolTip(this.rbUDLRForbid, resources.GetString("rbUDLRForbid.ToolTip"));
             // 
             // rbUDLRPriority
             // 
             resources.ApplyResources(this.rbUDLRPriority, "rbUDLRPriority");
             this.rbUDLRPriority.Name = "rbUDLRPriority";
-            this.toolTip1.SetToolTip(this.rbUDLRPriority, resources.GetString("rbUDLRPriority.ToolTip"));
             // 
             // rbUDLRAllow
             // 
             resources.ApplyResources(this.rbUDLRAllow, "rbUDLRAllow");
             this.rbUDLRAllow.Name = "rbUDLRAllow";
-            this.toolTip1.SetToolTip(this.rbUDLRAllow, resources.GetString("rbUDLRAllow.ToolTip"));
+            // 
+            // btnMisc
+            // 
+            resources.ApplyResources(this.btnMisc, "btnMisc");
+            this.btnMisc.Menu = this.contextMenuStrip1;
+            this.btnMisc.Name = "btnMisc";
+            this.btnMisc.UseVisualStyleBackColor = true;
             // 
             // ControllerConfig
             // 
@@ -242,7 +222,6 @@
             this.Controls.Add(this.buttonOK);
             this.Controls.Add(this.checkBoxAutoTab);
             this.Name = "ControllerConfig";
-            this.toolTip1.SetToolTip(this, resources.GetString("$this.ToolTip"));
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ControllerConfig_FormClosed);
             this.Load += new System.EventHandler(this.ControllerConfig_Load);
             this.tabControl1.ResumeLayout(false);

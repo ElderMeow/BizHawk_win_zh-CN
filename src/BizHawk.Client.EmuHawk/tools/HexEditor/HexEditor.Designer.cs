@@ -99,16 +99,15 @@ namespace BizHawk.Client.EmuHawk
             // 
             // HexMenuStrip
             // 
-            resources.ApplyResources(this.HexMenuStrip, "HexMenuStrip");
             this.HexMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.FileSubMenu,
             this.EditMenuItem,
             this.OptionsSubMenu,
             this.SettingsSubMenu});
+            resources.ApplyResources(this.HexMenuStrip, "HexMenuStrip");
             // 
             // FileSubMenu
             // 
-            resources.ApplyResources(this.FileSubMenu, "FileSubMenu");
             this.FileSubMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.SaveMenuItem,
             this.SaveAsBinaryMenuItem,
@@ -118,6 +117,7 @@ namespace BizHawk.Client.EmuHawk
             this.LoadTableFileMenuItem,
             this.CloseTableFileMenuItem,
             this.RecentTablesSubMenu});
+            resources.ApplyResources(this.FileSubMenu, "FileSubMenu");
             this.FileSubMenu.DropDownOpened += new System.EventHandler(this.FileSubMenu_DropDownOpened);
             // 
             // SaveMenuItem
@@ -140,10 +140,6 @@ namespace BizHawk.Client.EmuHawk
             resources.ApplyResources(this.importAsBinaryToolStripMenuItem, "importAsBinaryToolStripMenuItem");
             this.importAsBinaryToolStripMenuItem.Click += new System.EventHandler(this.importAsBinaryToolStripMenuItem_Click);
             // 
-            // toolStripSeparator4
-            // 
-            resources.ApplyResources(this.toolStripSeparator4, "toolStripSeparator4");
-            // 
             // LoadTableFileMenuItem
             // 
             resources.ApplyResources(this.LoadTableFileMenuItem, "LoadTableFileMenuItem");
@@ -156,9 +152,9 @@ namespace BizHawk.Client.EmuHawk
             // 
             // RecentTablesSubMenu
             // 
-            resources.ApplyResources(this.RecentTablesSubMenu, "RecentTablesSubMenu");
             this.RecentTablesSubMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.noneToolStripMenuItem});
+            resources.ApplyResources(this.RecentTablesSubMenu, "RecentTablesSubMenu");
             this.RecentTablesSubMenu.DropDownOpened += new System.EventHandler(this.RecentTablesSubMenu_DropDownOpened);
             // 
             // noneToolStripMenuItem
@@ -167,7 +163,6 @@ namespace BizHawk.Client.EmuHawk
             // 
             // EditMenuItem
             // 
-            resources.ApplyResources(this.EditMenuItem, "EditMenuItem");
             this.EditMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.CopyMenuItem,
             this.ExportMenuItem,
@@ -176,6 +171,7 @@ namespace BizHawk.Client.EmuHawk
             this.FindMenuItem,
             this.FindNextMenuItem,
             this.FindPrevMenuItem});
+            resources.ApplyResources(this.EditMenuItem, "EditMenuItem");
             this.EditMenuItem.DropDownOpened += new System.EventHandler(this.EditMenuItem_DropDownOpened);
             // 
             // CopyMenuItem
@@ -192,10 +188,6 @@ namespace BizHawk.Client.EmuHawk
             // 
             resources.ApplyResources(this.PasteMenuItem, "PasteMenuItem");
             this.PasteMenuItem.Click += new System.EventHandler(this.PasteMenuItem_Click);
-            // 
-            // toolStripSeparator6
-            // 
-            resources.ApplyResources(this.toolStripSeparator6, "toolStripSeparator6");
             // 
             // FindMenuItem
             // 
@@ -214,7 +206,6 @@ namespace BizHawk.Client.EmuHawk
             // 
             // OptionsSubMenu
             // 
-            resources.ApplyResources(this.OptionsSubMenu, "OptionsSubMenu");
             this.OptionsSubMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.MemoryDomainsMenuItem,
             this.DataSizeSubMenu,
@@ -225,26 +216,23 @@ namespace BizHawk.Client.EmuHawk
             this.FreezeAddressMenuItem,
             this.UnfreezeAllMenuItem,
             this.PokeAddressMenuItem});
+            resources.ApplyResources(this.OptionsSubMenu, "OptionsSubMenu");
             this.OptionsSubMenu.DropDownOpened += new System.EventHandler(this.OptionsSubMenu_DropDownOpened);
             // 
             // MemoryDomainsMenuItem
             // 
-            resources.ApplyResources(this.MemoryDomainsMenuItem, "MemoryDomainsMenuItem");
             this.MemoryDomainsMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripSeparator3});
+            resources.ApplyResources(this.MemoryDomainsMenuItem, "MemoryDomainsMenuItem");
             this.MemoryDomainsMenuItem.DropDownOpened += new System.EventHandler(this.MemoryDomainsMenuItem_DropDownOpened);
-            // 
-            // toolStripSeparator3
-            // 
-            resources.ApplyResources(this.toolStripSeparator3, "toolStripSeparator3");
             // 
             // DataSizeSubMenu
             // 
-            resources.ApplyResources(this.DataSizeSubMenu, "DataSizeSubMenu");
             this.DataSizeSubMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.DataSizeByteMenuItem,
             this.DataSizeWordMenuItem,
             this.DataSizeDWordMenuItem});
+            resources.ApplyResources(this.DataSizeSubMenu, "DataSizeSubMenu");
             // 
             // DataSizeByteMenuItem
             // 
@@ -265,10 +253,6 @@ namespace BizHawk.Client.EmuHawk
             // 
             resources.ApplyResources(this.BigEndianMenuItem, "BigEndianMenuItem");
             this.BigEndianMenuItem.Click += new System.EventHandler(this.BigEndianMenuItem_Click);
-            // 
-            // toolStripSeparator2
-            // 
-            resources.ApplyResources(this.toolStripSeparator2, "toolStripSeparator2");
             // 
             // GoToAddressMenuItem
             // 
@@ -297,35 +281,27 @@ namespace BizHawk.Client.EmuHawk
             // 
             // SettingsSubMenu
             // 
-            resources.ApplyResources(this.SettingsSubMenu, "SettingsSubMenu");
             this.SettingsSubMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.CustomColorsSubMenu});
+            resources.ApplyResources(this.SettingsSubMenu, "SettingsSubMenu");
             // 
             // CustomColorsSubMenu
             // 
-            resources.ApplyResources(this.CustomColorsSubMenu, "CustomColorsSubMenu");
             this.CustomColorsSubMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.SetColorsMenuItem,
             this.toolStripSeparator8,
             this.ResetColorsToDefaultMenuItem});
+            resources.ApplyResources(this.CustomColorsSubMenu, "CustomColorsSubMenu");
             // 
             // SetColorsMenuItem
             // 
             resources.ApplyResources(this.SetColorsMenuItem, "SetColorsMenuItem");
             this.SetColorsMenuItem.Click += new System.EventHandler(this.SetColorsMenuItem_Click);
             // 
-            // toolStripSeparator8
-            // 
-            resources.ApplyResources(this.toolStripSeparator8, "toolStripSeparator8");
-            // 
             // ResetColorsToDefaultMenuItem
             // 
             resources.ApplyResources(this.ResetColorsToDefaultMenuItem, "ResetColorsToDefaultMenuItem");
             this.ResetColorsToDefaultMenuItem.Click += new System.EventHandler(this.ResetColorsToDefaultMenuItem_Click);
-            // 
-            // toolStripSeparator7
-            // 
-            resources.ApplyResources(this.toolStripSeparator7, "toolStripSeparator7");
             // 
             // resetToDefaultToolStripMenuItem
             // 
@@ -333,7 +309,6 @@ namespace BizHawk.Client.EmuHawk
             // 
             // ViewerContextMenuStrip
             // 
-            resources.ApplyResources(this.ViewerContextMenuStrip, "ViewerContextMenuStrip");
             this.ViewerContextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.CopyContextItem,
             this.ExportContextItem,
@@ -350,6 +325,7 @@ namespace BizHawk.Client.EmuHawk
             this.toolStripMenuItem1,
             this.viewN64MatrixToolStripMenuItem});
             this.ViewerContextMenuStrip.Name = "ViewerContextMenuStrip";
+            resources.ApplyResources(this.ViewerContextMenuStrip, "ViewerContextMenuStrip");
             this.ViewerContextMenuStrip.Opening += new System.ComponentModel.CancelEventHandler(this.ViewerContextMenuStrip_Opening);
             // 
             // CopyContextItem
@@ -386,10 +362,6 @@ namespace BizHawk.Client.EmuHawk
             resources.ApplyResources(this.PokeContextItem, "PokeContextItem");
             this.PokeContextItem.Click += new System.EventHandler(this.PokeAddressMenuItem_Click);
             // 
-            // ContextSeparator1
-            // 
-            resources.ApplyResources(this.ContextSeparator1, "ContextSeparator1");
-            // 
             // IncrementContextItem
             // 
             resources.ApplyResources(this.IncrementContextItem, "IncrementContextItem");
@@ -400,18 +372,10 @@ namespace BizHawk.Client.EmuHawk
             resources.ApplyResources(this.DecrementContextItem, "DecrementContextItem");
             this.DecrementContextItem.Click += new System.EventHandler(this.DecrementContextItem_Click);
             // 
-            // ContextSeparator2
-            // 
-            resources.ApplyResources(this.ContextSeparator2, "ContextSeparator2");
-            // 
             // GoToContextItem
             // 
             resources.ApplyResources(this.GoToContextItem, "GoToContextItem");
             this.GoToContextItem.Click += new System.EventHandler(this.GoToAddressMenuItem_Click);
-            // 
-            // toolStripMenuItem1
-            // 
-            resources.ApplyResources(this.toolStripMenuItem1, "toolStripMenuItem1");
             // 
             // viewN64MatrixToolStripMenuItem
             // 
@@ -443,8 +407,8 @@ namespace BizHawk.Client.EmuHawk
             // 
             // AddressesLabel
             // 
-            resources.ApplyResources(this.AddressesLabel, "AddressesLabel");
             this.AddressesLabel.ContextMenuStrip = this.ViewerContextMenuStrip;
+            resources.ApplyResources(this.AddressesLabel, "AddressesLabel");
             this.AddressesLabel.Name = "AddressesLabel";
             this.AddressesLabel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.AddressesLabel_MouseDown);
             this.AddressesLabel.MouseLeave += new System.EventHandler(this.AddressesLabel_MouseLeave);

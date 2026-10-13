@@ -127,11 +127,44 @@
   <data name="TotalSearchLabel.Text" xml:space="preserve">
     <value>0 地址</value>
   </data>
+  <data name="ListViewContextMenu.Size" type="System.Drawing.Size, System.Drawing">
+    <value>197, 220</value>
+  </data>
   <data name="WatchListView.Location" type="System.Drawing.Point, System.Drawing">
     <value>9, 65</value>
   </data>
   <data name="WatchListView.Size" type="System.Drawing.Size, System.Drawing">
     <value>230, 333</value>
+  </data>
+  <data name="DoSearchContextMenuItem.Text" xml:space="preserve">
+    <value>搜索(&amp;S)</value>
+  </data>
+  <data name="NewSearchContextMenuItem.Text" xml:space="preserve">
+    <value>开始新的搜索(&amp;S)</value>
+  </data>
+  <data name="RemoveContextMenuItem.Text" xml:space="preserve">
+    <value>移除所选</value>
+  </data>
+  <data name="AddToRamWatchContextMenuItem.Text" xml:space="preserve">
+    <value>添加到监视</value>
+  </data>
+  <data name="PokeContextMenuItem.Text" xml:space="preserve">
+    <value>写入地址</value>
+  </data>
+  <data name="FreezeContextMenuItem.Text" xml:space="preserve">
+    <value>冻结地址</value>
+  </data>
+  <data name="UnfreezeAllContextMenuItem.Text" xml:space="preserve">
+    <value>解冻所有(&amp;A)</value>
+  </data>
+  <data name="ViewInHexEditorContextMenuItem.Text" xml:space="preserve">
+    <value>在十六进制编辑器查看</value>
+  </data>
+  <data name="ClearPreviewContextMenuItem.Text" xml:space="preserve">
+    <value>清空预览(&amp;C)</value>
+  </data>
+  <data name="fileToolStripMenuItem.Text" xml:space="preserve">
+    <value>文件(&amp;F)</value>
   </data>
   <data name="OpenMenuItem.Text" xml:space="preserve">
     <value>打开(&amp;O)</value>
@@ -151,8 +184,11 @@
   <data name="RecentSubMenu.Text" xml:space="preserve">
     <value>历史</value>
   </data>
-  <data name="fileToolStripMenuItem.Text" xml:space="preserve">
-    <value>文件(&amp;F)</value>
+  <data name="OptionsSubMenuMenuItem.Text" xml:space="preserve">
+    <value>选项(&amp;O)</value>
+  </data>
+  <data name="modeToolStripMenuItem.Text" xml:space="preserve">
+    <value>模式(&amp;M)</value>
   </data>
   <data name="DetailedMenuItem.Text" xml:space="preserve">
     <value>详细(&amp;D)</value>
@@ -160,11 +196,11 @@
   <data name="FastMenuItem.Text" xml:space="preserve">
     <value>快速(&amp;F)</value>
   </data>
-  <data name="modeToolStripMenuItem.Text" xml:space="preserve">
-    <value>模式(&amp;M)</value>
-  </data>
   <data name="MemoryDomainsSubMenu.Text" xml:space="preserve">
     <value>内存域(&amp;M)</value>
+  </data>
+  <data name="sizeToolStripMenuItem.Text" xml:space="preserve">
+    <value>大小(&amp;S)</value>
   </data>
   <data name="ByteMenuItem.Text" xml:space="preserve">
     <value>&amp;1 字节</value>
@@ -175,9 +211,6 @@
   <data name="DWordMenuItem.Text" xml:space="preserve">
     <value>&amp;4 字节</value>
   </data>
-  <data name="sizeToolStripMenuItem.Text" xml:space="preserve">
-    <value>大小(&amp;S)</value>
-  </data>
   <data name="CheckMisalignedMenuItem.Text" xml:space="preserve">
     <value>检查非对齐</value>
   </data>
@@ -186,6 +219,9 @@
   </data>
   <data name="DisplayTypeSubMenu.Text" xml:space="preserve">
     <value>显示类型(&amp;D)</value>
+  </data>
+  <data name="DefinePreviousValueSubMenu.Text" xml:space="preserve">
+    <value>定义前值</value>
   </data>
   <data name="Previous_LastSearchMenuItem.Text" xml:space="preserve">
     <value>上次搜索(&amp;S)</value>
@@ -199,11 +235,8 @@
   <data name="Previous_LastChangeMenuItem.Text" xml:space="preserve">
     <value>最后变更(&amp;C)</value>
   </data>
-  <data name="DefinePreviousValueSubMenu.Text" xml:space="preserve">
-    <value>定义前值</value>
-  </data>
-  <data name="OptionsSubMenuMenuItem.Text" xml:space="preserve">
-    <value>选项(&amp;O)</value>
+  <data name="searchToolStripMenuItem.Text" xml:space="preserve">
+    <value>搜索(&amp;S)</value>
   </data>
   <data name="newSearchToolStripMenuItem.Text" xml:space="preserve">
     <value>新建搜索(&amp;N)</value>
@@ -241,8 +274,8 @@
   <data name="ClearUndoMenuItem.Text" xml:space="preserve">
     <value>清空撤销历史</value>
   </data>
-  <data name="searchToolStripMenuItem.Text" xml:space="preserve">
-    <value>搜索(&amp;S)</value>
+  <data name="SettingsMenuItem.Text" xml:space="preserve">
+    <value>设置(&amp;S)</value>
   </data>
   <data name="PreviewModeMenuItem.Text" xml:space="preserve">
     <value>预览模式(&amp;P)</value>
@@ -259,9 +292,6 @@
   <data name="UseUndoHistoryMenuItem.Text" xml:space="preserve">
     <value>使用撤销历史(&amp;U)</value>
   </data>
-  <data name="SettingsMenuItem.Text" xml:space="preserve">
-    <value>设置(&amp;S)</value>
-  </data>
   <data name="MemDomainLabel.Location" type="System.Drawing.Point, System.Drawing">
     <value>134, 50</value>
   </data>
@@ -271,11 +301,35 @@
   <data name="MessageLabel.Text" xml:space="preserve">
     <value> todo?                         </value>
   </data>
+  <data name="AutoSearchCheckBox.ToolTip" xml:space="preserve">
+    <value>自动搜寻每帧</value>
+  </data>
+  <data name="CompareToBox.Text" xml:space="preserve">
+    <value>参照值：</value>
+  </data>
+  <data name="CompareToBox.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DifferenceBox.ToolTip" xml:space="preserve">
+    <value />
+  </data>
   <data name="DifferenceRadio.Size" type="System.Drawing.Size, System.Drawing">
     <value>95, 16</value>
   </data>
   <data name="DifferenceRadio.Text" xml:space="preserve">
     <value>与前值的差：</value>
+  </data>
+  <data name="DifferenceRadio.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="NumberOfChangesBox.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SpecificAddressBox.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SpecificValueBox.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="NumberOfChangesRadio.Size" type="System.Drawing.Size, System.Drawing">
     <value>95, 16</value>
@@ -283,11 +337,17 @@
   <data name="NumberOfChangesRadio.Text" xml:space="preserve">
     <value>指定变更数：</value>
   </data>
+  <data name="NumberOfChangesRadio.ToolTip" xml:space="preserve">
+    <value />
+  </data>
   <data name="SpecificAddressRadio.Size" type="System.Drawing.Size, System.Drawing">
     <value>83, 16</value>
   </data>
   <data name="SpecificAddressRadio.Text" xml:space="preserve">
     <value>指定地址：</value>
+  </data>
+  <data name="SpecificAddressRadio.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="SpecificValueRadio.Size" type="System.Drawing.Size, System.Drawing">
     <value>71, 16</value>
@@ -295,14 +355,20 @@
   <data name="SpecificValueRadio.Text" xml:space="preserve">
     <value>指定值：</value>
   </data>
+  <data name="SpecificValueRadio.ToolTip" xml:space="preserve">
+    <value />
+  </data>
   <data name="PreviousValueRadio.Size" type="System.Drawing.Size, System.Drawing">
     <value>47, 16</value>
   </data>
   <data name="PreviousValueRadio.Text" xml:space="preserve">
     <value>前值</value>
   </data>
-  <data name="CompareToBox.Text" xml:space="preserve">
-    <value>参照值：</value>
+  <data name="PreviousValueRadio.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="toolStrip1.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="DoSearchToolButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>36, 22</value>
@@ -355,11 +421,20 @@
   <data name="ErrorIconButton.Text" xml:space="preserve">
     <value>警告！列表中的地址超出范围，单击以删除它们</value>
   </data>
+  <data name="ComparisonBox.Text" xml:space="preserve">
+    <value>比较类型：</value>
+  </data>
+  <data name="ComparisonBox.ToolTip" xml:space="preserve">
+    <value />
+  </data>
   <data name="DifferentByBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>114, 123</value>
   </data>
   <data name="DifferentByBox.Size" type="System.Drawing.Size, System.Drawing">
     <value>70, 21</value>
+  </data>
+  <data name="DifferentByBox.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="DifferentByRadio.Size" type="System.Drawing.Size, System.Drawing">
     <value>107, 16</value>
@@ -367,11 +442,17 @@
   <data name="DifferentByRadio.Text" xml:space="preserve">
     <value>与参照值的差：</value>
   </data>
+  <data name="DifferentByRadio.ToolTip" xml:space="preserve">
+    <value />
+  </data>
   <data name="NotEqualToRadio.Size" type="System.Drawing.Size, System.Drawing">
     <value>59, 16</value>
   </data>
   <data name="NotEqualToRadio.Text" xml:space="preserve">
     <value>不等于</value>
+  </data>
+  <data name="NotEqualToRadio.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="EqualToRadio.Size" type="System.Drawing.Size, System.Drawing">
     <value>47, 16</value>
@@ -379,11 +460,17 @@
   <data name="EqualToRadio.Text" xml:space="preserve">
     <value>等于</value>
   </data>
+  <data name="EqualToRadio.ToolTip" xml:space="preserve">
+    <value />
+  </data>
   <data name="GreaterThanOrEqualToRadio.Size" type="System.Drawing.Size, System.Drawing">
     <value>71, 16</value>
   </data>
   <data name="GreaterThanOrEqualToRadio.Text" xml:space="preserve">
     <value>大于等于</value>
+  </data>
+  <data name="GreaterThanOrEqualToRadio.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="LessThanOrEqualToRadio.Size" type="System.Drawing.Size, System.Drawing">
     <value>71, 16</value>
@@ -391,11 +478,17 @@
   <data name="LessThanOrEqualToRadio.Text" xml:space="preserve">
     <value>小于等于</value>
   </data>
+  <data name="LessThanOrEqualToRadio.ToolTip" xml:space="preserve">
+    <value />
+  </data>
   <data name="GreaterThanRadio.Size" type="System.Drawing.Size, System.Drawing">
     <value>47, 16</value>
   </data>
   <data name="GreaterThanRadio.Text" xml:space="preserve">
     <value>大于</value>
+  </data>
+  <data name="GreaterThanRadio.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="LessThanRadio.Size" type="System.Drawing.Size, System.Drawing">
     <value>47, 16</value>
@@ -403,16 +496,31 @@
   <data name="LessThanRadio.Text" xml:space="preserve">
     <value>小于</value>
   </data>
-  <data name="ComparisonBox.Text" xml:space="preserve">
-    <value>比较类型：</value>
+  <data name="LessThanRadio.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="SearchButton.Text" xml:space="preserve">
     <value>搜索(&amp;S)</value>
   </data>
+  <data name="SearchButton.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SizeDropdown.ToolTip" xml:space="preserve">
+    <value />
+  </data>
   <data name="label1.Text" xml:space="preserve">
     <value>大小：</value>
   </data>
+  <data name="label1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
   <data name="label2.Text" xml:space="preserve">
     <value>显示为：</value>
+  </data>
+  <data name="label2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DisplayTypeDropdown.ToolTip" xml:space="preserve">
+    <value />
   </data>
 </root>

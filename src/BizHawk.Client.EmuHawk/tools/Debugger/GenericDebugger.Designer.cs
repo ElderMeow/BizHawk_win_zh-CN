@@ -67,11 +67,10 @@ namespace BizHawk.Client.EmuHawk
             // 
             // menuStrip1
             // 
-            resources.ApplyResources(this.menuStrip1, "menuStrip1");
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
             this.DebugSubMenu});
-            this.toolTip1.SetToolTip(this.menuStrip1, resources.GetString("menuStrip1.ToolTip"));
+            resources.ApplyResources(this.menuStrip1, "menuStrip1");
             // 
             // fileToolStripMenuItem
             // 
@@ -79,13 +78,13 @@ namespace BizHawk.Client.EmuHawk
             // 
             // DebugSubMenu
             // 
-            resources.ApplyResources(this.DebugSubMenu, "DebugSubMenu");
             this.DebugSubMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.StepIntoMenuItem,
             this.StepOverMenuItem,
             this.StepOutMenuItem,
             this.toolStripSeparator1,
             this.RefreshMenuItem});
+            resources.ApplyResources(this.DebugSubMenu, "DebugSubMenu");
             // 
             // StepIntoMenuItem
             // 
@@ -102,10 +101,6 @@ namespace BizHawk.Client.EmuHawk
             resources.ApplyResources(this.StepOutMenuItem, "StepOutMenuItem");
             this.StepOutMenuItem.Click += new System.EventHandler(this.StepOutMenuItem_Click);
             // 
-            // toolStripSeparator1
-            // 
-            resources.ApplyResources(this.toolStripSeparator1, "toolStripSeparator1");
-            // 
             // RefreshMenuItem
             // 
             resources.ApplyResources(this.RefreshMenuItem, "RefreshMenuItem");
@@ -117,7 +112,6 @@ namespace BizHawk.Client.EmuHawk
             this.RegistersGroupBox.Controls.Add(this.RegisterPanel);
             this.RegistersGroupBox.Name = "RegistersGroupBox";
             this.RegistersGroupBox.TabStop = false;
-            this.toolTip1.SetToolTip(this.RegistersGroupBox, resources.GetString("RegistersGroupBox.ToolTip"));
             // 
             // RegisterPanel
             // 
@@ -125,7 +119,6 @@ namespace BizHawk.Client.EmuHawk
             this.RegisterPanel.Core = null;
             this.RegisterPanel.Name = "RegisterPanel";
             this.RegisterPanel.ParentDebugger = null;
-            this.toolTip1.SetToolTip(this.RegisterPanel, resources.GetString("RegisterPanel.ToolTip"));
             // 
             // BreakpointsGroupBox
             // 
@@ -133,7 +126,6 @@ namespace BizHawk.Client.EmuHawk
             this.BreakpointsGroupBox.Controls.Add(this.BreakPointControl1);
             this.BreakpointsGroupBox.Name = "BreakpointsGroupBox";
             this.BreakpointsGroupBox.TabStop = false;
-            this.toolTip1.SetToolTip(this.BreakpointsGroupBox, resources.GetString("BreakpointsGroupBox.ToolTip"));
             // 
             // BreakPointControl1
             // 
@@ -144,7 +136,6 @@ namespace BizHawk.Client.EmuHawk
             this.BreakPointControl1.MemoryDomains = null;
             this.BreakPointControl1.Name = "BreakPointControl1";
             this.BreakPointControl1.ParentDebugger = null;
-            this.toolTip1.SetToolTip(this.BreakPointControl1, resources.GetString("BreakPointControl1.ToolTip"));
             // 
             // DisassemblerBox
             // 
@@ -154,13 +145,11 @@ namespace BizHawk.Client.EmuHawk
             this.DisassemblerBox.Controls.Add(this.DisassemblerView);
             this.DisassemblerBox.Name = "DisassemblerBox";
             this.DisassemblerBox.TabStop = false;
-            this.toolTip1.SetToolTip(this.DisassemblerBox, resources.GetString("DisassemblerBox.ToolTip"));
             // 
             // ToPCBtn
             // 
             resources.ApplyResources(this.ToPCBtn, "ToPCBtn");
             this.ToPCBtn.Name = "ToPCBtn";
-            this.toolTip1.SetToolTip(this.ToPCBtn, resources.GetString("ToPCBtn.ToolTip"));
             this.ToPCBtn.UseVisualStyleBackColor = true;
             this.ToPCBtn.Click += new System.EventHandler(this.ToPCBtn_Click);
             // 
@@ -168,14 +157,13 @@ namespace BizHawk.Client.EmuHawk
             // 
             resources.ApplyResources(this.label1, "label1");
             this.label1.Name = "label1";
-            this.toolTip1.SetToolTip(this.label1, resources.GetString("label1.ToolTip"));
             // 
             // DisassemblerView
             // 
-            resources.ApplyResources(this.DisassemblerView, "DisassemblerView");
             this.DisassemblerView.AllowColumnReorder = false;
             this.DisassemblerView.AllowColumnResize = true;
             this.DisassemblerView.AlwaysScroll = false;
+            resources.ApplyResources(this.DisassemblerView, "DisassemblerView");
             this.DisassemblerView.CellHeightPadding = 0;
             this.DisassemblerView.ContextMenuStrip = this.DisassemblerContextMenu;
             this.DisassemblerView.FullRowSelect = true;
@@ -184,17 +172,15 @@ namespace BizHawk.Client.EmuHawk
             this.DisassemblerView.Name = "DisassemblerView";
             this.DisassemblerView.RowCount = 0;
             this.DisassemblerView.ScrollSpeed = 3;
-            this.toolTip1.SetToolTip(this.DisassemblerView, resources.GetString("DisassemblerView.ToolTip"));
             this.DisassemblerView.SizeChanged += new System.EventHandler(this.DisassemblerView_SizeChanged);
             this.DisassemblerView.KeyDown += new System.Windows.Forms.KeyEventHandler(this.DisassemblerView_KeyDown);
             // 
             // DisassemblerContextMenu
             // 
-            resources.ApplyResources(this.DisassemblerContextMenu, "DisassemblerContextMenu");
             this.DisassemblerContextMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.AddBreakpointContextMenuItem});
             this.DisassemblerContextMenu.Name = "DisassemblerContextMenu";
-            this.toolTip1.SetToolTip(this.DisassemblerContextMenu, resources.GetString("DisassemblerContextMenu.ToolTip"));
+            resources.ApplyResources(this.DisassemblerContextMenu, "DisassemblerContextMenu");
             this.DisassemblerContextMenu.Opening += new System.ComponentModel.CancelEventHandler(this.DisassemblerContextMenu_Opening);
             // 
             // AddBreakpointContextMenuItem
@@ -206,7 +192,6 @@ namespace BizHawk.Client.EmuHawk
             // 
             resources.ApplyResources(this.StepOutBtn, "StepOutBtn");
             this.StepOutBtn.Name = "StepOutBtn";
-            this.toolTip1.SetToolTip(this.StepOutBtn, resources.GetString("StepOutBtn.ToolTip"));
             this.StepOutBtn.UseVisualStyleBackColor = true;
             this.StepOutBtn.Click += new System.EventHandler(this.StepOutMenuItem_Click);
             // 
@@ -214,7 +199,6 @@ namespace BizHawk.Client.EmuHawk
             // 
             resources.ApplyResources(this.StepIntoBtn, "StepIntoBtn");
             this.StepIntoBtn.Name = "StepIntoBtn";
-            this.toolTip1.SetToolTip(this.StepIntoBtn, resources.GetString("StepIntoBtn.ToolTip"));
             this.StepIntoBtn.UseVisualStyleBackColor = true;
             this.StepIntoBtn.Click += new System.EventHandler(this.StepIntoMenuItem_Click);
             // 
@@ -222,7 +206,6 @@ namespace BizHawk.Client.EmuHawk
             // 
             resources.ApplyResources(this.StepOverBtn, "StepOverBtn");
             this.StepOverBtn.Name = "StepOverBtn";
-            this.toolTip1.SetToolTip(this.StepOverBtn, resources.GetString("StepOverBtn.ToolTip"));
             this.StepOverBtn.UseVisualStyleBackColor = true;
             this.StepOverBtn.Click += new System.EventHandler(this.StepOverMenuItem_Click);
             // 
@@ -230,7 +213,6 @@ namespace BizHawk.Client.EmuHawk
             // 
             resources.ApplyResources(this.SeekToBtn, "SeekToBtn");
             this.SeekToBtn.Name = "SeekToBtn";
-            this.toolTip1.SetToolTip(this.SeekToBtn, resources.GetString("SeekToBtn.ToolTip"));
             this.SeekToBtn.UseVisualStyleBackColor = true;
             this.SeekToBtn.Click += new System.EventHandler(this.SeekToBtn_Click);
             // 
@@ -240,13 +222,11 @@ namespace BizHawk.Client.EmuHawk
             this.SeekToBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.SeekToBox.Name = "SeekToBox";
             this.SeekToBox.Nullable = false;
-            this.toolTip1.SetToolTip(this.SeekToBox, resources.GetString("SeekToBox.ToolTip"));
             // 
             // CancelSeekBtn
             // 
             resources.ApplyResources(this.CancelSeekBtn, "CancelSeekBtn");
             this.CancelSeekBtn.Name = "CancelSeekBtn";
-            this.toolTip1.SetToolTip(this.CancelSeekBtn, resources.GetString("CancelSeekBtn.ToolTip"));
             this.CancelSeekBtn.UseVisualStyleBackColor = true;
             this.CancelSeekBtn.Click += new System.EventHandler(this.CancelSeekBtn_Click);
             // 
@@ -254,7 +234,6 @@ namespace BizHawk.Client.EmuHawk
             // 
             resources.ApplyResources(this.RunBtn, "RunBtn");
             this.RunBtn.Name = "RunBtn";
-            this.toolTip1.SetToolTip(this.RunBtn, resources.GetString("RunBtn.ToolTip"));
             this.RunBtn.UseVisualStyleBackColor = true;
             this.RunBtn.Click += new System.EventHandler(this.RunBtn_Click);
             // 
@@ -275,7 +254,6 @@ namespace BizHawk.Client.EmuHawk
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "GenericDebugger";
-            this.toolTip1.SetToolTip(this, resources.GetString("$this.ToolTip"));
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.GenericDebugger_MouseMove);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

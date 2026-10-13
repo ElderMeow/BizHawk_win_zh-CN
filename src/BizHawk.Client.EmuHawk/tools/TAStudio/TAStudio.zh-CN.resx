@@ -117,32 +117,20 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="BranchesMarkersSplit.Panel1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BranchesMarkersSplit.Panel2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="MainVertialSplit.Panel1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="MainVertialSplit.Panel2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
   <data name="FileSubMenu.Text" xml:space="preserve">
     <value>文件(&amp;F)</value>
-  </data>
-  <data name="EditSubMenu.Text" xml:space="preserve">
-    <value>编辑(&amp;E)</value>
-  </data>
-  <data name="HeaderMenuItem.Text" xml:space="preserve">
-    <value>头部信息(&amp;H)</value>
-  </data>
-  <data name="CommentsMenuItem.Text" xml:space="preserve">
-    <value>注释(&amp;C)</value>
-  </data>
-  <data name="SubtitlesMenuItem.Text" xml:space="preserve">
-    <value>字幕(&amp;S)</value>
-  </data>
-  <data name="MetaSubMenu.Text" xml:space="preserve">
-    <value>元数据(&amp;M)</value>
-  </data>
-  <data name="SettingsSubMenu.Text" xml:space="preserve">
-    <value>设置(&amp;S)</value>
-  </data>
-  <data name="ColumnsSubMenu.Text" xml:space="preserve">
-    <value>列(&amp;C)</value>
-  </data>
-  <data name="HelpSubMenu.Text" xml:space="preserve">
-    <value>帮助(&amp;H)</value>
   </data>
   <data name="NewTASMenuItem.Text" xml:space="preserve">
     <value>新建(&amp;N)</value>
@@ -185,6 +173,9 @@
   </data>
   <data name="ToBk2MenuItem.Text" xml:space="preserve">
     <value>导出到 Bk2 (&amp;E)</value>
+  </data>
+  <data name="EditSubMenu.Text" xml:space="preserve">
+    <value>编辑(&amp;E)</value>
   </data>
   <data name="UndoMenuItem.Text" xml:space="preserve">
     <value>撤销(&amp;U)</value>
@@ -255,12 +246,33 @@
   <data name="StateHistoryIntegrityCheckMenuItem.Text" xml:space="preserve">
     <value>进度历史完整性检查</value>
   </data>
+  <data name="MetaSubMenu.Text" xml:space="preserve">
+    <value>元数据(&amp;M)</value>
+  </data>
+  <data name="HeaderMenuItem.Text" xml:space="preserve">
+    <value>头部信息(&amp;H)</value>
+  </data>
+  <data name="CommentsMenuItem.Text" xml:space="preserve">
+    <value>注释(&amp;C)</value>
+  </data>
+  <data name="SubtitlesMenuItem.Text" xml:space="preserve">
+    <value>字幕(&amp;S)</value>
+  </data>
+  <data name="SettingsSubMenu.Text" xml:space="preserve">
+    <value>设置(&amp;S)</value>
+  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="TAStudioSettingsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>124, 22</value>
   </data>
   <data name="TAStudioSettingsToolStripMenuItem.Text" xml:space="preserve">
     <value>打开设置</value>
+  </data>
+  <data name="ColumnsSubMenu.Text" xml:space="preserve">
+    <value>列(&amp;C)</value>
+  </data>
+  <data name="HelpSubMenu.Text" xml:space="preserve">
+    <value>帮助(&amp;H)</value>
   </data>
   <data name="TASEditorManualOnlineMenuItem.Text" xml:space="preserve">
     <value>TAS 编辑器在线手册</value>
@@ -276,5 +288,77 @@
   </data>
   <data name="MessageStatusLabel.Text" xml:space="preserve">
     <value>TAStudio 已启动！</value>
+  </data>
+  <data name="toolStripStatusLabel2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>260, 17</value>
+  </data>
+  <data name="SetMarkersContextMenuItem.Text" xml:space="preserve">
+    <value>设置标记</value>
+  </data>
+  <data name="SetMarkerWithTextContextMenuItem.Text" xml:space="preserve">
+    <value>设置带文本的标记</value>
+  </data>
+  <data name="RemoveMarkersContextMenuItem.Text" xml:space="preserve">
+    <value>移除标记</value>
+  </data>
+  <data name="DeselectContextMenuItem.Text" xml:space="preserve">
+    <value>取消选择</value>
+  </data>
+  <data name="SelectBetweenMarkersContextMenuItem.Text" xml:space="preserve">
+    <value>选择标记中间</value>
+  </data>
+  <data name="UngreenzoneContextMenuItem.Text" xml:space="preserve">
+    <value>清除绿区</value>
+  </data>
+  <data name="CancelSeekContextMenuItem.Text" xml:space="preserve">
+    <value>取消搜索</value>
+  </data>
+  <data name="copyToolStripMenuItem.Text" xml:space="preserve">
+    <value>复制</value>
+  </data>
+  <data name="pasteToolStripMenuItem.Text" xml:space="preserve">
+    <value>粘贴</value>
+  </data>
+  <data name="pasteInsertToolStripMenuItem.Text" xml:space="preserve">
+    <value>贴入</value>
+  </data>
+  <data name="cutToolStripMenuItem.Text" xml:space="preserve">
+    <value>剪切</value>
+  </data>
+  <data name="ClearContextMenuItem.Text" xml:space="preserve">
+    <value>清空</value>
+  </data>
+  <data name="DeleteFramesContextMenuItem.Text" xml:space="preserve">
+    <value>删除</value>
+  </data>
+  <data name="InsertFrameContextMenuItem.Text" xml:space="preserve">
+    <value>插入</value>
+  </data>
+  <data name="InsertNumFramesContextMenuItem.Text" xml:space="preserve">
+    <value>插入指定帧数</value>
+  </data>
+  <data name="CloneContextMenuItem.Text" xml:space="preserve">
+    <value>克隆</value>
+  </data>
+  <data name="CloneXTimesContextMenuItem.Text" xml:space="preserve">
+    <value>克隆指定次数</value>
+  </data>
+  <data name="TruncateContextMenuItem.Text" xml:space="preserve">
+    <value>截断影片</value>
+  </data>
+  <data name="BranchContextMenuItem.Text" xml:space="preserve">
+    <value>分支(&amp;B)</value>
+  </data>
+  <data name="StartNewProjectFromNowMenuItem.Text" xml:space="preserve">
+    <value>从当前新建项目</value>
+  </data>
+  <data name="StartANewProjectFromSaveRamMenuItem.Text" xml:space="preserve">
+    <value>从保存的 RAM 新建项目</value>
+  </data>
+  <data name="RightClickMenu.Size" type="System.Drawing.Size, System.Drawing">
+    <value>209, 502</value>
+  </data>
+  <data name="ColumnRightClickMenu.ToolTip" xml:space="preserve">
+    <value />
   </data>
 </root>

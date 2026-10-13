@@ -122,12 +122,10 @@
             resources.ApplyResources(this.MiscButton, "MiscButton");
             this.MiscButton.Menu = this.clearBtnContextMenu;
             this.MiscButton.Name = "MiscButton";
-            this.toolTip1.SetToolTip(this.MiscButton, resources.GetString("MiscButton.ToolTip"));
             this.MiscButton.UseVisualStyleBackColor = true;
             // 
             // clearBtnContextMenu
             // 
-            resources.ApplyResources(this.clearBtnContextMenu, "clearBtnContextMenu");
             this.clearBtnContextMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.restoreDefaultsToolStripMenuItem,
             this.restoreDefaultsForCurrentTabToolStripMenuItem,
@@ -135,7 +133,7 @@
             this.clearAllToolStripMenuItem,
             this.clearCurrentTabToolStripMenuItem});
             this.clearBtnContextMenu.Name = "clearBtnContextMenu";
-            this.toolTip1.SetToolTip(this.clearBtnContextMenu, resources.GetString("clearBtnContextMenu.ToolTip"));
+            resources.ApplyResources(this.clearBtnContextMenu, "clearBtnContextMenu");
             // 
             // restoreDefaultsToolStripMenuItem
             // 
@@ -144,13 +142,9 @@
             // 
             // restoreDefaultsForCurrentTabToolStripMenuItem
             // 
-            resources.ApplyResources(this.restoreDefaultsForCurrentTabToolStripMenuItem, "restoreDefaultsForCurrentTabToolStripMenuItem");
             this.restoreDefaultsForCurrentTabToolStripMenuItem.Name = "restoreDefaultsForCurrentTabToolStripMenuItem";
+            resources.ApplyResources(this.restoreDefaultsForCurrentTabToolStripMenuItem, "restoreDefaultsForCurrentTabToolStripMenuItem");
             this.restoreDefaultsForCurrentTabToolStripMenuItem.Click += new System.EventHandler(this.RestoreDefaultsCurrentTabToolStripMenuItem_Click);
-            // 
-            // toolStripSeparator1
-            // 
-            resources.ApplyResources(this.toolStripSeparator1, "toolStripSeparator1");
             // 
             // clearAllToolStripMenuItem
             // 
