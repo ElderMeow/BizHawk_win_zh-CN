@@ -1435,7 +1435,7 @@ namespace BizHawk.Client.EmuHawk
 			if (!string.IsNullOrEmpty(details))
 			{
 				Tools.Load<LogWindow>();
-				((LogWindow) Tools.Get<LogWindow>()).ShowReport("Dump Status Report", details);
+				((LogWindow) Tools.Get<LogWindow>()).ShowReport(TheLocalizater.TranslateText("Dump Status Report"), details);
 			}
 		}
 

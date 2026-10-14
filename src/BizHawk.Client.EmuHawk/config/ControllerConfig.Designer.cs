@@ -88,7 +88,7 @@
             this.AutofireControlsTab.Location = new System.Drawing.Point(4, 22);
             this.AutofireControlsTab.Name = "AutofireControlsTab";
             this.AutofireControlsTab.Padding = new System.Windows.Forms.Padding(3);
-            this.AutofireControlsTab.Size = new System.Drawing.Size(554, 455);
+            this.AutofireControlsTab.Size = new System.Drawing.Size(554, 454);
             this.AutofireControlsTab.TabIndex = 1;
             this.AutofireControlsTab.Text = "Autofire Controls";
             this.AutofireControlsTab.UseVisualStyleBackColor = true;
@@ -97,7 +97,7 @@
             // 
             this.AnalogControlsTab.Location = new System.Drawing.Point(4, 22);
             this.AnalogControlsTab.Name = "AnalogControlsTab";
-            this.AnalogControlsTab.Size = new System.Drawing.Size(554, 455);
+            this.AnalogControlsTab.Size = new System.Drawing.Size(554, 454);
             this.AnalogControlsTab.TabIndex = 2;
             this.AnalogControlsTab.Text = "Analog Controls";
             this.AnalogControlsTab.UseVisualStyleBackColor = true;
@@ -106,7 +106,7 @@
             // 
             this.FeedbacksTab.Location = new System.Drawing.Point(4, 22);
             this.FeedbacksTab.Name = "FeedbacksTab";
-            this.FeedbacksTab.Size = new System.Drawing.Size(554, 455);
+            this.FeedbacksTab.Size = new System.Drawing.Size(554, 454);
             this.FeedbacksTab.TabIndex = 3;
             this.FeedbacksTab.Text = "Feedbacks";
             this.FeedbacksTab.UseVisualStyleBackColor = true;
@@ -237,7 +237,7 @@
             this.flpUDLR.Controls.Add(this.rbUDLRForbid);
             this.flpUDLR.Controls.Add(this.rbUDLRPriority);
             this.flpUDLR.Controls.Add(this.rbUDLRAllow);
-            this.flpUDLR.Location = new System.Drawing.Point(432, 502);
+            this.flpUDLR.Location = new System.Drawing.Point(474, 468);
             this.flpUDLR.Name = "flpUDLR";
             // 
             // lblUDLR

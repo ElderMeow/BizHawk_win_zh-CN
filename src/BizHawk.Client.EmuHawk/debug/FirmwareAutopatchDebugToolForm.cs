@@ -17,7 +17,7 @@ namespace BizHawk.Client.EmuHawk.ForDebugging
 		public const string TOOL_NAME = "Manual Firmware Autopatching Tool";
 
 		protected override string WindowTitleStatic
-			=> TOOL_NAME;
+			=> TheLocalizater.TranslateText(TOOL_NAME);
 
 		public FirmwareAutopatchDebugToolForm()
 		{

@@ -25,7 +25,7 @@ namespace BizHawk.Client.EmuHawk
 //				this.ShowDialogAsChild(form);
 //			}
 			void OpenTool<T>() where T : class, IToolForm => Tools.Load<T>();
-			ToolStripMenuItemEx firmwareAutopatchDebugItem = new() { Text = FirmwareAutopatchDebugToolForm.TOOL_NAME };
+			ToolStripMenuItemEx firmwareAutopatchDebugItem = new() { Text = TheLocalizater.TranslateText(FirmwareAutopatchDebugToolForm.TOOL_NAME) };
 			firmwareAutopatchDebugItem.Click += (_, _) => OpenTool<FirmwareAutopatchDebugToolForm>();
 			ToolStripMenuItemEx rcHashDebugItem = new() { Text = TheLocalizater.TranslateText("Debug RC Hash") };
 			rcHashDebugItem.Click += (_, _) => RCheevos.DebugHash();
@@ -79,8 +79,8 @@ namespace BizHawk.Client.EmuHawk
 					{
 						DropDownItems =
 						{
-							new DebugVSystemChildItem(N64RomByteswapToolForm.TOOL_NAME, OpenTool<N64RomByteswapToolForm>) { RequiresLoadedRom = false },
-							new DebugVSystemChildItem(N64VideoSettingsFuzzToolForm.TOOL_NAME, OpenTool<N64VideoSettingsFuzzToolForm>),
+							new DebugVSystemChildItem(TheLocalizater.TranslateText(N64RomByteswapToolForm.TOOL_NAME), OpenTool<N64RomByteswapToolForm>) { RequiresLoadedRom = false },
+							new DebugVSystemChildItem(TheLocalizater.TranslateText(N64VideoSettingsFuzzToolForm.TOOL_NAME), OpenTool<N64VideoSettingsFuzzToolForm>),
 						},
 					},
 				},

@@ -142,6 +142,12 @@ namespace BizHawk.Client.EmuHawk
 
 			_previousDisplayMessage = Config.DisplayMessages;
 			Closing += (_, _) => StopBot();
+
+			StartFromSlotBox.Items.Clear();
+			for (int i = 1; i < 10; i++)
+			{
+				StartFromSlotBox.Items.Add(TheLocalizater.TranslateFormatString("Slot {0}", i));
+			}
 		}
 
 		private Dictionary<string, double> ControlProbabilities =>
@@ -240,15 +246,26 @@ namespace BizHawk.Client.EmuHawk
 
 		public string FromSlot
 		{
-			get => StartFromSlotBox.SelectedItem != null
-				? StartFromSlotBox.SelectedItem.ToString()
-				: "";
+			get
+			{
+				if (StartFromSlotBox.SelectedItem == null) { return ""; }
+				var soltDisplayName = StartFromSlotBox.SelectedItem.ToString();
+				for (int i = 1; i <= 10; i++)
+				{
+					string soltName = $"Solt {i}";
+					if (TheLocalizater.TranslateText(soltName, context:"basicbot_selected_slot") == StartFromSlotBox.SelectedItem.ToString())
+					{
+						return soltName;
+					}
+				}
+				return "";
+			}
 
 			set
 			{
 				var item = StartFromSlotBox.Items
 					.OfType<object>()
-					.FirstOrDefault(o => o.ToString() == value);
+					.FirstOrDefault(o => o.ToString() == TheLocalizater.TranslateText(value, context: "basicbot_selected_slot"));
 
 				StartFromSlotBox.SelectedItem = item;
 			}
@@ -789,7 +806,7 @@ namespace BizHawk.Client.EmuHawk
 			{
 				var control = new BotControlsRow
 				{
-					ButtonName = button,
+					ButtonName = TheLocalizater.TranslateText(button),
 					Probability = 0.0,
 					Location = new Point(marginLeft, startY + accumulatedY),
 					TabIndex = count + 1,

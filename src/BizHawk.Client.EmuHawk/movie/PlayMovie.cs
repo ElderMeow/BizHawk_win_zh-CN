@@ -532,7 +532,7 @@ namespace BizHawk.Client.EmuHawk
 			{
 				// TODO this will allocate unnecessary memory when this movie is a TasMovie due to TasStateManager
 				var movie = _movieSession.Get(_movieList[MovieView.SelectedIndices[0]].Filename, true);
-				if (movie == null) throw new Exception(TheLocalizater.TranslateFormatString("Unable to load movie {}", _movieList[MovieView.SelectedIndices[0]].Filename));
+				if (movie == null) throw new Exception(TheLocalizater.TranslateFormatString("Unable to load movie {0}", _movieList[MovieView.SelectedIndices[0]].Filename));
 				var form = new EditSubtitlesForm(DialogController, movie, _config.PathEntries, readOnly: false, disposeOnClose: true);
 				form.Show();
 			}

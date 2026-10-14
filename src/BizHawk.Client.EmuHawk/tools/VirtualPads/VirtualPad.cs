@@ -92,7 +92,7 @@ namespace BizHawk.Client.EmuHawk
 				{
 					InputManager = inputManager,
 					Name = button.Name,
-					Text = icon != null ? null : button.DisplayName,
+					Text = icon != null ? null : TheLocalizater.TranslateText(button.DisplayName),
 					Location = UIHelper.Scale(button.Location),
 					Image = icon,
 				};

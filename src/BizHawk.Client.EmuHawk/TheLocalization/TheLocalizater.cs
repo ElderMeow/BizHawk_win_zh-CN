@@ -3,10 +3,10 @@
 	public static class TheLocalizater
 	{
 		// Translate a plain text. 翻译一条纯文本。
-		public static string TranslateText(string text)
+		public static string TranslateText(string text, string context = null)
 		{
 			// TODO: your translate implementation.
-			return "T_" + text;
+			return context == null ? "T_" + text : context + ":T_" + text;
 		}
 
 		public static string TranslateShortcutKeyDisplayString(string bindstring)

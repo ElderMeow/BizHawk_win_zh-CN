@@ -159,14 +159,14 @@ namespace BizHawk.Client.EmuHawk
 			if (_s != null)
 			{
 				_s = Activator.CreateInstance(_s.GetType());
-				propertyGrid1.SelectedObject = _s;
+				propertyGrid1.SelectedObject = new TheLocalizedTypeDescriptorProxy(_s);
 				_settingsChanged = true;
 			}
 
 			if (_ss != null)
 			{
 				_ss = Activator.CreateInstance(_ss.GetType());
-				propertyGrid2.SelectedObject = _ss;
+				propertyGrid2.SelectedObject = new TheLocalizedTypeDescriptorProxy(_ss);
 				_syncSettingsChanged = true;
 			}
 		}
