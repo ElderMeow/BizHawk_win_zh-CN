@@ -93,13 +93,9 @@ namespace BizHawk.Client.EmuHawk
 				_ => _ss.VideoPlugin,
 			};
 
-			_ss.Core = CoreTypeDropdown.SelectedItem
-				.ToString()
-				.GetEnumFromDescription<N64SyncSettings.CoreType>();
+			_ss.Core = (N64SyncSettings.CoreType)CoreTypeDropdown.SelectedIndex;
 
-			_ss.Rsp = RspTypeDropdown.SelectedItem
-				.ToString()
-				.GetEnumFromDescription<N64SyncSettings.RspType>();
+			_ss.Rsp = (N64SyncSettings.RspType)RspTypeDropdown.SelectedIndex;
 
 			_settable.PutCoreSettings(_s);
 			_settable.PutCoreSyncSettings(_ss);

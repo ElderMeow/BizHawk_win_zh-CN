@@ -89,8 +89,8 @@ namespace BizHawk.Client.EmuHawk
 		{
 			BranchView.AllColumns.Clear();
 			BranchView.AllColumns.Add(new(name: BranchNumberColumnName, widthUnscaled: 30, text: "#"));
-			BranchView.AllColumns.Add(new(name: FrameColumnName, widthUnscaled: 64, text: TheLocalizater.TranslateText("Frame")));
-			BranchView.AllColumns.Add(new(name: UserTextColumnName, widthUnscaled: 90, text: TheLocalizater.TranslateText("UserText")));
+			BranchView.AllColumns.Add(new(name: FrameColumnName, widthUnscaled: 64, text:"Frame"));
+			BranchView.AllColumns.Add(new(name: UserTextColumnName, widthUnscaled: 90, text: "UserText"));
 		}
 
 		private void QueryItemText(InputRoll sender, int index, RollColumn column, out string text, ref int offsetX, ref int offsetY)

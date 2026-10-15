@@ -1,4 +1,4 @@
-﻿using System.Collections.Concurrent;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 
@@ -23,7 +23,7 @@ namespace BizHawk.Client.EmuHawk
 		
 		// 本地化翻译器实例表， key 为 cultureName, value 为 翻译器实例。
 		// Localization instance dictionary, key is cultureName, and value is translator instance.
-		static ConcurrentDictionary<string, HardEncodingTextTralslaterBase> _translaters = new ConcurrentDictionary<string, HardEncodingTextTralslaterBase>();
+		static Dictionary<string, HardEncodingTextTralslaterBase> _translaters = new Dictionary<string, HardEncodingTextTralslaterBase>();
 
 		static string getCultureName()
 		{

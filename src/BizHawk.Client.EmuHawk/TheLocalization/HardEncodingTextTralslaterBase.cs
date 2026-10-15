@@ -1,37 +1,15 @@
-﻿using System.Collections.Concurrent;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Windows.Forms;
-using static System.Net.Mime.MediaTypeNames;
+﻿using System.Collections.Generic;
 
 namespace BizHawk.Client.EmuHawk
 {
 	internal class HardEncodingTextTralslaterBase
 	{
-#if DEBUG
-		HashSet<string> untranslated = new HashSet<string>();
-		internal void collectUntranslated(string text)
-		{
-			untranslated.Add(text);
-		}
-#endif
-		~HardEncodingTextTralslaterBase()
-		{
-#if DEBUG
-			foreach (var kv in untranslated)
-			{
-				Console.WriteLine("未翻译的文本：\t\"" + kv + "\" ！");
-			}
-#endif
-		}
-
 		// 将根据系统的 cultureName 字段应用对应的翻译器。
 		// The corresponding translator will be applied according to the cultureName.
 		internal string cultureName = "default";
 
 		// The dictionary used to translate. 字典，文字对照表。
-		protected ConcurrentDictionary<string, string> textTranlateDictionary = new ConcurrentDictionary<string, string>();
+		protected Dictionary<string, string> textTranlateDictionary = new Dictionary<string, string>();
 
 		// Translate a plain text. 翻译一条纯文本。
 		public virtual string TranslateText(string text, string context = null)
@@ -41,13 +19,6 @@ namespace BizHawk.Client.EmuHawk
 			{
 				return translatedString; //take out the translated text from it. 则从中取出翻译后的文本。
 			}
-#if DEBUG
-			if (!string.IsNullOrWhiteSpace(key))
-			{
-				collectUntranslated(key.Replace("\"", "\\\""));
-				// Console.WriteLine("没有翻译的文本： \"" + text.Replace("\"", "\\\"") + "\"");
-			}
-#endif
 			return text; // Otherwise, non translate.
 		}
 
@@ -63,10 +34,6 @@ namespace BizHawk.Client.EmuHawk
 				}
 				else
 				{
-#if DEBUG
-					collectUntranslated($"<[keyname]>:{key}");
-					// Console.WriteLine("没有翻译的按键名： " + $"<[keyname]>:{bindstring}");
-#endif
 					translatedKeys.Add(key); // Otherwise, non translate.
 				}
 			}
@@ -80,13 +47,6 @@ namespace BizHawk.Client.EmuHawk
 			{
 				return string.Format(translatedString, args); //take out the translated text from it. 则从中取出翻译后的文本。
 			}
-#if DEBUG
-			if (!string.IsNullOrWhiteSpace(formatString))
-			{
-				collectUntranslated(formatString.Replace("\"", "\\\""));
-				// Console.WriteLine("没有翻译的格式串： \"" + formatString.Replace("\"", "\\\"") + "\"");
-			}
-#endif
 			return string.Format(formatString, args); // Otherwise, non translate.
 		}
 

@@ -142,6 +142,13 @@ namespace BizHawk.Client.EmuHawk
 
 			_previousDisplayMessage = Config.DisplayMessages;
 			Closing += (_, _) => StopBot();
+
+			StartFromSlotBox.Items.Clear();
+			for (int i = 1; i < 10; i++)
+			{
+				string soltName = $"Solt {i}";
+				StartFromSlotBox.Items.Add(TheLocalizater.TranslateText(soltName, context: "basicbot_selected_slot"));
+			}
 		}
 
 		private Dictionary<string, double> ControlProbabilities =>
@@ -240,15 +247,26 @@ namespace BizHawk.Client.EmuHawk
 
 		public string FromSlot
 		{
-			get => StartFromSlotBox.SelectedItem != null
-				? StartFromSlotBox.SelectedItem.ToString()
-				: "";
+			get
+			{
+				if (StartFromSlotBox.SelectedItem == null) { return ""; }
+				var soltDisplayName = StartFromSlotBox.SelectedItem.ToString();
+				for (int i = 1; i <= 10; i++)
+				{
+					string soltName = $"Solt {i}";
+					if (TheLocalizater.TranslateText(soltName, context:"basicbot_selected_slot") == StartFromSlotBox.SelectedItem.ToString())
+					{
+						return soltName;
+					}
+				}
+				return "";
+			}
 
 			set
 			{
 				var item = StartFromSlotBox.Items
 					.OfType<object>()
-					.FirstOrDefault(o => o.ToString() == value);
+					.FirstOrDefault(o => o.ToString() == TheLocalizater.TranslateText(value, context: "basicbot_selected_slot"));
 
 				StartFromSlotBox.SelectedItem = item;
 			}
@@ -789,7 +807,7 @@ namespace BizHawk.Client.EmuHawk
 			{
 				var control = new BotControlsRow
 				{
-					ButtonName = button,
+					ButtonName = TheLocalizater.TranslateText(button, context:"controllerkey"),
 					Probability = 0.0,
 					Location = new Point(marginLeft, startY + accumulatedY),
 					TabIndex = count + 1,
@@ -988,7 +1006,7 @@ namespace BizHawk.Client.EmuHawk
 
 			foreach (var button in Emulator.ControllerDefinition.BoolButtons)
 			{
-				double probability = _cachedControlProbabilities[button];
+				double probability = _cachedControlProbabilities[TheLocalizater.TranslateText(button, context: "controllerkey")];
 				bool pressed = rand.Next(100) < probability;
 
 				InputManager.ClickyVirtualPadController.SetBool(button, pressed);

@@ -185,10 +185,10 @@ namespace BizHawk.Client.EmuHawk
 					lvi[3] = $"{total}";
 				if (tsbViewStyle.SelectedIndex == 2)
 				{
-					lvi[4] = $"of {(dataA.Length % 1024 == 0 ? "" : "~")}{dataA.Length / 1024} KBytes";
+					lvi[4] = TheLocalizater.TranslateFormatString("of {0}{1} KBytes", (dataA.Length % 1024 == 0 ? "" : "~"), dataA.Length / 1024);
 				}
 				else
-					lvi[4] = $"of {dataA.Length} Bytes";
+					lvi[4] = TheLocalizater.TranslateFormatString("of {0} Bytes", dataA.Length);
 				for (int i = 0; i < 8; i++)
 				{
 					if (tsbViewStyle.SelectedIndex == 0)

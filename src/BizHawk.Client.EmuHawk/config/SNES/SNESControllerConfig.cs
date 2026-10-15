@@ -33,14 +33,14 @@ namespace BizHawk.Client.EmuHawk
 		private void OkBtn_Click(object sender, EventArgs e)
 		{
 			bool changed =
-				_syncSettings.LeftPort.ToString() != Port1ComboBox.SelectedItem.ToString()
-				|| _syncSettings.RightPort.ToString() != Port2ComboBox.SelectedItem.ToString()
+				_syncSettings.LeftPort != (LibsnesControllerDeck.ControllerType)Port1ComboBox.SelectedIndex
+				|| _syncSettings.RightPort != (LibsnesControllerDeck.ControllerType)Port2ComboBox.SelectedIndex
 				|| _syncSettings.LimitAnalogChangeSensitivity != LimitAnalogChangeCheckBox.Checked;
 
 			if (changed)
 			{
-				_syncSettings.LeftPort = (LibsnesControllerDeck.ControllerType)Enum.Parse(typeof(LibsnesControllerDeck.ControllerType), Port1ComboBox.SelectedItem.ToString());
-				_syncSettings.RightPort = (LibsnesControllerDeck.ControllerType)Enum.Parse(typeof(LibsnesControllerDeck.ControllerType), Port2ComboBox.SelectedItem.ToString());
+				_syncSettings.LeftPort = (LibsnesControllerDeck.ControllerType)Port1ComboBox.SelectedIndex;
+				_syncSettings.RightPort = (LibsnesControllerDeck.ControllerType)Port2ComboBox.SelectedIndex;
 				_syncSettings.LimitAnalogChangeSensitivity = LimitAnalogChangeCheckBox.Checked;
 
 				_settable.PutCoreSyncSettings(_syncSettings);
@@ -60,8 +60,8 @@ namespace BizHawk.Client.EmuHawk
 		{
 			if (!_suppressDropdownChangeEvents)
 			{
-				var leftPort = (LibsnesControllerDeck.ControllerType)Enum.Parse(typeof(LibsnesControllerDeck.ControllerType), Port1ComboBox.SelectedItem.ToString());
-				var rightPort = (LibsnesControllerDeck.ControllerType)Enum.Parse(typeof(LibsnesControllerDeck.ControllerType), Port2ComboBox.SelectedItem.ToString());
+				var leftPort = (LibsnesControllerDeck.ControllerType)Port1ComboBox.SelectedIndex;
+				var rightPort = (LibsnesControllerDeck.ControllerType)Port2ComboBox.SelectedIndex;
 				ToggleMouseSection(leftPort == LibsnesControllerDeck.ControllerType.Mouse
 					|| rightPort == LibsnesControllerDeck.ControllerType.Mouse);
 			}

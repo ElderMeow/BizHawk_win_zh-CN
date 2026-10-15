@@ -499,7 +499,7 @@ namespace BizHawk.Client.EmuHawk
 
 			// All final widths are computed in UpdateColumnWidths, after column creation.
 			roll.AllColumns.Add(new(name: CursorColumnName, widthUnscaled: 10, text: string.Empty));
-			roll.AllColumns.Add(new(name: FrameColumnName, widthUnscaled: 10, text: TheLocalizater.TranslateText("Frame#"))
+			roll.AllColumns.Add(new(name: FrameColumnName, widthUnscaled: 10, text: "Frame#")
 			{
 				Rotatable = true,
 			});

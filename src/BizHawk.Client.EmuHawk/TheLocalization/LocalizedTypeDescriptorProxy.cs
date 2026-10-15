@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel;
+using System.Globalization;
 using System.Linq;
 
 namespace BizHawk.Client.EmuHawk
@@ -35,7 +36,7 @@ namespace BizHawk.Client.EmuHawk
 			=> TypeDescriptor.GetEditor(_target, editorBaseType);
 
 		public EventDescriptorCollection GetEvents()
-			=> TypeDescriptor.GetEvents(_target);
+			=> GetEvents((Attribute[]) null);
 
 		public EventDescriptorCollection GetEvents(Attribute[] attributes)
 			=> TypeDescriptor.GetEvents(_target, attributes);
@@ -60,7 +61,55 @@ namespace BizHawk.Client.EmuHawk
 		}
 	}
 
-	// Wrap a PropertyDescriptor, to translate DisplayName、Category、Description
+	// Wrap a enum, to translate enum value. 
+	internal class LocalizedEnumConverter : EnumConverter
+	{
+		public LocalizedEnumConverter(Type type) : base(type)
+		{
+		}
+
+		public override object ConvertTo(ITypeDescriptorContext context, CultureInfo culture, object value, Type destinationType)
+		{
+			if (destinationType == typeof(string) && value != null)
+			{
+				var enumName = Enum.GetName(EnumType, value);
+				if (enumName != null)
+				{
+					return TheLocalizater.TranslateText(enumName, context: EnumType.Name);
+				}
+			}
+			return base.ConvertTo(context, culture, value, destinationType);
+		}
+
+		public override object ConvertFrom(ITypeDescriptorContext context, CultureInfo culture, object value)
+		{
+			if (value is string strVal)
+			{
+				foreach (var enumObj in Enum.GetValues(EnumType))
+				{
+					var rawKey = Enum.GetName(EnumType, enumObj)!;
+					var display = TheLocalizater.TranslateText(rawKey, context: EnumType.Name);
+					if (display == strVal)
+					{
+						return enumObj;
+					}
+				}
+			}
+			return base.ConvertFrom(context, culture, value);
+		}
+
+		public override bool GetStandardValuesSupported(ITypeDescriptorContext context)
+		{
+			return true;
+		}
+
+		public override StandardValuesCollection GetStandardValues(ITypeDescriptorContext context)
+		{
+			return new StandardValuesCollection(Enum.GetValues(EnumType));
+		}
+	}
+
+	// Wrap a PropertyDescriptor, to translate DisplayName, Category, Description ...
 	internal class TranslatedPropertyDescriptor : PropertyDescriptor
 	{
 		private readonly PropertyDescriptor _inner;
@@ -102,6 +151,19 @@ namespace BizHawk.Client.EmuHawk
 		public override bool IsReadOnly => _inner.IsReadOnly;
 		public override Type PropertyType => _inner.PropertyType;
 		public override Type ComponentType => _inner.ComponentType;
+
+		//
+		public override TypeConverter Converter
+		{
+			get
+			{
+				if (_inner.PropertyType.IsEnum)
+				{
+					return new LocalizedEnumConverter(_inner.PropertyType);
+				}
+				return _inner.Converter;
+			}
+		}
 
 		private object Unwrap(object component)
 		{

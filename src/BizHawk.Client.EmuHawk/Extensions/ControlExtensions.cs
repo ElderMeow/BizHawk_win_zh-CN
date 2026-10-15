@@ -29,8 +29,9 @@ namespace BizHawk.Client.EmuHawk
 		public static void PopulateFromEnum<T>(this ComboBox box, T enumVal)
 			where T : Enum
 		{
-			box.ReplaceItems(items: typeof(T).GetEnumDescriptions());
-			box.SelectedItem = enumVal.GetDescription();
+			Type enumType = typeof(T);
+			box.ReplaceItems(items: typeof(T).GetEnumDescriptions().Select(s => TheLocalizater.TranslateText(s, context: enumType.Name)));
+			box.SelectedItem = TheLocalizater.TranslateText(enumVal.GetDescription(), context: enumType.Name);
 		}
 
 		public static ToolStripMenuItem ToColumnsMenu(this InputRoll inputRoll, Action changeCallback)

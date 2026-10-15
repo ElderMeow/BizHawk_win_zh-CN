@@ -9,11 +9,12 @@
 		<ApplicationManifest>app.manifest</ApplicationManifest>
 		<Description>Multi-system emulator frontend</Description>
 		<Nullable>disable</Nullable>
-		<NoWarn>$(NoWarn);MA0162</NoWarn> <!-- MA0162 is helpful for migration to .NET Core -->
+		<NoWarn>$(NoWarn);MA0162</NoWarn>
+		<!-- MA0162 is helpful for migration to .NET Core -->
 		<ResolveAssemblyWarnOrErrorOnTargetArchitectureMismatch>None</ResolveAssemblyWarnOrErrorOnTargetArchitectureMismatch>
 		<UseWindowsForms>true</UseWindowsForms>
 	</PropertyGroup>
-	
+
 	<!-- 本项目文件夹路径和命名空间不严格匹配，为了本地化，我们需要特别处理本地化 resx 文件的 LogicalName 。 -->
 	<!-- folder path and namespace of this project are not strictly matched. In order to localize, we need to specially handle the LogicalName of the localized resx file. -->
 	<ItemGroup>
@@ -21,7 +22,7 @@
 			<LogicalName>BizHawk.Client.EmuHawk.%(Filename).resources</LogicalName>
 		</EmbeddedResource>
 	</ItemGroup>
-	
+
 	<!-- 又有几个窗口的命名空间既不对应路径，又不是 BizHawk.Client.EmuHawk ，需要单独处理 -->
 	<!-- There are also several window namespaces that do not correspond to any paths and are not of the type BizHawk.Client.EmuHawk; these need to be handled separately. -->
 	<ItemGroup>
@@ -42,7 +43,7 @@
 		<EmbeddedResource Update="tools\Genesis\VDPViewer.zh-CN.resx" LogicalName="BizHawk.Client.EmuHawk.GenVdpViewer.zh-CN.resources" />
 		<EmbeddedResource Update="tools\SMS\VDPViewer.zh-CN.resx" LogicalName="BizHawk.Client.EmuHawk.SmsVdpViewer.zh-CN.resources" />
 	</ItemGroup>
-	
+
 	<!-- 原项目中有些中性的 .resx 文件未指定 DependentUpon ，又由于路径与命名空间不匹配的问题导致开启 Localization 后找不到资源 -->
 	<!-- In the original project, those neutral.resx files did not have a DependentUpon attribute specified, and due to mismatches in paths and namespaces, the resources could not be found after localization was enabled. -->
 	<ItemGroup>
@@ -68,8 +69,8 @@
 		<EmbeddedResource Update="tools\ToolFormBase.resx" DependentUpon="ToolFormBase.cs" />
 		<EmbeddedResource Update="tools\Watch\WatchEditor.resx" DependentUpon="WatchEditor.cs" />
 	</ItemGroup>
-	<!-- 修改结束 Edit Done -->	
-	
+	<!-- 修改结束 Edit Done -->
+
 	<ItemGroup>
 		<Reference Include="PresentationFramework" />
 	</ItemGroup>
@@ -353,7 +354,7 @@
 		<Compile Update="PlatformChooser.cs" SubType="Form" />
 		<Compile Update="PlatformChooser.Designer.cs" DependentUpon="PlatformChooser.cs" />
 		<EmbeddedResource Update="PlatformChooser.resx" DependentUpon="PlatformChooser.cs" />
-<!-- creates circular dependency
+		<!-- creates circular dependency
 		<Compile Update="Properties/Resources.cs" DependentUpon="Resources.resx" />
 -->
 		<Compile Update="RetroAchievements/RAIntegrationDownloaderForm.cs" SubType="Form" />
@@ -421,7 +422,7 @@
 		<Compile Update="tools\HexEditor\HexColor.cs" SubType="Form" />
 		<Compile Update="tools\HexEditor\HexColor.Designer.cs" DependentUpon="HexColor.cs" />
 		<EmbeddedResource Update="tools\HexEditor\HexColor.zh-CN.resx">
-		  <DependentUpon>HexColor.cs</DependentUpon>
+			<DependentUpon>HexColor.cs</DependentUpon>
 		</EmbeddedResource>
 		<EmbeddedResource Update="tools\HexEditor\HexColor.resx" DependentUpon="HexColor.cs" />
 		<Compile Update="tools/HexEditor/HexEditor.cs" SubType="Form" />
@@ -459,7 +460,7 @@
 		<Compile Update="tools\Macros\MacroInput.ButtonSelect.cs" DependentUpon="MacroInput.cs" />
 		<!-- 修改结束 -->
 		<EmbeddedResource Update="tools\Macros\MacroInput.zh-CN.resx">
-		  <DependentUpon>MacroInput.cs</DependentUpon>
+			<DependentUpon>MacroInput.cs</DependentUpon>
 		</EmbeddedResource>
 		<!-- The original project forgot to include this files, which led to the misunderstanding of the file as window file during localization, resulting in bugs. -->
 		<EmbeddedResource Update="tools\Macros\MacroInput.resx" DependentUpon="MacroInput.cs" />
@@ -499,16 +500,16 @@
 		<Compile Update="tools\SMS\VDPViewer.cs" SubType="Form" />
 		<Compile Update="tools\SMS\VdpViewer.Designer.cs" DependentUpon="VDPViewer.cs" />
 		<EmbeddedResource Update="tools\Genesis\VdpViewer.zh-CN.resx">
-		  <DependentUpon>VDPViewer.cs</DependentUpon>
+			<DependentUpon>VDPViewer.cs</DependentUpon>
 		</EmbeddedResource>
 		<EmbeddedResource Update="tools\NES\NESPPU.zh-CN.resx">
-		  <DependentUpon>NesPPU.cs</DependentUpon>
+			<DependentUpon>NesPPU.cs</DependentUpon>
 		</EmbeddedResource>
 		<EmbeddedResource Update="tools\PCE\PCEBGViewer.zh-CN.resx">
-		  <DependentUpon>PceBGViewer.cs</DependentUpon>
+			<DependentUpon>PceBGViewer.cs</DependentUpon>
 		</EmbeddedResource>
 		<EmbeddedResource Update="tools\PCE\PCETileViewer.zh-CN.resx">
-		  <DependentUpon>PceTileViewer.cs</DependentUpon>
+			<DependentUpon>PceTileViewer.cs</DependentUpon>
 		</EmbeddedResource>
 		<EmbeddedResource Update="tools\SMS\VdpViewer.resx" DependentUpon="VDPViewer.cs" />
 		<Compile Update="tools/SNES/SNESGraphicsDebugger.cs" SubType="Form" />
@@ -527,7 +528,7 @@
 		<Compile Update="tools\TAStudio\HeaderEditor.cs" SubType="Form" />
 		<Compile Update="tools\TAStudio\HeaderEditor.Designer.cs" DependentUpon="HeaderEditor.cs" />
 		<EmbeddedResource Update="tools\TAStudio\HeaderEditor.zh-CN.resx">
-		  <DependentUpon>HeaderEditor.cs</DependentUpon>
+			<DependentUpon>HeaderEditor.cs</DependentUpon>
 		</EmbeddedResource>
 		<EmbeddedResource Update="tools\TAStudio\HeaderEditor.resx" DependentUpon="HeaderEditor.cs" />
 		<Compile Update="tools/TAStudio/MarkerControl.cs" SubType="UserControl" />
@@ -581,7 +582,7 @@
 		<Compile Update="tools\VirtualPads\VirtualpadsTool.cs" SubType="Form" />
 		<Compile Update="tools\VirtualPads\VirtualpadsTool.Designer.cs" DependentUpon="VirtualpadsTool.cs" />
 		<EmbeddedResource Update="tools\VirtualPads\VirtualpadsTool.zh-CN.resx">
-		  <DependentUpon>VirtualpadsTool.cs</DependentUpon>
+			<DependentUpon>VirtualpadsTool.cs</DependentUpon>
 		</EmbeddedResource>
 		<EmbeddedResource Update="tools\VirtualPads\VirtualpadsTool.resx" DependentUpon="VirtualpadsTool.cs" />
 		<Compile Update="tools/Watch/RamPoke.cs" SubType="Form" />
@@ -594,10 +595,18 @@
 		<Compile Update="tools/Watch/RamWatch.Designer.cs" DependentUpon="RamWatch.cs" />
 		<EmbeddedResource Update="tools/Watch/RamWatch.resx" DependentUpon="RamWatch.cs" />
 		<EmbeddedResource Update="tools\SMS\VdpViewer.zh-CN.resx">
-		  <DependentUpon>VDPViewer.cs</DependentUpon>
+			<DependentUpon>VDPViewer.cs</DependentUpon>
 		</EmbeddedResource>
 		<Compile Update="tools/Watch/WatchEditor.cs" SubType="Form" />
 		<Compile Update="tools/Watch/WatchValueBox.cs" SubType="Component" />
 		<Compile Update="UpdateChecker.cs" SubType="Code" />
+	</ItemGroup>
+	<ItemGroup>
+		<None Update="TheLocalization\zh-CN\DoTranslate.py">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="TheLocalization\zh-CN\TextTranslateDictionary.json">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
 	</ItemGroup>
 </Project>

@@ -98,13 +98,13 @@ namespace BizHawk.Client.EmuHawk
 			{
 				DropDownStyle = ComboBoxStyle.DropDownList,
 				FormattingEnabled = true,
-				Items = { START_FROM_POWERON },
+				Items = { TheLocalizater.TranslateText(START_FROM_POWERON) },
 				Location = new(83, 65),
 				MaxDropDownItems = 32,
 				Size = new(152, 21),
 			};
-			if (_emulator.HasSaveRam() && _emulator.AsSaveRam().CloneSaveRam(clearDirty: false) is not null) StartFromCombo.Items.Add(START_FROM_SAVERAM);
-			if (_emulator.HasSavestates()) StartFromCombo.Items.Add(START_FROM_SAVESTATE);
+			if (_emulator.HasSaveRam() && _emulator.AsSaveRam().CloneSaveRam(clearDirty: false) is not null) StartFromCombo.Items.Add(TheLocalizater.TranslateText(START_FROM_SAVERAM));
+			if (_emulator.HasSavestates()) StartFromCombo.Items.Add(TheLocalizater.TranslateText(START_FROM_SAVESTATE));
 
 			DefaultAuthorCheckBox = new()
 			{
@@ -216,7 +216,7 @@ namespace BizHawk.Client.EmuHawk
 				movieToRecord.Author = AuthorBox.Text ?? _config.DefaultAuthor;
 
 				var selectedStartFromValue = StartFromCombo.SelectedItem.ToString();
-				if (selectedStartFromValue is START_FROM_SAVESTATE && _emulator.HasSavestates())
+				if (selectedStartFromValue == TheLocalizater.TranslateText(START_FROM_SAVESTATE) && _emulator.HasSavestates())
 				{
 					var core = _emulator.AsStatable();
 
@@ -239,7 +239,7 @@ namespace BizHawk.Client.EmuHawk
 						movieToRecord.SavestateFramebuffer = new BitmapBuffer(v.BufferWidth, v.BufferHeight, v.GetVideoBuffer());
 					}
 				}
-				else if (selectedStartFromValue is START_FROM_SAVERAM && _emulator.HasSaveRam())
+				else if (selectedStartFromValue == TheLocalizater.TranslateText(START_FROM_SAVERAM) && _emulator.HasSaveRam())
 				{
 					var core = _emulator.AsSaveRam();
 					movieToRecord.StartsFromSaveRam = true;

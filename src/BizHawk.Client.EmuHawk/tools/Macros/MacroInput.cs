@@ -60,8 +60,8 @@ namespace BizHawk.Client.EmuHawk
 			};
 
 			_zones.Add(main);
-			ZonesList.Items.Add($"{main.Name} - length: {main.Length}");
-			ZonesList.Items[0] += " [Zones don't change!]";
+			ZonesList.Items.Add(TheLocalizater.TranslateFormatString( "{0} - length: {1}", main.Name, main.Length));
+			ZonesList.Items[0] += TheLocalizater.TranslateText(" [Zones don't change!]");
 
 			SetUpButtonBoxes();
 
@@ -134,7 +134,7 @@ namespace BizHawk.Client.EmuHawk
 				Name = $"Zone {_zones.Count}",
 			};
 			_zones.Add(newZone);
-			ZonesList.Items.Add($"{newZone.Name} - length: {newZone.Length}");
+			ZonesList.Items.Add(TheLocalizater.TranslateFormatString("{0} - length: {1}", newZone.Name, newZone.Length));
 
 			_unsavedZones.Add(ZonesList.Items.Count - 1);
 		}
@@ -163,7 +163,7 @@ namespace BizHawk.Client.EmuHawk
 			}
 
 			SelectedZone.Name = NameTextbox.Text;
-			ZonesList.Items[ZonesList.SelectedIndex] = $"{SelectedZone.Name} - length: {SelectedZone.Length}";
+			ZonesList.Items[ZonesList.SelectedIndex] = TheLocalizater.TranslateFormatString("{0} - length: {1}", SelectedZone.Name, SelectedZone.Length);
 		}
 
 		private void ReplaceBox_CheckedChanged(object sender, EventArgs e)
@@ -219,7 +219,7 @@ namespace BizHawk.Client.EmuHawk
 			if (loadZone != null)
 			{
 				_zones.Add(loadZone);
-				ZonesList.Items.Add($"{loadZone.Name} - length: {loadZone.Length}");
+				ZonesList.Items.Add(TheLocalizater.TranslateFormatString("{0} - length: {1}", loadZone.Name, loadZone.Length));
 
 				// Options only for TasMovie
 				if (CurrentMovie is not ITasMovie)
@@ -238,7 +238,7 @@ namespace BizHawk.Client.EmuHawk
 			MovieZone loadZone = MovieZone.Load(path, MainForm, CurrentMovie);
 			if (loadZone == null) return;
 			_zones.Add(loadZone);
-			ZonesList.Items.Add($"{loadZone.Name} - length: {loadZone.Length}");
+			ZonesList.Items.Add(TheLocalizater.TranslateFormatString("{0} - length: {1}", loadZone.Name, loadZone.Length));
 		}
 
 		public static string SuggestedFolder(Config config, IGameInfo game)

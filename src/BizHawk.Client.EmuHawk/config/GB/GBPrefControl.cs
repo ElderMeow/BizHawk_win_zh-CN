@@ -35,7 +35,7 @@ namespace BizHawk.Client.EmuHawk
 			_movieSession = movieSession;
 			_s = s ?? new Gameboy.GambatteSettings();
 			_ss = ss ?? new Gameboy.GambatteSyncSettings();
-			propertyGrid1.SelectedObject = _ss;
+			propertyGrid1.SelectedObject = new TheLocalizedTypeDescriptorProxy(_ss);
 			propertyGrid1.Enabled = movieSession.Movie.NotActive();
 			checkBoxMuted.Checked = _s.Muted;
 			cbRgbdsSyntax.Checked = _s.RgbdsSyntax;

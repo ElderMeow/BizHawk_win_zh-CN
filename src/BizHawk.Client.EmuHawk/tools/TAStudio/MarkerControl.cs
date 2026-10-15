@@ -53,8 +53,8 @@ namespace BizHawk.Client.EmuHawk
 		private void SetupColumns()
 		{
 			MarkerView.AllColumns.Clear();
-			MarkerView.AllColumns.Add(new(name: "FrameColumn", widthUnscaled: 52, text: TheLocalizater.TranslateText("Frame")));
-			MarkerView.AllColumns.Add(new(name: SAVESTATE_COL_NAME, widthUnscaled: 24, text: TheLocalizater.TranslateText("State")));
+			MarkerView.AllColumns.Add(new(name: "FrameColumn", widthUnscaled: 52, text: "Frame"));
+			MarkerView.AllColumns.Add(new(name: SAVESTATE_COL_NAME, widthUnscaled: 24, text: "State"));
 			MarkerView.AllColumns.Add(new(name: "LabelColumn", widthUnscaled: 125, text: string.Empty));
 		}
 

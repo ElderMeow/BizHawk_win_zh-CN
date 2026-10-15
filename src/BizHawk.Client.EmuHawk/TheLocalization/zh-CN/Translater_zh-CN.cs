@@ -1,25 +1,111 @@
-﻿using BizHawk.Client.Common;
-using BizHawk.Emulation.Cores.Nintendo.N64;
-using System;
+﻿using Newtonsoft.Json;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.IO;
 
 namespace BizHawk.Client.EmuHawk.zh_CN
 {
 	internal class Translater_zh_CN : HardEncodingTextTralslaterBase
 	{
+		protected Dictionary<string, string> untranslated = new Dictionary<string, string>();
+		internal void collectUntranslated(string text)
+		{
+			untranslated[text] = "";
+		}
+
+		public static void SaveTranslationDict(Dictionary<string, string> dict, string fileName)
+		{
+			string fileFullName = Path.Combine(AppContext.BaseDirectory, "dll", "TheLocalization", "zh-CN", fileName);
+			string json = JsonConvert.SerializeObject(dict, Formatting.Indented);
+			File.WriteAllText(fileFullName, json);
+		}
+
+		public static void LoadTranslationDict(string fileName, ref Dictionary<string, string> targetDict)
+		{
+			string fileFullName = Path.Combine(AppContext.BaseDirectory, "dll", "TheLocalization", "zh-CN", fileName);
+			if (!File.Exists(fileFullName))
+				return;
+
+			string json = File.ReadAllText(fileFullName);
+			var loaded = JsonConvert.DeserializeObject<Dictionary<string, string>>(json);
+			if (loaded == null) return;
+
+			foreach (var kv in loaded)
+			{
+				targetDict[kv.Key] = kv.Value;
+			}
+		}
+
 		public Translater_zh_CN()
 		{
 			cultureName = "zh-CN";
 
 			// ====================================================
 
-			InitTranslatedText();
+			// InitTranslatedText();
+			LoadTranslationDict("TextTranslateDictionary.json", ref textTranlateDictionary);
 		}
 
-		// 第一批导出和翻译
+		~Translater_zh_CN()
+		{
+			foreach (var kv in untranslated)
+			{
+				Console.WriteLine("发现未翻译的文本：\t\"" + kv.Key + "\" ！");
+			}
+			// SaveTranslationDict(textTranlateDictionary, "TextTranslateDictionary.json");
+			SaveTranslationDict(untranslated, "UntranslatedTexts.json");
+		}
+
+		// Translate a plain text. 翻译一条纯文本。
+		public override string TranslateText(string text, string context = null)
+		{
+			string key = context == null ? text : $"<[{context}]>:{text}";
+			if (textTranlateDictionary.TryGetValue(key, out var translatedString)) // If there is pre-translated text in the dictionary, 如果字典中存在翻译前的文本，
+			{
+				return translatedString; //take out the translated text from it. 则从中取出翻译后的文本。
+			}
+			if (!string.IsNullOrWhiteSpace(key))
+			{
+				collectUntranslated(key.Replace("\"", "\\\""));
+			}
+			return text; // Otherwise, non translate.
+		}
+
+		public override string TranslateKeyDisplayString(string bindstring)
+		{
+			var keys = bindstring.Split('+');
+			List<string> translatedKeys = new List<string>();
+			foreach (var key in keys)
+			{
+				if (textTranlateDictionary.TryGetValue($"<[keyname]>:{key}", out var translatedKey)) // If there is pre-translated text in the dictionary, 如果字典中存在翻译前的文本，
+				{
+					translatedKeys.Add(translatedKey); //take out the translated text from it. 则从中取出翻译后的文本。
+				}
+				else
+				{
+					collectUntranslated($"<[keyname]>:{key}");
+					translatedKeys.Add(key); // Otherwise, non translate.
+				}
+			}
+			return string.Join("+", translatedKeys); // Otherwise, non translate.
+		}
+
+		// Translate a format string. 翻译一条格式化字符串。
+		public override string TranslateFormatString(string formatString, params object[] args)
+		{
+			if (textTranlateDictionary.TryGetValue(formatString, out var translatedString)) // If there is pre-translated text in the dictionary, 如果字典中存在翻译前的文本，
+			{
+				return string.Format(translatedString, args); //take out the translated text from it. 则从中取出翻译后的文本。
+			}
+			if (!string.IsNullOrWhiteSpace(formatString))
+			{
+				collectUntranslated(formatString.Replace("\"", "\\\""));
+			}
+			return string.Format(formatString, args); // Otherwise, non translate.
+		}
+
+
+		/* 第一批导出和翻译 老东西了
 		private void InitTranslatedText()
 		{
 
@@ -1746,7 +1832,8 @@ And: 2. It's not suitable for detailed scrutinizing of graphics
 			textTranlateDictionary["psx.bios_sanity"] = "BIOS完整性校验";
 			textTranlateDictionary["psx.input.pport2.multitap"] = "物理端口2 多手柄转接器";
 			textTranlateDictionary["psx.input.pport1.multitap"] = "物理端口1 多手柄转接器";
-
+			
 		}
+		//*/
 	}
 }

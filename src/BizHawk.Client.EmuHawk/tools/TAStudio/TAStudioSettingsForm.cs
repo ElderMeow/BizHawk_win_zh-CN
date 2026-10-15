@@ -7,6 +7,7 @@ using System.Windows.Forms;
 
 using BizHawk.Client.Common;
 using BizHawk.Emulation.Common;
+using Silk.NET.OpenAL;
 
 namespace BizHawk.Client.EmuHawk
 {
@@ -291,11 +292,11 @@ namespace BizHawk.Client.EmuHawk
 					str += _patternValues[i];
 				}
 
-				PatternList.Items.Add($"{str}\t(x{_patternCounts[i]})");
+				PatternList.Items.Add($"{TheLocalizater.TranslateText(str, context:"")}\t(x{_patternCounts[i]})");
 				index += _patternCounts[i];
 			}
 
-			PatternList.Items.Add($"Loop to: {_patternLoopAt}");
+			PatternList.Items.Add(TheLocalizater.TranslateFormatString("Loop to: {0}", _patternLoopAt));
 
 			if (oldIndex >= PatternList.Items.Count)
 			{

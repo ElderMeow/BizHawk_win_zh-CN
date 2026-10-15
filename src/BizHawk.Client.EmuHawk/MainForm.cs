@@ -1856,7 +1856,7 @@ namespace BizHawk.Client.EmuHawk
 			DumpStatusButton.ToolTipText = tooltip;
 			DumpStatusReportMenuItem.Enabled = kind.Length is not 0;
 			DumpStatusReportMenuItem.Image = icon;
-			DumpStatusReportMenuItem.Text = string.Format(FMT_STR_DUMP_STATUS_MENUITEM_LABEL, kind);
+			DumpStatusReportMenuItem.Text = TheLocalizater.TranslateFormatString(FMT_STR_DUMP_STATUS_MENUITEM_LABEL, kind);
 			DumpStatusReportMenuItem.ToolTipText = tooltip;
 		}
 
@@ -2757,8 +2757,8 @@ namespace BizHawk.Client.EmuHawk
 		private void UpdateCoreStatusBarButton()
 		{
 			var attributes = Emulator.Attributes();
-			var coreDispName = attributes.Released ? attributes.CoreName : $"(Experimental) {attributes.CoreName}";
-			LoadedCoreNameMenuItem.Text = $"Loaded core: {coreDispName} ({Emulator.SystemId})";
+			var coreDispName = attributes.Released ? attributes.CoreName : TheLocalizater.TranslateFormatString("(Experimental) {0}", attributes.CoreName);
+			LoadedCoreNameMenuItem.Text = TheLocalizater.TranslateFormatString("Loaded core: {0} ({1})", coreDispName, Emulator.SystemId);
 			if (Emulator.IsNull())
 			{
 				CoreNameStatusBarButton.Visible = false;
