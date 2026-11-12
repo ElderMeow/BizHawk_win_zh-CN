@@ -1,0 +1,23 @@
+﻿{
+	"items": [
+		{
+			"path": "",
+			"data": {
+				"Text": "这是关于窗口(按ESC可关闭)",
+				"Size": "800, 600"
+			}
+		},
+		{
+			"path": "[pty]Controls.[obj]button1",
+			"data": {
+				"Text": "好的"
+			}
+		},
+		{
+			"path": "[pty]Controls.[obj]richTextBox1",
+			"data": {
+				"Text": "DiscoHawk converts bolloxed-up crusty disc images to totally tidy CCD.\n\nDiscoHawk is part of the BizHawk project ( https://github.com/TASEmulators/BizHawk ).\n\nBizHawk is a .net-based multi-system emulator brought to you by some of the rerecording emulator principals. We wrote our own cue parsing/generating code to be able to handle any kind of junk we threw at it. Instead of trapping it in the emulator, we liberated it in the form of this tool, to be useful in other environments.\n\nTo use, drag a disc (.cue, .iso, .ccd, .cdi, .mds, .nrg) into the top area. DiscoHawk will dump a newly cleaned up CCD file set to the same directory as the original disc image, and call it _hawked.\n\nThis is beta software. You are invited to report problems to our bug tracker or IRC. Problems consist of: crusty disc images that crash DiscoHawk or that cause DiscoHawk to produce a _hawked.ccd which fails to serve your particular purposes (which we will need to be informed of, in case we are outputting wrongly.)\n\n DiscoHawk 能够将磁盘镜像转换为格式良好的 CCD 文件。 \n\n DiscoHawk 是 BizHawk 项目的一部分 (https://github.com/TASEmulators/BizHawk) 。\n\n BizHawk 是一款基于 .NET 技术的多系统模拟器，由一些曾经参与过磁盘复制模拟器开发的专家们共同打造。我们自行编写了用于解析和生成的代码，这样就能处理各种复杂的输入数据。与其让这个工具绑定在模拟器中，不如将其以工具的形式释放出来，以便在其他环境中使用。\n\n 要使用该工具，只需将磁盘文件 (.cue、.iso、.ccd、.cdi、.mds、.nrg) 拖放到工具的对应区域即可。DiscoHawk 会生成一份经过处理的 CCD 文件，该文件会被保存在与原始磁盘镜像文件相同的目录下，文件名为 _hawked 。 \n\n 这是一款测试版软件。如果您发现任何问题，欢迎通过我们的错误报告系统或 IRC 与我们联系。可能出现的问题包括：磁盘镜像导致 DiscoHawk 无法正常工作，或者生成的 _hawked.ccd 文件无法满足您的需求。如果是这种情况，请及时告知我们，以便我们修正错误。"
+			}
+		}
+	]
+}

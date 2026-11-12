@@ -10,6 +10,8 @@ namespace BizHawk.Client.DiscoHawk
 		{
 			InitializeComponent();
 			lblVersion.Text = $"v{System.Reflection.Assembly.GetExecutingAssembly().GetName().Version}";
+
+			FormTranslater.TramslateFormWithJsonFile(this, "About.json");
 		}
 
 		private void richTextBox1_LinkClicked(object sender, LinkClickedEventArgs e)

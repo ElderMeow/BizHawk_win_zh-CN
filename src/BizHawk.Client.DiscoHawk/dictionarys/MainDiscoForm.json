@@ -1,0 +1,79 @@
+﻿{
+	"items": [
+		{
+			"path": "",
+			"data": {
+				"Text": "窗口汉化器的测试",
+				"Size": "800, 600"
+			}
+		},
+		{
+			"path": "[pty]Controls.[obj]btnAbout",
+			"data": {
+				"Text": "关于"
+			}
+		},
+		{
+			"path": "[pty]Controls.[obj]ExitButton",
+			"data": {
+				"Text": "退出"
+			}
+		},
+		{
+			"path": "[pty]Controls.[obj]label7",
+			"data": {
+				"Text": "- 设置 -"
+			}
+		},
+		{
+			"path": "[pty]Controls.[obj]groupBox1",
+			"data": {
+				"Text": "读碟引擎",
+				"Size": "307, 216"
+			}
+		},
+		{
+			"path": "[pty]Controls.[obj]groupBox2",
+			"data": {
+				"Text": "输出格式"
+			}
+		},
+		{
+			"path": "[pty]Controls.[obj]groupBox1.[pty]Controls.[obj]label3",
+			"data": {
+				"Text": "- 可使用 FFMPEG 解码音频,\n- 可加载ISO、CUE、CCD、CDI、CHD、MDS和NRG文件"
+			}
+		},
+		{
+			"path": "[pty]Controls.[obj]groupBox1.[pty]Controls.[obj]label4",
+			"data": {
+				"Text": "- 尚不支持音频解码,\n(虽然 \"Mednafen\",\n可以支持),\n- 可加载ISO、CUE和CCD",
+				"Size": "216, 63"
+			}
+		},
+		{
+			"path": "[pty]Controls.[obj]lblMagicDragArea",
+			"data": {
+				"Location": "380, 31"
+			}
+		},
+		{
+			"path": "[pty]Controls.[obj]lblMp3ExtractMagicArea",
+			"data": {
+				"Location": "380, 146"
+			}
+		},
+		{
+			"path": "[pty]Controls.[obj]lblMagicDragArea.[pty]Controls.[obj]label1",
+			"data": {
+				"Text": "拖放磁碟镜像到这里，将其转换为纯 CCD/CHD 文件！"
+			}
+		},
+		{
+			"path": "[pty]Controls.[obj]lblMp3ExtractMagicArea.[pty]Controls.[obj]label2",
+			"data": {
+				"Text": "拖放磁碟镜像到这里，将其转换为纯 MP3 文件！"
+			}
+		}
+	]
+}

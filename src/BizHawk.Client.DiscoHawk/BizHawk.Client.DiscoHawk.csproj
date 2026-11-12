@@ -15,6 +15,9 @@
 		<EmbeddedResource Include="discohawk.ico" />
 	</ItemGroup>
 	<ItemGroup>
+	  <PackageReference Include="Newtonsoft.Json" />
+	</ItemGroup>
+	<ItemGroup>
 		<Compile Update="About.cs" SubType="Form" />
 		<Compile Update="About.Designer.cs" DependentUpon="About.cs" />
 		<EmbeddedResource Update="About.resx" DependentUpon="About.cs" />
@@ -24,5 +27,13 @@
 		<Compile Update="MainDiscoForm.cs" SubType="Form" />
 		<Compile Update="MainDiscoForm.Designer.cs" DependentUpon="MainDiscoForm.cs" />
 		<EmbeddedResource Update="MainDiscoForm.resx" DependentUpon="MainDiscoForm.cs" SubType="Designer" />
+	</ItemGroup>
+	<ItemGroup>
+	  <None Update="dictionarys\About.json">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </None>
+	  <None Update="dictionarys\MainDiscoForm.json">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </None>
 	</ItemGroup>
 </Project>

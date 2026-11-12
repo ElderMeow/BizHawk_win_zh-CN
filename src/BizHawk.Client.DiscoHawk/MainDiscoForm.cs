@@ -27,6 +27,8 @@ namespace BizHawk.Client.DiscoHawk
 		private void MainDiscoForm_Load(object sender, EventArgs e)
 		{
 			lvCompareTargets.Columns[0].Width = lvCompareTargets.ClientSize.Width;
+
+			FormTranslater.TramslateFormWithJsonFile(this, "MainDiscoForm.json");
 		}
 
 		private void ExitButton_Click(object sender, EventArgs e)
